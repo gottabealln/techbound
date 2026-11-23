@@ -142,7 +142,7 @@ $company_links = [
         </li>
 
 
-       <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li>
+       <?php /* <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li> */ ?>
 
       <!-- ===== COMPANY MEGA MENU ===== -->
 <li class="has-sub has-mega">
@@ -230,7 +230,7 @@ $company_links = [
           </div>
         </li>
 
-        <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li>
+        <?php /* <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li> */ ?>
 
         <!-- ===== COMPANY MOBILE (SEPARATE SECTIONS) ===== -->
         <li class="has-sub">

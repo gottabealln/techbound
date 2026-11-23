@@ -46,19 +46,15 @@ include __DIR__ . '/includes/header.php';
     </div>
     <ul class="seo-track__grid">
       <li class="seo-track__item" data-animate="up">
-        <span class="seo-track__dot" aria-hidden="true"></span>
         <span>15+ Years of Industry Experience</span>
       </li>
       <li class="seo-track__item" data-animate="up" style="--d:80ms">
-        <span class="seo-track__dot" aria-hidden="true"></span>
         <span>Kerala to Global Markets</span>
       </li>
       <li class="seo-track__item" data-animate="up" style="--d:160ms">
-        <span class="seo-track__dot" aria-hidden="true"></span>
         <span>Traditional Search to AI Search</span>
       </li>
       <li class="seo-track__item" data-animate="up" style="--d:240ms">
-        <span class="seo-track__dot" aria-hidden="true"></span>
         <span>Results, Not Promises</span>
       </li>
     </ul>

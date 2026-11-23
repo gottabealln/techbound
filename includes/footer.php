@@ -53,7 +53,7 @@ $page_scripts = $page_scripts ?? [];
             <li><a href="<?= url('index.php') ?>">Home</a></li>
             <li><a href="<?= url('about.php') ?>">About</a></li>
             <li><a href="<?= url('services.php') ?>">Our Services</a></li>
-            <li><a href="<?= url('portfolio.php') ?>">Portfolio</a></li>
+            <?php /* <li><a href="<?= url('portfolio.php') ?>">Portfolio</a></li> */ ?>
             <li><a href="<?= url('blog.php') ?>">Blog</a></li>
             <li><a href="<?= url('careers.php') ?>">Careers</a></li>
             <li><a href="<?= url('contact.php') ?>">Contact</a></li>

@@ -20,7 +20,9 @@
     RewriteRule ^about-us/?$ about.php [L,QSA]
     RewriteRule ^our-services/?$ services.php [L,QSA]
     RewriteRule ^our-services/seo-company-in-kerala/?$ seo.php [L,QSA]
-    RewriteRule ^ai-seo-services-in-kerala/?$ ai-seo.php [L,QSA]
+    RewriteRule ^our-services/ai-seo-services-in-kerala/?$ ai-seo.php [L,QSA]
+    RewriteCond %{REQUEST_URI} ^(.*/)ai-seo-services-in-kerala/?$
+    RewriteRule ^ %1our-services/ai-seo-services-in-kerala/ [R=301,L]
     RewriteRule ^our-services/social-media-management-company-in-kerala/?$ smm.php [L,QSA]
     RewriteRule ^our-services/website-development-company-in-kerala/?$ website-development.php [L,QSA]
     RewriteRule ^our-services/best-lead-generation-company-in-kerala/?$ lead-generation.php [L,QSA]

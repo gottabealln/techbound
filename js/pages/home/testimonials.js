@@ -99,23 +99,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const topPaused = isHovering(topRow);
     const bottomPaused = isHovering(bottomRow);
 
-    // BOTTOM ROW: moves unless the mouse is over it.
+    // BOTTOM ROW: slides left unless the mouse is over it.
     if (bottomDistance > 0 && !bottomPaused) {
       bottomPosition =
         (bottomPosition + BOTTOM_SPEED * delta) % bottomDistance;
 
       bottomRow.style.transform =
-        `translate3d(${-bottomDistance + bottomPosition}px, 0, 0)`;
+        `translate3d(${-bottomPosition}px, 0, 0)`;
     }
 
-    // TOP ROW: fixed until the user scrolls farther, then moves unless hovered.
-    if (!topStarted) {
-      topRow.style.transform = "translate3d(0, 0, 0)";
-    } else if (topDistance > 0 && !topPaused) {
-      topPosition = (topPosition + TOP_SPEED * delta) % topDistance;
+    // TOP ROW: slides right once scrolled in, unless hovered.
+    if (topDistance > 0) {
+      if (!topStarted) {
+        topRow.style.transform = `translate3d(${-topDistance}px, 0, 0)`;
+      } else if (!topPaused) {
+        topPosition = (topPosition + TOP_SPEED * delta) % topDistance;
 
-      topRow.style.transform =
-        `translate3d(${-topDistance + topPosition}px, 0, 0)`;
+        topRow.style.transform =
+          `translate3d(${-topDistance + topPosition}px, 0, 0)`;
+      }
     }
 
     frame = requestAnimationFrame(animate);

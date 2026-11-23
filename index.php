@@ -42,7 +42,7 @@ require __DIR__ . '/includes/header.php';
 
         <div class="hero__buttons">
           <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--book">Book a Call</a>
-          <a href="<?= url('portfolio.php') ?>" class="btn btn--outline btn--arrow btn--works">View Our Works</a>
+          <?php /* <a href="<?= url('portfolio.php') ?>" class="btn btn--outline btn--arrow btn--works">View Our Works</a> */ ?>
         </div>
       </div>
     </div>
@@ -552,7 +552,7 @@ require __DIR__ . '/includes/header.php';
         Book a Call
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="<?= url('portfolio.php') ?>" class="cta__btn cta__btn--ghost">View Our Work</a>
+      <?php /* <a href="<?= url('portfolio.php') ?>" class="cta__btn cta__btn--ghost">View Our Work</a> */ ?>
     </div>
   </div>
 </section>

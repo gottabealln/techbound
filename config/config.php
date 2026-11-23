@@ -6,9 +6,9 @@ $env = function (string $key, $default = null) {
     return ($v === false || $v === '') ? $default : $v;
 };
 
-// Auto-detect default MySQL port based on environment (3307 for local XAMPP Windows, 3306 for Cloud / Render)
+// Default MySQL port (3306 for both local XAMPP and Cloud / Render; override via DB_PORT env var if needed)
 $isLocalXampp = (PHP_OS_FAMILY === 'Windows' && is_dir('C:/xampp'));
-$defaultPort  = $isLocalXampp ? 3307 : 3306;
+$defaultPort  = 3306;
 
 return [
     'db' => [

@@ -165,10 +165,11 @@ if ($raw_desc === '') {
 }
 $page_title   = $post_title . ' | TechBound Blog';
 $page_desc    = $raw_desc;
+$header_light = false;
 $page_styles  = ['css/blog.css'];
 $show_faq_btn = false;
 
-$related_posts = get_related_posts($post['category'] ?? 'Digital Marketing', (int)$post['id'], 3);
+$related_posts = get_related_posts($post['category'] ?? 'Digital Marketing', (int)$post['id'], 4);
 
 // Current canonical URL for social sharing
 $share_url   = url('blog-post.php?slug=' . urlencode($post['slug']));
@@ -177,25 +178,32 @@ $share_title = urlencode($post['title']);
 include __DIR__ . '/includes/header.php';
 ?>
 
-<article class="post-article">
-  <!-- Article Header -->
-  <header class="post-header">
-    <nav class="post-header__crumbs" aria-label="Breadcrumb">
-      <a href="<?= url('index.php') ?>">Home</a>
-      <span>/</span>
-      <a href="<?= url('blog.php') ?>">Blog</a>
-      <span>/</span>
-      <a href="<?= url('blog.php?cat=' . urlencode($post['category'] ?? 'Digital Marketing')) ?>" style="color:var(--brand);font-weight:600;"><?= htmlspecialchars($post['category'] ?? 'Digital Marketing') ?></a>
-      <span>/</span>
-      <span style="color:#718096;"><?= htmlspecialchars(mb_strimwidth($post['title'], 0, 45, '...')) ?></span>
-    </nav>
+<!-- ===== BLOG POST HERO (Consistent across all blogs) ===== -->
+<section class="hero hero--inner post-hero" style="background-image: url('<?= asset('assets/mega-blog.avif') ?>');" data-nav="dark">
+  <div class="hero__overlay"></div>
 
-    <div style="margin-bottom: 16px;">
-      <span class="blog-cat-pill"><?= htmlspecialchars($post['category'] ?? 'Digital Marketing') ?></span>
+  <div class="hero__content">
+    <div class="hero__tagline-wrap">
+      <nav class="hero__crumbs" aria-label="Breadcrumb">
+        <a href="<?= url('index.php') ?>">Home</a><span>/</span>
+        <a href="<?= url('blog.php') ?>">Blog</a><span>/</span>
+        <span class="is-current"><?= htmlspecialchars($post['category'] ?? 'Digital Marketing') ?></span>
+      </nav>
+      <div class="hero__line"></div>
     </div>
 
-    <h1 class="post-title"><?= htmlspecialchars($post['title']) ?></h1>
+    <div class="hero__body">
+      <div class="hero__text">
+        <span class="blog-cat-pill blog-cat-pill--hero"><?= htmlspecialchars($post['category'] ?? 'Digital Marketing') ?></span>
+        <h1 class="hero__title post-hero__title"><?= htmlspecialchars($post['title']) ?></h1>
+      </div>
+    </div>
+  </div>
+</section>
 
+<article class="post-article" data-nav="light">
+  <!-- Article Meta -->
+  <header class="post-header">
     <div class="post-meta-bar">
       <div class="blog-author">
         <span class="blog-author-avatar" aria-hidden="true">

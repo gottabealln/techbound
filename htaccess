@@ -7,3 +7,32 @@
 <FilesMatch "\.(sql|xml|json|lock|frm|ibd|opt|env|md)$">
     Require all denied
 </FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Serve existing files and directories directly (CSS, JS, images, admin, AJAX endpoints)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Live SEO-friendly clean URLs -> Backend PHP files
+    RewriteRule ^about-us/?$ about.php [L,QSA]
+    RewriteRule ^our-services/?$ services.php [L,QSA]
+    RewriteRule ^our-services/seo-company-in-kerala/?$ seo.php [L,QSA]
+    RewriteRule ^ai-seo-services-in-kerala/?$ ai-seo.php [L,QSA]
+    RewriteRule ^our-services/social-media-management-company-in-kerala/?$ smm.php [L,QSA]
+    RewriteRule ^our-services/website-development-company-in-kerala/?$ website-development.php [L,QSA]
+    RewriteRule ^our-services/best-lead-generation-company-in-kerala/?$ lead-generation.php [L,QSA]
+    RewriteRule ^our-services/online-advertising-agency-in-kerala/?$ online-advertising.php [L,QSA]
+    RewriteRule ^construction-marketing-agency-kerala/?$ construction.php [L,QSA]
+    RewriteRule ^digital-marketing-trivandrum-guide/?$ digital-marketing-trivandrum-guide.php [L,QSA]
+    RewriteRule ^blog/?$ blog.php [L,QSA]
+    RewriteRule ^blog/([^/]+)/?$ blog-post.php?slug=$1 [L,QSA]
+    RewriteRule ^contact/?$ contact.php [L,QSA]
+
+    # Additional site pages for uniform clean URLs
+    RewriteRule ^portfolio/?$ portfolio.php [L,QSA]
+    RewriteRule ^careers/?$ careers.php [L,QSA]
+    RewriteRule ^privacy-policy/?$ privacy-policy.php [L,QSA]
+</IfModule>

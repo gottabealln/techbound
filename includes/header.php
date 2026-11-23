@@ -49,6 +49,14 @@ $company_links = [
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WDGF4FS9');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($page_title) ?></title>
@@ -70,6 +78,10 @@ $company_links = [
   <?php endforeach; ?>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDGF4FS9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header class="header<?= $header_light ? ' is-light' : '' ?>">
     <nav class="navbar">
@@ -93,6 +105,9 @@ $company_links = [
             <div class="svc-mega">
 
               <div class="svc-mega__intro">
+                <a href="<?= url('services.php') ?>" class="svc-mega__thumb" aria-label="Explore TechBound Services">
+                  <img src="<?= url('assets/services.avif') ?>" alt="TechBound Digital Solutions">
+                </a>
                 <span class="mega-menu__eyebrow">WHAT WE DO</span>
                 <h2>Digital Solutions for Business Growth</h2>
                 <p>Everything your business needs to build its online presence and reach the right audience.</p>
@@ -127,7 +142,7 @@ $company_links = [
         </li>
 
 
-       <li><a href="<?= url('about.php') ?>"<?= current_attr('about.php') ?>>Portfolio</a></li>
+       <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li>
 
       <!-- ===== COMPANY MEGA MENU ===== -->
 <li class="has-sub has-mega">
@@ -215,7 +230,7 @@ $company_links = [
           </div>
         </li>
 
-        <li><a href="<?= url('about.php') ?>"<?= current_attr('about.php') ?>>Portfolio</a></li>
+        <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li>
 
         <!-- ===== COMPANY MOBILE (SEPARATE SECTIONS) ===== -->
         <li class="has-sub">

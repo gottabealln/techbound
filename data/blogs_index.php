@@ -1,10 +1,10 @@
 <?php
-// Precompiled index of all TechBound blog posts (metadata only)
-return [
-  [
+return array (
+  0 => 
+  array (
     'id' => 60988,
-    'title' => 'AI SEO Course: What It Is, Where the Scope Is and What the Future Looks Like',
     'slug' => 'ai-seo-course-scope-future',
+    'title' => 'AI SEO Course: What It Is, Where the Scope Is and What the Future Looks Like',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -13,11 +13,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/11/AI-SEO-Course-The-Future-of-Search.png',
     'published_at' => '2026-11-18 16:31:04',
     'active' => 1,
-  ],
-  [
+  ),
+  1 => 
+  array (
     'id' => 60937,
-    'title' => 'Digital Marketing for Study Abroad Consultants: Why the Enquiry Is Won Long Before the First Call',
     'slug' => 'digital-marketing-for-study-abroad-consultants',
+    'title' => 'Digital Marketing for Study Abroad Consultants: Why the Enquiry Is Won Long Before the First Call',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Jithu Gilbert',
@@ -26,11 +27,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/11/Digital-Marketing-for-Study-Abroad-Consultants.png',
     'published_at' => '2026-11-16 17:09:04',
     'active' => 1,
-  ],
-  [
+  ),
+  2 => 
+  array (
     'id' => 60677,
-    'title' => 'Google November 2026 Core Update: What It Means and What to Do Now',
     'slug' => 'google-november-2026-core-update',
+    'title' => 'Google November 2026 Core Update: What It Means and What to Do Now',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -39,11 +41,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/11/Google-November-2026-Core-Update-Guide.png',
     'published_at' => '2026-11-11 17:47:35',
     'active' => 1,
-  ],
-  [
+  ),
+  3 => 
+  array (
     'id' => 60647,
-    'title' => 'Will AI Take Your SEO Job? What Changes, What Stays',
     'slug' => 'future-of-seo-jobs-in-india',
+    'title' => 'Will AI Take Your SEO Job? What Changes, What Stays',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Jithu Gilbert',
@@ -52,11 +55,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/11/AI-and-SEO-Career-Shift.png',
     'published_at' => '2026-11-09 16:07:40',
     'active' => 1,
-  ],
-  [
+  ),
+  4 => 
+  array (
     'id' => 60635,
-    'title' => 'Top 10 Global Marketing Trends in 2026 and How Digital Marketing Is Shaping the Future of Business',
     'slug' => 'global-marketing-trends-2026',
+    'title' => 'Top 10 Global Marketing Trends in 2026 and How Digital Marketing Is Shaping the Future of Business',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -65,11 +69,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/11/Global-Marketing-Trends-2026-Dashboard.png',
     'published_at' => '2026-11-04 16:45:38',
     'active' => 1,
-  ],
-  [
+  ),
+  5 => 
+  array (
     'id' => 60621,
-    'title' => 'AI Content Marketing and the Human Edit Rule: How to Keep Your Brand Voice',
     'slug' => 'ai-content-marketing-human-edit-rule',
+    'title' => 'AI Content Marketing and the Human Edit Rule: How to Keep Your Brand Voice',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -78,11 +83,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/11/AI-Content-Marketing-The-Human-Edit-Rule.png',
     'published_at' => '2026-11-02 17:14:21',
     'active' => 1,
-  ],
-  [
+  ),
+  6 => 
+  array (
     'id' => 60610,
-    'title' => 'Instagram Features: What 90-Minute Videos Mean for Brands and Creators',
     'slug' => 'instagram-features-long-form-video',
+    'title' => 'Instagram Features: What 90-Minute Videos Mean for Brands and Creators',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Jithu Gilbert',
@@ -91,11 +97,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/Instagrams-90-Minute-Video-Opportunity.png',
     'published_at' => '2026-10-28 16:30:22',
     'active' => 1,
-  ],
-  [
+  ),
+  7 => 
+  array (
     'id' => 60598,
-    'title' => 'Meta Ads Updates 2026: What Super Burst, First Impression Ads and Reels Trending Ads Mean for Your Business',
     'slug' => 'meta-ads-updates-super-burst-trending-ads',
+    'title' => 'Meta Ads Updates 2026: What Super Burst, First Impression Ads and Reels Trending Ads Mean for Your Business',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Jithu Gilbert',
@@ -104,11 +111,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/Meta-Ads-Updates-2026_-Reels-Revolution.png',
     'published_at' => '2026-10-26 15:35:55',
     'active' => 1,
-  ],
-  [
+  ),
+  8 => 
+  array (
     'id' => 60582,
-    'title' => 'Zero-Click Search: How to Measure SEO Success When Clicks Keep Falling',
     'slug' => 'zero-click-search-seo-measurement',
+    'title' => 'Zero-Click Search: How to Measure SEO Success When Clicks Keep Falling',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Jithu Gilbert',
@@ -117,11 +125,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/Zero-Click-SEO-Success-Dashboard-1.png',
     'published_at' => '2026-10-22 15:08:20',
     'active' => 1,
-  ],
-  [
+  ),
+  9 => 
+  array (
     'id' => 60570,
-    'title' => 'Influencer Marketing: How Brands Turn Creator Trust into Real Business Results',
     'slug' => 'influencer-marketing-guide',
+    'title' => 'Influencer Marketing: How Brands Turn Creator Trust into Real Business Results',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Jithu Gilbert',
@@ -130,11 +139,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/Influencer-Marketing_-Creator-Trust-in-Action-1.png',
     'published_at' => '2026-10-19 15:43:39',
     'active' => 1,
-  ],
-  [
+  ),
+  10 => 
+  array (
     'id' => 60552,
-    'title' => 'Social Commerce and Scroll-Led Discovery: How People Buy Now',
     'slug' => 'social-commerce-scroll-led-discovery',
+    'title' => 'Social Commerce and Scroll-Led Discovery: How People Buy Now',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Jithu Gilbert',
@@ -143,11 +153,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/Social-Commerce-and-Scroll-Led-Discovery.png',
     'published_at' => '2026-10-14 16:33:53',
     'active' => 1,
-  ],
-  [
+  ),
+  11 => 
+  array (
     'id' => 60538,
-    'title' => 'ChatGPT Ads Are Going Visual: What Advertisers Should Prepare For',
     'slug' => 'chatgpt-visual-ads-measurement',
+    'title' => 'ChatGPT Ads Are Going Visual: What Advertisers Should Prepare For',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -156,11 +167,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/chatgpt-ads-going-visual-featured-image.png',
     'published_at' => '2026-10-12 16:02:16',
     'active' => 1,
-  ],
-  [
+  ),
+  12 => 
+  array (
     'id' => 60526,
-    'title' => 'SEO Strategy and Technical SEO in October 2026: What Changed and What to Do Next',
     'slug' => 'seo-strategy-technical-seo-updates-october-2026',
+    'title' => 'SEO Strategy and Technical SEO in October 2026: What Changed and What to Do Next',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Jithu Gilbert',
@@ -169,11 +181,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/seo-strategy-technical-seo-october-2026-1.png',
     'published_at' => '2026-10-07 18:03:52',
     'active' => 1,
-  ],
-  [
+  ),
+  13 => 
+  array (
     'id' => 60511,
-    'title' => 'Meta Muse AI Agent: What It Does, How It Stays Private, and Why Marketers Should Care',
     'slug' => 'meta-muse-ai-agent-guide',
+    'title' => 'Meta Muse AI Agent: What It Does, How It Stays Private, and Why Marketers Should Care',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -182,11 +195,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/10/meta-muse-ai-agent-featured-image.png',
     'published_at' => '2026-10-05 15:30:56',
     'active' => 1,
-  ],
-  [
+  ),
+  14 => 
+  array (
     'id' => 60364,
-    'title' => 'AI Search Optimization: How SEO, AEO and GEO Work Together',
     'slug' => 'ai-search-optimization-seo-aeo-geo',
+    'title' => 'AI Search Optimization: How SEO, AEO and GEO Work Together',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -195,11 +209,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/ai-search-optimization-seo-aeo-geo.png',
     'published_at' => '2026-09-30 16:19:49',
     'active' => 1,
-  ],
-  [
+  ),
+  15 => 
+  array (
     'id' => 59999,
-    'title' => 'Google September 2026 Spam Update: What We Know and What to Check on Your Site',
     'slug' => 'google-september-2026-spam-update',
+    'title' => 'Google September 2026 Spam Update: What We Know and What to Check on Your Site',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -208,11 +223,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/google-september-2026-spam-update-blog-banner.png',
     'published_at' => '2026-09-28 16:13:42',
     'active' => 1,
-  ],
-  [
+  ),
+  16 => 
+  array (
     'id' => 59648,
-    'title' => 'How to Increase Website Traffic in 2026: A Practical Guide for Growing Businesses',
     'slug' => 'how-to-increase-website-traffic-2026',
+    'title' => 'How to Increase Website Traffic in 2026: A Practical Guide for Growing Businesses',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Jithu Gilbert',
@@ -221,11 +237,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/increase-website-traffic-2026-guide.png',
     'published_at' => '2026-09-23 16:14:15',
     'active' => 1,
-  ],
-  [
+  ),
+  17 => 
+  array (
     'id' => 59607,
-    'title' => 'Social Media Marketing: A Complete 2026 Guide',
     'slug' => 'social-media-marketing-guide-2026',
+    'title' => 'Social Media Marketing: A Complete 2026 Guide',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Jithu Gilbert',
@@ -234,11 +251,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/social-media-marketing-guide-2026.png',
     'published_at' => '2026-09-21 16:20:13',
     'active' => 1,
-  ],
-  [
+  ),
+  18 => 
+  array (
     'id' => 59546,
-    'title' => 'ChatGPT Ads Are Now Live in India: Should Your Business Advertise There?',
     'slug' => 'chatgpt-ads-india-should-you-advertise',
+    'title' => 'ChatGPT Ads Are Now Live in India: Should Your Business Advertise There?',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -247,11 +265,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/chatgpt-ads-india-should-you-advertise.png',
     'published_at' => '2026-09-16 15:58:11',
     'active' => 1,
-  ],
-  [
+  ),
+  19 => 
+  array (
     'id' => 59531,
-    'title' => 'Google Business Profile Updates: View Counts Are Back and Owner Responses Can Now Be Reported',
     'slug' => 'google-business-profile-view-counts-and-review-responses',
+    'title' => 'Google Business Profile Updates: View Counts Are Back and Owner Responses Can Now Be Reported',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -260,11 +279,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/google-business-profile-view-counts-and-review-responses.png',
     'published_at' => '2026-09-14 16:00:00',
     'active' => 1,
-  ],
-  [
+  ),
+  20 => 
+  array (
     'id' => 59520,
-    'title' => 'Have a Website But No Leads? 7 Signs Your Design Isn\'t Built to Convert',
     'slug' => 'website-no-leads-conversion-design-signs',
+    'title' => 'Have a Website But No Leads? 7 Signs Your Design Isn\'t Built to Convert',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Jithu Gilbert',
@@ -273,11 +293,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/website-no-leads-conversion-design-signs-blog-cover.png',
     'published_at' => '2026-09-09 16:06:34',
     'active' => 1,
-  ],
-  [
+  ),
+  21 => 
+  array (
     'id' => 59505,
-    'title' => 'Google\'s August 2026 Spam Update: What Changed and How to Protect Your Rankings',
     'slug' => 'google-august-2026-spam-update',
+    'title' => 'Google\'s August 2026 Spam Update: What Changed and How to Protect Your Rankings',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Jithu Gilbert',
@@ -286,11 +307,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/google-august-2026-spam-update.png',
     'published_at' => '2026-09-07 16:03:19',
     'active' => 1,
-  ],
-  [
+  ),
+  22 => 
+  array (
     'id' => 59488,
-    'title' => 'Google\'s New AI Overviews Report in Search Console: What It Actually Tells You',
     'slug' => 'google-ai-overviews-report-search-console',
+    'title' => 'Google\'s New AI Overviews Report in Search Console: What It Actually Tells You',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -299,11 +321,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/09/google-search-console-ai-overviews-report-hero-2.png',
     'published_at' => '2026-09-02 16:15:27',
     'active' => 1,
-  ],
-  [
+  ),
+  23 => 
+  array (
     'id' => 59456,
-    'title' => 'How Digital Marketing for Travel and Tourism Business Is Changing the Game in 2026',
     'slug' => 'digital-marketing-for-travel-and-tourism-business-2026',
+    'title' => 'How Digital Marketing for Travel and Tourism Business Is Changing the Game in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -312,11 +335,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/digital-marketing-in-travel-and-tourism-business.png',
     'published_at' => '2026-08-31 16:25:23',
     'active' => 1,
-  ],
-  [
+  ),
+  24 => 
+  array (
     'id' => 59447,
-    'title' => 'Best Digital Marketing Agency in Trivandrum: How to Choose the Right One in 2026',
     'slug' => 'best-digital-marketing-agency-trivandrum',
+    'title' => 'Best Digital Marketing Agency in Trivandrum: How to Choose the Right One in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -325,11 +349,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/best-digital-marketing-agency-in-trivandrum.png',
     'published_at' => '2026-08-24 16:00:00',
     'active' => 1,
-  ],
-  [
+  ),
+  25 => 
+  array (
     'id' => 59433,
-    'title' => 'Google Ads Smart Bidding Update: What Changed in August 2026',
     'slug' => 'google-ads-smart-bidding-update-2026',
+    'title' => 'Google Ads Smart Bidding Update: What Changed in August 2026',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'Jithu Gilbert',
@@ -338,11 +363,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/google-ads-smart-bidding-update.png',
     'published_at' => '2026-08-19 10:57:13',
     'active' => 1,
-  ],
-  [
+  ),
+  26 => 
+  array (
     'id' => 59403,
-    'title' => 'Why Digital Marketing Is Essential for Healthcare Providers in 2026',
     'slug' => 'digital-marketing-healthcare-providers-2026',
+    'title' => 'Why Digital Marketing Is Essential for Healthcare Providers in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -351,11 +377,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/digital-marketing-healthcare-providers-2026.png',
     'published_at' => '2026-08-17 10:50:00',
     'active' => 1,
-  ],
-  [
+  ),
+  27 => 
+  array (
     'id' => 59377,
-    'title' => 'Role of Digital Marketing in Ecommerce Business: 2026 and What Comes Next',
     'slug' => 'blog-role-of-digital-marketing-in-ecommerce-2026',
+    'title' => 'Role of Digital Marketing in Ecommerce Business: 2026 and What Comes Next',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -364,11 +391,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/role-of-digital-maketing-in-ecommerce-business-2026-and-what-comes-next.png',
     'published_at' => '2026-08-12 10:30:16',
     'active' => 1,
-  ],
-  [
+  ),
+  28 => 
+  array (
     'id' => 59359,
-    'title' => 'Is a Digital Marketing Course Worth It in 2026? What to Know Before You Enroll',
     'slug' => 'digital-marketing-course-2026',
+    'title' => 'Is a Digital Marketing Course Worth It in 2026? What to Know Before You Enroll',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -377,11 +405,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/digital-marketing-course-2026-worth-it.png',
     'published_at' => '2026-08-10 10:43:57',
     'active' => 1,
-  ],
-  [
+  ),
+  29 => 
+  array (
     'id' => 59339,
-    'title' => 'Digital Marketing for Real Estate: What Actually Grows Your Business in 2026',
     'slug' => 'digital-marketing-for-real-estate-business-growth-2026',
+    'title' => 'Digital Marketing for Real Estate: What Actually Grows Your Business in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -390,11 +419,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/digital-marketing-for-real-estate.png',
     'published_at' => '2026-08-05 11:00:41',
     'active' => 1,
-  ],
-  [
+  ),
+  30 => 
+  array (
     'id' => 59326,
-    'title' => 'How to Check If Your Business Shows Up in AI Search Answers',
     'slug' => 'ai-search-visibility-geo-guide-2026',
+    'title' => 'How to Check If Your Business Shows Up in AI Search Answers',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -403,11 +433,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/08/ai-search-visibility-geo-guide-featured.png',
     'published_at' => '2026-08-03 10:52:21',
     'active' => 1,
-  ],
-  [
+  ),
+  31 => 
+  array (
     'id' => 58998,
-    'title' => 'Social Search Strategy 2026: Why Discovery No Longer Starts With Google',
     'slug' => 'blog-social-search-strategy-2026',
+    'title' => 'Social Search Strategy 2026: Why Discovery No Longer Starts With Google',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -416,11 +447,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/social-search-strategy-2026-techbound.png',
     'published_at' => '2026-07-29 10:54:33',
     'active' => 1,
-  ],
-  [
+  ),
+  32 => 
+  array (
     'id' => 58723,
-    'title' => 'Google Just Confirmed GEO Is Part of SEO - What Local Businesses Need to Know in 2026',
     'slug' => 'geo-seo-local-businesses-google-2026-update',
+    'title' => 'Google Just Confirmed GEO Is Part of SEO - What Local Businesses Need to Know in 2026',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Jithu Gilbert',
@@ -429,11 +461,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/google-confirmed-geo-is-partof-seo.png',
     'published_at' => '2026-07-27 10:40:39',
     'active' => 1,
-  ],
-  [
+  ),
+  33 => 
+  array (
     'id' => 58709,
-    'title' => 'Google\'s Search Box Just Got Its Biggest Redesign in 25 Years  Here\'s What It Means for Your Website',
     'slug' => 'google-multimodal-search-image-video-update-2026',
+    'title' => 'Google\'s Search Box Just Got Its Biggest Redesign in 25 Years  Here\'s What It Means for Your Website',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Jithu Gilbert',
@@ -442,11 +475,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/GOOGLE-search-box-just-got-its-biggest-redesign-in-25-years.png',
     'published_at' => '2026-07-22 10:57:45',
     'active' => 1,
-  ],
-  [
+  ),
+  34 => 
+  array (
     'id' => 58701,
-    'title' => 'Google Search Console\'s New Generative AI Report: What It Shows, What It Hides, and How to Use It',
     'slug' => 'google-search-console-generative-ai-report',
+    'title' => 'Google Search Console\'s New Generative AI Report: What It Shows, What It Hides, and How to Use It',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -455,11 +489,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/search-console-generative-ai-report.png.png',
     'published_at' => '2026-07-20 11:43:33',
     'active' => 1,
-  ],
-  [
+  ),
+  35 => 
+  array (
     'id' => 58648,
-    'title' => 'Google Business Profile Showing "No Reviews Yet"? Here\'s What It Means for Your Business',
     'slug' => 'google-business-profile-no-reviews-yet-bug',
+    'title' => 'Google Business Profile Showing "No Reviews Yet"? Here\'s What It Means for Your Business',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -468,11 +503,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/google-business-profile-no-reviews-yet-bug.jpg.jpeg',
     'published_at' => '2026-07-16 11:00:43',
     'active' => 1,
-  ],
-  [
+  ),
+  36 => 
+  array (
     'id' => 58632,
-    'title' => 'How to Optimize Website Content for Google AI Mode',
     'slug' => 'optimize-content-for-google-ai-mode',
+    'title' => 'How to Optimize Website Content for Google AI Mode',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Jithu Gilbert',
@@ -481,11 +517,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/how-to-optimize-website-content-for-google-ai-mode.png',
     'published_at' => '2026-07-14 10:28:52',
     'active' => 1,
-  ],
-  [
+  ),
+  37 => 
+  array (
     'id' => 58379,
-    'title' => 'GA4 Source Group: How Google\'s New Dimension Fixes Messy Social Media Reporting',
     'slug' => 'ga4-source-group-dimension-explained',
+    'title' => 'GA4 Source Group: How Google\'s New Dimension Fixes Messy Social Media Reporting',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Jithu Gilbert',
@@ -494,11 +531,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/Techbound-2.png',
     'published_at' => '2026-07-09 08:09:57',
     'active' => 1,
-  ],
-  [
+  ),
+  38 => 
+  array (
     'id' => 58316,
-    'title' => 'Agentic AI in Digital Marketing: What Changes in 2026',
     'slug' => 'agentic-ai-digital-marketing-2026',
+    'title' => 'Agentic AI in Digital Marketing: What Changes in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -507,11 +545,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/Untitled-design-2026-07-14T143118.478.png',
     'published_at' => '2026-07-07 11:52:21',
     'active' => 1,
-  ],
-  [
+  ),
+  39 => 
+  array (
     'id' => 58301,
-    'title' => 'Google Search Console Adds Social Channels to Insights Report: What Site Owners Need to Know in 2026',
     'slug' => 'google-search-console-social-channels-insights-2026',
+    'title' => 'Google Search Console Adds Social Channels to Insights Report: What Site Owners Need to Know in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Jithu Gilbert',
@@ -520,11 +559,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/07/Techbound-3.png',
     'published_at' => '2026-07-03 11:04:34',
     'active' => 1,
-  ],
-  [
+  ),
+  40 => 
+  array (
     'id' => 58266,
-    'title' => 'Google June 2026 Spam Update: What Every Website Owner Needs to Know',
     'slug' => 'google-june-2026-spam-update',
+    'title' => 'Google June 2026 Spam Update: What Every Website Owner Needs to Know',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Jithu Gilbert',
@@ -533,11 +573,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/06/76e62c41-51b4-46e3-a305-8cc3ed3bb991-1.png',
     'published_at' => '2026-06-29 09:51:53',
     'active' => 1,
-  ],
-  [
+  ),
+  41 => 
+  array (
     'id' => 54501,
-    'title' => 'How PPC and Social Strategies Can Position Your Brand in 2026',
     'slug' => 'metaverse-commerce-ppc-social-2026',
+    'title' => 'How PPC and Social Strategies Can Position Your Brand in 2026',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'Kishor',
@@ -546,11 +587,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-10-at-16.16.39.jpeg',
     'published_at' => '2026-02-10 12:57:37',
     'active' => 1,
-  ],
-  [
+  ),
+  42 => 
+  array (
     'id' => 54492,
-    'title' => 'Answer Engine Optimization (AEO): Moving Beyond Traditional SEO in the AI Search Era',
     'slug' => 'answer-engine-optimization-aeo-guide',
+    'title' => 'Answer Engine Optimization (AEO): Moving Beyond Traditional SEO in the AI Search Era',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -559,11 +601,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/01/answer-engine-optimization.jpeg',
     'published_at' => '2026-01-30 10:56:02',
     'active' => 1,
-  ],
-  [
+  ),
+  43 => 
+  array (
     'id' => 54475,
-    'title' => 'OpenAI Embraces Ads in ChatGPT: What\'s Next?',
     'slug' => 'openai-chatgpt-ads-launch',
+    'title' => 'OpenAI Embraces Ads in ChatGPT: What\'s Next?',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -572,11 +615,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/01/chatgpt-ads.jpeg',
     'published_at' => '2026-01-21 12:20:49',
     'active' => 1,
-  ],
-  [
+  ),
+  44 => 
+  array (
     'id' => 54443,
-    'title' => 'Backlinks are used to rule seo. Are they still valid or just outdated tactics in the AI-driven world?',
     'slug' => 'backlinks-seo-2026-guide',
+    'title' => 'Backlinks are used to rule seo. Are they still valid or just outdated tactics in the AI-driven world?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -585,11 +629,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/01/backlinks-2026.jpeg',
     'published_at' => '2026-01-09 12:44:28',
     'active' => 1,
-  ],
-  [
+  ),
+  45 => 
+  array (
     'id' => 54417,
-    'title' => 'SEO Monthly Roundup December 2025: Core Algorithm Chaos and Quality Wins',
     'slug' => 'seo-roundup-december-2025-core-update',
+    'title' => 'SEO Monthly Roundup December 2025: Core Algorithm Chaos and Quality Wins',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -598,11 +643,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2026/01/techbound-blog-banner.jpeg',
     'published_at' => '2026-01-06 12:11:37',
     'active' => 1,
-  ],
-  [
+  ),
+  46 => 
+  array (
     'id' => 54256,
-    'title' => 'Google\'s Final 2025 Core Update: Key Takeaways for SEO in 2026',
     'slug' => 'december-2025-google-core-update',
+    'title' => 'Google\'s Final 2025 Core Update: Key Takeaways for SEO in 2026',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -611,11 +657,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/12/2025.png',
     'published_at' => '2025-12-30 12:02:18',
     'active' => 1,
-  ],
-  [
+  ),
+  47 => 
+  array (
     'id' => 54206,
-    'title' => 'Voice Replies Go Wide on YouTube + AI &amp; Superchat Upgrades',
     'slug' => 'youtube-2025-finale-creator-updates',
+    'title' => 'Voice Replies Go Wide on YouTube + AI &amp; Superchat Upgrades',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -624,11 +671,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/12/2025-1.png',
     'published_at' => '2025-12-26 10:47:16',
     'active' => 1,
-  ],
-  [
+  ),
+  48 => 
+  array (
     'id' => 54192,
-    'title' => 'The End of Keywords—Welcome to the Age of Intent',
     'slug' => '2026-seo-survival-guide-ai-search',
+    'title' => 'The End of Keywords—Welcome to the Age of Intent',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -637,11 +685,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-18.10.18.jpeg',
     'published_at' => '2025-12-16 11:23:51',
     'active' => 1,
-  ],
-  [
+  ),
+  49 => 
+  array (
     'id' => 54176,
-    'title' => 'GSC Tests “AI-Powered Configuration” to Generate Dynamic Reports.',
     'slug' => 'google-search-console-ai-configuration',
+    'title' => 'GSC Tests “AI-Powered Configuration” to Generate Dynamic Reports.',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -650,11 +699,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-05-at-17.44.34.jpeg',
     'published_at' => '2025-12-06 05:25:10',
     'active' => 1,
-  ],
-  [
+  ),
+  50 => 
+  array (
     'id' => 54094,
-    'title' => 'HOW THE DIGITAL MARKETING CAREER TAKEOVER 2026 AND THE FUTURE',
     'slug' => 'digital-marketing-career-2026-future',
+    'title' => 'HOW THE DIGITAL MARKETING CAREER TAKEOVER 2026 AND THE FUTURE',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -663,11 +713,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/12/Digital-Marketing-Career-2026.jpeg',
     'published_at' => '2025-12-02 12:57:33',
     'active' => 1,
-  ],
-  [
+  ),
+  51 => 
+  array (
     'id' => 54088,
-    'title' => 'How to Become an AI-Powered Digital Marketer in 2026',
     'slug' => 'digital-marketing-generative-ai-trivandrum',
+    'title' => 'How to Become an AI-Powered Digital Marketer in 2026',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -676,11 +727,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-28-at-17.31.02.jpeg',
     'published_at' => '2025-11-28 12:10:52',
     'active' => 1,
-  ],
-  [
+  ),
+  52 => 
+  array (
     'id' => 54056,
-    'title' => 'Google Ads API v2: New Features Every PPC Pro Needs Right Now',
     'slug' => 'google-ads-api-v22-features',
+    'title' => 'Google Ads API v2: New Features Every PPC Pro Needs Right Now',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'Kishor',
@@ -689,11 +741,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/11/generative-ai-google-ads.jpeg',
     'published_at' => '2025-11-25 10:32:15',
     'active' => 1,
-  ],
-  [
+  ),
+  53 => 
+  array (
     'id' => 52779,
-    'title' => 'Top AI Visibility Tools in 2026: Tracking Your Brand in the AI Search Era',
     'slug' => 'top-ai-visibility-tools-2026',
+    'title' => 'Top AI Visibility Tools in 2026: Tracking Your Brand in the AI Search Era',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -702,11 +755,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/11/top-ai.jpg',
     'published_at' => '2025-11-14 09:03:10',
     'active' => 1,
-  ],
-  [
+  ),
+  54 => 
+  array (
     'id' => 52769,
-    'title' => 'The New Era of Google Ads: How Performance Max is Redefining Transparency, Local Reach, and Control',
     'slug' => 'google-ads-2025-pmax-waze-control-updates',
+    'title' => 'The New Era of Google Ads: How Performance Max is Redefining Transparency, Local Reach, and Control',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'Kishor',
@@ -715,11 +769,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/11/google-ads-blog-banner.jpg',
     'published_at' => '2025-11-11 10:12:49',
     'active' => 1,
-  ],
-  [
+  ),
+  55 => 
+  array (
     'id' => 52670,
-    'title' => 'Reddit and the Rise of AEO: Why Social Listening Is the Next Big Thing in Marketing',
     'slug' => 'reddit-and-the-rise-of-aeo',
+    'title' => 'Reddit and the Rise of AEO: Why Social Listening Is the Next Big Thing in Marketing',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -728,11 +783,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/11/new-blog-banner.jpg',
     'published_at' => '2025-11-07 06:54:43',
     'active' => 1,
-  ],
-  [
+  ),
+  56 => 
+  array (
     'id' => 52581,
-    'title' => 'Threads\' Explosive Rise: Breaking Down Meta\'s New Kingmaker',
     'slug' => 'threads-explosive-rise-meta-kingmaker',
+    'title' => 'Threads\' Explosive Rise: Breaking Down Meta\'s New Kingmaker',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -741,11 +797,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/11/blog-banner.jpg',
     'published_at' => '2025-11-04 12:46:31',
     'active' => 1,
-  ],
-  [
+  ),
+  57 => 
+  array (
     'id' => 52570,
-    'title' => 'Marketing for Small Businesses: Google Launches Pomelli AI',
     'slug' => 'google-pomelli-ai-marketing-tool',
+    'title' => 'Marketing for Small Businesses: Google Launches Pomelli AI',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -754,11 +811,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/Pomelli-Ai-.jpg',
     'published_at' => '2025-10-31 12:39:19',
     'active' => 1,
-  ],
-  [
+  ),
+  58 => 
+  array (
     'id' => 52563,
-    'title' => 'ChatGPT Atlas: A New Challenger in the Browser Wars',
     'slug' => 'chatgpt-openai-browser-atlas',
+    'title' => 'ChatGPT Atlas: A New Challenger in the Browser Wars',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'TechBound Team',
@@ -767,11 +825,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/Chatgpt-Atlas-.jpg',
     'published_at' => '2025-10-28 12:27:00',
     'active' => 1,
-  ],
-  [
+  ),
+  59 => 
+  array (
     'id' => 52557,
-    'title' => 'How AI Assistant Errors Are Reshaping Content Strategy?',
     'slug' => 'accuracy-of-ai-search-assistant',
+    'title' => 'How AI Assistant Errors Are Reshaping Content Strategy?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -780,11 +839,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/AI-Search-Assistant-Accuracy.jpg',
     'published_at' => '2025-10-24 11:43:58',
     'active' => 1,
-  ],
-  [
+  ),
+  60 => 
+  array (
     'id' => 52548,
-    'title' => 'Major YouTube Updates: October 2025',
     'slug' => 'youtube-updates-october-2025',
+    'title' => 'Major YouTube Updates: October 2025',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -793,11 +853,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/Major-Youtube-Updates.jpg',
     'published_at' => '2025-10-21 06:09:08',
     'active' => 1,
-  ],
-  [
+  ),
+  61 => 
+  array (
     'id' => 52510,
-    'title' => 'Brand Mentions: The New Fuel for AI-Driven Visibility',
     'slug' => 'brand-mentions-the-new-fuel-for-ai-driven-visibility',
+    'title' => 'Brand Mentions: The New Fuel for AI-Driven Visibility',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -806,11 +867,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-4.12.27-PM.jpeg',
     'published_at' => '2025-10-14 09:02:06',
     'active' => 1,
-  ],
-  [
+  ),
+  62 => 
+  array (
     'id' => 52471,
-    'title' => 'Meta\'s Ad-Free Subscription: A Trial That Could Reshape Digital Marketing',
     'slug' => 'meta-ad-free-subscription',
+    'title' => 'Meta\'s Ad-Free Subscription: A Trial That Could Reshape Digital Marketing',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -819,11 +881,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/Ad-free-Subscription-.jpg',
     'published_at' => '2025-10-10 09:14:54',
     'active' => 1,
-  ],
-  [
+  ),
+  63 => 
+  array (
     'id' => 52438,
-    'title' => 'Monthly SEO Round Up - September 2025',
     'slug' => 'seo-monthly-roundup-september-2025',
+    'title' => 'Monthly SEO Round Up - September 2025',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -832,11 +895,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/10/SEO-Monthly-round-up.jpg',
     'published_at' => '2025-10-07 10:17:29',
     'active' => 1,
-  ],
-  [
+  ),
+  64 => 
+  array (
     'id' => 52423,
-    'title' => 'Nano Banana: A Deep Dive into Privacy Concerns and Policies',
     'slug' => 'nano-banana-a-deep-dive-into-privacy-concerns-and-policies',
+    'title' => 'Nano Banana: A Deep Dive into Privacy Concerns and Policies',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -845,11 +909,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/09/Nano-banana-privacy.jpeg',
     'published_at' => '2025-09-18 11:57:50',
     'active' => 1,
-  ],
-  [
+  ),
+  65 => 
+  array (
     'id' => 52408,
-    'title' => 'Nano-Banana Unveiled: Revolutionizing AI-Powered Visual Creation',
     'slug' => 'nano-banana-unveiled-revolutionizing-ai-powered-visual-creation',
+    'title' => 'Nano-Banana Unveiled: Revolutionizing AI-Powered Visual Creation',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -858,11 +923,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-16.10.02.jpeg',
     'published_at' => '2025-09-16 04:48:26',
     'active' => 1,
-  ],
-  [
+  ),
+  66 => 
+  array (
     'id' => 51938,
-    'title' => 'Threads DMs Just Got a Whole Lot More Fun: GIFs, Group Chats &amp; More!',
     'slug' => 'threads-updates-on-dm-gif-stickers-group-chat',
+    'title' => 'Threads DMs Just Got a Whole Lot More Fun: GIFs, Group Chats &amp; More!',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -871,11 +937,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-13-at-12.26.58-PM.jpeg',
     'published_at' => '2025-08-01 08:02:16',
     'active' => 1,
-  ],
-  [
+  ),
+  67 => 
+  array (
     'id' => 51931,
-    'title' => 'YouTube\'s Double Upgrade: Smarter Conversations &amp; Endless AI Tunes',
     'slug' => 'youtube-double-update-smarter-conversations-endless-ai-tunes',
+    'title' => 'YouTube\'s Double Upgrade: Smarter Conversations &amp; Endless AI Tunes',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -884,11 +951,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-29-at-10.31.48.jpeg',
     'published_at' => '2025-07-29 09:48:48',
     'active' => 1,
-  ],
-  [
+  ),
+  68 => 
+  array (
     'id' => 51924,
-    'title' => 'Meta Expands Video Selfie Age Checks to Comply With Global Laws',
     'slug' => 'meta-expands-video-selfie-age-checks',
+    'title' => 'Meta Expands Video Selfie Age Checks to Comply With Global Laws',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -897,11 +965,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-25-at-12.10.15.jpeg',
     'published_at' => '2025-07-25 10:01:30',
     'active' => 1,
-  ],
-  [
+  ),
+  69 => 
+  array (
     'id' => 51898,
-    'title' => 'PERPLEXITY MAGIC OF AI: NOW FREE IN YOUR HANDS',
     'slug' => 'perplexity-ai-pro-magic-of-ai-now-free-in-your-hands',
+    'title' => 'PERPLEXITY MAGIC OF AI: NOW FREE IN YOUR HANDS',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -910,11 +979,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-22-at-12.07.14-e1755069166243.jpeg',
     'published_at' => '2025-07-23 11:57:00',
     'active' => 1,
-  ],
-  [
+  ),
+  70 => 
+  array (
     'id' => 51888,
-    'title' => 'AI Takes Center Stage: Google Ads\' Intelligent Evolution in 2025',
     'slug' => 'google-ads-updates-evolution-in-2025',
+    'title' => 'AI Takes Center Stage: Google Ads\' Intelligent Evolution in 2025',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'Kishor',
@@ -923,11 +993,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-17-at-15.42.36.jpeg',
     'published_at' => '2025-07-17 11:52:52',
     'active' => 1,
-  ],
-  [
+  ),
+  71 => 
+  array (
     'id' => 51879,
-    'title' => 'Social Media updates Halfway Through 2025',
     'slug' => 'social-media-updates-in-last-6-months',
+    'title' => 'Social Media updates Halfway Through 2025',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -936,11 +1007,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-11-at-11.41.53.jpeg',
     'published_at' => '2025-07-11 11:13:31',
     'active' => 1,
-  ],
-  [
+  ),
+  72 => 
+  array (
     'id' => 51839,
-    'title' => 'Google’s June 2025 Core Update:What to expect next',
     'slug' => 'googles-june-2025-core-updatewhat-to-expect-next',
+    'title' => 'Google’s June 2025 Core Update:What to expect next',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -949,11 +1021,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-08-at-14.46.52.jpeg',
     'published_at' => '2025-07-08 10:24:44',
     'active' => 1,
-  ],
-  [
+  ),
+  73 => 
+  array (
     'id' => 51786,
-    'title' => 'Beyond Ad-Free: Navigating the Future of WhatsApp with Ads',
     'slug' => 'whatsapp-ads-will-takeover-privacy-2025',
+    'title' => 'Beyond Ad-Free: Navigating the Future of WhatsApp with Ads',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -962,11 +1035,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-04-at-13.01.50-1.jpeg',
     'published_at' => '2025-07-04 11:19:11',
     'active' => 1,
-  ],
-  [
+  ),
+  74 => 
+  array (
     'id' => 51756,
-    'title' => 'Google’s Audio Overviews: A New Way to Explore Search Results',
     'slug' => 'audio-overviews-transform-google-search',
+    'title' => 'Google’s Audio Overviews: A New Way to Explore Search Results',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -975,11 +1049,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/06/Audio-Overviews-.jpg',
     'published_at' => '2025-06-17 08:19:44',
     'active' => 1,
-  ],
-  [
+  ),
+  75 => 
+  array (
     'id' => 51736,
-    'title' => 'What’s New on Social Media: June 2025 Updates to Boost Your Online Game',
     'slug' => 'social-media-updates-2025-june-trends',
+    'title' => 'What’s New on Social Media: June 2025 Updates to Boost Your Online Game',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -988,11 +1063,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/06/Social-Media-Updates-2025.jpg',
     'published_at' => '2025-06-13 11:00:49',
     'active' => 1,
-  ],
-  [
+  ),
+  76 => 
+  array (
     'id' => 51730,
-    'title' => 'Zero-Click Searches in 2025: Navigating AI Search and Video SEO Challenges',
     'slug' => 'zero-click-ai-video-seo-trends-2025',
+    'title' => 'Zero-Click Searches in 2025: Navigating AI Search and Video SEO Challenges',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1001,11 +1077,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/06/Zero-click-Searches-.jpg',
     'published_at' => '2025-06-10 11:05:12',
     'active' => 1,
-  ],
-  [
+  ),
+  77 => 
+  array (
     'id' => 51717,
-    'title' => 'XChat VS WhatsApp: Who Could Win The Chat Battle?',
     'slug' => 'xchat-whatsapp-india-messaging-battle-2025',
+    'title' => 'XChat VS WhatsApp: Who Could Win The Chat Battle?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1014,11 +1091,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/06/Xchat-VS-Whatsap.jpg',
     'published_at' => '2025-06-06 06:15:26',
     'active' => 1,
-  ],
-  [
+  ),
+  78 => 
+  array (
     'id' => 51706,
-    'title' => 'Google Lens Hits YouTube Shorts: Visual Search Meets Short-Form Video',
     'slug' => 'google-lens-youtube-shorts-integration',
+    'title' => 'Google Lens Hits YouTube Shorts: Visual Search Meets Short-Form Video',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1027,11 +1105,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2025/06/Google-Lens-in-Youtube-Shorts-.jpg',
     'published_at' => '2025-06-03 07:17:54',
     'active' => 1,
-  ],
-  [
+  ),
+  79 => 
+  array (
     'id' => 49939,
-    'title' => 'Supreme Court Youtube Channel Hacked! 7 YouTube Security Tips to Outsmart Hackers',
     'slug' => 'supreme-court-youtube-channel-hacked',
+    'title' => 'Supreme Court Youtube Channel Hacked! 7 YouTube Security Tips to Outsmart Hackers',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1040,11 +1119,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/09/hakking.jpg',
     'published_at' => '2024-09-25 09:25:39',
     'active' => 1,
-  ],
-  [
+  ),
+  80 => 
+  array (
     'id' => 49923,
-    'title' => 'Now Google’s Gemini on Address Bar & New Gemini Gem Feature',
     'slug' => 'now-googles-gemini-on-address-bar-new-gemini-gem-feature',
+    'title' => 'Now Google’s Gemini on Address Bar & New Gemini Gem Feature',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -1053,11 +1133,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/09/Gemini.png',
     'published_at' => '2024-09-20 05:32:16',
     'active' => 1,
-  ],
-  [
+  ),
+  81 => 
+  array (
     'id' => 49900,
-    'title' => 'Is Telegram banned in India? The Shocking Truth!',
     'slug' => 'is-telegram-banned-in-india-the-shocking-truth',
+    'title' => 'Is Telegram banned in India? The Shocking Truth!',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1066,11 +1147,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/08/Telegram.jpg',
     'published_at' => '2024-08-28 09:40:20',
     'active' => 1,
-  ],
-  [
+  ),
+  82 => 
+  array (
     'id' => 49886,
-    'title' => 'Google Core Update August 2024: Let’s Dive In',
     'slug' => 'google-core-update-august-2024-lets-dive-in',
+    'title' => 'Google Core Update August 2024: Let’s Dive In',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1079,11 +1161,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/10/Google-core-update-August-2024-Banner-Image.webp',
     'published_at' => '2024-08-24 11:24:22',
     'active' => 1,
-  ],
-  [
+  ),
+  83 => 
+  array (
     'id' => 47603,
-    'title' => '4 New WhatsApp Updates: That Will Wow You!',
     'slug' => '4-confirmed-whatsapp-updates-a-sneak-peak-into-the-future',
+    'title' => '4 New WhatsApp Updates: That Will Wow You!',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1092,11 +1175,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/08/New-whatsapp-updates.webp',
     'published_at' => '2024-08-23 06:41:26',
     'active' => 1,
-  ],
-  [
+  ),
+  84 => 
+  array (
     'id' => 49863,
-    'title' => 'The Power of Persuasion Psychology in Digital Marketing: How to Impact Customer Behaviour Online',
     'slug' => 'the-power-of-persuasion-psychology-in-digital-marketing-how-to-impact-customer-behaviour-online',
+    'title' => 'The Power of Persuasion Psychology in Digital Marketing: How to Impact Customer Behaviour Online',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1105,11 +1189,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/08/Persuasion-Psychology.webp',
     'published_at' => '2024-08-16 11:42:50',
     'active' => 1,
-  ],
-  [
+  ),
+  85 => 
+  array (
     'id' => 49849,
-    'title' => 'Instagram New update: Add Note.                              You Should Not Miss',
     'slug' => 'instagram-new-update-add-note-you-should-not-miss',
+    'title' => 'Instagram New update: Add Note.                              You Should Not Miss',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -1118,11 +1203,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/08/Instagram-new-update-add-note.webp',
     'published_at' => '2024-08-10 10:03:31',
     'active' => 1,
-  ],
-  [
+  ),
+  86 => 
+  array (
     'id' => 49827,
-    'title' => 'YOUTUBE SEO IN 2024: ALL YOU NEED TO KNOW',
     'slug' => 'youtube-seo-in-2024-all-you-need-to-know',
+    'title' => 'YOUTUBE SEO IN 2024: ALL YOU NEED TO KNOW',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1131,11 +1217,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-06-at-5.20.52-PM-1.webp',
     'published_at' => '2024-08-07 09:29:43',
     'active' => 1,
-  ],
-  [
+  ),
+  87 => 
+  array (
     'id' => 49815,
-    'title' => 'Seamless Shopping: E-commerce menu optimisation for User Experience',
     'slug' => '10-tips-for-e-commerce-menu-optimisation',
+    'title' => 'Seamless Shopping: E-commerce menu optimisation for User Experience',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'Kishor',
@@ -1144,11 +1231,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-30-at-5.27.39-PM.webp',
     'published_at' => '2024-07-31 07:04:53',
     'active' => 1,
-  ],
-  [
+  ),
+  88 => 
+  array (
     'id' => 49787,
-    'title' => 'YOUR SEO BUDGET BREAKDOWN: IS IT WORTH THE INVESTMENT?',
     'slug' => 'seo-budget-breakdown-is-it-worth-the-investment',
+    'title' => 'YOUR SEO BUDGET BREAKDOWN: IS IT WORTH THE INVESTMENT?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1157,11 +1245,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/07/SEO-BUDGET.webp',
     'published_at' => '2024-07-24 12:27:55',
     'active' => 1,
-  ],
-  [
+  ),
+  89 => 
+  array (
     'id' => 49766,
-    'title' => 'REPUTATION & RANKINGS: YOUR ESSENTIAL GUIDE TO ONLINE REPUTATION MANAGEMENT',
     'slug' => 'online-reputation-management-top-up-your-brand-in-2024',
+    'title' => 'REPUTATION & RANKINGS: YOUR ESSENTIAL GUIDE TO ONLINE REPUTATION MANAGEMENT',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1170,11 +1259,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/07/Online-Reputation-Management.webp',
     'published_at' => '2024-07-20 13:02:03',
     'active' => 1,
-  ],
-  [
+  ),
+  90 => 
+  array (
     'id' => 49747,
-    'title' => 'Why Mobile Commerce is the Future of Online Shopping',
     'slug' => 'the-future-of-online-shopping-mobile-commerce-2024',
+    'title' => 'Why Mobile Commerce is the Future of Online Shopping',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1183,11 +1273,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/07/Mobile-Commerce.webp',
     'published_at' => '2024-07-06 12:08:36',
     'active' => 1,
-  ],
-  [
+  ),
+  91 => 
+  array (
     'id' => 49725,
-    'title' => 'E-commerce Mistakes to Avoid in 2024: A Survival Guide for Your Online Store',
     'slug' => 'e-commerce-mistakes-to-avoid-in-2024',
+    'title' => 'E-commerce Mistakes to Avoid in 2024: A Survival Guide for Your Online Store',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -1196,11 +1287,12 @@ return [
     'image' => 'assets/placeholders/blog-web-dev.svg',
     'published_at' => '2024-06-26 06:00:46',
     'active' => 1,
-  ],
-  [
+  ),
+  92 => 
+  array (
     'id' => 49687,
-    'title' => 'The Google Shopping Graph: Your Personal Shopper in the Digital Mall',
     'slug' => 'dominate-ecommerce-google-shopping-graph-seo',
+    'title' => 'The Google Shopping Graph: Your Personal Shopper in the Digital Mall',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1209,11 +1301,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-06-15 06:38:29',
     'active' => 1,
-  ],
-  [
+  ),
+  93 => 
+  array (
     'id' => 49672,
-    'title' => 'E-commerce AEO: The Answer to Higher Visibility and Booming Sales',
     'slug' => 'mastering-aeo-for-ecommerce-growth-in-2024',
+    'title' => 'E-commerce AEO: The Answer to Higher Visibility and Booming Sales',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'TechBound Team',
@@ -1222,11 +1315,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2024-06-12 02:38:07',
     'active' => 1,
-  ],
-  [
+  ),
+  94 => 
+  array (
     'id' => 49655,
-    'title' => 'Google Search Algorithm Leak: SEO Implications and What Happens Next',
     'slug' => 'google-search-algorithm-leak-seo-implications-strategies',
+    'title' => 'Google Search Algorithm Leak: SEO Implications and What Happens Next',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1235,11 +1329,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-06-07 13:45:08',
     'active' => 1,
-  ],
-  [
+  ),
+  95 => 
+  array (
     'id' => 49637,
-    'title' => 'Image Optimization: Making Your Pictures Speak and Rank in 2024',
     'slug' => 'image-optimization-rank-higher-in-search-results-in-2024',
+    'title' => 'Image Optimization: Making Your Pictures Speak and Rank in 2024',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1248,11 +1343,12 @@ return [
     'image' => 'https://techbound.in/wp-content/plugins/elementor/assets/images/placeholder.png',
     'published_at' => '2024-06-04 12:51:17',
     'active' => 1,
-  ],
-  [
+  ),
+  96 => 
+  array (
     'id' => 49618,
-    'title' => 'Say Goodbye to Google Business Profile Chat: What This Means for Your Online Presence',
     'slug' => 'google-business-profile-chat-feature-going-away',
+    'title' => 'Say Goodbye to Google Business Profile Chat: What This Means for Your Online Presence',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1261,11 +1357,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/1.jpg',
     'published_at' => '2024-05-31 12:51:22',
     'active' => 1,
-  ],
-  [
+  ),
+  97 => 
+  array (
     'id' => 49605,
-    'title' => 'Google Ads Updates May 2024 Overview: AI Revolution &amp; What it Means for Meta Advertisers',
     'slug' => 'google-ads-update-may-2024-ai-features-meta-ads',
+    'title' => 'Google Ads Updates May 2024 Overview: AI Revolution &amp; What it Means for Meta Advertisers',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -1274,11 +1371,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2024-05-28 12:28:56',
     'active' => 1,
-  ],
-  [
+  ),
+  98 => 
+  array (
     'id' => 49591,
-    'title' => 'Mastering Invisible Influence: Native Ads – The Power of Story &amp; Connection',
     'slug' => 'native-advertising-in-2024-mastering-invisible-influence',
+    'title' => 'Mastering Invisible Influence: Native Ads – The Power of Story &amp; Connection',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1287,11 +1385,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/vhjkxfgjdf-1-1024x576.jpg',
     'published_at' => '2024-05-24 13:08:31',
     'active' => 1,
-  ],
-  [
+  ),
+  99 => 
+  array (
     'id' => 73,
-    'title' => 'Future where technology creates good jobs',
     'slug' => 'future-where-technology-creates-good-jobs',
+    'title' => 'Future where technology creates good jobs',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1300,11 +1399,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/blog-05.jpg',
     'published_at' => '2024-05-24 02:33:19',
     'active' => 1,
-  ],
-  [
+  ),
+  100 => 
+  array (
     'id' => 72,
-    'title' => 'What you do today improve your tomorrows',
     'slug' => 'what-you-do-today-improve-your-tomorrows',
+    'title' => 'What you do today improve your tomorrows',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1313,11 +1413,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/blog-04.jpg',
     'published_at' => '2024-05-24 02:32:41',
     'active' => 1,
-  ],
-  [
+  ),
+  101 => 
+  array (
     'id' => 49577,
-    'title' => 'Beyond Borders: How Content Internationalization Elevates Your SEO Strategy for Global Success',
     'slug' => 'internationalization-of-content-seo-global-expansion',
+    'title' => 'Beyond Borders: How Content Internationalization Elevates Your SEO Strategy for Global Success',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1326,11 +1427,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-05-21 13:02:36',
     'active' => 1,
-  ],
-  [
+  ),
+  102 => 
+  array (
     'id' => 49563,
-    'title' => 'Beyond Imagination: Google I/O 2024 Unleashes AI\'s Creative Potential, Can Human Imagination Keep Up?',
     'slug' => 'google-io-2024-ai-unleashed-what-to-expect',
+    'title' => 'Beyond Imagination: Google I/O 2024 Unleashes AI\'s Creative Potential, Can Human Imagination Keep Up?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1339,11 +1441,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/Google-Nano-1024x538.jpg',
     'published_at' => '2024-05-17 13:04:35',
     'active' => 1,
-  ],
-  [
+  ),
+  103 => 
+  array (
     'id' => 49552,
-    'title' => 'GPT-4o: The AI That Sees, Hears, and Speaks. Is OpenAI\'s Latest Creation Truly Magical?',
     'slug' => 'openai-gpt-4o-unveiled-a-deep-dive',
+    'title' => 'GPT-4o: The AI That Sees, Hears, and Speaks. Is OpenAI\'s Latest Creation Truly Magical?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1352,11 +1455,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/Chatgpt4o-4-768x568.jpg',
     'published_at' => '2024-05-14 13:40:32',
     'active' => 1,
-  ],
-  [
+  ),
+  104 => 
+  array (
     'id' => 49534,
-    'title' => 'Is Your Online Store Getting Top Rankings? Fix These E-commerce SEO Mistakes That Hurt Visibility',
     'slug' => 'struggling-with-ecommerce-seo-avoid-these-common-mistakes',
+    'title' => 'Is Your Online Store Getting Top Rankings? Fix These E-commerce SEO Mistakes That Hurt Visibility',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1365,11 +1469,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-05-10 14:19:54',
     'active' => 1,
-  ],
-  [
+  ),
+  105 => 
+  array (
     'id' => 49523,
-    'title' => 'Social Commerce: The Key to Boosting Your Ecommerce Success',
     'slug' => 'why-social-commerce-important-for-boosting-ecommerce-sales',
+    'title' => 'Social Commerce: The Key to Boosting Your Ecommerce Success',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -1378,11 +1483,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/05/Tools-1-1024x576.jpg',
     'published_at' => '2024-05-08 06:28:49',
     'active' => 1,
-  ],
-  [
+  ),
+  106 => 
+  array (
     'id' => 49511,
-    'title' => 'Master the April 2024 Google Updates: Paid AI Search, Reddit, &amp; Your SEO Strategy',
     'slug' => 'google-updates-april-2024-paid-ai-crawling-change-seo',
+    'title' => 'Master the April 2024 Google Updates: Paid AI Search, Reddit, &amp; Your SEO Strategy',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1391,11 +1497,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-05-03 13:01:28',
     'active' => 1,
-  ],
-  [
+  ),
+  107 => 
+  array (
     'id' => 49500,
-    'title' => 'CTR in 2024: How to Adapt Your Ads &amp; Prevent Budget Drain',
     'slug' => 'maximize-ctr-2024-ai-strategies-avoid-manipulation',
+    'title' => 'CTR in 2024: How to Adapt Your Ads &amp; Prevent Budget Drain',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -1404,11 +1511,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2024-04-30 14:07:34',
     'active' => 1,
-  ],
-  [
+  ),
+  108 => 
+  array (
     'id' => 49487,
-    'title' => 'Ecommerce Website SEO 2024: Optimize Landing Pages with Video, Images, &amp; Voice Search',
     'slug' => 'ecommerce-website-seo-2024-landing-page-voice-image',
+    'title' => 'Ecommerce Website SEO 2024: Optimize Landing Pages with Video, Images, &amp; Voice Search',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1417,11 +1525,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-04-26 13:26:05',
     'active' => 1,
-  ],
-  [
+  ),
+  109 => 
+  array (
     'id' => 49477,
-    'title' => 'Google Business Profile Advantage:  Transform \'Near Me\' Searches Into Customers',
     'slug' => 'google-business-profile-transform-searches-into-customers',
+    'title' => 'Google Business Profile Advantage:  Transform \'Near Me\' Searches Into Customers',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1430,11 +1539,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/04/GBP-1-1024x486.jpg',
     'published_at' => '2024-04-23 12:58:48',
     'active' => 1,
-  ],
-  [
+  ),
+  110 => 
+  array (
     'id' => 49465,
-    'title' => 'Perplexity AI Challenges the Giants: Could This Innovative Search Tool Be Your New Favorite?',
     'slug' => 'perplexity-ai-answers-with-citations-smarter-search',
+    'title' => 'Perplexity AI Challenges the Giants: Could This Innovative Search Tool Be Your New Favorite?',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'TechBound Team',
@@ -1443,11 +1553,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/04/Perplexity-AI-1.jpg',
     'published_at' => '2024-04-19 12:09:53',
     'active' => 1,
-  ],
-  [
+  ),
+  111 => 
+  array (
     'id' => 49435,
-    'title' => 'Meta AI on WhatsApp: Features, Privacy Concerns, and How to Use It',
     'slug' => 'meta-ai-on-whatsapp-how-to-use-features-privacy',
+    'title' => 'Meta AI on WhatsApp: Features, Privacy Concerns, and How to Use It',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -1456,11 +1567,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/04/Meta-AI-on-Whatsapp-6.jpg',
     'published_at' => '2024-04-16 12:01:39',
     'active' => 1,
-  ],
-  [
+  ),
+  112 => 
+  array (
     'id' => 49422,
-    'title' => 'Take the Leap: Your PPC Strategy for 3X Lead Generation in 2024',
     'slug' => 'ppc-strategy-for-3x-leads-in-2024',
+    'title' => 'Take the Leap: Your PPC Strategy for 3X Lead Generation in 2024',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -1469,11 +1581,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/04/PPC-VS-SEO-1024x427.jpg',
     'published_at' => '2024-04-12 12:17:01',
     'active' => 1,
-  ],
-  [
+  ),
+  113 => 
+  array (
     'id' => 49401,
-    'title' => 'Online Advertising: Maximise ROI With The Perfect Platform.',
     'slug' => 'online-advertising-maximize-roi-business-growth',
+    'title' => 'Online Advertising: Maximise ROI With The Perfect Platform.',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -1482,11 +1595,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2024-04-09 12:09:05',
     'active' => 1,
-  ],
-  [
+  ),
+  114 => 
+  array (
     'id' => 49389,
-    'title' => '2024 Digital Marketing: Why Social Listening is Essential for Growth',
     'slug' => 'why-social-listening-is-essential-for-growth-in-2024',
+    'title' => '2024 Digital Marketing: Why Social Listening is Essential for Growth',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1495,11 +1609,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-04-05 12:19:28',
     'active' => 1,
-  ],
-  [
+  ),
+  115 => 
+  array (
     'id' => 49359,
-    'title' => 'Branding Roadmap For 2024: What You MUST Do to Dominate Your Market',
     'slug' => 'branding-roadmap-2024-build-strong-brand-awareness',
+    'title' => 'Branding Roadmap For 2024: What You MUST Do to Dominate Your Market',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1508,11 +1623,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-04-02 13:00:07',
     'active' => 1,
-  ],
-  [
+  ),
+  116 => 
+  array (
     'id' => 49351,
-    'title' => 'Advertising &amp; Marketing Dominance: Why Giants Never Stop',
     'slug' => 'why-top-brands-invest-in-advertising-power-of-continous-communicatio',
+    'title' => 'Advertising &amp; Marketing Dominance: Why Giants Never Stop',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -1521,11 +1637,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2024-03-29 12:36:49',
     'active' => 1,
-  ],
-  [
+  ),
+  117 => 
+  array (
     'id' => 49325,
-    'title' => 'Google Crawling in 2024: Why It Matters And How To Optimise Your Website For Top Rankings.',
     'slug' => 'optimize-google-crawling-for-2024-and-beyond',
+    'title' => 'Google Crawling in 2024: Why It Matters And How To Optimise Your Website For Top Rankings.',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1534,11 +1651,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-03-26 12:15:58',
     'active' => 1,
-  ],
-  [
+  ),
+  118 => 
+  array (
     'id' => 49316,
-    'title' => 'From Clicks to Conversion: Crafting Compelling Call To Action in 2024.',
     'slug' => 'beyond-clicks-effective-call-to-action-in-2024',
+    'title' => 'From Clicks to Conversion: Crafting Compelling Call To Action in 2024.',
     'category' => 'Lead Generation',
     'tags' => 'Lead Generation',
     'author' => 'TechBound Team',
@@ -1547,11 +1665,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/03/BOA-erica-300x157.jpg',
     'published_at' => '2024-03-22 12:18:14',
     'active' => 1,
-  ],
-  [
+  ),
+  119 => 
+  array (
     'id' => 49297,
-    'title' => 'Beyond Engaging Content: Essential SEO Strategies for Travel Websites &amp; Agencies',
     'slug' => '2024-travel-seo-for-websites-agencies',
+    'title' => 'Beyond Engaging Content: Essential SEO Strategies for Travel Websites &amp; Agencies',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1560,11 +1679,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-03-19 12:29:14',
     'active' => 1,
-  ],
-  [
+  ),
+  120 => 
+  array (
     'id' => 49283,
-    'title' => 'Google\'s June 2024 Core Update: A Crackdown on Low-Quality Content',
     'slug' => 'googles-june-spam-update-high-quality-content-2024',
+    'title' => 'Google\'s June 2024 Core Update: A Crackdown on Low-Quality Content',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1573,11 +1693,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/03/Googles-June-2024-spam-update.png',
     'published_at' => '2024-03-15 12:56:22',
     'active' => 1,
-  ],
-  [
+  ),
+  121 => 
+  array (
     'id' => 49257,
-    'title' => 'Real Estate SEO 2024 : Tactics To Attract More Clients',
     'slug' => 'real-estate-seo-tactics-2024',
+    'title' => 'Real Estate SEO 2024 : Tactics To Attract More Clients',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1586,11 +1707,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-03-12 12:39:43',
     'active' => 1,
-  ],
-  [
+  ),
+  122 => 
+  array (
     'id' => 49248,
-    'title' => 'User Generated Content In 2024',
     'slug' => 'user-generated-conetnt-spotting-real-fake-reviews-2024',
+    'title' => 'User Generated Content In 2024',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1599,11 +1721,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-03-08 12:55:31',
     'active' => 1,
-  ],
-  [
+  ),
+  123 => 
+  array (
     'id' => 49213,
-    'title' => 'Disappearing Google’s Third-Party Cookies: What to Expect in 2024.',
     'slug' => 'third-party-cookies-phase-out-marketing-for-2024',
+    'title' => 'Disappearing Google’s Third-Party Cookies: What to Expect in 2024.',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1612,11 +1735,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-03-05 12:16:37',
     'active' => 1,
-  ],
-  [
+  ),
+  124 => 
+  array (
     'id' => 49203,
-    'title' => 'Dominate E-Commerce Growth: Key SEO Strategies for 2024 and Beyond',
     'slug' => 'e-commerce-growth-seo-strategies-in-2024',
+    'title' => 'Dominate E-Commerce Growth: Key SEO Strategies for 2024 and Beyond',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1625,11 +1749,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-03-01 11:22:25',
     'active' => 1,
-  ],
-  [
+  ),
+  125 => 
+  array (
     'id' => 49157,
-    'title' => 'The SORA Effect: An Analysis of the Power of AI Prompts in 2024',
     'slug' => 'sora-effect-power-of-ai-prompts-in-2024',
+    'title' => 'The SORA Effect: An Analysis of the Power of AI Prompts in 2024',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1638,11 +1763,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-02-27 11:47:36',
     'active' => 1,
-  ],
-  [
+  ),
+  126 => 
+  array (
     'id' => 49145,
-    'title' => 'The Importance of Backlinks in SEO Strategy in 2024.',
     'slug' => 'backlinks-still-important-for-seo-in-2024',
+    'title' => 'The Importance of Backlinks in SEO Strategy in 2024.',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1651,11 +1777,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-02-23 12:37:37',
     'active' => 1,
-  ],
-  [
+  ),
+  127 => 
+  array (
     'id' => 49114,
-    'title' => 'Is Influencer Marketing Still Worth It? A 2024 Analysis',
     'slug' => 'influencer-marketing-worth-the-hype-in-2024',
+    'title' => 'Is Influencer Marketing Still Worth It? A 2024 Analysis',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -1664,11 +1791,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2024-02-20 12:21:42',
     'active' => 1,
-  ],
-  [
+  ),
+  128 => 
+  array (
     'id' => 49016,
-    'title' => 'Bard To Gemini: What to Expect From Google’s AI Chatbot Update in 2024.',
     'slug' => 'google-unveils-biggest-update-of-2024-gemini',
+    'title' => 'Bard To Gemini: What to Expect From Google’s AI Chatbot Update in 2024.',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -1677,11 +1805,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2024-02-16 11:36:13',
     'active' => 1,
-  ],
-  [
+  ),
+  129 => 
+  array (
     'id' => 48609,
-    'title' => 'Master Mobile SEO in 2024: 10 Tactics to Dominate Rankings &amp; User Experience',
     'slug' => 'mobile-seo-tactics-for-2024',
+    'title' => 'Master Mobile SEO in 2024: 10 Tactics to Dominate Rankings &amp; User Experience',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1690,11 +1819,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2024-02-13 13:14:27',
     'active' => 1,
-  ],
-  [
+  ),
+  130 => 
+  array (
     'id' => 48598,
-    'title' => '2024 Content Marketing: Grow Your Audience with Reels &amp; Podcasts',
     'slug' => 'content-marketing-strategies-for-2024',
+    'title' => '2024 Content Marketing: Grow Your Audience with Reels &amp; Podcasts',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -1703,11 +1833,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2024-02-09 12:26:18',
     'active' => 1,
-  ],
-  [
+  ),
+  131 => 
+  array (
     'id' => 48589,
-    'title' => 'Lead Generation : What to Expect in 2024.',
     'slug' => 'lead-generation-in-2024',
+    'title' => 'Lead Generation : What to Expect in 2024.',
     'category' => 'Lead Generation',
     'tags' => 'Lead Generation',
     'author' => 'Kishor',
@@ -1716,11 +1847,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-02-06 13:07:21',
     'active' => 1,
-  ],
-  [
+  ),
+  132 => 
+  array (
     'id' => 48569,
-    'title' => 'Digital Marketing Agency VS In-House Staff. Which One Should You Choose in 2024?',
     'slug' => 'should-you-hire-a-digital-marketing-agency',
+    'title' => 'Digital Marketing Agency VS In-House Staff. Which One Should You Choose in 2024?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1729,11 +1861,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2024-02-02 13:06:57',
     'active' => 1,
-  ],
-  [
+  ),
+  133 => 
+  array (
     'id' => 48557,
-    'title' => 'Social Media Marketing: A Complete Guide for 2024',
     'slug' => 'social-media-marketing-in-2024',
+    'title' => 'Social Media Marketing: A Complete Guide for 2024',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'Kishor',
@@ -1742,11 +1875,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2024-01-30 11:27:20',
     'active' => 1,
-  ],
-  [
+  ),
+  134 => 
+  array (
     'id' => 48541,
-    'title' => 'Google SGE Impact: Is SEO Fading?',
     'slug' => 'google-sge-impact-is-seo-fading',
+    'title' => 'Google SGE Impact: Is SEO Fading?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1755,11 +1889,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/01/google-sge-300x272.jpg',
     'published_at' => '2024-01-24 13:42:59',
     'active' => 1,
-  ],
-  [
+  ),
+  135 => 
+  array (
     'id' => 48494,
-    'title' => 'Insider Secrets: Mastering Digital Marketing Skills in 2024!',
     'slug' => 'skills-to-become-digital-marketing-expert-in-2024',
+    'title' => 'Insider Secrets: Mastering Digital Marketing Skills in 2024!',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1768,11 +1903,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2024/01/Responsive-Website.png',
     'published_at' => '2024-01-08 14:09:01',
     'active' => 1,
-  ],
-  [
+  ),
+  136 => 
+  array (
     'id' => 48284,
-    'title' => 'Topical Authority in SEO. All you need to Know',
     'slug' => 'topical-authority-in-seo-all-you-need-to-know',
+    'title' => 'Topical Authority in SEO. All you need to Know',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'Kishor',
@@ -1781,11 +1917,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2023-12-15 10:00:05',
     'active' => 1,
-  ],
-  [
+  ),
+  137 => 
+  array (
     'id' => 48252,
-    'title' => 'OpenAI Unleashes Free Voice Capabilities with ChatGPT Update',
     'slug' => 'openai-unleashes-free-voice-capabilities-with-chatgpt-update',
+    'title' => 'OpenAI Unleashes Free Voice Capabilities with ChatGPT Update',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'Kishor',
@@ -1794,11 +1931,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/12/mariia-shalabaieva-fluoEjpdj60-unsplash-1024x576.jpg',
     'published_at' => '2023-12-11 08:31:13',
     'active' => 1,
-  ],
-  [
+  ),
+  138 => 
+  array (
     'id' => 48198,
-    'title' => 'Hub and Spoke Content Marketing: What Is It &amp; How Does It Work?',
     'slug' => 'hub-and-spoke-content-marketing-what-is-it-how-does-it-work',
+    'title' => 'Hub and Spoke Content Marketing: What Is It &amp; How Does It Work?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1807,11 +1945,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/12/spoke-topic-1024x1024.png',
     'published_at' => '2023-12-08 07:33:03',
     'active' => 1,
-  ],
-  [
+  ),
+  139 => 
+  array (
     'id' => 48144,
-    'title' => 'Google Phases Out Crawl Rate Limiter Tool in Search Console for Enhanced Crawling Efficiency',
     'slug' => 'google-phases-out-crawl-rate-limiter-tool-in-search-console-for-enhanced-crawling-efficiency',
+    'title' => 'Google Phases Out Crawl Rate Limiter Tool in Search Console for Enhanced Crawling Efficiency',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1820,11 +1959,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-12-04 06:25:16',
     'active' => 1,
-  ],
-  [
+  ),
+  140 => 
+  array (
     'id' => 48102,
-    'title' => 'Google\'s Latest Structured Data for Forums and Profiles Redefines Content Discovery in Search',
     'slug' => 'googles-latest-structured-data-for-forums-and-profiles-redefines-content-discovery-in-search',
+    'title' => 'Google\'s Latest Structured Data for Forums and Profiles Redefines Content Discovery in Search',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'Kishor',
@@ -1833,11 +1973,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/12/IMG_20231128_144019-769x1024.jpg',
     'published_at' => '2023-12-01 07:54:15',
     'active' => 1,
-  ],
-  [
+  ),
+  141 => 
+  array (
     'id' => 47935,
-    'title' => 'Mastering WhatsApp Security: A Comprehensive Guide to Privacy Checkup',
     'slug' => 'mastering-whatsapp-security-a-comprehensive-guide-to-privacy-checkup',
+    'title' => 'Mastering WhatsApp Security: A Comprehensive Guide to Privacy Checkup',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -1846,11 +1987,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/11/mika-baumeister-uKdkh25_wc0-unsplash-819x1024.jpg',
     'published_at' => '2023-11-27 05:21:07',
     'active' => 1,
-  ],
-  [
+  ),
+  142 => 
+  array (
     'id' => 47948,
-    'title' => 'Google is all set to unveil new AI features in Performance Max!!!',
     'slug' => 'google-is-all-set-to-unveil-new-ai-features-in-performance-max-what-can-we-anticipate-in-the-world-of-ads',
+    'title' => 'Google is all set to unveil new AI features in Performance Max!!!',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1859,11 +2001,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/11/Final-1-2.jpg',
     'published_at' => '2023-11-24 06:37:21',
     'active' => 1,
-  ],
-  [
+  ),
+  143 => 
+  array (
     'id' => 47905,
-    'title' => 'From Search to Success: How SEO Can Transform Your Business',
     'slug' => 'from-search-to-success-how-seo-can-transform-your-business',
+    'title' => 'From Search to Success: How SEO Can Transform Your Business',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -1872,11 +2015,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/11/melanie-deziel-U33fHryBYBU-unsplash-1024x683.jpg',
     'published_at' => '2023-11-20 09:55:19',
     'active' => 1,
-  ],
-  [
+  ),
+  144 => 
+  array (
     'id' => 47883,
-    'title' => 'Unraveling Instagram\'s Latest Updates for Content Creators',
     'slug' => 'unraveling-instagrams-latest-updates-for-content-creators',
+    'title' => 'Unraveling Instagram\'s Latest Updates for Content Creators',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -1885,11 +2029,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/11/01_Reels-Edits.webp',
     'published_at' => '2023-11-17 06:58:23',
     'active' => 1,
-  ],
-  [
+  ),
+  145 => 
+  array (
     'id' => 47864,
-    'title' => 'WhatsApp Introduces Voice Chats for Large Groups',
     'slug' => 'whatsapp-introduces-seamless-voice-chats-for-large-groups',
+    'title' => 'WhatsApp Introduces Voice Chats for Large Groups',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1898,11 +2043,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/11/4e78ea4d-3169-447a-848f-82062fb93ff3-1024x1024.jpg',
     'published_at' => '2023-11-15 06:34:02',
     'active' => 1,
-  ],
-  [
+  ),
+  146 => 
+  array (
     'id' => 47842,
-    'title' => 'Elevate Your Business this Holiday Season with Google\'s New Merchant Features',
     'slug' => 'elevate-your-business-this-holiday-season-with-googles-new-merchant-features',
+    'title' => 'Elevate Your Business this Holiday Season with Google\'s New Merchant Features',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1911,11 +2057,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/11/SRP.width-1000.format-webp-549x1024.webp',
     'published_at' => '2023-11-08 05:36:14',
     'active' => 1,
-  ],
-  [
+  ),
+  147 => 
+  array (
     'id' => 47478,
-    'title' => 'How Social Media Can Influence What Consumers Buy!',
     'slug' => 'the-power-of-social-media-how-social-media-casts-its-spell-on-what-you-buy',
+    'title' => 'How Social Media Can Influence What Consumers Buy!',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -1924,11 +2071,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/elementor/thumbs/campaign-creators-yktK2qaiVHI-unsplash-scaled-qeilqkmo08srhnonqqw0xwzemvi55kgnracdj4b5s2.jpg',
     'published_at' => '2023-10-28 08:07:54',
     'active' => 1,
-  ],
-  [
+  ),
+  148 => 
+  array (
     'id' => 47333,
-    'title' => '5 Latest X Updates. What Else Can You Expect in 2023?',
     'slug' => '5-latest-x-updates-what-else-can-you-expect-in-2023',
+    'title' => '5 Latest X Updates. What Else Can You Expect in 2023?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1937,11 +2085,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-27-at-10.19.06-AM-1024x502.png',
     'published_at' => '2023-10-26 06:05:10',
     'active' => 1,
-  ],
-  [
+  ),
+  149 => 
+  array (
     'id' => 47063,
-    'title' => 'ChatGPT Ban: Legal, Privacy, and National Security Concerns',
     'slug' => 'chatgpt-ban-legal-privacy-and-national-security-concerns',
+    'title' => 'ChatGPT Ban: Legal, Privacy, and National Security Concerns',
     'category' => 'AI & Emerging Tech',
     'tags' => 'AI & Emerging Tech',
     'author' => 'TechBound Team',
@@ -1950,11 +2099,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-17-at-11.12.26-AM.jpeg',
     'published_at' => '2023-10-17 06:32:41',
     'active' => 1,
-  ],
-  [
+  ),
+  150 => 
+  array (
     'id' => 46829,
-    'title' => '5 Exciting Meta Reels Updates to Power Up Your Ads',
     'slug' => '5-exciting-meta-reels-updates-to-power-up-your-ads',
+    'title' => '5 Exciting Meta Reels Updates to Power Up Your Ads',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -1963,11 +2113,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/Screen-Shot-2019-11-17-at-12.57.21-PM-e1697197174906.png',
     'published_at' => '2023-10-13 06:55:54',
     'active' => 1,
-  ],
-  [
+  ),
+  151 => 
+  array (
     'id' => 46757,
-    'title' => 'October 2023 Spam Update : Google Boosts Spam Defense',
     'slug' => 'googles-october-2023-spam-update-a-stronger-defense-against-spam',
+    'title' => 'October 2023 Spam Update : Google Boosts Spam Defense',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1976,11 +2127,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/IMG_20231011_143501-799x1024.jpg',
     'published_at' => '2023-10-11 09:11:56',
     'active' => 1,
-  ],
-  [
+  ),
+  152 => 
+  array (
     'id' => 46577,
-    'title' => 'October Spam Update! Google’s Master Stroke Against Spam Mails',
     'slug' => 'october-spam-update-googles-master-stroke-against-spam-mails',
+    'title' => 'October Spam Update! Google’s Master Stroke Against Spam Mails',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -1989,11 +2141,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-10-10 05:14:03',
     'active' => 1,
-  ],
-  [
+  ),
+  153 => 
+  array (
     'id' => 46384,
-    'title' => 'Ad-free Instagram and Facebook? Meta to Charge $14 Fee.',
     'slug' => 'ad-free-instagram-and-facebook-meta-will-charge-a-14-subscription-fee',
+    'title' => 'Ad-free Instagram and Facebook? Meta to Charge $14 Fee.',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2002,11 +2155,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2023-10-06 05:15:39',
     'active' => 1,
-  ],
-  [
+  ),
+  154 => 
+  array (
     'id' => 46210,
-    'title' => 'Meta AI: Latest WhatsApp Feature Update in News',
     'slug' => 'meta-ai-latest-whatsapp-feature-update-in-news',
+    'title' => 'Meta AI: Latest WhatsApp Feature Update in News',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2015,11 +2169,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-03-at-4.31.26-PM.jpeg',
     'published_at' => '2023-10-03 08:08:47',
     'active' => 1,
-  ],
-  [
+  ),
+  155 => 
+  array (
     'id' => 45974,
-    'title' => 'Update! Delete Threads Account Without Deleting Instagram',
     'slug' => 'update-delete-threads-account-without-deleting-instagram',
+    'title' => 'Update! Delete Threads Account Without Deleting Instagram',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2028,11 +2183,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-29-at-4.20.53-PM.jpeg',
     'published_at' => '2023-09-29 05:49:00',
     'active' => 1,
-  ],
-  [
+  ),
+  156 => 
+  array (
     'id' => 45934,
-    'title' => 'Google\'s 25th Birthday Celebration: A Walk Down Memory Lane',
     'slug' => 'googles-25th-birthday-celebration-a-walk-down-memory-lane',
+    'title' => 'Google\'s 25th Birthday Celebration: A Walk Down Memory Lane',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2041,11 +2197,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/IMG_20230927_152836-569x1024.jpg',
     'published_at' => '2023-09-27 11:44:37',
     'active' => 1,
-  ],
-  [
+  ),
+  157 => 
+  array (
     'id' => 45848,
-    'title' => 'WhatsApp Channels: How it differs from Telegram Channels',
     'slug' => 'whatsapp-channels-how-it-differs-from-telegram-channels',
+    'title' => 'WhatsApp Channels: How it differs from Telegram Channels',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2054,11 +2211,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-09-27 04:15:52',
     'active' => 1,
-  ],
-  [
+  ),
+  158 => 
+  array (
     'id' => 45319,
-    'title' => 'The Awaited Update Arrives: Seamless Transition to Google Ads Now Live!',
     'slug' => 'google-business-profile-ads-update-adieu-to-business-profile-ads',
+    'title' => 'The Awaited Update Arrives: Seamless Transition to Google Ads Now Live!',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -2067,11 +2225,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/Screenshot-24-1024x204.png',
     'published_at' => '2023-09-21 11:44:00',
     'active' => 1,
-  ],
-  [
+  ),
+  159 => 
+  array (
     'id' => 44821,
-    'title' => 'Untold future of digital marketing course. A Reality Check',
     'slug' => 'untold-future-of-digital-marketing-course-a-reality-check',
+    'title' => 'Untold future of digital marketing course. A Reality Check',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2080,11 +2239,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-09-15 06:11:11',
     'active' => 1,
-  ],
-  [
+  ),
+  160 => 
+  array (
     'id' => 44403,
-    'title' => 'Simple Formulas to Write Creative Headlines in Seconds',
     'slug' => 'simple-formulas-to-write-creative-headlines-in-seconds',
+    'title' => 'Simple Formulas to Write Creative Headlines in Seconds',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2093,11 +2253,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-09-12 04:41:22',
     'active' => 1,
-  ],
-  [
+  ),
+  161 => 
+  array (
     'id' => 44375,
-    'title' => '9 Innovative E-commerce Strategies for Boosting Sales',
     'slug' => 'from-clicks-to-customers-innovative-e-commerce-strategies-for-boosting-sales',
+    'title' => '9 Innovative E-commerce Strategies for Boosting Sales',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -2106,11 +2267,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/ecommerce-2140603_1280-1024x439.jpg',
     'published_at' => '2023-09-09 08:32:32',
     'active' => 1,
-  ],
-  [
+  ),
+  162 => 
+  array (
     'id' => 44048,
-    'title' => 'Video SEO. Easiest way to Rank Higher in Search Engine Results',
     'slug' => 'video-seo-easiest-way-to-rank-higher-in-search-engine-results',
+    'title' => 'Video SEO. Easiest way to Rank Higher in Search Engine Results',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2119,11 +2281,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2023-09-08 05:16:42',
     'active' => 1,
-  ],
-  [
+  ),
+  163 => 
+  array (
     'id' => 43700,
-    'title' => 'Get More YouTube Views Instantly with this Simple Hack',
     'slug' => 'get-more-youtube-views-instantly-with-this-simple-hack',
+    'title' => 'Get More YouTube Views Instantly with this Simple Hack',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2132,11 +2295,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-05-at-4.53.19-PM.jpeg',
     'published_at' => '2023-09-05 04:31:31',
     'active' => 1,
-  ],
-  [
+  ),
+  164 => 
+  array (
     'id' => 43675,
-    'title' => 'Is A Digital Marketing Course Really Worth It?',
     'slug' => 'is-digital-marketing-course-worth-the-hype-or-not',
+    'title' => 'Is A Digital Marketing Course Really Worth It?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2145,11 +2309,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/What-to-Look-for-in-a-Digital-Marketing-Course-576x1024.png',
     'published_at' => '2023-09-02 08:13:23',
     'active' => 1,
-  ],
-  [
+  ),
+  165 => 
+  array (
     'id' => 43327,
-    'title' => 'Google Ads Secret Features Revealed! Guaranteed Conversions',
     'slug' => 'google-ads-secret-features-revealed-guaranteed-conversions',
+    'title' => 'Google Ads Secret Features Revealed! Guaranteed Conversions',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -2158,11 +2323,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/09/image-ad-creator-1-1.png',
     'published_at' => '2023-09-01 11:32:18',
     'active' => 1,
-  ],
-  [
+  ),
+  166 => 
+  array (
     'id' => 43161,
-    'title' => 'X Hiring Beta: Will it disrupt the LinkedIn led Job Seeker Market?',
     'slug' => 'x-hiring-beta-will-it-disrupt-the-linkedin-led-job-seeker-market',
+    'title' => 'X Hiring Beta: Will it disrupt the LinkedIn led Job Seeker Market?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2171,11 +2337,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/WhatsApp-Image-2023-08-28-at-10.38.19-AM.jpeg',
     'published_at' => '2023-08-29 08:10:00',
     'active' => 1,
-  ],
-  [
+  ),
+  167 => 
+  array (
     'id' => 42951,
-    'title' => '5 Email Marketing Mistakes to Avoid in 2023 & How to Fix Them',
     'slug' => '5-email-marketing-mistakes-to-avoid-in-2023-how-to-fix-them',
+    'title' => '5 Email Marketing Mistakes to Avoid in 2023 & How to Fix Them',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2184,11 +2351,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-08-25 04:51:31',
     'active' => 1,
-  ],
-  [
+  ),
+  168 => 
+  array (
     'id' => 42918,
-    'title' => 'Essential Digital Marketing Strategies for Small Businesses',
     'slug' => 'essential-digital-marketing-strategies-for-small-businesses',
+    'title' => 'Essential Digital Marketing Strategies for Small Businesses',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2197,11 +2365,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/Digital-Marketing-Strategies-for-Small-Businesses-1024x680.jpg',
     'published_at' => '2023-08-23 11:04:52',
     'active' => 1,
-  ],
-  [
+  ),
+  169 => 
+  array (
     'id' => 42638,
-    'title' => '5 Simple Hacks to Top Google Business Profile',
     'slug' => '5-simple-hacks-to-top-google-business-profile',
+    'title' => '5 Simple Hacks to Top Google Business Profile',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2210,11 +2379,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-08-22 08:43:52',
     'active' => 1,
-  ],
-  [
+  ),
+  170 => 
+  array (
     'id' => 42321,
-    'title' => '5 Outdated Keyword Practices in SEO',
     'slug' => '5-outdated-keyword-practices-in-seo',
+    'title' => '5 Outdated Keyword Practices in SEO',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2223,11 +2393,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/keyword-stuffing-que-es.webp',
     'published_at' => '2023-08-18 04:45:28',
     'active' => 1,
-  ],
-  [
+  ),
+  171 => 
+  array (
     'id' => 41761,
-    'title' => 'Digital Marketing Updates You Almost Missed',
     'slug' => 'digital-marketing-updates-you-missed',
+    'title' => 'Digital Marketing Updates You Almost Missed',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2236,11 +2407,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/F28dojOWUAAzD96.jpg',
     'published_at' => '2023-08-11 05:46:03',
     'active' => 1,
-  ],
-  [
+  ),
+  172 => 
+  array (
     'id' => 41737,
-    'title' => 'Online vs. Offline Digital Marketing Course',
     'slug' => 'digital-marketing-course-online-vs-offline-options',
+    'title' => 'Online vs. Offline Digital Marketing Course',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2249,11 +2421,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/digital-marketing-course-in-Trivandrum-1024x685.jpg',
     'published_at' => '2023-08-09 11:17:51',
     'active' => 1,
-  ],
-  [
+  ),
+  173 => 
+  array (
     'id' => 41409,
-    'title' => 'Facebook Ads Library. Hidden Secrets Revealed',
     'slug' => 'facebook-ads-library-hidden-secrets-revealed',
+    'title' => 'Facebook Ads Library. Hidden Secrets Revealed',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2262,11 +2435,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/Untitled115-1024x477.png',
     'published_at' => '2023-08-08 05:58:42',
     'active' => 1,
-  ],
-  [
+  ),
+  174 => 
+  array (
     'id' => 41082,
-    'title' => 'Voice Search Optimisation. 6 Red Flags to Avoid',
     'slug' => 'voice-search-optimisation-5-redflags',
+    'title' => 'Voice Search Optimisation. 6 Red Flags to Avoid',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2275,11 +2449,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/Blue-and-Orange-Abstract-Digital-Marketing-Infographic-Instagram-Post-768x768.png',
     'published_at' => '2023-08-04 04:14:49',
     'active' => 1,
-  ],
-  [
+  ),
+  175 => 
+  array (
     'id' => 41025,
-    'title' => '5 Best Digital Marketing Course in Trivandrum in 2023',
     'slug' => '5-best-digital-marketing-courses-in-trivandrum-in-2023',
+    'title' => '5 Best Digital Marketing Course in Trivandrum in 2023',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2288,11 +2463,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/google-certificate-1024x576.png',
     'published_at' => '2023-08-02 11:16:30',
     'active' => 1,
-  ],
-  [
+  ),
+  176 => 
+  array (
     'id' => 40730,
-    'title' => 'Technical SEO. The Unsung Hero',
     'slug' => 'technical-seo-the-unsung-hero',
+    'title' => 'Technical SEO. The Unsung Hero',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2301,11 +2477,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/08/three-types-of-seo-with-sub-tasks-1024x902.jpg',
     'published_at' => '2023-08-01 04:39:30',
     'active' => 1,
-  ],
-  [
+  ),
+  177 => 
+  array (
     'id' => 40393,
-    'title' => 'Black Hat SEO. New Fear Unlocked',
     'slug' => 'black-hat-seo-new-fear-unlocked',
+    'title' => 'Black Hat SEO. New Fear Unlocked',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2314,11 +2491,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/BLACK-HAT-SEO-TRAINING-INSTITUTE-DELHI-INDIA-1024x687-1-768x515.png',
     'published_at' => '2023-07-28 04:43:51',
     'active' => 1,
-  ],
-  [
+  ),
+  178 => 
+  array (
     'id' => 40321,
-    'title' => 'Advocacy Marketing : Cheerleader for Your Brand',
     'slug' => 'advocacy-marketing-cheerleader-for-your-brand',
+    'title' => 'Advocacy Marketing : Cheerleader for Your Brand',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2327,11 +2505,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/what-is-advocacy-marketing-1-1024x683.jpg',
     'published_at' => '2023-07-26 09:28:46',
     'active' => 1,
-  ],
-  [
+  ),
+  179 => 
+  array (
     'id' => 40006,
-    'title' => 'Goodbye Google Digital Unlocked. No More Free Courses',
     'slug' => 'goodbye-google-digital-unlocked-no-more-free-courses',
+    'title' => 'Goodbye Google Digital Unlocked. No More Free Courses',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2340,11 +2519,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/unlocked-1-1024x408.png',
     'published_at' => '2023-07-25 04:36:14',
     'active' => 1,
-  ],
-  [
+  ),
+  180 => 
+  array (
     'id' => 39729,
-    'title' => 'Social Listening: The key concerns',
     'slug' => 'social-listening-the-key-concerns',
+    'title' => 'Social Listening: The key concerns',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2353,11 +2533,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/646cf40a96b414cd8fc5f095_Purposes-of-Social-Listening-768x576.png',
     'published_at' => '2023-07-21 04:06:19',
     'active' => 1,
-  ],
-  [
+  ),
+  181 => 
+  array (
     'id' => 39718,
-    'title' => 'The Social Media Marketing Landscape in India: Insights and Opportunities for Businesses in 2023',
     'slug' => 'the-social-media-marketing-landscape-in-india-insights-and-opportunities-for-businesses',
+    'title' => 'The Social Media Marketing Landscape in India: Insights and Opportunities for Businesses in 2023',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2366,11 +2547,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/social-media-marketing-in-India-1024x682.jpg',
     'published_at' => '2023-07-19 10:23:44',
     'active' => 1,
-  ],
-  [
+  ),
+  182 => 
+  array (
     'id' => 39474,
-    'title' => 'Cracking the Code: The Future of Digital Marketing Pricing in 2023',
     'slug' => 'cracking-the-code-the-future-of-digital-marketing-pricing-in-2023',
+    'title' => 'Cracking the Code: The Future of Digital Marketing Pricing in 2023',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2379,11 +2561,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/digital-marketing-cost-in-2023-1024x577.png',
     'published_at' => '2023-07-15 08:17:55',
     'active' => 1,
-  ],
-  [
+  ),
+  183 => 
+  array (
     'id' => 39182,
-    'title' => 'VR Marketing. A Complete Guide for Being Limitless.',
     'slug' => 'a-complete-guide-for-being-limitless-in-vr-marketing',
+    'title' => 'VR Marketing. A Complete Guide for Being Limitless.',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -2392,11 +2575,12 @@ return [
     'image' => 'assets/placeholders/blog-web-dev.svg',
     'published_at' => '2023-07-14 04:29:13',
     'active' => 1,
-  ],
-  [
+  ),
+  184 => 
+  array (
     'id' => 38759,
-    'title' => 'Personalisation in Marketing. Expectation vs Reality',
     'slug' => 'personalisation-in-marketing-expectation-vs-reality',
+    'title' => 'Personalisation in Marketing. Expectation vs Reality',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2405,11 +2589,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/Screen-Shot-2015-12-09-at-09.jpg',
     'published_at' => '2023-07-11 04:06:00',
     'active' => 1,
-  ],
-  [
+  ),
+  185 => 
+  array (
     'id' => 38071,
-    'title' => 'Twitter vs Threads. Who will Win the Suit?',
     'slug' => 'twitter-vs-threads-who-will-win-the-suit',
+    'title' => 'Twitter vs Threads. Who will Win the Suit?',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -2418,11 +2603,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/Untitled-1.png',
     'published_at' => '2023-07-07 08:31:55',
     'active' => 1,
-  ],
-  [
+  ),
+  186 => 
+  array (
     'id' => 38021,
-    'title' => 'Make Digital Marketing Flawless using these 45 Tools',
     'slug' => 'make-digital-marketing-flawless-using-these-45-tools',
+    'title' => 'Make Digital Marketing Flawless using these 45 Tools',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2431,11 +2617,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-07-07 06:15:12',
     'active' => 1,
-  ],
-  [
+  ),
+  187 => 
+  array (
     'id' => 38010,
-    'title' => 'SEO Agency Digital Marketing Company Faq',
     'slug' => 'seo-agency-digital-marketing-company-faq',
+    'title' => 'SEO Agency Digital Marketing Company Faq',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2444,11 +2631,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/456369-768x576.jpg',
     'published_at' => '2023-07-07 06:07:18',
     'active' => 1,
-  ],
-  [
+  ),
+  188 => 
+  array (
     'id' => 37978,
-    'title' => '5 Digital Marketing Tips to Build a Successful Start-up',
     'slug' => '5-digital-marketing-tips-to-build-a-successful-start-up',
+    'title' => '5 Digital Marketing Tips to Build a Successful Start-up',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -2457,11 +2645,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/diagram-768x415.png',
     'published_at' => '2023-07-07 05:41:16',
     'active' => 1,
-  ],
-  [
+  ),
+  189 => 
+  array (
     'id' => 37946,
-    'title' => 'How to Promote your Small Medium Business on Google',
     'slug' => 'how-to-promote-your-small-medium-business-on-google',
+    'title' => 'How to Promote your Small Medium Business on Google',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2470,11 +2659,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/backlink-profile-seo-300x300.png',
     'published_at' => '2023-07-07 05:13:58',
     'active' => 1,
-  ],
-  [
+  ),
+  190 => 
+  array (
     'id' => 37918,
-    'title' => 'How Branding can Enliven your Business to New Standards',
     'slug' => 'how-branding-can-enliven-your-business-to-new-standards',
+    'title' => 'How Branding can Enliven your Business to New Standards',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2483,11 +2673,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/pexels-photo-7661590-768x512.webp',
     'published_at' => '2023-07-07 04:25:06',
     'active' => 1,
-  ],
-  [
+  ),
+  191 => 
+  array (
     'id' => 37684,
-    'title' => 'Realtors and Digital Marketing',
     'slug' => 'realtors-and-digital-marketing',
+    'title' => 'Realtors and Digital Marketing',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2496,11 +2687,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-07-06 09:16:45',
     'active' => 1,
-  ],
-  [
+  ),
+  192 => 
+  array (
     'id' => 37668,
-    'title' => 'digital marketing course all about careers and opportunities',
     'slug' => 'digital-marketing-course-all-about-careers-and-opportunities',
+    'title' => 'digital marketing course all about careers and opportunities',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2509,11 +2701,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-07-06 09:08:51',
     'active' => 1,
-  ],
-  [
+  ),
+  193 => 
+  array (
     'id' => 37660,
-    'title' => '7 tips to drive more traffic with search engine optimization',
     'slug' => '7-tips-to-drive-more-traffic-with-search-engine-optimization',
+    'title' => '7 tips to drive more traffic with search engine optimization',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2522,11 +2715,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/wallpaperflare.com_wallpaper-2-768x432.jpg',
     'published_at' => '2023-07-06 08:59:49',
     'active' => 1,
-  ],
-  [
+  ),
+  194 => 
+  array (
     'id' => 37650,
-    'title' => 'Why Web SEO is a Necessity in 2023',
     'slug' => 'why-web-seo-is-a-necessity-in-2023',
+    'title' => 'Why Web SEO is a Necessity in 2023',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2535,11 +2729,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Grey-Simple-Modern-Timeline-Infographic-Chart-Graph.png',
     'published_at' => '2023-07-06 07:37:43',
     'active' => 1,
-  ],
-  [
+  ),
+  195 => 
+  array (
     'id' => 37648,
-    'title' => 'Tips to Promote your Product Service Online',
     'slug' => 'tips-to-promote-your-product-service-online',
+    'title' => 'Tips to Promote your Product Service Online',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2548,11 +2743,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-07-06 07:36:25',
     'active' => 1,
-  ],
-  [
+  ),
+  196 => 
+  array (
     'id' => 37646,
-    'title' => 'The Rise and Opportunities of Digital Marketing in the Future',
     'slug' => 'the-rise-and-opportunities-of-digital-marketing-in-the-future',
+    'title' => 'The Rise and Opportunities of Digital Marketing in the Future',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2561,11 +2757,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/major-components-of-digital-marketing.png',
     'published_at' => '2023-07-06 07:35:04',
     'active' => 1,
-  ],
-  [
+  ),
+  197 => 
+  array (
     'id' => 37644,
-    'title' => 'Seo Friendly Website for Businesses',
     'slug' => 'seo-friendly-website-for-businesses',
+    'title' => 'Seo Friendly Website for Businesses',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2574,11 +2771,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/1-three-traits-of-seo-friendly-site-768x898.jpg',
     'published_at' => '2023-07-06 07:33:34',
     'active' => 1,
-  ],
-  [
+  ),
+  198 => 
+  array (
     'id' => 37433,
-    'title' => 'The Latest update to Meta Ads location targeting',
     'slug' => 'latest-update-to-meta-ads-location-targeting',
+    'title' => 'The Latest update to Meta Ads location targeting',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2587,11 +2785,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/facebook-targeting-locations-700x366-1.webp',
     'published_at' => '2023-07-06 05:01:55',
     'active' => 1,
-  ],
-  [
+  ),
+  199 => 
+  array (
     'id' => 37078,
-    'title' => 'Youtube new monetisation policy. The Good, Bad and the Ugly',
     'slug' => 'youtube-new-monetisation-policy',
+    'title' => 'Youtube new monetisation policy. The Good, Bad and the Ugly',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2600,11 +2799,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/07/Orange-Black-Motif-Modern-Minimal-Instagram-Post-1-768x768.png',
     'published_at' => '2023-07-03 08:48:19',
     'active' => 1,
-  ],
-  [
+  ),
+  200 => 
+  array (
     'id' => 36472,
-    'title' => 'Going Global with Digital Marketing Course: A Must-Have Skillset for MBA Graduates',
     'slug' => 'how-digital-marketing-course-can-be-useful-for-an-mba-graduate',
+    'title' => 'Going Global with Digital Marketing Course: A Must-Have Skillset for MBA Graduates',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2613,11 +2813,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-06-22 06:22:55',
     'active' => 1,
-  ],
-  [
+  ),
+  201 => 
+  array (
     'id' => 16840,
-    'title' => 'Digital Marketing Strategies for Abroad Education Consultancies',
     'slug' => 'digital-marketing-strategies-for-abroad-education-consultancies',
+    'title' => 'Digital Marketing Strategies for Abroad Education Consultancies',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2626,11 +2827,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-05-16 11:33:29',
     'active' => 1,
-  ],
-  [
+  ),
+  202 => 
+  array (
     'id' => 16802,
-    'title' => 'YouTube Ads: AI-Powered Music Ads Unveiled to Reach Gen Z',
     'slug' => 'youtube-ads-ai-powered-music-ads-unveiled-to-reach-gen-z',
+    'title' => 'YouTube Ads: AI-Powered Music Ads Unveiled to Reach Gen Z',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2639,11 +2841,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/05/Youtube-Ads-1-1024x341.png',
     'published_at' => '2023-05-05 10:00:00',
     'active' => 1,
-  ],
-  [
+  ),
+  203 => 
+  array (
     'id' => 16770,
-    'title' => 'Google Search Console API Data Driven Optimization',
     'slug' => 'google-search-console-api-for-data-driven-optimization',
+    'title' => 'Google Search Console API Data Driven Optimization',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2652,11 +2855,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/05/2-1024x1024.png',
     'published_at' => '2023-05-03 10:00:00',
     'active' => 1,
-  ],
-  [
+  ),
+  204 => 
+  array (
     'id' => 16712,
-    'title' => 'Google DeepMind: A Potent AI Innovation',
     'slug' => 'google-deepmind-a-potent-ai-innovation',
+    'title' => 'Google DeepMind: A Potent AI Innovation',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2665,11 +2869,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/05/Google-Deepmind-at-Googleconference.jpg',
     'published_at' => '2023-05-01 11:54:00',
     'active' => 1,
-  ],
-  [
+  ),
+  205 => 
+  array (
     'id' => 16674,
-    'title' => 'How Does Refreshed Old Content Improve Rankings?',
     'slug' => 'content-marketing-strategy-how-to-refresh-old-content',
+    'title' => 'How Does Refreshed Old Content Improve Rankings?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2678,11 +2883,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/04/Content-Marketing-Strategy-2-1024x1024.png',
     'published_at' => '2023-04-27 14:25:00',
     'active' => 1,
-  ],
-  [
+  ),
+  206 => 
+  array (
     'id' => 16690,
-    'title' => 'GoogleBot Verification: Documentation on Google Updates',
     'slug' => 'googlebot-verification-new-google-updates',
+    'title' => 'GoogleBot Verification: Documentation on Google Updates',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2691,11 +2897,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/04/GoogleBot-1-1024x1024.png',
     'published_at' => '2023-04-26 10:35:00',
     'active' => 1,
-  ],
-  [
+  ),
+  207 => 
+  array (
     'id' => 16640,
-    'title' => 'Dolly 2.0: A New Open Source Language Model',
     'slug' => 'dolly2-0-a-new-open-source-language-model',
+    'title' => 'Dolly 2.0: A New Open Source Language Model',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2704,11 +2911,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2020/10/shape-bg1.png',
     'published_at' => '2023-04-19 08:43:48',
     'active' => 1,
-  ],
-  [
+  ),
+  208 => 
+  array (
     'id' => 16466,
-    'title' => 'Why use Social Media for Business Growth',
     'slug' => 'why-use-social-media-for-business-growth',
+    'title' => 'Why use Social Media for Business Growth',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2717,11 +2925,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2023-04-14 04:03:26',
     'active' => 1,
-  ],
-  [
+  ),
+  209 => 
+  array (
     'id' => 16317,
-    'title' => 'How a Good Digital Marketing Agency Can Help Your Business Grow?',
     'slug' => 'how-digital-marketing-agency-can-help-your-business-grow',
+    'title' => 'How a Good Digital Marketing Agency Can Help Your Business Grow?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2730,11 +2939,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-04-13 09:24:02',
     'active' => 1,
-  ],
-  [
+  ),
+  210 => 
+  array (
     'id' => 16261,
-    'title' => 'Google Improves Discovery Ads to Increase Engagement and Conversions',
     'slug' => 'discovery-ads-google-enhances-engagement-and-conversions',
+    'title' => 'Google Improves Discovery Ads to Increase Engagement and Conversions',
     'category' => 'Lead Generation',
     'tags' => 'Lead Generation',
     'author' => 'TechBound Team',
@@ -2743,11 +2953,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/04/Screenshot-16-1024x485.png',
     'published_at' => '2023-04-08 06:00:00',
     'active' => 1,
-  ],
-  [
+  ),
+  211 => 
+  array (
     'id' => 16209,
-    'title' => 'Digital Marketing After MBA: A Worthy Upgrade?',
     'slug' => 'digital-marketing-a-good-stimuli-to-upgrade-your-mba',
+    'title' => 'Digital Marketing After MBA: A Worthy Upgrade?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2756,11 +2967,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-04-06 08:10:00',
     'active' => 1,
-  ],
-  [
+  ),
+  212 => 
+  array (
     'id' => 16189,
-    'title' => 'Benefits Social Media Marketing In 2024',
     'slug' => 'benefits-of-social-media-marketing',
+    'title' => 'Benefits Social Media Marketing In 2024',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2769,11 +2981,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/04/Ai-in-Social-Media-Marketing-1024x427.jpg',
     'published_at' => '2023-04-06 07:41:14',
     'active' => 1,
-  ],
-  [
+  ),
+  213 => 
+  array (
     'id' => 16188,
-    'title' => 'Simple and Effective Hacks to Top Google Ads',
     'slug' => '5-tips-to-show-your-business-in-google-ads-top-position',
+    'title' => 'Simple and Effective Hacks to Top Google Ads',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -2782,11 +2995,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2023-04-06 07:31:45',
     'active' => 1,
-  ],
-  [
+  ),
+  214 => 
+  array (
     'id' => 16150,
-    'title' => 'Which AI Chatbots Produce the Best Responses?',
     'slug' => 'which-ai-chatbots-produce-the-best-responses-chatgpt-bing-bard-or-jasper',
+    'title' => 'Which AI Chatbots Produce the Best Responses?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2795,11 +3009,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/04/Chat-Gpt3-AI-ChatBot-300x300.png',
     'published_at' => '2023-04-05 06:51:35',
     'active' => 1,
-  ],
-  [
+  ),
+  215 => 
+  array (
     'id' => 16103,
-    'title' => 'Search for Right Digital Marketing Agency',
     'slug' => 'find-the-right-digital-marketing-agency',
+    'title' => 'Search for Right Digital Marketing Agency',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2808,11 +3023,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-04-03 08:30:53',
     'active' => 1,
-  ],
-  [
+  ),
+  216 => 
+  array (
     'id' => 16018,
-    'title' => 'Make Use of AI Websites as Digital Marketing Resources',
     'slug' => 'make-use-of-ai-websites-as-digital-marketing-resources',
+    'title' => 'Make Use of AI Websites as Digital Marketing Resources',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -2821,11 +3037,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/04/Pega-Marketing-as-AI-Websites-1024x1024.png',
     'published_at' => '2023-04-01 06:11:45',
     'active' => 1,
-  ],
-  [
+  ),
+  217 => 
+  array (
     'id' => 15952,
-    'title' => 'UNIQUE DIGITAL MARKETING STRATEGIES To Ace Lead Generation Campaigns',
     'slug' => 'how-to-get-genuine-lead-through-unique-digital-marketing-strategies',
+    'title' => 'UNIQUE DIGITAL MARKETING STRATEGIES To Ace Lead Generation Campaigns',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -2834,11 +3051,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Modern-Carousel-22-1024x1024.png',
     'published_at' => '2023-03-29 08:12:26',
     'active' => 1,
-  ],
-  [
+  ),
+  218 => 
+  array (
     'id' => 15934,
-    'title' => '8 Reasons for Hiring a Digital Marketing Agency',
     'slug' => '8-reasons-for-hiring-a-digital-marketing-agency',
+    'title' => '8 Reasons for Hiring a Digital Marketing Agency',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2847,11 +3065,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-29 07:47:58',
     'active' => 1,
-  ],
-  [
+  ),
+  219 => 
+  array (
     'id' => 15868,
-    'title' => 'Say Goodbye to Google My Business',
     'slug' => 'hello-google-business-profile-google-my-business-is-over',
+    'title' => 'Say Goodbye to Google My Business',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2860,11 +3079,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/Logo-4.png',
     'published_at' => '2023-03-29 06:42:14',
     'active' => 1,
-  ],
-  [
+  ),
+  220 => 
+  array (
     'id' => 15851,
-    'title' => 'Will 2023 be the year of SEO Automation?',
     'slug' => 'will-2021-be-the-year-of-seo-automation',
+    'title' => 'Will 2023 be the year of SEO Automation?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2873,11 +3093,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2023-03-29 06:38:08',
     'active' => 1,
-  ],
-  [
+  ),
+  221 => 
+  array (
     'id' => 15830,
-    'title' => 'Google BARD AI Powered ChatBot',
     'slug' => 'google-bard-ai-powered-chatbot',
+    'title' => 'Google BARD AI Powered ChatBot',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2886,11 +3107,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Google-Bard-1-1024x1024.png',
     'published_at' => '2023-03-29 06:28:22',
     'active' => 1,
-  ],
-  [
+  ),
+  222 => 
+  array (
     'id' => 15741,
-    'title' => 'Upgrade your Digital Marketing Skill using these Simple and Proven Methods',
     'slug' => 'upgrade-your-digital-marketing-skills-using-these-simple-and-proven-methods',
+    'title' => 'Upgrade your Digital Marketing Skill using these Simple and Proven Methods',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2899,11 +3121,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-28 07:29:43',
     'active' => 1,
-  ],
-  [
+  ),
+  223 => 
+  array (
     'id' => 15737,
-    'title' => 'Best Social Media Platforms for Business Growth in 2022',
     'slug' => 'best-social-media-platforms-for-business-growth-in-2022',
+    'title' => 'Best Social Media Platforms for Business Growth in 2022',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2912,11 +3135,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Modern-Carousel-14-480x480.png',
     'published_at' => '2023-03-28 07:13:59',
     'active' => 1,
-  ],
-  [
+  ),
+  224 => 
+  array (
     'id' => 15662,
-    'title' => 'Digital Marketing Interview Questions',
     'slug' => 'digital-marketing-interview-questions',
+    'title' => 'Digital Marketing Interview Questions',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2925,11 +3149,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-27 07:00:09',
     'active' => 1,
-  ],
-  [
+  ),
+  225 => 
+  array (
     'id' => 15652,
-    'title' => 'How to Build an Effective Social Media Marketing Strategy',
     'slug' => 'how-to-build-an-effective-social-media-marketing-strategy',
+    'title' => 'How to Build an Effective Social Media Marketing Strategy',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -2938,11 +3163,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/Frame-315.png',
     'published_at' => '2023-03-27 06:49:44',
     'active' => 1,
-  ],
-  [
+  ),
+  226 => 
+  array (
     'id' => 15644,
-    'title' => 'How to Increase your Social Signals and How it Impacts Search Engine Ranking?',
     'slug' => 'how-to-increase-your-social-signals-and-how-it-impacts-search-engine-ranking',
+    'title' => 'How to Increase your Social Signals and How it Impacts Search Engine Ranking?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -2951,11 +3177,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/10/Ellipse-125.png',
     'published_at' => '2023-03-27 06:34:43',
     'active' => 1,
-  ],
-  [
+  ),
+  227 => 
+  array (
     'id' => 15635,
-    'title' => 'Top 20 Digital Marketing Interview Questions and Answers for Freshers',
     'slug' => 'top-20-digital-marketing-interview-questions-and-answers-for-freshers',
+    'title' => 'Top 20 Digital Marketing Interview Questions and Answers for Freshers',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2964,11 +3191,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-27 06:15:05',
     'active' => 1,
-  ],
-  [
+  ),
+  228 => 
+  array (
     'id' => 15574,
-    'title' => 'How Should I Write My Digital Marketing Resume?',
     'slug' => 'how-should-i-write-my-digital-marketing-resume',
+    'title' => 'How Should I Write My Digital Marketing Resume?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2977,11 +3205,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Digital-Marketing-Resume-1-768x1086.png',
     'published_at' => '2023-03-25 06:49:34',
     'active' => 1,
-  ],
-  [
+  ),
+  229 => 
+  array (
     'id' => 15372,
-    'title' => 'Career Opportunities in Digital Marketing in 2023',
     'slug' => 'digital-marketing-career-opportunities-in-2023',
+    'title' => 'Career Opportunities in Digital Marketing in 2023',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -2990,11 +3219,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/DIGITAL-MARKETING-Career-1-1-1024x1024.png',
     'published_at' => '2023-03-22 07:02:28',
     'active' => 1,
-  ],
-  [
+  ),
+  230 => 
+  array (
     'id' => 15423,
-    'title' => 'WHY SHOULD YOU CHOOSE A DIGITAL MARKETING COURSE?',
     'slug' => '7-reasons-why-should-you-choose-a-digital-marketing-course',
+    'title' => 'WHY SHOULD YOU CHOOSE A DIGITAL MARKETING COURSE?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3003,11 +3233,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-22 06:40:25',
     'active' => 1,
-  ],
-  [
+  ),
+  231 => 
+  array (
     'id' => 15416,
-    'title' => 'Top 11 Reasons to Learn Digital Marketing',
     'slug' => 'side-hustle-or-9-5-digital-marketing-is-the-answer-2',
+    'title' => 'Top 11 Reasons to Learn Digital Marketing',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3016,11 +3247,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-22 06:18:34',
     'active' => 1,
-  ],
-  [
+  ),
+  232 => 
+  array (
     'id' => 15293,
-    'title' => 'Do you need Free Guaranteed Answers For your Doubts on Digital Marketing Course?',
     'slug' => 'faqs-by-students-freelancers-and-employees-on-digital-marketing',
+    'title' => 'Do you need Free Guaranteed Answers For your Doubts on Digital Marketing Course?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3029,11 +3261,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-21 07:40:31',
     'active' => 1,
-  ],
-  [
+  ),
+  233 => 
+  array (
     'id' => 15269,
-    'title' => 'Who can become a Digital Marketing Training Aspirant',
     'slug' => 'who-can-achieve-new-skill-sets-in-digital-marketing-training',
+    'title' => 'Who can become a Digital Marketing Training Aspirant',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3042,11 +3275,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-21 07:22:15',
     'active' => 1,
-  ],
-  [
+  ),
+  234 => 
+  array (
     'id' => 15249,
-    'title' => 'What are Digital Marketing Certifications and its Importance in 2022',
     'slug' => 'what-are-digital-marketing-certifications-and-its-important-in-2022',
+    'title' => 'What are Digital Marketing Certifications and its Importance in 2022',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3055,11 +3289,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-21 06:57:58',
     'active' => 1,
-  ],
-  [
+  ),
+  235 => 
+  array (
     'id' => 15226,
-    'title' => 'HOW TO CHOOSE A BEST DIGITAL MARKETING INSTITUTE',
     'slug' => 'how-to-choose-a-best-digital-marketing-institute',
+    'title' => 'HOW TO CHOOSE A BEST DIGITAL MARKETING INSTITUTE',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3068,11 +3303,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-20 10:55:58',
     'active' => 1,
-  ],
-  [
+  ),
+  236 => 
+  array (
     'id' => 15178,
-    'title' => 'How to Set up a Successful Social Media Marketing Strategy',
     'slug' => 'how-to-set-up-a-successful-social-media-marketing-strategy',
+    'title' => 'How to Set up a Successful Social Media Marketing Strategy',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -3081,11 +3317,12 @@ return [
     'image' => 'assets/placeholders/blog-smm.svg',
     'published_at' => '2023-03-20 10:02:20',
     'active' => 1,
-  ],
-  [
+  ),
+  237 => 
+  array (
     'id' => 15167,
-    'title' => 'Digital Marketing Training- To Make You Future Ready',
     'slug' => 'digital-marketing-training-to-make-you-future-ready',
+    'title' => 'Digital Marketing Training- To Make You Future Ready',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3094,11 +3331,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-20 09:46:18',
     'active' => 1,
-  ],
-  [
+  ),
+  238 => 
+  array (
     'id' => 15157,
-    'title' => 'ROLE OF DIGITAL MARKETING IN REAL ESTATE',
     'slug' => 'digital-marketing-strategy-for-real-estate-business-luxury-service-flats-apartments',
+    'title' => 'ROLE OF DIGITAL MARKETING IN REAL ESTATE',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3107,11 +3345,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-20 09:25:39',
     'active' => 1,
-  ],
-  [
+  ),
+  239 => 
+  array (
     'id' => 22880,
-    'title' => 'Breaking Through YouTube’s Algorithm: The Recommendation System',
     'slug' => 'youtube-video-algorithms-an-ice-in-the-cake',
+    'title' => 'Breaking Through YouTube’s Algorithm: The Recommendation System',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -3120,11 +3359,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2023-03-20 08:41:18',
     'active' => 1,
-  ],
-  [
+  ),
+  240 => 
+  array (
     'id' => 15132,
-    'title' => 'Digital Marketing Training Scams: Avoid Getting Scammed!',
     'slug' => '10-tips-to-identify-digital-marketing-training-scams',
+    'title' => 'Digital Marketing Training Scams: Avoid Getting Scammed!',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3133,11 +3373,12 @@ return [
     'image' => 'assets/placeholders/blog-digital-marketing.svg',
     'published_at' => '2023-03-20 07:25:26',
     'active' => 1,
-  ],
-  [
+  ),
+  241 => 
+  array (
     'id' => 22879,
-    'title' => 'Get a Firm Knowledge About the Future And Scope of Digital Marketing Industries',
     'slug' => 'scope-of-digital-marketing-industries-in-future-2023',
+    'title' => 'Get a Firm Knowledge About the Future And Scope of Digital Marketing Industries',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3146,11 +3387,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Target-Audience-in-Digital-Marketing-Industries.png',
     'published_at' => '2023-03-17 05:45:17',
     'active' => 1,
-  ],
-  [
+  ),
+  242 => 
+  array (
     'id' => 22878,
-    'title' => 'The Race for Website SEO in 2023',
     'slug' => 'why-website-seo-is-a-necessity-in-2023',
+    'title' => 'The Race for Website SEO in 2023',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -3159,11 +3401,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Grey-Simple-Modern-Timeline-Infographic-Chart-Graph-480x360.png',
     'published_at' => '2023-03-16 05:54:57',
     'active' => 1,
-  ],
-  [
+  ),
+  243 => 
+  array (
     'id' => 14680,
-    'title' => 'What Chat GPT 3 has over the future of SEO and Content writing?',
     'slug' => 'what-impact-will-gpt-3-have-on-seo-and-content-writing-in-the-future',
+    'title' => 'What Chat GPT 3 has over the future of SEO and Content writing?',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -3172,11 +3415,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Open-AI.png',
     'published_at' => '2023-03-13 06:19:29',
     'active' => 1,
-  ],
-  [
+  ),
+  244 => 
+  array (
     'id' => 14384,
-    'title' => 'Learn Future Ready Skills in Digital Marketing',
     'slug' => 'be-future-ready-in-digital-marketing-by-learning-the-latest-skills',
+    'title' => 'Learn Future Ready Skills in Digital Marketing',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3185,11 +3429,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/elementor/thumbs/White-and-Blue-Modern-Online-Business-Webinar-Youtube-Thumbnail-10-q37e966i88o1wrt4mer8aa0vwf6ltspue5fe6242ye.png',
     'published_at' => '2023-03-08 06:18:34',
     'active' => 1,
-  ],
-  [
+  ),
+  245 => 
+  array (
     'id' => 14349,
-    'title' => 'Having Doubts On How To Have A Successful Career In Digital Marketing?',
     'slug' => 'having-doubts-on-how-to-have-a-successful-career-in-digital-marketing',
+    'title' => 'Having Doubts On How To Have A Successful Career In Digital Marketing?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3198,11 +3443,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Digital-Marketing-Career-1024x577.png',
     'published_at' => '2023-03-06 04:49:07',
     'active' => 1,
-  ],
-  [
+  ),
+  246 => 
+  array (
     'id' => 14220,
-    'title' => 'Digital Marketing Interview Questions For Freshers, Specialists And Managers',
     'slug' => 'digital-marketing-interview-questions-for-freshers-specialists-and-managers',
+    'title' => 'Digital Marketing Interview Questions For Freshers, Specialists And Managers',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3211,11 +3457,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/03/Digital-marketing-Interview-For-Freshers-1024x577.png',
     'published_at' => '2023-03-01 07:13:15',
     'active' => 1,
-  ],
-  [
+  ),
+  247 => 
+  array (
     'id' => 14194,
-    'title' => 'Who Can Join A Digital Marketing Course?',
     'slug' => 'who-can-join-a-digital-marketing-course',
+    'title' => 'Who Can Join A Digital Marketing Course?',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3224,11 +3471,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/02/Digital-Marketing-Course-in-Trivandrum-1024x576.png',
     'published_at' => '2023-02-24 09:48:54',
     'active' => 1,
-  ],
-  [
+  ),
+  248 => 
+  array (
     'id' => 14162,
-    'title' => 'Google Business listing Guidelines that you should Follow',
     'slug' => 'google-business-listing-guidelines-that-you-should-follow',
+    'title' => 'Google Business listing Guidelines that you should Follow',
     'category' => 'Web Development',
     'tags' => 'Web Development',
     'author' => 'TechBound Team',
@@ -3237,11 +3485,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/02/start-building-business-profile-768x593.jpg',
     'published_at' => '2023-02-16 09:28:51',
     'active' => 1,
-  ],
-  [
+  ),
+  249 => 
+  array (
     'id' => 14132,
-    'title' => 'Double Up Your Conversion Rates On Google Ads',
     'slug' => 'google-ads-conversion-rates-ways-to-double-up-in-digital-marketing',
+    'title' => 'Double Up Your Conversion Rates On Google Ads',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -3250,11 +3499,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/02/Google-Quality-Score-for-ads-in-Digital-Marketing-1024x1024.png',
     'published_at' => '2023-02-13 09:06:57',
     'active' => 1,
-  ],
-  [
+  ),
+  250 => 
+  array (
     'id' => 13947,
-    'title' => 'Facebook Advertising Guide 2023',
     'slug' => 'facebook-advertising-guide-2023',
+    'title' => 'Facebook Advertising Guide 2023',
     'category' => 'Social Media Marketing',
     'tags' => 'Social Media Marketing',
     'author' => 'TechBound Team',
@@ -3263,11 +3513,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/02/how-to-create-facebook-ads_102022-4.png',
     'published_at' => '2023-02-07 10:26:49',
     'active' => 1,
-  ],
-  [
+  ),
+  251 => 
+  array (
     'id' => 13665,
-    'title' => 'Top 11 Reasons to Join Digital Marketing Course',
     'slug' => 'top-11-reasons-to-join-digital-marketing-course',
+    'title' => 'Top 11 Reasons to Join Digital Marketing Course',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3276,11 +3527,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/02/Pastel-Colorful-Simple-Tips-for-Grocery-Saving-Instagram-Post-480x480.png',
     'published_at' => '2023-02-02 07:01:32',
     'active' => 1,
-  ],
-  [
+  ),
+  252 => 
+  array (
     'id' => 13637,
-    'title' => 'Digital Marketing Strategies for Educational Institutions',
     'slug' => 'marketing-strategies-for-educational-institutions-online',
+    'title' => 'Digital Marketing Strategies for Educational Institutions',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3289,11 +3541,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/01/Digital-Marketing-Strategies-for-Educational-Institutes-768x433.png',
     'published_at' => '2023-01-31 09:18:28',
     'active' => 1,
-  ],
-  [
+  ),
+  253 => 
+  array (
     'id' => 13611,
-    'title' => 'Increase your Click-Through Rate before discovering what converts readers into buyers and searchers into readers.',
     'slug' => 'new-ways-to-enhance-ads-online-click-through-rate',
+    'title' => 'Increase your Click-Through Rate before discovering what converts readers into buyers and searchers into readers.',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3302,11 +3555,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/01/100-768x433.png',
     'published_at' => '2023-01-27 05:32:09',
     'active' => 1,
-  ],
-  [
+  ),
+  254 => 
+  array (
     'id' => 13470,
-    'title' => 'Google\'s desktop search now allows Continuous Scrolling.',
     'slug' => 'continuous-scrolling-on-google-desktop-search',
+    'title' => 'Google\'s desktop search now allows Continuous Scrolling.',
     'category' => 'Digital Marketing',
     'tags' => 'Digital Marketing',
     'author' => 'TechBound Team',
@@ -3315,11 +3569,12 @@ return [
     'image' => 'https://techbound.in/wp-content/uploads/2023/01/clicks-by-search-ranking-backlinko-768x599-1.png',
     'published_at' => '2023-01-11 06:44:02',
     'active' => 1,
-  ],
-  [
+  ),
+  255 => 
+  array (
     'id' => 12355,
-    'title' => 'Boost Your Company\'s Success With Google Ads(PPC)',
     'slug' => 'boost-your-companys-success-with-google-ads-company',
+    'title' => 'Boost Your Company\'s Success With Google Ads(PPC)',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -3328,11 +3583,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2022-11-28 06:14:54',
     'active' => 1,
-  ],
-  [
+  ),
+  256 => 
+  array (
     'id' => 12180,
-    'title' => 'B2B marketing strategy on Social Media Marketing',
     'slug' => 'b2b-marketing-strategy-on-social-media-marketing',
+    'title' => 'B2B marketing strategy on Social Media Marketing',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -3341,11 +3597,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2022-11-04 05:18:35',
     'active' => 1,
-  ],
-  [
+  ),
+  257 => 
+  array (
     'id' => 12015,
-    'title' => 'Google Algorithm update 2022-Latest Recommendations for website owners',
     'slug' => 'google-algorithm-update-2022-latest-recommendations-for-website-owners',
+    'title' => 'Google Algorithm update 2022-Latest Recommendations for website owners',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -3354,11 +3611,12 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2022-10-19 07:55:02',
     'active' => 1,
-  ],
-  [
+  ),
+  258 => 
+  array (
     'id' => 11930,
-    'title' => 'Customer Retention of Digital Marketing campaigns',
     'slug' => 'customer-retention-of-digital-marketing-campaigns',
+    'title' => 'Customer Retention of Digital Marketing campaigns',
     'category' => 'Paid Advertising',
     'tags' => 'Paid Advertising',
     'author' => 'TechBound Team',
@@ -3367,11 +3625,12 @@ return [
     'image' => 'assets/placeholders/blog-ai-seo.svg',
     'published_at' => '2022-10-19 05:37:35',
     'active' => 1,
-  ],
-  [
+  ),
+  259 => 
+  array (
     'id' => 8883,
-    'title' => 'How to Optimize Your Blog for High Ranking',
     'slug' => 'how-to-optimize-blog-for-high-ranking',
+    'title' => 'How to Optimize Your Blog for High Ranking',
     'category' => 'Search Engine Optimization',
     'tags' => 'Search Engine Optimization',
     'author' => 'TechBound Team',
@@ -3380,5 +3639,5 @@ return [
     'image' => 'assets/placeholders/blog-seo.svg',
     'published_at' => '2020-10-11 12:08:25',
     'active' => 1,
-  ],
-];
+  ),
+);

@@ -18,10 +18,50 @@ $site = [
     ],
 ];
 
-// url('about.php') -> /techbound/about.php
+// Maps internal PHP filenames to live SEO-friendly clean URLs
 function url(string $path = ''): string
 {
-    return BASE_URL . ltrim($path, '/');
+    static $routes = [
+        'index.php'                              => '',
+        'about.php'                              => 'about-us/',
+        'services.php'                           => 'our-services/',
+        'seo.php'                                => 'our-services/seo-company-in-kerala/',
+        'ai-seo.php'                             => 'ai-seo-services-in-kerala/',
+        'smm.php'                                => 'our-services/social-media-management-company-in-kerala/',
+        'website-development.php'                => 'our-services/website-development-company-in-kerala/',
+        'lead-generation.php'                    => 'our-services/best-lead-generation-company-in-kerala/',
+        'online-advertising.php'                 => 'our-services/online-advertising-agency-in-kerala/',
+        'construction.php'                       => 'construction-marketing-agency-kerala/',
+        'digital-marketing-trivandrum-guide.php' => 'digital-marketing-trivandrum-guide/',
+        'blog.php'                               => 'blog/',
+        'contact.php'                            => 'contact/',
+        'portfolio.php'                          => 'portfolio/',
+        'careers.php'                            => 'careers/',
+        'privacy-policy.php'                     => 'privacy-policy/',
+    ];
+
+    $clean  = ltrim($path, '/');
+    $suffix = '';
+
+    if (preg_match('/^([^?#]+)([?#].*)$/', $clean, $m)) {
+        $clean  = $m[1];
+        $suffix = $m[2];
+    }
+
+    // Clean blog post URLs: blog-post.php?slug=foo -> blog/foo/
+    if (($clean === 'blog-post.php' || $clean === 'blog.php') && preg_match('/^\?slug=([^&#]+)(.*)$/', $suffix, $sm)) {
+        $rest = $sm[2];
+        if ($rest !== '' && $rest[0] === '&') {
+            $rest = '?' . substr($rest, 1);
+        }
+        return BASE_URL . 'blog/' . $sm[1] . '/' . $rest;
+    }
+
+    if (array_key_exists($clean, $routes)) {
+        $clean = $routes[$clean];
+    }
+
+    return BASE_URL . $clean . $suffix;
 }
 
 

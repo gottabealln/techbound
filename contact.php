@@ -100,7 +100,7 @@ $map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('Tech
       <div class="contact__form-wrap" data-animate style="--d:120ms">
         <h2 class="contact__form-title">Send us a message</h2>
 
-        <form class="cform" id="contactForm" action="send-contact.php" method="post" novalidate>
+        <form class="cform" id="contactForm" action="<?= url('send-contact.php') ?>" method="post" novalidate>
 
           <div class="field">
             <input type="text" id="cf-name" name="name" placeholder=" " autocomplete="name" required>
@@ -158,7 +158,7 @@ $map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('Tech
 
           <p class="cform__note">
             By sending this form I confirm that I have read and accept Techbound's
-            <a href="privacy-policy.php">privacy policy</a>.
+            <a href="<?= url('privacy-policy.php') ?>">privacy policy</a>.
           </p>
 
           <button type="submit" class="btn btn--primary btn--sm btn--arrow cform__submit">Send Message</button>

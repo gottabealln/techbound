@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       try {
         const formData = new FormData(form);
-        const response = await fetch('send-career.php', {
+        const response = await fetch(form.getAttribute('action') || 'send-career.php', {
           method: 'POST',
           body: formData
         });

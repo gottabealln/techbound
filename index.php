@@ -34,15 +34,15 @@ require __DIR__ . '/includes/header.php';
           <p class="hero__desc">
             We help businesses worldwide grow with customized digital
             marketing solutions designed to increase revenue and attract
-            quality leads. With over 12 years of experience, we combine
+            quality leads. With over 15 years of experience, we combine
             global insights with practical strategies to support your
             success, whether you're starting out or scaling up.
           </p>
         </div>
 
         <div class="hero__buttons">
-          <a href="contact.php" class="btn btn--primary btn--arrow btn--book">Book a Call</a>
-          <a href="works.php" class="btn btn--outline btn--arrow btn--works">View Our Works</a>
+          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--book">Book a Call</a>
+          <a href="<?= url('portfolio.php') ?>" class="btn btn--outline btn--arrow btn--works">View Our Works</a>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@ require __DIR__ . '/includes/header.php';
         About Us
       </span>
       <h2 class="intro__title">A Team of Passionate Experts Delivering Real Growth</h2>
-    <a href="about.html" class="btn btn--primary btn--sm btn--arrow">About</a>
+    <a href="<?= url('about.php') ?>" class="btn btn--primary btn--sm btn--arrow">About</a>
     </div>
 
     <div class="intro__right">
@@ -75,7 +75,7 @@ require __DIR__ . '/includes/header.php';
           <p class="stat__label">Projects Completed</p>
         </div>
         <div class="stat">
-          <div class="stat__num"><span data-count="12">12</span><sup>+</sup></div>
+          <div class="stat__num"><span data-count="15">15</span><sup>+</sup></div>
           <p class="stat__label">Years of Experience</p>
         </div>
         <div class="stat">
@@ -548,11 +548,11 @@ require __DIR__ . '/includes/header.php';
       we'll help you find the right strategy and the right team to deliver it.
     </p>
     <div class="cta__actions">
-      <a href="#contact" class="cta__btn cta__btn--solid">
+      <a href="<?= url('contact.php') ?>" class="cta__btn cta__btn--solid">
         Book a Call
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="#work" class="cta__btn cta__btn--ghost">View Our Work</a>
+      <a href="<?= url('portfolio.php') ?>" class="cta__btn cta__btn--ghost">View Our Work</a>
     </div>
   </div>
 </section>

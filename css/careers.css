@@ -670,8 +670,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #06121e;
-  color: var(--brand, #00e599);
+  background: var(--brand);
+  color: #ffffff;
   font-family: var(--font-heading, 'DM Sans', sans-serif);
   font-weight: 700;
   font-size: 15px;
@@ -1102,13 +1102,27 @@
 
 /* ---------- Speculative Banner / Bottom CTA ---------- */
 .cr-bottom-cta {
-  background: linear-gradient(135deg, #06121e 0%, #0d2238 100%);
+  position: relative;
+  overflow: hidden;
+  background: #000000 url('../assets/hero.avif') center / cover no-repeat;
   color: #fff;
-  padding: 70px 24px;
+  padding: 76px 24px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+.cr-bottom-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(640px 380px at 85% 25%, rgba(27, 140, 67, 0.34), transparent 70%),
+    linear-gradient(180deg, rgba(4, 14, 10, 0.78) 0%, rgba(4, 14, 10, 0.88) 70%, #000000 100%);
+  pointer-events: none;
+}
 .cr-bottom-cta__inner {
+  position: relative;
+  z-index: 1;
   max-width: 680px;
   margin: 0 auto;
 }

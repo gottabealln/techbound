@@ -6,25 +6,33 @@ $page_scripts = $page_scripts ?? [];
 
    <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="footer__inner">
-
-      <!-- call to action -->
-      <div class="footer__cta">
-        <div class="footer__cta-text">
-          <h2 class="footer__title">Get Started Now</h2>
-          <p class="footer__lead">
-            If you would like to work with us or just want to get in touch, we'd love to hear from you!
-          </p>
+    <!-- call to action band with background image + gradient -->
+    <div class="footer__cta-band">
+      <div class="footer__inner">
+        <div class="footer__cta">
+          <div class="footer__cta-text">
+            <h2 class="footer__title">Get Started Now</h2>
+            <p class="footer__lead">
+              If you would like to work with us or just want to get in touch, we'd love to hear from you!
+            </p>
+          </div>
+          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Contact Us</a>
         </div>
-        <a href="contact.php" class="btn btn--primary btn--arrow">Contact Us</a>
       </div>
+    </div>
+
+    <div class="footer__body">
+      <div class="footer__inner">
 
       <!-- columns -->
       <div class="footer__grid">
         <div class="footer__col">
+          <a href="<?= url('index.php') ?>" class="footer__logo">
+            <img src="<?= url('assets/logo_techbound.png') ?>" alt="TechBound logo">
+          </a>
           <h3 class="footer__heading">Address</h3>
           <address class="footer__address">
-            Address: Fl -2,<br>
+             Fl -2,<br>
              Thejaswini, SBC 7, Technopark Campus<br>
             Phase I, Thiruvananthapuram, Keralam 695581
           </address>
@@ -42,25 +50,26 @@ $page_scripts = $page_scripts ?? [];
         <div class="footer__col">
           <h3 class="footer__heading">Company</h3>
           <ul class="footer__list">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="services.php">Our Services</a></li>
-            <li><a href="blog.php">Blog</a></li>
-            <li><a href="careers.php">Careers</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="<?= url('index.php') ?>">Home</a></li>
+            <li><a href="<?= url('about.php') ?>">About</a></li>
+            <li><a href="<?= url('services.php') ?>">Our Services</a></li>
+            <li><a href="<?= url('portfolio.php') ?>">Portfolio</a></li>
+            <li><a href="<?= url('blog.php') ?>">Blog</a></li>
+            <li><a href="<?= url('careers.php') ?>">Careers</a></li>
+            <li><a href="<?= url('contact.php') ?>">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer__col">
           <h3 class="footer__heading">Services</h3>
           <ul class="footer__list">
-            <li><a href="seo.php">Search Engine Optimization</a></li>
-            <li><a href="ai-seo.php">AI SEO &amp; Search</a></li>
-            <li><a href="online-advertising.php">Online Advertising</a></li>
-            <li><a href="smm.php">Social Media Marketing</a></li>
-            <li><a href="website-development.php">Website Development</a></li>
-            <li><a href="lead-generation.php">Lead Generation</a></li>
-            <li><a href="construction.php">Construction Marketing</a></li>
+            <li><a href="<?= url('seo.php') ?>">Search Engine Optimization</a></li>
+            <li><a href="<?= url('ai-seo.php') ?>">AI SEO &amp; Search</a></li>
+            <li><a href="<?= url('online-advertising.php') ?>">Online Advertising</a></li>
+            <li><a href="<?= url('smm.php') ?>">Social Media Marketing</a></li>
+            <li><a href="<?= url('website-development.php') ?>">Website Development</a></li>
+            <li><a href="<?= url('lead-generation.php') ?>">Lead Generation</a></li>
+            <li><a href="<?= url('construction.php') ?>">Construction Marketing</a></li>
           </ul>
         </div>
 
@@ -78,9 +87,10 @@ $page_scripts = $page_scripts ?? [];
       <div class="footer__bottom">
         <p>© 2026 All rights reserved by TechBound</p>
         <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms and Conditions</a>
+          <a href="<?= url('privacy-policy.php') ?>">Privacy Policy</a>
+          <a href="<?= url('privacy-policy.php') ?>">Terms and Conditions</a>
         </div>
+      </div>
       </div>
     </div>
 

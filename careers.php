@@ -40,30 +40,6 @@ require __DIR__ . '/includes/header.php';
   </section>
 
   <!-- =========================================================================
-       QUICK INFO BAR
-       ========================================================================= -->
-  <div class="careers-quickbar">
-    <div class="careers-quickbar__inner">
-      <div class="careers-quickbar__item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <span>Location: <strong>Statue, Trivandrum (Kerala)</strong></span>
-      </div>
-      <div class="careers-quickbar__item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span>Schedule: <strong>Standard Hours &bull; Work-Life Balance</strong></span>
-      </div>
-      <div class="careers-quickbar__item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        <span>Growth: <strong>Merit-Based Appraisals &amp; Mentorship</strong></span>
-      </div>
-      <div class="careers-quickbar__item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span>Tech Stack: <strong>AI Tooling &amp; Enterprise Software</strong></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
        CULTURE & LIFE AT TECHBOUND
        ========================================================================= -->
   <section class="cr-section cr-culture" data-nav="light">
@@ -608,7 +584,7 @@ require __DIR__ . '/includes/header.php';
       <div class="cr-form-wrap" data-animate="up" style="--d:120ms">
         <h2 class="cr-form-title">Send your application</h2>
 
-        <form id="careersForm" class="cr-form" action="send-career.php" method="POST" enctype="multipart/form-data" novalidate>
+        <form id="careersForm" class="cr-form" action="<?= url('send-career.php') ?>" method="POST" enctype="multipart/form-data" novalidate>
 
           <!-- Honeypot -->
           <div class="cr-trap" aria-hidden="true">

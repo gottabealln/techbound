@@ -87,20 +87,22 @@ $filtered = array_filter($all_posts, function($p) use ($selected_cat, $search_qu
     return true;
 });
 
+// Featured post: first post if on page 1 with no search filter
+$featured_post = null;
+$grid_posts = array_values($filtered);
+if ($current_page === 1 && empty($search_query) && $selected_cat === 'All' && !empty($all_posts)) {
+    $featured_post = $all_posts[0];
+    // Exclude featured post before paginating so page 1 has a clean 4-column grid (12 cards)
+    $grid_posts = array_values(array_filter($grid_posts, fn($p) => $p['id'] !== $featured_post['id']));
+}
+
 $total_filtered = count($filtered);
-$total_pages    = max(1, (int)ceil($total_filtered / $per_page));
+$total_grid     = count($grid_posts);
+$total_pages    = max(1, (int)ceil($total_grid / $per_page));
 if ($current_page > $total_pages) $current_page = $total_pages;
 
 $offset       = ($current_page - 1) * $per_page;
-$paged_posts  = array_slice($filtered, $offset, $per_page);
-
-// Featured post: first post if on page 1 with no search filter
-$featured_post = null;
-if ($current_page === 1 && empty($search_query) && $selected_cat === 'All' && !empty($all_posts)) {
-    $featured_post = $all_posts[0];
-    // Remove featured post from the grid so it's not duplicated
-    $paged_posts = array_filter($paged_posts, fn($p) => $p['id'] !== $featured_post['id']);
-}
+$paged_posts  = array_slice($grid_posts, $offset, $per_page);
 
 include __DIR__ . '/includes/header.php';
 ?>

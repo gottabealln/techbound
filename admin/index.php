@@ -38,12 +38,12 @@ require __DIR__ . '/_header.php';
 <div class="flex flex-col w-full">
 
     <?php if (!$pdo): ?>
-    <div class="mb-space-md p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-sm flex items-start gap-3">
-        <span class="material-symbols-outlined text-[22px] text-amber-400 shrink-0 mt-0.5">cloud_off</span>
+    <div class="mb-space-md p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 text-sm flex items-start gap-3">
+        <span class="material-symbols-outlined text-[22px] text-amber-600 shrink-0 mt-0.5">cloud_off</span>
         <div class="flex flex-col gap-1">
-            <span class="font-bold text-white">Standalone Cloud Mode Active (Database Disconnected)</span>
-            <p class="text-xs text-slate-300">
-                You are currently running in zero-downtime offline mode. All 260 articles are loaded from precompiled files. To persist new enquiries, live blog additions, and multi-user accounts on Render, set up a MySQL database (e.g. TiDB Cloud, Aiven, or PlanetScale) and add <code class="bg-black/30 px-1 py-0.5 rounded text-amber-300">DB_HOST</code>, <code class="bg-black/30 px-1 py-0.5 rounded text-amber-300">DB_NAME</code>, <code class="bg-black/30 px-1 py-0.5 rounded text-amber-300">DB_USER</code>, <code class="bg-black/30 px-1 py-0.5 rounded text-amber-300">DB_PASS</code>, and <code class="bg-black/30 px-1 py-0.5 rounded text-amber-300">DB_PORT</code> in Render's Environment Variables.
+            <span class="font-bold text-amber-950">Standalone Cloud Mode Active (Database Disconnected)</span>
+            <p class="text-xs text-amber-900 leading-relaxed">
+                You are currently running in zero-downtime offline mode. All 260 articles are loaded from precompiled files. To persist new enquiries, live blog additions, and multi-user accounts on Render, set up a MySQL database (e.g. TiDB Cloud, Aiven, or PlanetScale) and add <code class="bg-amber-200/70 px-1.5 py-0.5 rounded text-amber-950 font-semibold">DB_HOST</code>, <code class="bg-amber-200/70 px-1.5 py-0.5 rounded text-amber-950 font-semibold">DB_NAME</code>, <code class="bg-amber-200/70 px-1.5 py-0.5 rounded text-amber-950 font-semibold">DB_USER</code>, <code class="bg-amber-200/70 px-1.5 py-0.5 rounded text-amber-950 font-semibold">DB_PASS</code>, and <code class="bg-amber-200/70 px-1.5 py-0.5 rounded text-amber-950 font-semibold">DB_PORT</code> in Render's Environment Variables.
             </p>
         </div>
     </div>

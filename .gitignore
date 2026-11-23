@@ -1,0 +1,8 @@
+.env
+*.sql
+*.frm
+*.ibd
+db.opt
+*.xml
+uploads/resumes/*
+!uploads/resumes/index.html

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050b14"/>
+      <stop offset="50%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#081c24"/>
+    </linearGradient>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="aiGlow1" cx="85%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aiGlow2" cx="15%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="aiGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.035"/>
+      <circle cx="40" cy="40" r="1.5" fill="#38bdf8" fill-opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#aiBg)"/>
+  <rect width="1200" height="630" fill="url(#aiGlow1)"/>
+  <rect width="1200" height="630" fill="url(#aiGlow2)"/>
+  <rect width="1200" height="630" fill="url(#aiGrid)"/>
+
+  <!-- Neural Network Constellation Graphic on Right -->
+  <g transform="translate(850, 150)">
+    <!-- Connection lines -->
+    <path d="M0,80 L70,20 L160,50 L220,120 L160,200 L60,180 Z" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.4" fill="none"/>
+    <path d="M70,20 L110,110 L160,50 M0,80 L110,110 L160,200 M60,180 L110,110 L220,120" stroke="#34d399" stroke-width="1.5" stroke-opacity="0.3" fill="none"/>
+
+    <!-- Central AI Node -->
+    <circle cx="110" cy="110" r="38" fill="#082f49" stroke="#38bdf8" stroke-width="2.5"/>
+    <circle cx="110" cy="110" r="26" fill="url(#aiGrad)"/>
+    <circle cx="110" cy="110" r="14" fill="#050b14"/>
+
+    <!-- Outer Nodes -->
+    <circle cx="0" cy="80" r="10" fill="#38bdf8"/>
+    <circle cx="70" cy="20" r="12" fill="#34d399"/>
+    <circle cx="160" cy="50" r="9" fill="#818cf8"/>
+    <circle cx="220" cy="120" r="14" fill="#38bdf8"/>
+    <circle cx="160" cy="200" r="11" fill="#34d399"/>
+    <circle cx="60" cy="180" r="10" fill="#38bdf8"/>
+
+    <!-- Orbit rings -->
+    <circle cx="110" cy="110" r="140" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="6 6" stroke-opacity="0.25" fill="none"/>
+  </g>
+
+  <!-- Left Content -->
+  <g transform="translate(100, 150)">
+    <!-- Pill -->
+    <rect x="0" y="0" width="230" height="38" rx="19" fill="#06b6d4" fill-opacity="0.18" stroke="#06b6d4" stroke-width="1.5"/>
+    <circle cx="20" cy="19" r="5" fill="#06b6d4"/>
+    <text x="35" y="24" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">AI &amp; FUTURE SEARCH</text>
+
+    <!-- Main Title -->
+    <text x="0" y="95" fill="#ffffff" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">
+      AI SEO &amp; Generative
+    </text>
+    <text x="0" y="150" fill="url(#aiGrad)" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">
+      Engine Optimization
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="215" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="20" font-weight="400">
+      ChatGPT, Perplexity, Gemini and Google AI Overviews ranking
+    </text>
+
+    <!-- Signature Bar -->
+    <line x1="0" y1="270" x2="480" y2="270" stroke="#1e293b" stroke-width="2"/>
+    <g transform="translate(0, 290)">
+      <text x="0" y="18" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">TECHBOUND</text>
+      <text x="125" y="18" fill="#06b6d4" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="600">INNOVATIONS</text>
+      <text x="260" y="18" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">techbound.in</text>
+    </g>
+  </g>
+</svg>

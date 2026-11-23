@@ -1,0 +1,9 @@
+.env
+*.sql
+*.frm
+*.ibd
+db.opt
+*.xml
+techbound_blogs.json
+uploads/resumes/*
+!uploads/resumes/index.html

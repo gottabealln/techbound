@@ -70,11 +70,8 @@ try {
     error_log('Contact DB error: ' . $e->getMessage());
 }
 
-$forwardTo  = 'contacts@techbound.in';
-$recipients = [$forwardTo];
-if (!empty($cfg['mail']['to']) && strcasecmp($cfg['mail']['to'], $forwardTo) !== 0) {
-    $recipients[] = $cfg['mail']['to'];
-}
+$toRaw      = trim((string)($cfg['mail']['to'] ?? ''));
+$recipients = $toRaw !== '' ? array_values(array_filter(array_map('trim', explode(',', $toRaw)))) : ['contacts@techbound.in'];
 
 $subjectTag = $service ? " [$service]" : '';
 $mailSubj   = 'New enquiry' . $subjectTag . ' from ' . $name;

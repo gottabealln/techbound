@@ -171,12 +171,6 @@ button:active {
 .navbar__logo {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  height: 44px;
-  padding: 0 14px;
-  border-radius: 10px;
-  background: #ffffff;
-  overflow: hidden;
 }
 
 .navbar__logo img {
@@ -185,6 +179,8 @@ button:active {
   max-width: none;
   object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1);
+  transition: filter .25s ease;
 }
 
 /* ===== Solid White Navbar over Light/White Content (ZERO Glass Effect) ===== */
@@ -212,7 +208,7 @@ button:active {
 }
 
 .header.is-light .navbar__logo img {
-  color: #0a1220;
+  filter: none;
 }
 
 .header.is-light .menu-btn {
@@ -1229,13 +1225,7 @@ body.drawer-open {
 .footer__logo {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  height: 36px;
-  padding: 0 12px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  background: #ffffff;
-  overflow: hidden;
 }
 
 .footer__logo img {
@@ -1243,6 +1233,7 @@ body.drawer-open {
   width: auto;
   display: block;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .footer__heading {

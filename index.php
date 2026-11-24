@@ -62,7 +62,7 @@ require __DIR__ . '/includes/header.php';
         About Us
       </span>
       <h2 class="intro__title">A Team of Passionate Experts Delivering Real Growth</h2>
-    <a href="<?= url('about.php') ?>" class="btn btn--primary btn--sm btn--arrow">About</a>
+    <a href="<?= url('about.php') ?>" class="btn btn--primary btn--sm btn--arrow">More About us</a>
     </div>
 
     <div class="intro__right">

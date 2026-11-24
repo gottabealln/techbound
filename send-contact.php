@@ -71,7 +71,7 @@ try {
 }
 
 $toRaw      = trim((string)($cfg['mail']['to'] ?? ''));
-$recipients = $toRaw !== '' ? array_values(array_filter(array_map('trim', explode(',', $toRaw)))) : ['allen.medowa@gmail.com'];
+$recipients = $toRaw !== '' ? array_values(array_filter(array_map('trim', explode(',', $toRaw)))) : ['contacts@techbound.in'];
 
 $subjectTag = $service ? " [$service]" : '';
 $mailSubj   = 'New enquiry' . $subjectTag . ' from ' . $name;
@@ -103,7 +103,7 @@ if (!$mailSent) {
 if (!$dbSaved && !$mailSent) {
     $reason = !empty($mailRes['error']) ? $mailRes['error'] : 'Mail delivery failed';
     error_log('Contact delivery failed: ' . $reason);
-    respond(false, 'Could not deliver your message right now (' . $reason . ').', 500);
+    respond(false, 'Could not deliver your message right now. Please email us directly at contacts@techbound.in.', 500);
 }
 
 $_SESSION['last_contact'] = time();

@@ -216,8 +216,33 @@ function admin_role_label(string $role): string {
 }
 
 function admin_url(string $p = ''): string {
+    static $routes = [
+        ''                               => 'dashboard/',
+        'index.php'                      => 'dashboard/',
+        'login.php'                      => 'login/',
+        'logout.php'                     => 'logout/',
+        'resources/contact_messages.php' => 'enquiries/',
+        'resources/blog_posts.php'       => 'blog/',
+        'resources/blog_editor.php'      => 'blog/editor/',
+        'resources/services.php'         => 'services/',
+        'resources/testimonials.php'     => 'testimonials/',
+        'resources/faqs.php'             => 'faqs/',
+        'resources/users.php'            => 'users/',
+    ];
+
+    $clean  = ltrim($p, '/');
+    $suffix = '';
+    if (preg_match('/^([^?#]+)([?#].*)$/', $clean, $m)) {
+        $clean  = $m[1];
+        $suffix = $m[2];
+    }
+
+    if (array_key_exists($clean, $routes)) {
+        $clean = $routes[$clean];
+    }
+
     $base = defined('BASE_URL') ? BASE_URL : '/';
-    return rtrim($base, '/') . '/admin/' . ltrim($p, '/');
+    return rtrim($base, '/') . '/admin/' . $clean . $suffix;
 }
 
 function e($v): string {

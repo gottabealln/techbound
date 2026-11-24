@@ -174,6 +174,11 @@ document.addEventListener('DOMContentLoaded', function () {
       `;
 
       try {
+        if (typeof window.tbGetRecaptchaToken === 'function') {
+          const token = await window.tbGetRecaptchaToken('career_apply');
+          const tokenEl = document.getElementById('cr-recaptcha-token');
+          if (tokenEl) tokenEl.value = token || '';
+        }
         const formData = new FormData(form);
         const response = await fetch(form.getAttribute('action') || 'send-career.php', {
           method: 'POST',

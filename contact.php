@@ -154,7 +154,10 @@ $map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('Tech
         
           <div class="cform__trap" aria-hidden="true">
             <input type="text" name="website" tabindex="-1" autocomplete="off">
+            <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
           </div>
+          <input type="hidden" name="_form_ts" value="<?= time() ?>">
+          <input type="hidden" name="recaptcha_token" id="cf-recaptcha-token" value="">
 
           <p class="cform__note">
             By sending this form I confirm that I have read and accept Techbound's

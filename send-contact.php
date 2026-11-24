@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/includes/mailer.php';
+require_once __DIR__ . '/includes/spam_guard.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -21,8 +22,15 @@ function field(string $key, int $max, bool $multiline = false): string {
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') respond(false, 'Method not allowed', 405);
 
+if (spam_guard_honeypot_tripped()) {
+    respond(true, 'Thank you! Your message has been sent.');
+}
 
-if (!empty($_POST['website'])) respond(true);
+$cfg = require __DIR__ . '/config/config.php';
+$rc  = spam_guard_verify_recaptcha($cfg, (string)($_POST['recaptcha_token'] ?? ''));
+if (empty($rc['ok'])) {
+    respond(false, $rc['error'] ?? 'Security verification failed.', 422);
+}
 
 
 session_start();

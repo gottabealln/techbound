@@ -27,9 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(false, 'Method not allowed', 405);
 }
 
-// Honeypot check
-if (!empty($_POST['website'])) {
+require_once __DIR__ . '/includes/spam_guard.php';
+
+// Honeypot & timing trap check
+if (spam_guard_honeypot_tripped()) {
     respond(true, 'Application received.');
+}
+
+$cfg = require __DIR__ . '/config/config.php';
+$rc  = spam_guard_verify_recaptcha($cfg, (string)($_POST['recaptcha_token'] ?? ''));
+if (empty($rc['ok'])) {
+    respond(false, $rc['error'] ?? 'Security verification failed.', 422);
 }
 
 session_start();

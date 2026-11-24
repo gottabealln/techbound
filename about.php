@@ -196,7 +196,7 @@ require __DIR__ . '/includes/header.php';
                 and that promise still guides every campaign we deliver.
               </blockquote>
               <h3>Riyaz Hakkim</h3>
-              <span class="ceo-quote__role">Founder &amp; CEO, Techbound</span>
+              <span class="ceo-quote__role">Founder</span>
             </div>
             <div class="ceo-about">
               <span class="ceo-tag">Founder</span>
@@ -210,7 +210,7 @@ require __DIR__ . '/includes/header.php';
         <!-- CEO 2 -->
         <article class="ceo-slide">
           <div class="ceo-slide__photo">
-            <img src="images/team/ceo-2.jpg" alt="CEO photo" loading="lazy">
+            <img src="<?= asset('assets/team/shabna-nazeer.jpg') ?>" alt="Shabna Nazeer — Co-founder &amp; CEO, TechBound" loading="lazy">
           </div>
           <div class="ceo-slide__body">
             <div class="ceo-quote">
@@ -220,13 +220,13 @@ require __DIR__ . '/includes/header.php';
                 and stay accountable to the results we promise.
               </blockquote>
               <h3>Shabna Nazeer</h3>
-              <span class="ceo-quote__role">Co-founder &amp; CEO, Techbound</span>
+              <span class="ceo-quote__role">Co-founder</span>
             </div>
             <div class="ceo-about">
               <span class="ceo-tag">Co-founder</span>
               <h4>Building a trusted growth partner</h4>
               <p>Short line about this leader's background and focus, such as web, design or technology.</p>
-              <a href="#" class="btn btn--primary btn--sm btn--arrow" target="_blank" rel="noopener">Connect on LinkedIn</a>
+              <a href="https://www.linkedin.com/in/shabnadigitalmarketingexpert/" class="btn btn--primary btn--sm btn--arrow" target="_blank" rel="noopener">Connect on LinkedIn</a>
             </div>
           </div>
         </article>

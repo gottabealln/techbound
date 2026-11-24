@@ -724,6 +724,12 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
           <input type="hidden" name="service" value="Free AI Visibility Audit">
           <input type="hidden" name="company" id="g-company-hidden" value="">
           <input type="hidden" name="message" id="g-message-hidden" value="">
+          <input type="hidden" name="_form_ts" value="<?= time() ?>">
+          <input type="hidden" name="recaptcha_token" id="g-recaptcha-token" value="">
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+            <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
+          </div>
 
           <div class="guide-field">
             <label for="g-name">Your Name *</label>
@@ -780,10 +786,18 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
     statusEl.className = 'guide-form__status';
     statusEl.textContent = 'Sending your request...';
 
-    fetch(form.getAttribute('action'), {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    var getToken = (typeof window.tbGetRecaptchaToken === 'function')
+      ? window.tbGetRecaptchaToken('free_audit')
+      : Promise.resolve('');
+
+    getToken.then(function (token) {
+      var tokenEl = document.getElementById('g-recaptcha-token');
+      if (tokenEl) tokenEl.value = token || '';
+      return fetch(form.getAttribute('action'), {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      });
     })
       .then(function (r) { return r.json(); })
       .then(function (data) {

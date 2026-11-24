@@ -125,6 +125,30 @@ $company_links = [
   <!-- Bootstrap 5 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
+  <?php
+    $__siteCfg = is_file(__DIR__ . '/../config/config.php') ? (require __DIR__ . '/../config/config.php') : [];
+    $__recaptchaKey = trim((string)($__siteCfg['recaptcha']['site_key'] ?? ''));
+    if ($__recaptchaKey !== ''):
+  ?>
+  <script src="https://www.google.com/recaptcha/api.js?render=<?= htmlspecialchars($__recaptchaKey) ?>" async defer></script>
+  <?php endif; ?>
+  <script>
+    window.TB_RECAPTCHA_SITE_KEY = <?= json_encode($__recaptchaKey) ?>;
+    window.tbGetRecaptchaToken = function (action) {
+      return new Promise(function (resolve) {
+        var key = window.TB_RECAPTCHA_SITE_KEY;
+        if (!key || typeof grecaptcha === 'undefined') return resolve('');
+        try {
+          grecaptcha.ready(function () {
+            grecaptcha.execute(key, { action: action || 'submit' })
+              .then(function (token) { resolve(token || ''); })
+              .catch(function () { resolve(''); });
+          });
+        } catch (e) { resolve(''); }
+      });
+    };
+  </script>
+
    <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
   <?php foreach ($page_styles as $css): ?>
   <link rel="stylesheet" href="<?= asset($css) ?>">

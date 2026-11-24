@@ -661,6 +661,13 @@ require __DIR__ . '/includes/header.php';
             <label for="cr-message">Cover Note / Why TechBound? (Optional)</label>
           </div>
 
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+            <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_form_ts" value="<?= time() ?>">
+          <input type="hidden" name="recaptcha_token" id="cr-recaptcha-token" value="">
+
           <p class="cr-form__note">
             By sending this form I confirm that I have read and accept Techbound's
             <a href="privacy-policy.php">privacy policy</a>.

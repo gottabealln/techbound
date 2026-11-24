@@ -71,7 +71,15 @@
     btn.classList.add('is-loading');
     btn.disabled = true;
 
-    fetch(form.action, { method: 'POST', body: new FormData(form) })
+    var getToken = (typeof window.tbGetRecaptchaToken === 'function')
+      ? window.tbGetRecaptchaToken('contact')
+      : Promise.resolve('');
+
+    getToken.then(function (token) {
+      var tokenEl = document.getElementById('cf-recaptcha-token');
+      if (tokenEl) tokenEl.value = token || '';
+      return fetch(form.action, { method: 'POST', body: new FormData(form) });
+    })
       .then(function (r) {
         return r.json().catch(function () { return { ok: false, message: 'Unexpected server response.' }; });
       })

@@ -52,9 +52,11 @@ function send_via_resend(array $cfg, array $opts): array
             CURLOPT_POST           => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT        => 15,
+            CURLOPT_USERAGENT      => 'TechBound-Website/1.0',
             CURLOPT_HTTPHEADER     => [
                 'Authorization: Bearer ' . $apiKey,
                 'Content-Type: application/json',
+                'Accept: application/json',
             ],
             CURLOPT_POSTFIELDS     => $json,
         ]);
@@ -66,7 +68,7 @@ function send_via_resend(array $cfg, array $opts): array
         $ctx = stream_context_create([
             'http' => [
                 'method'        => 'POST',
-                'header'        => "Authorization: Bearer {$apiKey}\r\nContent-Type: application/json\r\n",
+                'header'        => "Authorization: Bearer {$apiKey}\r\nContent-Type: application/json\r\nAccept: application/json\r\nUser-Agent: TechBound-Website/1.0\r\n",
                 'content'       => $json,
                 'timeout'       => 15,
                 'ignore_errors' => true,

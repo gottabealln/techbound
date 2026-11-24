@@ -18,6 +18,9 @@ if (is_file($envFile) && is_readable($envFile)) {
 // Falls back to the old local XAMPP values so the site still runs locally.
 $env = function (string $key, $default = null) {
     $v = getenv($key);
+    if ($v === false || $v === '') {
+        $v = $_ENV[$key] ?? ($_SERVER[$key] ?? false);
+    }
     return ($v === false || $v === '') ? $default : $v;
 };
 

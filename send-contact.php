@@ -101,7 +101,9 @@ if (!$mailSent) {
 }
 
 if (!$dbSaved && !$mailSent) {
-    respond(false, 'Could not deliver your message right now. Please email us directly at contacts@techbound.in.', 500);
+    $reason = !empty($mailRes['error']) ? $mailRes['error'] : 'Mail delivery failed';
+    error_log('Contact delivery failed: ' . $reason);
+    respond(false, 'Could not deliver your message right now (' . $reason . ').', 500);
 }
 
 $_SESSION['last_contact'] = time();

@@ -168,11 +168,23 @@ button:active {
   transition: color .25s ease;
 }
 
+.navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
 .navbar__logo img {
   height: 44px;
   width: 140px;
   max-width: none;
   object-fit: contain;
+  display: block;
 }
 
 /* ===== Solid White Navbar over Light/White Content (ZERO Glass Effect) ===== */

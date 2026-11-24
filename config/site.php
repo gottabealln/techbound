@@ -33,6 +33,7 @@ function url(string $path = ''): string
         'online-advertising.php'                 => 'our-services/online-advertising-agency-in-kerala/',
         'construction.php'                       => 'real-estate-marketing-agency-kerala/',
         'digital-marketing-trivandrum-guide.php' => 'digital-marketing-trivandrum-guide/',
+        'digital-marketing-agency-in-kochi.php'  => 'digital-marketing-agency-in-kochi/',
         'blog.php'                               => 'blog/',
         'contact.php'                            => 'contact/',
         'portfolio.php'                          => 'portfolio/',

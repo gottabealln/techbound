@@ -495,39 +495,97 @@ require __DIR__ . '/includes/header.php';
     </div>
 
 
+    <?php
+      $home_posts = [];
+      try {
+        require_once __DIR__ . '/includes/db.php';
+        $stmt = db()->query("SELECT title, slug, category, image, published_at FROM blog_posts WHERE active = 1 ORDER BY published_at DESC, id DESC LIMIT 4");
+        if ($stmt) {
+          $home_posts = $stmt->fetchAll();
+        }
+      } catch (Throwable $e) {
+        $home_posts = [];
+      }
+
+      if (empty($home_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
+        $all = require __DIR__ . '/data/blogs_index.php';
+        if (is_array($all)) {
+          $active = array_values(array_filter($all, fn($p) => ($p['active'] ?? 1) == 1));
+          $home_posts = array_slice($active, 0, 4);
+        }
+      }
+    ?>
+
     <div class="blog__grid">
-      <article class="blog-card" data-animate="up" style="--d:0ms">
-        <a href="#" class="blog-card__img">
-          <img src="assets/blog-1.png" alt="ChatGPT Ads Are Going Visual" loading="lazy">
-        </a>
-        <div class="blog-card__body">
-          <time class="blog-card__date" datetime="2026-10-12">October 12, 2026</time>
-          <h3 class="blog-card__title"><a href="#">ChatGPT Ads Are Going Visual: What Advertisers Should Prepare For</a></h3>
-          <a href="#" class="blog-card__more">Read More <span>→</span></a>
-        </div>
-      </article>
+      <?php if (!empty($home_posts)): ?>
+        <?php foreach ($home_posts as $i => $hp):
+          $postUrl   = url('blog-post.php?slug=' . rawurlencode($hp['slug'] ?? ''));
+          $postImg   = blog_image_url($hp['image'] ?? '', $hp['category'] ?? null);
+          $postTitle = htmlspecialchars($hp['title'] ?? '');
+          $rawDate   = $hp['published_at'] ?? '';
+          $ts        = $rawDate ? strtotime($rawDate) : false;
+          $dateAttr  = $ts ? date('Y-m-d', $ts) : '';
+          $dateLabel = $ts ? date('F j, Y', $ts) : '';
+          $delay     = $i * 100;
+        ?>
+        <article class="blog-card" data-animate="up" style="--d:<?= $delay ?>ms">
+          <a href="<?= $postUrl ?>" class="blog-card__img">
+            <img src="<?= htmlspecialchars($postImg) ?>" alt="<?= $postTitle ?>" loading="lazy">
+          </a>
+          <div class="blog-card__body">
+            <?php if ($dateLabel): ?>
+              <time class="blog-card__date" datetime="<?= $dateAttr ?>"><?= $dateLabel ?></time>
+            <?php endif; ?>
+            <h3 class="blog-card__title"><a href="<?= $postUrl ?>"><?= $postTitle ?></a></h3>
+            <a href="<?= $postUrl ?>" class="blog-card__more">Read More <span>→</span></a>
+          </div>
+        </article>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <article class="blog-card" data-animate="up" style="--d:0ms">
+          <a href="<?= url('blog.php') ?>" class="blog-card__img">
+            <img src="<?= asset('assets/blog-1.png') ?>" alt="ChatGPT Ads Are Going Visual" loading="lazy">
+          </a>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-10-12">October 12, 2026</time>
+            <h3 class="blog-card__title"><a href="<?= url('blog.php') ?>">ChatGPT Ads Are Going Visual: What Advertisers Should Prepare For</a></h3>
+            <a href="<?= url('blog.php') ?>" class="blog-card__more">Read More <span>→</span></a>
+          </div>
+        </article>
 
-      <article class="blog-card" data-animate="up" style="--d:150ms">
-        <a href="#" class="blog-card__img">
-          <img src="assets/blog-2.png" alt="SEO Strategy and Technical SEO" loading="lazy">
-        </a>
-        <div class="blog-card__body">
-          <time class="blog-card__date" datetime="2026-10-07">October 7, 2026</time>
-          <h3 class="blog-card__title"><a href="#">SEO Strategy and Technical SEO in October 2026: What Changed and What to Do Next</a></h3>
-          <a href="#" class="blog-card__more">Read More <span>→</span></a>
-        </div>
-      </article>
+        <article class="blog-card" data-animate="up" style="--d:100ms">
+          <a href="<?= url('blog.php') ?>" class="blog-card__img">
+            <img src="<?= asset('assets/blog-2.png') ?>" alt="SEO Strategy and Technical SEO" loading="lazy">
+          </a>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-10-07">October 7, 2026</time>
+            <h3 class="blog-card__title"><a href="<?= url('blog.php') ?>">SEO Strategy and Technical SEO in October 2026: What Changed and What to Do Next</a></h3>
+            <a href="<?= url('blog.php') ?>" class="blog-card__more">Read More <span>→</span></a>
+          </div>
+        </article>
 
-      <article class="blog-card" data-animate="up" style="--d:300ms">
-        <a href="#" class="blog-card__img">
-          <img src="assets/blog-3.png" alt="Meta Muse AI Agent" loading="lazy">
-        </a>
-        <div class="blog-card__body">
-          <time class="blog-card__date" datetime="2026-10-05">October 5, 2026</time>
-          <h3 class="blog-card__title"><a href="#">Meta Muse AI Agent: What It Does, How It Stays Private, and Why Marketers Should Care</a></h3>
-          <a href="#" class="blog-card__more">Read More <span>→</span></a>
-        </div>
-      </article>
+        <article class="blog-card" data-animate="up" style="--d:200ms">
+          <a href="<?= url('blog.php') ?>" class="blog-card__img">
+            <img src="<?= asset('assets/blog-3.png') ?>" alt="Meta Muse AI Agent" loading="lazy">
+          </a>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-10-05">October 5, 2026</time>
+            <h3 class="blog-card__title"><a href="<?= url('blog.php') ?>">Meta Muse AI Agent: What It Does, How It Stays Private, and Why Marketers Should Care</a></h3>
+            <a href="<?= url('blog.php') ?>" class="blog-card__more">Read More <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="blog-card" data-animate="up" style="--d:300ms">
+          <a href="<?= url('blog.php') ?>" class="blog-card__img">
+            <img src="<?= asset('assets/mega-blog.avif') ?>" alt="AI Search Visibility Guide" loading="lazy">
+          </a>
+          <div class="blog-card__body">
+            <time class="blog-card__date" datetime="2026-10-01">October 1, 2026</time>
+            <h3 class="blog-card__title"><a href="<?= url('blog.php') ?>">AI Search Visibility: How to Get Cited by ChatGPT, Perplexity and Google AI Overviews</a></h3>
+            <a href="<?= url('blog.php') ?>" class="blog-card__more">Read More <span>→</span></a>
+          </div>
+        </article>
+      <?php endif; ?>
     </div>
 
     <div class="blog__more">

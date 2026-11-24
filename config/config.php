@@ -1,5 +1,20 @@
 <?php
-// Reads settings from environment variables (set in Render's dashboard).
+// Load local .env file if present (never overrides server/Render environment variables)
+$envFile = __DIR__ . '/../.env';
+if (is_file($envFile) && is_readable($envFile)) {
+    foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+        $line = trim($line);
+        if ($line === '' || $line[0] === '#' || strpos($line, '=') === false) continue;
+        [$k, $v] = array_map('trim', explode('=', $line, 2));
+        $v = trim($v, "\"'");
+        if ($k !== '' && getenv($k) === false) {
+            putenv("$k=$v");
+            $_ENV[$k] = $v;
+        }
+    }
+}
+
+// Reads settings from environment variables (set in Render's dashboard or local .env).
 // Falls back to the old local XAMPP values so the site still runs locally.
 $env = function (string $key, $default = null) {
     $v = getenv($key);
@@ -23,12 +38,9 @@ return [
         'ssl_verify' => filter_var($env('DB_SSL_VERIFY', 'true'), FILTER_VALIDATE_BOOLEAN),
     ],
     'mail' => [
-        'host'   => $env('MAIL_HOST', 'mail.techbound.in'),
-        'port'   => (int) $env('MAIL_PORT', 465),
-        'secure' => $env('MAIL_SECURE', 'ssl'),   // 'ssl', 'tls' or ''
-        'user'   => $env('MAIL_USER', 'contacts@techbound.in'),
-        'pass'   => $env('MAIL_PASS', ''),
-        'from'   => $env('MAIL_FROM', 'contacts@techbound.in'),
-        'to'     => $env('MAIL_TO', 'contacts@techbound.in'),
+        'provider'       => 'resend',
+        'resend_api_key' => $env('RESEND_API_KEY', ''),
+        'resend_from'    => $env('RESEND_FROM', 'TechBound Website <contacts@techbound.in>'),
+        'to'             => $env('MAIL_TO', 'contacts@techbound.in'),
     ],
 ];

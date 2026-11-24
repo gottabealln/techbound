@@ -2,9 +2,42 @@
 
 require_once __DIR__ . '/../config/site.php';
 
-$default_desc = 'TechBound is a premier digital marketing agency in Trivandrum, Kerala providing expert SEO, AI SEO, PPC advertising, social media marketing, and custom web development.';
-$page_title   = !empty($page_title) ? $page_title : ($site['name'] . ' | ' . $site['tagline']);
-$page_desc    = !empty($page_desc) ? $page_desc : $default_desc;
+// Apply dynamic Service SEO overrides (Meta Title, Meta Description, Primary Keyword, Schema JSON-LD, Image Alt)
+$service_seo                   = null;
+$primary_keyword               = $primary_keyword ?? '';
+$schema_data                   = $schema_data ?? '';
+$service_image_alt             = $service_image_alt ?? '';
+$service_image_alt_description = $service_image_alt_description ?? '';
+
+if (is_file(__DIR__ . '/service_seo.php')) {
+    require_once __DIR__ . '/service_seo.php';
+    $service_seo = get_service_seo_by_file($current_page ?? basename($_SERVER['PHP_SELF'] ?? ''));
+    if ($service_seo) {
+        if (!empty(trim((string)($service_seo['meta_title'] ?? '')))) {
+            $page_title = trim((string)$service_seo['meta_title']);
+        }
+        if (!empty(trim((string)($service_seo['meta_description'] ?? '')))) {
+            $page_desc = trim((string)$service_seo['meta_description']);
+        }
+        if (!empty(trim((string)($service_seo['primary_keyword'] ?? '')))) {
+            $primary_keyword = trim((string)$service_seo['primary_keyword']);
+        }
+        if (!empty(trim((string)($service_seo['schema_data'] ?? '')))) {
+            $schema_data = trim((string)$service_seo['schema_data']);
+        }
+        if (!empty(trim((string)($service_seo['image_alt'] ?? '')))) {
+            $service_image_alt = trim((string)$service_seo['image_alt']);
+        }
+        if (!empty(trim((string)($service_seo['image_alt_description'] ?? '')))) {
+            $service_image_alt_description = trim((string)$service_seo['image_alt_description']);
+        }
+    }
+}
+
+$__meta       = resolve_page_meta($page_title ?? ($meta_title ?? null), $page_desc ?? ($meta_desc ?? null));
+$page_title   = $__meta['title'];
+$page_desc    = $__meta['description'];
+$og_type      = !empty($og_type) ? $og_type : 'website';
 $header_light = $header_light ?? false;
 $page_styles  = $page_styles  ?? [];
 
@@ -60,10 +93,26 @@ $company_links = [
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($page_title) ?></title>
+  <meta name="title" content="<?= htmlspecialchars($page_title) ?>">
   <meta name="description" content="<?= htmlspecialchars($page_desc) ?>">
+  <?php if (!empty($primary_keyword)): ?>
+  <meta name="keywords" content="<?= htmlspecialchars($primary_keyword) ?>">
+  <?php endif; ?>
   <meta property="og:title" content="<?= htmlspecialchars($page_title) ?>">
   <meta property="og:description" content="<?= htmlspecialchars($page_desc) ?>">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="<?= htmlspecialchars($og_type) ?>">
+  <?php if (!empty($service_image_alt)): ?>
+  <meta property="og:image:alt" content="<?= htmlspecialchars($service_image_alt) ?>">
+  <?php endif; ?>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?= htmlspecialchars($page_title) ?>">
+  <meta name="twitter:description" content="<?= htmlspecialchars($page_desc) ?>">
+  <?php if (!empty($schema_data)):
+    $__decodedSchema = json_decode($schema_data, true);
+    if (json_last_error() === JSON_ERROR_NONE && is_array($__decodedSchema)):
+  ?>
+  <script type="application/ld+json"><?= json_encode($__decodedSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+  <?php endif; endif; ?>
 
   <link rel="icon" type="image/png" href="<?= asset('assets/favicon.png') ?>">
   <link rel="shortcut icon" type="image/png" href="<?= asset('assets/favicon.png') ?>">

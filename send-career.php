@@ -136,43 +136,44 @@ try {
     respond(false, 'We could not save your application right now. Please try again or email us directly at contacts@techbound.in', 500);
 }
 
-// Email notification
-try {
-    if (!empty($cfg['mail']['host']) && !empty($cfg['mail']['user'])) {
-        $m = new PHPMailer(true);
-        $m->isSMTP();
-        $m->Host       = $cfg['mail']['host'];
-        $m->Port       = $cfg['mail']['port'] ?? 465;
-        $m->SMTPAuth   = true;
-        $m->Username   = $cfg['mail']['user'];
-        $m->Password   = $cfg['mail']['pass'];
-        $m->SMTPSecure = ($cfg['mail']['secure'] ?? 'ssl') === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
-        $m->CharSet    = 'UTF-8';
+// Email notification via Resend
+require_once __DIR__ . '/includes/mailer.php';
+$forwardTo  = 'contacts@techbound.in';
+$recipients = [$forwardTo];
+if (!empty($cfg['mail']['to']) && strcasecmp($cfg['mail']['to'], $forwardTo) !== 0) {
+    $recipients[] = $cfg['mail']['to'];
+}
 
-        $m->setFrom($cfg['mail']['from'] ?? 'contacts@techbound.in', 'Techbound Careers Portal');
-        $m->addAddress($cfg['mail']['to'] ?? 'contacts@techbound.in');
-        $m->addReplyTo($email, $name);
+$careerText = "A new application has been submitted through the Careers page:\n\n" .
+              "Name: $name\n" .
+              "Email: $email\n" .
+              "Phone: " . ($fullPhone ?? 'Not provided') . "\n" .
+              "Role: $role\n" .
+              "Experience: " . ($experience ?: 'Not provided') . "\n" .
+              "Portfolio/Links: " . ($portfolio ?: 'None') . "\n\n" .
+              "Applicant Message:\n" . ($message ?: 'No message provided') . "\n\n" .
+              ($resumeFilename ? "Resume Attached.\n" : "No resume attached.\n");
 
-        $m->Subject = 'New Job Application: ' . $role . ' - ' . $name;
-        $m->Body    = "A new application has been submitted through the Careers page:\n\n" .
-                      "Name: $name\n" .
-                      "Email: $email\n" .
-                      "Phone: " . ($fullPhone ?? 'Not provided') . "\n" .
-                      "Role: $role\n" .
-                      "Experience: " . ($experience ?: 'Not provided') . "\n" .
-                      "Portfolio/Links: " . ($portfolio ?: 'None') . "\n\n" .
-                      "Applicant Message:\n" . ($message ?: 'No message provided') . "\n\n" .
-                      ($resumeFilename ? "Resume Attached.\n" : "No resume attached.\n");
-
-        if ($resumePath && file_exists($resumePath)) {
-            $m->addAttachment($resumePath, $name . '_Resume.' . pathinfo($resumePath, PATHINFO_EXTENSION));
-        }
-
-        $m->send();
+$attachments = [];
+if ($resumePath && file_exists($resumePath)) {
+    $raw = @file_get_contents($resumePath);
+    if ($raw !== false) {
+        $attachments[] = [
+            'filename' => $name . '_Resume.' . pathinfo($resumePath, PATHINFO_EXTENSION),
+            'content'  => base64_encode($raw),
+        ];
     }
-} catch (Throwable $e) {
-    error_log('Career Mail error: ' . $e->getMessage());
-    // Continue since DB record is safely stored
+}
+
+$mailRes = send_via_resend($cfg, [
+    'to'          => $recipients,
+    'reply_to'    => $email,
+    'subject'     => 'New Job Application: ' . $role . ' - ' . $name,
+    'text'        => $careerText,
+    'attachments' => $attachments,
+]);
+if (empty($mailRes['ok'])) {
+    error_log('Career Resend error: ' . ($mailRes['error'] ?? 'Unknown error'));
 }
 
 $_SESSION['last_career_submit'] = time();

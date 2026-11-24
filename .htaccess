@@ -49,4 +49,8 @@
     RewriteRule ^admin/testimonials/?$ admin/resources/testimonials.php [L,QSA]
     RewriteRule ^admin/faqs/?$ admin/resources/faqs.php [L,QSA]
     RewriteRule ^admin/users/?$ admin/resources/users.php [L,QSA]
+
+    # Dynamic service slugs edited from Admin CMS
+    RewriteCond %{REQUEST_URI} !^/admin/
+    RewriteRule ^(.+?)/?$ service-router.php?route=$1 [L,QSA]
 </IfModule>

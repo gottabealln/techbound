@@ -112,7 +112,7 @@ $faqs = [
   // ── ABOUT ─────────────────────────────────────────────────────────────────
   [
     'question'   => 'How long has TechBound been in business?',
-    'answer'     => 'TechBound Innovations was founded in Trivandrum and has been helping businesses grow digitally for over 12 years, working with brands across Kerala, India and the GCC.',
+    'answer'     => 'TechBound Innovations was founded in Trivandrum and has been helping businesses grow digitally for over 15 years, working with brands across Kerala, India and the GCC.',
     'page'       => 'about',
     'sort_order' => 1,
   ],

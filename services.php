@@ -113,8 +113,12 @@ require __DIR__ . '/includes/header.php';
     </div>
 
     <div class="svc-block__media" data-animate="up">
+      <?php
+        $__svcSeo = function_exists('get_service_seo_by_file') ? get_service_seo_by_file($s['id'] . '.php') : null;
+        $__svcAlt = !empty($__svcSeo['image_alt']) ? $__svcSeo['image_alt'] : $s['title'];
+      ?>
       <?php if ($hasImg): ?>
-        <img src="<?= url($imgRel) ?>" alt="<?= htmlspecialchars($s['title']) ?>" loading="lazy">
+        <img src="<?= url($imgRel) ?>" alt="<?= htmlspecialchars($__svcAlt) ?>" loading="lazy">
       <?php else: ?>
         <div class="svc-block__placeholder" aria-hidden="true"><span><?= $num ?></span></div>
       <?php endif; ?>

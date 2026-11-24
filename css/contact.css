@@ -201,11 +201,31 @@
 .cform__submit.is-loading { opacity: .7; pointer-events: none; }
 
 .cform__status {
-  margin-top: 14px; min-height: 22px;
-  font-family: var(--font-body); font-size: 15px;
+  margin-top: 16px; min-height: 22px;
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
 }
-.cform__status.is-ok { color: var(--brand); }
-.cform__status.is-err { color: #d33a3a; }
+.cform__status.is-ok {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #eef7f1;
+  border: 1px solid rgba(27, 140, 67, 0.35);
+  color: #114b27;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cform__status.is-ok strong {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--brand);
+}
+.cform__status.is-err {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
 
 @media (max-width: 900px) {
   .contact__inner { grid-template-columns: 1fr; gap: 56px; }

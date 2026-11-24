@@ -158,13 +158,17 @@ $read_time  = max(1, (int)ceil($word_count / 200));
 
 // Setup page meta
 $post_title   = trim($post['title'] ?? 'Article');
-$raw_desc     = trim($post['excerpt'] ?? '');
+$custom_mt    = trim($post['meta_title'] ?? '');
+$custom_md    = trim($post['meta_description'] ?? '');
+$raw_desc     = $custom_md !== '' ? $custom_md : trim($post['excerpt'] ?? '');
 if ($raw_desc === '') {
     $raw_desc = trim(preg_replace('/\s+/', ' ', strip_tags($post['body'] ?? '')));
     $raw_desc = mb_substr($raw_desc, 0, 160);
 }
-$page_title   = $post_title . ' | TechBound Blog';
+$page_title   = $custom_mt !== '' ? $custom_mt : ($post_title . ' | TechBound Blog');
 $page_desc    = $raw_desc;
+$og_type      = 'article';
+$service_image_alt = trim($post['image_alt_description'] ?? '') ?: $post_title;
 $header_light = false;
 $page_styles  = ['css/blog.css'];
 $show_faq_btn = false;

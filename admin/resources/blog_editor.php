@@ -36,6 +36,28 @@ if (!$is_new) {
     }
 }
 
+// Ensure meta_title and meta_description columns exist on blog_posts
+function ensure_blog_meta_columns(PDO $pdo): void {
+    try {
+        $cols = $pdo->query("SHOW COLUMNS FROM blog_posts")->fetchAll(PDO::FETCH_COLUMN);
+        if (!in_array('meta_title', $cols, true)) {
+            $pdo->exec("ALTER TABLE blog_posts ADD COLUMN meta_title VARCHAR(255) NOT NULL DEFAULT '' AFTER title");
+        }
+        if (!in_array('meta_description', $cols, true)) {
+            $pdo->exec("ALTER TABLE blog_posts ADD COLUMN meta_description TEXT NULL AFTER meta_title");
+        }
+        if (!in_array('image_alt_description', $cols, true)) {
+            $pdo->exec("ALTER TABLE blog_posts ADD COLUMN image_alt_description LONGTEXT NULL AFTER image");
+        }
+    } catch (Throwable $e) {
+        // Skip silently if ALTER is restricted
+    }
+}
+
+if ($pdo) {
+    ensure_blog_meta_columns($pdo);
+}
+
 // Helper to keep techbound_blogs.json and data/blogs_*.php synchronized with MySQL
 function sync_blogs_to_json(PDO $pdo): void {
     try {
@@ -80,9 +102,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $author             = trim($_POST['author'] ?? ($user['name'] ?? 'TechBound Team'));
         $author_designation = trim($_POST['author_designation'] ?? 'Digital Growth Specialist');
         $excerpt            = trim($_POST['excerpt'] ?? '');
+        $meta_title         = trim($_POST['meta_title'] ?? '');
+        $meta_description   = trim($_POST['meta_description'] ?? '');
         $body               = trim($_POST['body'] ?? '');
-        $image              = trim($_POST['image'] ?? '');
-        $published_at       = trim($_POST['published_at'] ?? '');
+        $image                 = trim($_POST['image'] ?? '');
+        $image_alt_description = trim($_POST['image_alt_description'] ?? '');
+        $published_at          = trim($_POST['published_at'] ?? '');
         $active             = isset($_POST['active']) ? (int)$_POST['active'] : 1;
         $save_action        = $_POST['save_action'] ?? 'save_close'; // save_close or save_continue
 
@@ -112,6 +137,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $published_at = date('Y-m-d H:i:s', strtotime($published_at));
             }
 
+            // Auto-populate Meta Title & Meta Description if left blank
+            if ($meta_title === '') {
+                $meta_title = $title . ' | TechBound';
+            }
+            if ($meta_description === '') {
+                $sourceDesc = $excerpt !== '' ? $excerpt : trim(preg_replace('/\s+/', ' ', strip_tags($body)));
+                $meta_description = mb_substr($sourceDesc, 0, 160);
+            }
+
             // Fallback image if empty
             if ($image === '') {
                 $image = blog_placeholder($category);
@@ -119,9 +153,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($id > 0) {
                 // Update
-                $stmtUp = $pdo->prepare('UPDATE blog_posts SET title=?, slug=?, category=?, tags=?, author=?, author_designation=?, excerpt=?, body=?, image=?, published_at=?, active=? WHERE id=?');
+                $stmtUp = $pdo->prepare('UPDATE blog_posts SET title=?, meta_title=?, meta_description=?, slug=?, category=?, tags=?, author=?, author_designation=?, excerpt=?, body=?, image=?, image_alt_description=?, published_at=?, active=? WHERE id=?');
                 $stmtUp->execute([
                     $title,
+                    $meta_title,
+                    $meta_description,
                     $slug,
                     $category ?: 'Digital Marketing',
                     $tags,
@@ -130,6 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $excerpt,
                     $body,
                     $image,
+                    $image_alt_description,
                     $published_at,
                     $active,
                     $id
@@ -144,9 +181,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             } else {
                 // Insert
-                $stmtIn = $pdo->prepare('INSERT INTO blog_posts (title, slug, category, tags, author, author_designation, excerpt, body, image, published_at, active) VALUES (?,?,?,?,?,?,?,?,?,?,?)');
+                $stmtIn = $pdo->prepare('INSERT INTO blog_posts (title, meta_title, meta_description, slug, category, tags, author, author_designation, excerpt, body, image, image_alt_description, published_at, active) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
                 $stmtIn->execute([
                     $title,
+                    $meta_title,
+                    $meta_description,
                     $slug,
                     $category ?: 'Digital Marketing',
                     $tags,
@@ -155,6 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $excerpt,
                     $body,
                     $image,
+                    $image_alt_description,
                     $published_at,
                     $active
                 ]);
@@ -177,6 +217,8 @@ $flash = $flash ?? (string)($_GET['flash'] ?? '');
 
 // Default form values
 $form_title              = $post['title'] ?? '';
+$form_meta_title         = $post['meta_title'] ?? '';
+$form_meta_description   = $post['meta_description'] ?? '';
 $form_slug               = $post['slug'] ?? '';
 $form_category           = $post['category'] ?? 'Digital Marketing';
 $form_tags               = $post['tags'] ?? '';
@@ -184,8 +226,9 @@ $form_author             = $post['author'] ?? ($user['name'] ?? 'TechBound Team'
 $form_author_designation = $post['author_designation'] ?? 'Senior Digital Strategist';
 $form_excerpt            = $post['excerpt'] ?? '';
 $form_body               = $post['body'] ?? '';
-$form_image              = $post['image'] ?? 'assets/placeholders/blog-digital-marketing.svg';
-$form_published_at       = !empty($post['published_at']) ? date('Y-m-d\TH:i', strtotime($post['published_at'])) : date('Y-m-d\TH:i');
+$form_image                 = $post['image'] ?? 'assets/placeholders/blog-digital-marketing.svg';
+$form_image_alt_description = $post['image_alt_description'] ?? '';
+$form_published_at          = !empty($post['published_at']) ? date('Y-m-d\TH:i', strtotime($post['published_at'])) : date('Y-m-d\TH:i');
 $form_active             = isset($post['active']) ? (int)$post['active'] : 1;
 
 // Standard Top Categories
@@ -281,7 +324,7 @@ require __DIR__ . '/../_header.php';
                     <input type="text" id="title" name="title" required value="<?= e($form_title) ?>"
                            placeholder="e.g. How AI SEO and Generative Search are Transforming Organic Traffic in 2026"
                            class="w-full text-xl sm:text-2xl font-bold px-4 py-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary text-on-surface transition-colors"
-                           oninput="autoGenerateSlug(this.value)">
+                           oninput="autoGenerateSlug(this.value); autoGenerateMetaTitle(this.value);">
                 </div>
 
                 <!-- Slug / Permalink Bar -->
@@ -289,7 +332,7 @@ require __DIR__ . '/../_header.php';
                     <span class="font-semibold text-outline shrink-0 flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px]">link</span> Permalink:
                     </span>
-                    <span class="text-outline text-xs truncate max-w-xs font-mono"><?= url('blog-post.php?slug=') ?></span>
+                    <span class="text-outline text-xs truncate max-w-xs font-mono"><?= e(BASE_URL . 'blog/') ?></span>
                     <input type="text" id="slug" name="slug" value="<?= e($form_slug) ?>"
                            placeholder="auto-generated-slug"
                            class="flex-1 font-mono text-xs px-2.5 py-1 rounded-md bg-surface-container-lowest border border-outline-variant focus:outline-none focus:border-primary text-primary font-semibold">
@@ -531,6 +574,44 @@ require __DIR__ . '/../_header.php';
                 </div>
             </div>
 
+            <!-- SEO Metadata Card -->
+            <div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm border border-outline-variant/30 space-y-4">
+                <div class="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-primary">travel_explore</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">SEO Metadata</h3>
+                    </div>
+                    <button type="button" onclick="resetAutoMeta()" class="text-xs text-primary font-semibold hover:underline" title="Auto-fill from article title and excerpt">
+                        Auto-fill
+                    </button>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <label for="meta_title" class="block font-label-md text-label-md text-on-surface font-medium">
+                            Meta Title
+                        </label>
+                        <span id="metaTitleCount" class="text-[11px] text-outline">0 / 60</span>
+                    </div>
+                    <input type="text" id="meta_title" name="meta_title" value="<?= e($form_meta_title) ?>"
+                           placeholder="Auto-generated from title"
+                           class="w-full h-10 px-3.5 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary font-body-sm text-body-sm text-on-surface transition-colors">
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <label for="meta_description" class="block font-label-md text-label-md text-on-surface font-medium">
+                            Meta Description
+                        </label>
+                        <span id="metaDescCount" class="text-[11px] text-outline">0 / 160</span>
+                    </div>
+                    <textarea id="meta_description" name="meta_description" rows="3"
+                              placeholder="Auto-generated from excerpt or content"
+                              class="w-full p-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary font-body-sm text-body-sm text-on-surface transition-colors resize-none"><?= e($form_meta_description) ?></textarea>
+                    <p class="text-[11px] text-on-surface-variant mt-1">Automatically generated from the article if left blank.</p>
+                </div>
+            </div>
+
             <!-- Category & SEO Tags Card -->
             <div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm border border-outline-variant/30 space-y-4">
                 <div class="flex items-center gap-2 border-b border-outline-variant/30 pb-3">
@@ -603,6 +684,17 @@ require __DIR__ . '/../_header.php';
                            placeholder="https://... or assets/placeholders/blog-ai-seo.svg"
                            class="w-full h-10 px-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary font-body-sm text-body-sm text-on-surface transition-colors"
                            oninput="updateImagePreview(this.value)">
+                </div>
+
+                <!-- Image Alt Description (Unlimited) -->
+                <div>
+                    <label for="image_alt_description" class="block font-label-md text-label-md text-on-surface mb-1 font-medium">
+                        Image Alt Description
+                    </label>
+                    <textarea id="image_alt_description" name="image_alt_description" rows="3"
+                              placeholder="Detailed image alt description (no character limit)..."
+                              class="w-full p-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary font-body-sm text-body-sm text-on-surface transition-colors resize-y"><?= e($form_image_alt_description) ?></textarea>
+                    <p class="text-[11px] text-on-surface-variant mt-1">No character limit.</p>
                 </div>
 
                 <!-- 1-Click Branded Placeholder Buttons -->
@@ -830,10 +922,65 @@ function insertRaw(html) {
     updateBodyStats();
 }
 
+// Auto Meta Title & Meta Description Generators
+function updateMetaCounts() {
+    const mt = document.getElementById('meta_title');
+    const md = document.getElementById('meta_description');
+    if (mt) document.getElementById('metaTitleCount').textContent = mt.value.length + ' / 60';
+    if (md) document.getElementById('metaDescCount').textContent = md.value.length + ' / 160';
+}
+
+function autoGenerateMetaTitle(title) {
+    const mt = document.getElementById('meta_title');
+    if (!mt || mt.dataset.manual === 'true') return;
+    const clean = title.trim();
+    mt.value = clean ? (clean + ' | TechBound') : '';
+    updateMetaCounts();
+}
+
+function autoGenerateMetaDescription() {
+    const md = document.getElementById('meta_description');
+    if (!md || md.dataset.manual === 'true') return;
+    const excerpt = (document.getElementById('excerpt')?.value || '').trim();
+    const bodyText = (document.getElementById('body')?.value || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    const source = excerpt || bodyText;
+    md.value = source.slice(0, 160);
+    updateMetaCounts();
+}
+
+function resetAutoMeta() {
+    const mt = document.getElementById('meta_title');
+    const md = document.getElementById('meta_description');
+    if (mt) mt.dataset.manual = '';
+    if (md) md.dataset.manual = '';
+    autoGenerateMetaTitle(document.getElementById('title')?.value || '');
+    autoGenerateMetaDescription();
+}
+
+document.getElementById('meta_title')?.addEventListener('input', function() {
+    this.dataset.manual = this.value.trim() !== '' ? 'true' : '';
+    updateMetaCounts();
+});
+
+document.getElementById('meta_description')?.addEventListener('input', function() {
+    this.dataset.manual = this.value.trim() !== '' ? 'true' : '';
+    updateMetaCounts();
+});
+
+document.getElementById('excerpt')?.addEventListener('input', autoGenerateMetaDescription);
+document.getElementById('body')?.addEventListener('input', autoGenerateMetaDescription);
+
 // Initial count triggers
 window.addEventListener('DOMContentLoaded', function() {
     updateBodyStats();
     updateExcerptCount(document.getElementById('excerpt').value);
+    const mt = document.getElementById('meta_title');
+    const md = document.getElementById('meta_description');
+    if (mt && mt.value.trim() !== '') mt.dataset.manual = 'true';
+    if (md && md.value.trim() !== '') md.dataset.manual = 'true';
+    autoGenerateMetaTitle(document.getElementById('title')?.value || '');
+    autoGenerateMetaDescription();
+    updateMetaCounts();
 });
 </script>
 

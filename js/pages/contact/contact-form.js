@@ -72,16 +72,23 @@
     btn.disabled = true;
 
     fetch(form.action, { method: 'POST', body: new FormData(form) })
-      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (r) {
+        return r.json().catch(function () { return { ok: false, message: 'Unexpected server response.' }; });
+      })
       .then(function (data) {
-        if (!data.ok) throw new Error();
+        if (!data || !data.ok) {
+          throw new Error((data && data.message) || 'Sorry, something went wrong. Please call or email us directly.');
+        }
         form.reset();
         status.className = 'cform__status is-ok';
-        status.textContent = 'Thank you! Your message has been sent. We will contact you shortly.';
+        status.innerHTML =
+          '<strong>Thank you for reaching out!</strong>' +
+          '<span>' + (data.message || 'Your message has been sent. Our team will get back to you within one business day.') + '</span>';
+        status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       })
-      .catch(function () {
+      .catch(function (err) {
         status.className = 'cform__status is-err';
-        status.textContent = 'Sorry, something went wrong. Please call or email us directly.';
+        status.textContent = (err && err.message) ? err.message : 'Sorry, something went wrong. Please call or email us directly.';
       })
       .finally(function () {
         btn.classList.remove('is-loading');

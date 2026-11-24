@@ -9,8 +9,9 @@ $total_reviews    = 0;
 $total_blogs      = 0;
 $draft_blogs      = 0;
 $total_faqs       = 0;
-$recent_enquiries = [];
-$recent_posts     = [];
+$recent_enquiries    = [];
+$recent_posts        = [];
+$recent_testimonials = [];
 
 if ($pdo) {
     try {
@@ -27,6 +28,9 @@ if ($pdo) {
         }
         if (admin_can('blog')) {
             $recent_posts = $pdo->query("SELECT id, title, slug, category, published_at, active FROM blog_posts ORDER BY published_at DESC, id DESC LIMIT 5")->fetchAll();
+        }
+        if (admin_can('testimonials')) {
+            $recent_testimonials = $pdo->query("SELECT id, client, role, quote, active FROM testimonials WHERE active = 1 ORDER BY sort_order ASC, id ASC LIMIT 5")->fetchAll();
         }
     } catch (Throwable $e) {}
 } else {
@@ -231,6 +235,37 @@ require __DIR__ . '/_header.php';
                             <?php endif; ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <?php endif; ?>
+
+            <?php if (admin_can('testimonials')): ?>
+            <div class="bg-white border border-outline-variant rounded-lg overflow-hidden">
+                <div class="px-5 py-4 border-b border-outline-variant flex items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-headline-sm text-headline-sm text-on-surface">Testimonials &amp; Reviews</h2>
+                        <p class="text-xs text-outline mt-0.5">Published client reviews shown across the site</p>
+                    </div>
+                    <a href="<?= e(admin_url('resources/testimonials.php')) ?>" class="text-xs font-label-md text-primary hover:underline">Manage all</a>
+                </div>
+
+                <div class="divide-y divide-outline-variant">
+                    <?php if (empty($recent_testimonials)): ?>
+                        <div class="py-8 px-5 text-center text-sm text-on-surface-variant">No testimonials added yet.</div>
+                    <?php else: ?>
+                        <?php foreach ($recent_testimonials as $rev): ?>
+                        <div class="px-5 py-3.5 flex items-start justify-between gap-4 hover:bg-surface-container-low transition-colors">
+                            <div class="min-w-0 flex-1">
+                                <p class="text-sm text-on-surface line-clamp-2">"<?= e($rev['quote']) ?>"</p>
+                                <p class="text-xs text-outline mt-1">
+                                    <strong class="font-medium text-on-surface-variant"><?= e($rev['client']) ?></strong>
+                                    <?php if (!empty($rev['role'])): ?> &middot; <?= e($rev['role']) ?><?php endif; ?>
+                                </p>
+                            </div>
+                            <a href="<?= e(admin_url('resources/testimonials.php?edit=' . (int)$rev['id'])) ?>" class="text-xs font-medium text-primary hover:underline shrink-0">Edit</a>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endif; ?>

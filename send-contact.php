@@ -1,10 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/includes/mailer.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -60,6 +57,7 @@ $companyTag = mb_substr($companyTag, 0, 150);
 $cfg = require __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/db.php';
 
+$dbSaved = false;
 try {
     $pdo = db();
     $stmt = $pdo->prepare(
@@ -67,36 +65,47 @@ try {
          VALUES (?, ?, ?, ?, ?, ?)'
     );
     $stmt->execute([$name, $email, $fullPhone, $companyTag ?: null, $message, $_SERVER['REMOTE_ADDR'] ?? null]);
+    $dbSaved = true;
 } catch (Throwable $e) {
     error_log('Contact DB error: ' . $e->getMessage());
-    respond(false, 'Could not save your message.', 500);
 }
 
+$forwardTo  = 'contacts@techbound.in';
+$recipients = [$forwardTo];
+if (!empty($cfg['mail']['to']) && strcasecmp($cfg['mail']['to'], $forwardTo) !== 0) {
+    $recipients[] = $cfg['mail']['to'];
+}
 
-try {
-    $m = new PHPMailer(true);
-    $m->isSMTP();
-    $m->Host       = $cfg['mail']['host'];
-    $m->Port       = $cfg['mail']['port'];
-    $m->SMTPAuth   = true;
-    $m->Username   = $cfg['mail']['user'];
-    $m->Password   = $cfg['mail']['pass'];
-    $m->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $m->CharSet    = 'UTF-8';
+$subjectTag = $service ? " [$service]" : '';
+$mailSubj   = 'New enquiry' . $subjectTag . ' from ' . $name;
+$mailBody   = "Name: $name\nEmail: $email\nPhone: " . ($fullPhone ?? '-') .
+              "\nCategory/Service: " . ($service ?: 'General') .
+              "\nCompany: " . ($company ?: '-') . "\n\nMessage:\n$message\n";
+$mailHtml   = '<div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">'
+            . '<h2 style="margin:0 0 12px;color:#1b8c43">New Website Enquiry</h2>'
+            . '<p><strong>Name:</strong> ' . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '<br>'
+            . '<strong>Email:</strong> ' . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . '<br>'
+            . '<strong>Phone:</strong> ' . htmlspecialchars($fullPhone ?? '-', ENT_QUOTES, 'UTF-8') . '<br>'
+            . '<strong>Service:</strong> ' . htmlspecialchars($service ?: 'General', ENT_QUOTES, 'UTF-8') . '<br>'
+            . '<strong>Company / Website:</strong> ' . htmlspecialchars($company ?: '-', ENT_QUOTES, 'UTF-8') . '</p>'
+            . '<p><strong>Message:</strong><br>' . nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')) . '</p>'
+            . '</div>';
 
-    $m->setFrom($cfg['mail']['from'], 'Techbound Website');
-    $m->addAddress($cfg['mail']['to']);
-    $m->addReplyTo($email, $name);
+$mailRes  = send_via_resend($cfg, [
+    'to'       => $recipients,
+    'reply_to' => $email,
+    'subject'  => $mailSubj,
+    'text'     => $mailBody,
+    'html'     => $mailHtml,
+]);
+$mailSent = !empty($mailRes['ok']);
+if (!$mailSent) {
+    error_log('Contact Resend error: ' . ($mailRes['error'] ?? 'Unknown error'));
+}
 
-    $subjectTag = $service ? " [$service]" : '';
-    $m->Subject = 'New enquiry' . $subjectTag . ' from ' . $name;
-    $m->Body    = "Name: $name\nEmail: $email\nPhone: " . ($fullPhone ?? '-') .
-                  "\nCategory/Service: " . ($service ?: 'General') .
-                  "\nCompany: " . ($company ?: '-') . "\n\nMessage:\n$message\n";
-    $m->send();
-} catch (Throwable $e) {
-    error_log('Contact mail error: ' . $e->getMessage());
+if (!$dbSaved && !$mailSent) {
+    respond(false, 'Could not deliver your message right now. Please email us directly at contacts@techbound.in.', 500);
 }
 
 $_SESSION['last_contact'] = time();
-respond(true, 'Message sent.');
+respond(true, 'Thank you! Your message has been sent. Our team will get back to you within one business day.');

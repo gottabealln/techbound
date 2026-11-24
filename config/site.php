@@ -57,6 +57,15 @@ function url(string $path = ''): string
         return BASE_URL . 'blog/' . $sm[1] . '/' . $rest;
     }
 
+    // Allow dynamic slugs configured in Admin -> Services to override static routes
+    if (is_file(__DIR__ . '/../includes/service_seo.php')) {
+        require_once __DIR__ . '/../includes/service_seo.php';
+        $dynamicRoutes = get_dynamic_service_routes();
+        if (array_key_exists($clean, $dynamicRoutes)) {
+            return BASE_URL . $dynamicRoutes[$clean] . $suffix;
+        }
+    }
+
     if (array_key_exists($clean, $routes)) {
         $clean = $routes[$clean];
     }
@@ -119,4 +128,56 @@ function current_attr(string ...$pages): string
 {
     global $current_page;
     return in_array($current_page, $pages, true) ? ' aria-current="page"' : '';
+}
+
+/**
+ * Automatically resolves Meta Title and Meta Description for any page.
+ * Existing pages keep their explicit $page_title / $page_desc; any newly created
+ * page that includes header.php without setting them gets a unique, SEO-friendly
+ * title and description derived from its filename/slug.
+ */
+function resolve_page_meta(?string $title = null, ?string $desc = null): array
+{
+    global $site, $current_page;
+
+    $brand       = $site['name'] ?? 'TechBound';
+    $tagline     = $site['tagline'] ?? 'Digital Marketing Agency in Trivandrum, Kerala';
+    $defaultDesc = 'TechBound is a premier digital marketing agency in Trivandrum, Kerala with 15+ years of experience in SEO, AI SEO, PPC advertising, social media marketing, and custom web development.';
+
+    $rawTitle = trim(preg_replace('/\s+/', ' ', (string)($title ?? '')));
+    $rawDesc  = trim(preg_replace('/\s+/', ' ', (string)($desc ?? '')));
+
+    $slug = pathinfo((string)($current_page ?: basename($_SERVER['PHP_SELF'] ?? 'index.php')), PATHINFO_FILENAME);
+    $isHome = ($slug === '' || strtolower($slug) === 'index');
+
+    if ($rawTitle === '') {
+        if ($isHome) {
+            $rawTitle = $brand . ' | ' . $tagline;
+        } else {
+            $acronyms = ['seo', 'ai', 'ppc', 'smm', 'aeo', 'geo', 'b2b', 'ui', 'ux', 'faq', 'faqs', 'roi', 'crm', 'gcc'];
+            $words = preg_split('/[-_\s]+/', $slug, -1, PREG_SPLIT_NO_EMPTY);
+            $formatted = array_map(static function (string $w) use ($acronyms): string {
+                $lower = strtolower($w);
+                return in_array($lower, $acronyms, true) ? strtoupper($lower) : ucfirst($lower);
+            }, $words);
+            $human = implode(' ', $formatted);
+            $rawTitle = ($human !== '' ? $human . ' | ' . $brand : $brand . ' | ' . $tagline);
+        }
+    }
+
+    if ($rawDesc === '') {
+        if ($isHome) {
+            $rawDesc = $defaultDesc;
+        } else {
+            $label = trim(preg_replace('/\s*\|\s*' . preg_quote($brand, '/') . '.*$/i', '', $rawTitle));
+            $rawDesc = $label !== ''
+                ? "Explore {$label} with {$brand} Innovations, a digital marketing agency in Trivandrum, Kerala with 15+ years of experience delivering measurable online growth."
+                : $defaultDesc;
+        }
+    }
+
+    return [
+        'title'       => $rawTitle,
+        'description' => $rawDesc,
+    ];
 }

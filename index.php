@@ -19,7 +19,10 @@ require __DIR__ . '/includes/header.php';
 
 
   <!-- ===== HERO ===== -->
-  <section class="hero">
+  <section class="hero hero--video">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= asset('assets/hero.avif') ?>" aria-hidden="true">
+      <source src="<?= asset('assets/hero-video.mp4') ?>" type="video/mp4">
+    </video>
     <div class="hero__overlay"></div>
 
     <div class="hero__content">
@@ -261,84 +264,63 @@ require __DIR__ . '/includes/header.php';
       <p>Real experiences. Meaningful results. Lasting partnerships.</p>
     </div>
 
+    <?php
+      $home_testimonials = [];
+      try {
+        require_once __DIR__ . '/includes/db.php';
+        $tStmt = db()->query("SELECT quote, client, role FROM testimonials WHERE active = 1 ORDER BY sort_order ASC, id ASC");
+        if ($tStmt) {
+          $home_testimonials = $tStmt->fetchAll();
+        }
+      } catch (Throwable $e) {
+        $home_testimonials = [];
+      }
+      if (empty($home_testimonials)) {
+        $home_testimonials = [
+          ['quote' => 'TechBound understood our goals and helped us strengthen our online presence.', 'client' => 'Client', 'role' => 'Digital Growth'],
+          ['quote' => 'The team was professional, responsive and focused on delivering quality work.', 'client' => 'Client', 'role' => 'Web Development'],
+          ['quote' => 'Our digital strategy became clearer, more consistent and better aligned with our goals.', 'client' => 'Client', 'role' => 'Marketing'],
+          ['quote' => 'A supportive team that understands the importance of a strong brand.', 'client' => 'Client', 'role' => 'Brand Strategy'],
+          ['quote' => 'The website looks modern, works smoothly and represents our business well.', 'client' => 'Client', 'role' => 'Website Design'],
+          ['quote' => 'We appreciated the clear communication and attention to detail throughout the project.', 'client' => 'Client', 'role' => 'Digital Services'],
+          ['quote' => 'The team worked with us to find practical solutions for our business.', 'client' => 'Client', 'role' => 'Business Growth'],
+          ['quote' => 'A great experience from planning through execution and delivery.', 'client' => 'Client', 'role' => 'Project Delivery'],
+        ];
+      }
+      $half = (int)ceil(count($home_testimonials) / 2);
+      $top_reviews    = array_slice($home_testimonials, 0, $half);
+      $bottom_reviews = array_slice($home_testimonials, $half);
+      if (empty($bottom_reviews)) $bottom_reviews = $top_reviews;
+    ?>
+
     <div class="testimonials__stage">
 
       <!-- Top row -->
       <div class="testimonial-row testimonial-row--top">
+        <?php foreach ($top_reviews as $tr): ?>
         <article class="testimonial-card">
           <span class="testimonial-card__quote">“</span>
-          <p>TechBound understood our goals and helped us strengthen our online presence.</p>
+          <p><?= htmlspecialchars($tr['quote']) ?></p>
           <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Digital Growth</strong>
+            <span><?= htmlspecialchars($tr['client'] ?: 'Client') ?></span>
+            <strong><?= htmlspecialchars($tr['role'] ?: 'Client Review') ?></strong>
           </div>
         </article>
-
-        <article class="testimonial-card">
-          <span class="testimonial-card__quote">“</span>
-          <p>The team was professional, responsive and focused on delivering quality work.</p>
-          <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Web Development</strong>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <span class="testimonial-card__quote">“</span>
-          <p>Our digital strategy became clearer, more consistent and better aligned with our goals.</p>
-          <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Marketing</strong>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <span class="testimonial-card__quote">“</span>
-          <p>A supportive team that understands the importance of a strong brand.</p>
-          <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Brand Strategy</strong>
-          </div>
-        </article>
+        <?php endforeach; ?>
       </div>
 
       <!-- Bottom row -->
       <div class="testimonial-row testimonial-row--bottom">
+        <?php foreach ($bottom_reviews as $br): ?>
         <article class="testimonial-card">
           <span class="testimonial-card__quote">“</span>
-          <p>The website looks modern, works smoothly and represents our business well.</p>
+          <p><?= htmlspecialchars($br['quote']) ?></p>
           <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Website Design</strong>
+            <span><?= htmlspecialchars($br['client'] ?: 'Client') ?></span>
+            <strong><?= htmlspecialchars($br['role'] ?: 'Client Review') ?></strong>
           </div>
         </article>
-
-        <article class="testimonial-card">
-          <span class="testimonial-card__quote">“</span>
-          <p>We appreciated the clear communication and attention to detail throughout the project.</p>
-          <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Digital Services</strong>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <span class="testimonial-card__quote">“</span>
-          <p>The team worked with us to find practical solutions for our business.</p>
-          <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Business Growth</strong>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <span class="testimonial-card__quote">“</span>
-          <p>A great experience from planning through execution and delivery.</p>
-          <div class="testimonial-card__footer">
-            <span>Client</span>
-            <strong>Project Delivery</strong>
-          </div>
-        </article>
+        <?php endforeach; ?>
       </div>
 
     </div>

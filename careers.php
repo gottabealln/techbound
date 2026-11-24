@@ -51,7 +51,7 @@ require __DIR__ . '/includes/header.php';
           <img class="cr-culture__image" src="<?= asset('assets/careers_photo.avif') ?>" alt="TechBound Team Members collaborating at Trivandrum office">
           <div class="cr-culture__badge-float">
             <div class="cr-culture__badge-stat">
-              <strong>12+ Years</strong>
+              <strong>15+ Years</strong>
               <span>Digital Excellence in Kerala</span>
             </div>
             <div class="cr-culture__badge-stat">

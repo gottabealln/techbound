@@ -2,6 +2,36 @@
 require __DIR__ . '/../_guard.php';
 $pdo = admin_db();
 
+function default_site_testimonials(): array {
+    return [
+        ['client' => 'Biju Kesavan',     'role' => 'SEO & Website Growth',           'quote' => 'I approached TechBound Innovations for our website to increase our website calls and maintain the top position. As they promised us, their strategies increased our website calls and maintain our websites in top position. No wonder they are the top digital marketing agency in Kerala. I highly recommend them to you.', 'sort_order' => 1],
+        ['client' => 'Abhai Sasidharan', 'role' => 'Digital Marketing Partner',      'quote' => 'TechBound has been a great Digital Marketing partner over the last 5 years. We highly recommend them if you are in need of their Digital Marketing Services. The team is very responsive, professional and full of knowledge.', 'sort_order' => 2],
+        ['client' => 'Firos Hussain',    'role' => 'Digital Marketing Strategy',     'quote' => 'Working with TechBound Digital Marketing Company has been a wonderful experience. The team is very experienced, insightful, and extremely skilled. Their custom Digital Marketing Strategies generate excellent results across the last few months. I have recommended their services to anyone who wants to take their digital activities to the next level.', 'sort_order' => 3],
+        ['client' => 'Princy Antony',    'role' => 'Digital Marketing Client',       'quote' => 'Having had bad experiences with digital marketing agencies for many years, we have used TechBound Digital Marketing Agency since Feb 2022 and I have been extremely impressed by the work and results they have brought our company in a relatively short space of time. Would strongly recommend TechBound to anyone looking for a solid, reliable digital agency that can deliver results.', 'sort_order' => 4],
+        ['client' => 'SM Hilur',         'role' => 'Business Growth Client',         'quote' => 'I adore this Digital Marketing Company. With their new and "fresh" ideas, they have helped my company grow and expand. I\'ve had nothing but positive experiences with their team members, and their customer service is excellent. I highly recommend TechBound Digital Marketing Agency if you are looking for a company that is attentive to your business goals and needs.', 'sort_order' => 5],
+        ['client' => 'Mihila L',         'role' => 'SEO & Marketing Consulting',     'quote' => 'Regardless of how urgent our needs were, the TechBound team responded quickly and professionally. Anyone in need of marketing services should get in touch with them. They have long served as our marketing consultants. The team is always responsive, honest, and professional. Our website ranks have significantly improved as a result of TechBound Digital Marketing agency\'s advice.', 'sort_order' => 6],
+        ['client' => 'Client',           'role' => 'Digital Growth',                 'quote' => 'TechBound understood our goals and helped us strengthen our online presence.', 'sort_order' => 7],
+        ['client' => 'Client',           'role' => 'Web Development',                'quote' => 'The team was professional, responsive and focused on delivering quality work.', 'sort_order' => 8],
+        ['client' => 'Client',           'role' => 'Marketing',                      'quote' => 'Our digital strategy became clearer, more consistent and better aligned with our goals.', 'sort_order' => 9],
+        ['client' => 'Client',           'role' => 'Brand Strategy',                 'quote' => 'A supportive team that understands the importance of a strong brand.', 'sort_order' => 10],
+        ['client' => 'Client',           'role' => 'Website Design',                 'quote' => 'The website looks modern, works smoothly and represents our business well.', 'sort_order' => 11],
+        ['client' => 'Client',           'role' => 'Digital Services',               'quote' => 'We appreciated the clear communication and attention to detail throughout the project.', 'sort_order' => 12],
+        ['client' => 'Client',           'role' => 'Business Growth',                'quote' => 'The team worked with us to find practical solutions for our business.', 'sort_order' => 13],
+        ['client' => 'Client',           'role' => 'Project Delivery',               'quote' => 'A great experience from planning through execution and delivery.', 'sort_order' => 14],
+    ];
+}
+
+if ($pdo) {
+    try {
+        if ((int)$pdo->query('SELECT COUNT(*) FROM testimonials')->fetchColumn() === 0) {
+            $ins = $pdo->prepare('INSERT INTO testimonials (quote, client, role, sort_order, active) VALUES (?, ?, ?, ?, 1)');
+            foreach (default_site_testimonials() as $t) {
+                $ins->execute([$t['quote'], $t['client'], $t['role'], $t['sort_order']]);
+            }
+        }
+    } catch (Throwable $e) {}
+}
+
 $action = $_POST['_action'] ?? '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -115,15 +145,9 @@ require __DIR__ . '/../_header.php';
             $colors   = ['bg-primary-container text-on-primary', 'bg-tertiary-container text-on-tertiary', 'bg-secondary-fixed text-on-secondary-fixed'];
             $color    = $colors[$row['id'] % 3];
         ?>
-        <div class="rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200 flex flex-col p-space-md <?= !$row['active'] ? 'opacity-60' : '' ?>">
-            <!-- Stars -->
-            <div class="flex items-center gap-0.5 mb-space-sm">
-                <?php for ($i = 0; $i < 5; $i++): ?>
-                <span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings:'FILL' 1">star</span>
-                <?php endfor; ?>
-            </div>
+        <div class="rounded-lg bg-white border border-outline-variant flex flex-col p-5 <?= !$row['active'] ? 'opacity-60' : '' ?>">
             <!-- Quote -->
-            <blockquote class="font-body-md text-body-md text-on-surface italic flex-1 mb-space-md leading-relaxed">
+            <blockquote class="font-body-md text-body-md text-on-surface flex-1 mb-4 leading-relaxed">
                 "<?= e($row['quote']) ?>"
             </blockquote>
             <!-- Client info -->

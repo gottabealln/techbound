@@ -1,6 +1,6 @@
 <?php
 $page_title   = 'About Us | TechBound Digital Marketing Agency Trivandrum';
-$page_desc    = 'Learn about TechBound, a leading digital marketing agency in Trivandrum, Kerala. Meet our leadership team, discover our mission, and explore our 12+ years of delivering measurable growth.';
+$page_desc    = 'Learn about TechBound, a leading digital marketing agency in Trivandrum, Kerala. Meet our leadership team, discover our mission, and explore our 15+ years of delivering measurable growth.';
 $page_styles  = ['css/about.css'];
 $page_slug   = 'about';
 $page_scripts = [
@@ -35,7 +35,7 @@ require __DIR__ . '/includes/header.php';
         <div class="hero__text">
           <h1 class="hero__title">Meet the Team Behind Your Growth</h1>
           <p class="hero__desc">
-            With over 12 years of hands-on experience in Trivandrum, Kerala, we help ambitious brands outgrow trends with transparent, data-driven digital marketing and technology.
+            With over 15 years of hands-on experience in Trivandrum, Kerala, we help ambitious brands outgrow trends with transparent, data-driven digital marketing and technology.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ require __DIR__ . '/includes/header.php';
       <p class="about-stat__label">Projects Completed</p>
     </div>
     <div class="about-stat" data-animate>
-      <div class="about-stat__num"><span data-count="12">0</span><sup>+</sup></div>
+      <div class="about-stat__num"><span data-count="15">0</span><sup>+</sup></div>
       <p class="about-stat__label">Years of Experience</p>
     </div>
     <div class="about-stat" data-animate>
@@ -148,7 +148,7 @@ require __DIR__ . '/includes/header.php';
     <img src="<?= asset('assets/hero.avif') ?>" alt="The Techbound team at work" loading="lazy">
   </div>
   <div class="about-who__badge">
-    <strong>12+</strong>
+    <strong>15+</strong>
     <span>Years of Experience</span>
   </div>
 </div>

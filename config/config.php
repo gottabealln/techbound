@@ -40,7 +40,7 @@ return [
     'mail' => [
         'provider'       => 'resend',
         'resend_api_key' => $env('RESEND_API_KEY', ''),
-        'resend_from'    => $env('RESEND_FROM', 'TechBound Website <contacts@techbound.in>'),
-        'to'             => $env('MAIL_TO', 'contacts@techbound.in'),
+        'resend_from'    => $env('RESEND_FROM', 'TechBound Website <onboarding@resend.dev>'),
+        'to'             => $env('MAIL_TO', 'allen.medowa@gmail.com'),
     ],
 ];

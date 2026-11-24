@@ -65,6 +65,10 @@ $company_links = [
   <meta property="og:description" content="<?= htmlspecialchars($page_desc) ?>">
   <meta property="og:type" content="website">
 
+  <link rel="icon" type="image/png" href="<?= asset('assets/favicon.png') ?>">
+  <link rel="shortcut icon" type="image/png" href="<?= asset('assets/favicon.png') ?>">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?= asset('assets/apple-touch-icon.png') ?>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:wght@400;700&display=swap" rel="stylesheet">

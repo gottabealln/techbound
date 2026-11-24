@@ -195,7 +195,7 @@ require __DIR__ . '/includes/header.php';
                 We started Techbound to help local businesses grow online with honest advice,
                 and that promise still guides every campaign we deliver.
               </blockquote>
-              <h3>Riaz</h3>
+              <h3>Riyaz Hakkim</h3>
               <span class="ceo-quote__role">Founder &amp; CEO, Techbound</span>
             </div>
             <div class="ceo-about">
@@ -219,7 +219,7 @@ require __DIR__ . '/includes/header.php';
                 Great marketing is built on trust. We explain what we do, show the numbers
                 and stay accountable to the results we promise.
               </blockquote>
-              <h3>Shaphna</h3>
+              <h3>Shabna Nazeer</h3>
               <span class="ceo-quote__role">Co-founder &amp; CEO, Techbound</span>
             </div>
             <div class="ceo-about">

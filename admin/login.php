@@ -15,31 +15,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pass  = (string)($_POST['password'] ?? '');
     try {
         if (!admin_login($email, $pass)) {
-            $error = 'Invalid email address or password. Please try again.';
+            $error = 'Invalid email address or password.';
         } else {
             header('Location: ' . admin_home_url());
             exit;
         }
     } catch (Throwable $e) {
-        $error = 'Authentication service error: ' . $e->getMessage();
+        $error = 'Unable to sign in right now. Please check the database connection.';
     }
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login | TechBound Innovations</title>
-    <meta name="description" content="Secure administrative login for TechBound Innovations management.">
+    <title>Sign In | TechBound Admin</title>
+    <meta name="description" content="Sign in to TechBound Innovations Admin.">
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="<?= e(asset('assets/favicon.png')) ?>">
+    <link rel="shortcut icon" type="image/png" href="<?= e(asset('assets/favicon.png')) ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= e(asset('assets/apple-touch-icon.png')) ?>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -47,161 +48,100 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             theme: {
                 extend: {
                     colors: {
-                        brand: '#00e599',
-                        brandHover: '#00f0a0',
-                        darkNavy: '#06121e',
-                        surfaceCard: '#0d1e30',
+                        brand: '#1b8c43',
+                        brandHover: '#157336',
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['Lato', 'sans-serif'],
                         heading: ['DM Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        body {
-            background-color: #06121e;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 229, 153, 0.08) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(29, 78, 216, 0.12) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(6, 18, 30, 0.95) 0%, #040c14 100%);
-            min-height: 100vh;
-        }
-        .glow-pulse {
-            animation: pulseGlow 3s infinite ease-in-out;
-        }
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.3); opacity: 1; }
-        }
-    </style>
 </head>
-<body class="flex flex-col items-center justify-between min-h-screen p-4 sm:p-6 text-slate-200 font-sans antialiased">
+<body class="bg-[#f6f7f6] text-gray-900 font-sans antialiased min-h-screen flex flex-col justify-between px-4 py-8">
 
-    <!-- Top spacer / back link -->
-    <header class="w-full max-w-md pt-2 flex items-center justify-between">
-        <a href="<?= e(url('index.php')) ?>" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-brand transition-colors group">
-            <span class="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
-            <span>Back to TechBound Website</span>
+    <div class="w-full max-w-sm mx-auto">
+        <a href="<?= e(url('index.php')) ?>" class="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 transition-colors">
+            <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            <span>Back to website</span>
         </a>
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-brand text-[11px] font-semibold uppercase tracking-wider">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand glow-pulse"></span>
-            CMS Portal
-        </span>
-    </header>
+    </div>
 
-    <!-- Main Login Card Container -->
-    <main class="w-full max-w-md my-auto py-6">
-        <div class="bg-surfaceCard/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 sm:p-8 relative overflow-hidden">
-            
-            <!-- Subtle top accent bar -->
-            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 via-brand to-blue-500"></div>
+    <main class="w-full max-w-sm mx-auto my-auto py-8">
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 sm:p-8">
 
-            <!-- Card Header -->
-            <div class="flex flex-col items-center text-center mb-6">
-                <a href="<?= e(url('index.php')) ?>" class="inline-block mb-3 hover:opacity-90 transition-opacity">
-                    <img src="<?= e(url('assets/logo_techbound.png')) ?>" alt="TechBound Logo" class="h-9 w-auto object-contain">
+            <div class="mb-6">
+                <a href="<?= e(url('index.php')) ?>" class="inline-block mb-5">
+                    <img src="<?= e(url('assets/logo_techbound.png')) ?>" alt="TechBound" class="h-8 w-auto object-contain">
                 </a>
-                <h1 class="text-xl sm:text-2xl font-bold font-heading text-white tracking-tight">Admin Authentication</h1>
-                <p class="text-xs sm:text-sm text-slate-400 mt-1">Sign in to manage inbound leads, content, and agency settings</p>
+                <h1 class="text-xl font-heading font-semibold text-gray-900">Sign in</h1>
+                <p class="text-sm text-gray-500 mt-1">Enter your admin credentials to continue.</p>
             </div>
 
-            <!-- Error Banner -->
             <?php if ($error): ?>
-            <div class="mb-5 p-3.5 rounded-xl bg-red-500/15 border border-red-500/30 text-red-300 text-xs sm:text-sm flex items-start gap-2.5 animate-shake">
-                <span class="material-symbols-outlined text-[18px] text-red-400 shrink-0 mt-0.5">error</span>
+            <div class="mb-5 p-3 rounded-lg bg-red-50 border border-red-200 text-red-800 text-sm flex items-start gap-2">
+                <span class="material-symbols-outlined text-[18px] text-red-600 shrink-0 mt-0.5">error</span>
                 <span><?= e($error) ?></span>
             </div>
             <?php endif; ?>
 
-            <!-- Login Form -->
             <form method="POST" action="" class="space-y-4" novalidate>
-
-                <!-- Email Field -->
                 <div>
-                    <label for="admin-email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
-                        Email Address
-                    </label>
-                    <div class="relative flex items-center">
-                        <span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">mail</span>
-                        <input 
-                            type="email" 
-                            id="admin-email" 
-                            name="email" 
-                            required 
-                            autofocus
-                            autocomplete="email"
-                            placeholder="admin@techbound.in" 
-                            value="<?= e($_POST['email'] ?? '') ?>"
-                            class="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
-                        >
-                    </div>
+                    <label for="admin-email" class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+                    <input
+                        type="email"
+                        id="admin-email"
+                        name="email"
+                        required
+                        autofocus
+                        autocomplete="email"
+                        placeholder="you@techbound.in"
+                        value="<?= e($_POST['email'] ?? '') ?>"
+                        class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/15 transition-colors"
+                    >
                 </div>
 
-                <!-- Password Field -->
                 <div>
-                    <div class="flex items-center justify-between mb-1.5">
-                        <label for="admin-password" class="block text-xs font-semibold uppercase tracking-wider text-slate-300">
-                            Password
-                        </label>
-                    </div>
+                    <label for="admin-password" class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
                     <div class="relative flex items-center">
-                        <span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">lock</span>
-                        <input 
-                            type="password" 
-                            id="admin-password" 
-                            name="password" 
-                            required 
+                        <input
+                            type="password"
+                            id="admin-password"
+                            name="password"
+                            required
                             autocomplete="current-password"
-                            placeholder="••••••••••••" 
-                            class="w-full pl-11 pr-11 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                            placeholder="Enter your password"
+                            class="w-full pl-3.5 pr-10 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/15 transition-colors"
                         >
-                        <!-- Password Toggle Button -->
-                        <button 
-                            type="button" 
-                            id="togglePassword" 
-                            aria-label="Toggle password visibility" 
-                            class="absolute right-3 p-1 text-slate-400 hover:text-white transition-colors"
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            aria-label="Toggle password visibility"
+                            class="absolute right-2.5 p-1 text-gray-400 hover:text-gray-700 transition-colors"
                         >
-                            <span id="pwdIcon" class="material-symbols-outlined text-[20px]">visibility</span>
+                            <span id="pwdIcon" class="material-symbols-outlined text-[19px]">visibility</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Action Button -->
-                <div class="pt-2">
-                    <button 
-                        type="submit" 
-                        class="w-full py-3.5 px-4 bg-brand hover:bg-brandHover text-darkNavy font-heading font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-brand/20 hover:shadow-brand/30 active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+                <div class="pt-1">
+                    <button
+                        type="submit"
+                        class="w-full py-2.5 px-4 bg-brand hover:bg-brandHover text-white font-heading font-medium text-sm rounded-lg transition-colors"
                     >
-                        <span>Sign In to Dashboard</span>
-                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        Sign in
                     </button>
                 </div>
-
             </form>
-
-            <!-- Card Bottom Note -->
-            <div class="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-500">
-                <span class="flex items-center gap-1">
-                    <span class="material-symbols-outlined text-[14px] text-emerald-400">lock</span>
-                    
-                </span>
-                <span>Trivandrum, Kerala</span>
-            </div>
-
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full max-w-md pb-2 text-center text-xs text-slate-500">
-        <p>&copy; <?= date('Y') ?> TechBound Innovations. Internal Administrative System.</p>
+    <footer class="w-full max-w-sm mx-auto text-center text-xs text-gray-400">
+        <p>&copy; <?= date('Y') ?> TechBound Innovations</p>
     </footer>
 
-    <!-- Password visibility toggle script -->
     <script>
         const pwdInput = document.getElementById('admin-password');
         const pwdToggle = document.getElementById('togglePassword');
@@ -215,6 +155,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             });
         }
     </script>
-
 </body>
 </html>

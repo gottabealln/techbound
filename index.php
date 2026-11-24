@@ -44,7 +44,7 @@ require __DIR__ . '/includes/header.php';
         </div>
 
         <div class="hero__buttons">
-          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--book">Book a Call</a>
+          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--book" data-book-call>Book a Call</a>
           <?php /* <a href="<?= url('portfolio.php') ?>" class="btn btn--outline btn--arrow btn--works">View Our Works</a> */ ?>
         </div>
       </div>
@@ -200,60 +200,6 @@ require __DIR__ . '/includes/header.php';
 
 
 
-  <!-- ========== TECH STACK ========== -->
-<section class="stack" data-nav="light">
-  
-  <div class="stack__inner">
-
-    <div class="stack__head">
-      <h2 class="stack__title">
-        Tools We Use <br>
-        <span>To Grow Your Business</span>
-      </h2>
-      <p class="stack__lead">
-        Techbound uses trusted marketing, analytics and development platforms
-        to plan, launch and measure every campaign. The right tools mean
-        clearer data, faster results and growth you can track.
-      </p>
-    </div>
-
-    <div class="stack__marquee" aria-label="Tools and platforms we work with">
-      <div class="stack__track">
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/googleads" alt=""><span>Google Ads</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/googleanalytics" alt=""><span>Analytics</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/googlesearchconsole" alt=""><span>Search Console</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/meta" alt=""><span>Meta</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/semrush" alt=""><span>Semrush</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/wordpress" alt=""><span>WordPress</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/shopify" alt=""><span>Shopify</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/woocommerce" alt=""><span>WooCommerce</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/hubspot" alt=""><span>HubSpot</span>
-  </div>
-  <div class="stack__item">
-    <img src="https://cdn.simpleicons.org/mailchimp" alt=""><span>Mailchimp</span>
-  </div>
-</div>
-
-  </div>
-</section>
-
   <!-- ===== TESTIMONIALS ===== -->
 <section class="testimonials" id="testimonials">
   <div class="testimonials__inner">
@@ -330,6 +276,63 @@ require __DIR__ . '/includes/header.php';
   
 
 
+  <!-- ===== PROCESS TIMELINE ===== -->
+<section class="process" data-nav="light" id="process">
+  <div class="services__inner">
+
+    
+    <div class="services__head">
+      <span class="pill pill--glow">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+        Our Process
+      </span>
+
+      
+    </div>
+    
+    <div class="process__timeline" id="processTimeline">
+      <div class="process__line"><div class="process__fill" id="processFill"></div></div>
+      <span class="process__dot" id="processDot"></span>
+
+      <div class="process__step process__step--left">
+        <div class="process__content">
+          <h3>Discovery &amp; Strategy</h3>
+          <p>We learn about your business, goals and audience, then shape a plan around them.</p>
+        </div>
+      </div>
+
+      <div class="process__step process__step--right">
+        <div class="process__content">
+          <h3>Proposal &amp; Timeline</h3>
+          <p>We agree on scope, pricing and clear timelines before any work begins.</p>
+        </div>
+      </div>
+
+      <div class="process__step process__step--left">
+        <div class="process__content">
+          <h3>Design &amp; Execution</h3>
+          <p>Our team builds your website, creatives and campaigns, with regular updates along the way.</p>
+        </div>
+      </div>
+
+      <div class="process__step process__step--right">
+        <div class="process__content">
+          <h3>Review &amp; Refine</h3>
+          <p>We refine everything based on your feedback until it matches your expectations.</p>
+        </div>
+      </div>
+
+      <div class="process__step process__step--left">
+        <div class="process__content">
+          <h3>Launch &amp; Growth</h3>
+          <p>We go live, track the results and keep optimising to grow your business.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
     <!-- ===== FAQ ===== -->
   <section class="faq" id="faq" data-nav="light">
     <div class="faq__inner">
@@ -405,62 +408,6 @@ require __DIR__ . '/includes/header.php';
       </div>
     </div>
   </section>
-
-<section class="process" data-nav="light" id="process">
-  <div class="services__inner">
-
-    
-    <div class="services__head">
-      <span class="pill pill--glow">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
-        Our Process
-      </span>
-
-      
-    </div>
-    
-    <div class="process__timeline" id="processTimeline">
-      <div class="process__line"><div class="process__fill" id="processFill"></div></div>
-      <span class="process__dot" id="processDot"></span>
-
-      <div class="process__step process__step--left">
-        <div class="process__content">
-          <h3>Discovery &amp; Strategy</h3>
-          <p>We learn about your business, goals and audience, then shape a plan around them.</p>
-        </div>
-      </div>
-
-      <div class="process__step process__step--right">
-        <div class="process__content">
-          <h3>Proposal &amp; Timeline</h3>
-          <p>We agree on scope, pricing and clear timelines before any work begins.</p>
-        </div>
-      </div>
-
-      <div class="process__step process__step--left">
-        <div class="process__content">
-          <h3>Design &amp; Execution</h3>
-          <p>Our team builds your website, creatives and campaigns, with regular updates along the way.</p>
-        </div>
-      </div>
-
-      <div class="process__step process__step--right">
-        <div class="process__content">
-          <h3>Review &amp; Refine</h3>
-          <p>We refine everything based on your feedback until it matches your expectations.</p>
-        </div>
-      </div>
-
-      <div class="process__step process__step--left">
-        <div class="process__content">
-          <h3>Launch &amp; Growth</h3>
-          <p>We go live, track the results and keep optimising to grow your business.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <section class="services blog" id="blog" data-nav="light">
   <div class="services__inner">
@@ -588,7 +535,7 @@ require __DIR__ . '/includes/header.php';
       we'll help you find the right strategy and the right team to deliver it.
     </p>
     <div class="cta__actions">
-      <a href="<?= url('contact.php') ?>" class="cta__btn cta__btn--solid">
+      <a href="<?= url('contact.php') ?>" class="cta__btn cta__btn--solid" data-book-call>
         Book a Call
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>

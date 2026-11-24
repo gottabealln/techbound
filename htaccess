@@ -27,7 +27,9 @@
     RewriteRule ^our-services/website-development-company-in-kerala/?$ website-development.php [L,QSA]
     RewriteRule ^our-services/best-lead-generation-company-in-kerala/?$ lead-generation.php [L,QSA]
     RewriteRule ^our-services/online-advertising-agency-in-kerala/?$ online-advertising.php [L,QSA]
-    RewriteRule ^construction-marketing-agency-kerala/?$ construction.php [L,QSA]
+    RewriteRule ^real-estate-marketing-agency-kerala/?$ construction.php [L,QSA]
+    RewriteCond %{REQUEST_URI} ^(.*/)construction-marketing-agency-kerala/?$
+    RewriteRule ^ %1real-estate-marketing-agency-kerala/ [R=301,L]
     RewriteRule ^digital-marketing-trivandrum-guide/?$ digital-marketing-trivandrum-guide.php [L,QSA]
     RewriteRule ^blog/?$ blog.php [L,QSA]
     RewriteRule ^blog/([^/]+)/?$ blog-post.php?slug=$1 [L,QSA]

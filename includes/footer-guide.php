@@ -69,7 +69,7 @@ $page_scripts = $page_scripts ?? [];
             <li><a href="<?= url('smm.php') ?>">Social Media Marketing</a></li>
             <li><a href="<?= url('website-development.php') ?>">Website Development</a></li>
             <li><a href="<?= url('lead-generation.php') ?>">Lead Generation</a></li>
-            <li><a href="<?= url('construction.php') ?>">Construction Marketing</a></li>
+            <li><a href="<?= url('construction.php') ?>">Real Estate Marketing</a></li>
           </ul>
         </div>
 

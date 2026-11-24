@@ -76,7 +76,7 @@ $company = [
 ];
 
 $company_links = [
-  ['label' => 'Construction', 'href' => 'construction.php'],
+  ['label' => 'Real Estate', 'href' => 'construction.php'],
 ];
 ?>
 <!DOCTYPE html>

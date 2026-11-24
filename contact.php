@@ -130,7 +130,7 @@ $map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('Tech
               <option value="" <?= empty($req_service) ? 'selected' : '' ?>>Select Service / Inquiry Type</option>
               <option value="Website Development" <?= stripos($req_service, 'Web') !== false ? 'selected' : '' ?>>Website Development</option>
               <option value="Lead Generation" <?= stripos($req_service, 'Lead') !== false ? 'selected' : '' ?>>Lead Generation</option>
-              <option value="Construction Marketing" <?= stripos($req_service, 'Construct') !== false ? 'selected' : '' ?>>Construction Marketing</option>
+              <option value="Real Estate Marketing" <?= (stripos($req_service, 'Real Estate') !== false || stripos($req_service, 'Construct') !== false) ? 'selected' : '' ?>>Real Estate Marketing</option>
               <option value="SEO" <?= (stripos($req_service, 'SEO') !== false && stripos($req_service, 'AI') === false) ? 'selected' : '' ?>>Search Engine Optimization (SEO)</option>
               <option value="AI SEO" <?= stripos($req_service, 'AI') !== false ? 'selected' : '' ?>>AI SEO &amp; Generative Search</option>
               <option value="Online Advertising" <?= (stripos($req_service, 'Ad') !== false || stripos($req_service, 'PPC') !== false) ? 'selected' : '' ?>>Paid Online Advertising (Google &amp; Meta)</option>

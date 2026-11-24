@@ -363,4 +363,87 @@ if (document.readyState === 'loading') {
 
 })();
 
+/* ===== Book a Call Contact Popup Modal ===== */
+(function () {
+  const modal = document.getElementById('tbCallModal');
+  if (!modal) return;
+
+  const form = document.getElementById('tbCallModalForm');
+  const statusEl = document.getElementById('tbCallModalStatus');
+  const tsInput = document.getElementById('tbc-ts');
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    if (tsInput) tsInput.value = String(Math.floor(Date.now() / 1000));
+    const firstInput = modal.querySelector('#tbc-name');
+    if (firstInput) setTimeout(() => firstInput.focus(), 80);
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function (e) {
+    const trigger = e.target.closest('[data-book-call]');
+    if (trigger) {
+      e.preventDefault();
+      openModal();
+      return;
+    }
+    if (e.target.closest('[data-close-call-modal]')) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) {
+      closeModal();
+    }
+  });
+
+  if (form && statusEl) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      statusEl.className = 'tb-call-form__status';
+      statusEl.textContent = 'Sending your request...';
+
+      const getToken = (typeof window.tbGetRecaptchaToken === 'function')
+        ? window.tbGetRecaptchaToken('book_call')
+        : Promise.resolve('');
+
+      getToken.then(function (token) {
+        const tokenEl = document.getElementById('tbc-recaptcha-token');
+        if (tokenEl) tokenEl.value = token || '';
+        return fetch(form.getAttribute('action'), {
+          method: 'POST',
+          body: new FormData(form)
+        });
+      })
+        .then(function (r) {
+          return r.json().catch(function () { return { ok: false, message: 'Unexpected server response.' }; });
+        })
+        .then(function (data) {
+          if (!data || !data.ok) {
+            throw new Error((data && data.message) || 'Could not send your request. Please call +91 86064 97677.');
+          }
+          form.reset();
+          statusEl.className = 'tb-call-form__status is-ok';
+          statusEl.textContent = data.message || 'Thank you! We will call you back within one working day.';
+        })
+        .catch(function (err) {
+          statusEl.className = 'tb-call-form__status is-err';
+          statusEl.textContent = (err && err.message) ? err.message : 'Could not send right now. Please call +91 86064 97677.';
+        })
+        .finally(function () {
+          if (btn) btn.disabled = false;
+        });
+    });
+  }
+})();
+
+
 

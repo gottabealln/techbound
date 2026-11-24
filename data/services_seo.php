@@ -235,15 +235,15 @@ return array (
   array (
     'id' => 8,
     'page_file' => 'construction.php',
-    'slug' => 'construction-marketing-agency-kerala',
-    'title' => 'Construction Marketing',
-    'meta_title' => 'Construction Marketing Agency in Kerala | TechBound',
-    'meta_description' => 'Specialized digital marketing for builders, architects, and real estate developers in Kerala. Generate high-intent villa, apartment, and commercial leads.',
-    'primary_keyword' => 'construction marketing agency Kerala',
+    'slug' => 'real-estate-marketing-agency-kerala',
+    'title' => 'Real Estate Marketing',
+    'meta_title' => 'Real Estate Marketing Agency in Kerala | TechBound',
+    'meta_description' => 'Specialized real estate digital marketing for property developers, luxury villa projects, and apartment builders in Kerala. Generate high-intent local and NRI buyer leads.',
+    'primary_keyword' => 'real estate marketing agency Kerala',
     'schema_data' => '{
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Construction & Real Estate Digital Marketing",
+    "serviceType": "Real Estate Digital Marketing",
     "provider": {
         "@type": "Organization",
         "name": "TechBound Innovations",
@@ -255,10 +255,10 @@ return array (
         "India"
     ]
 }',
-    'intro' => 'Specialized digital marketing, SEO, and lead generation for builders and real estate developers in Kerala.',
+    'intro' => 'Specialized digital marketing, SEO, and site-visit lead generation for real estate developers and builders in Kerala.',
     'items' => '[]',
     'image' => 'assets/hero.avif',
-    'image_alt' => 'Construction and Real Estate Digital Marketing Agency in Kerala',
+    'image_alt' => 'Real Estate Digital Marketing Agency in Kerala',
     'image_alt_description' => NULL,
     'sort_order' => 8,
     'active' => 1,

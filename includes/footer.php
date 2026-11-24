@@ -30,7 +30,7 @@ $page_scripts = $page_scripts ?? [];
           <a href="<?= url('index.php') ?>" class="footer__logo">
             <img src="<?= url('assets/logo_techbound.png') ?>" alt="TechBound logo">
           </a>
-          <h3 class="footer__heading">Address</h3>
+          
           <address class="footer__address">
              Fl -2,<br>
              Thejaswini, SBC 7, Technopark Campus<br>
@@ -69,7 +69,7 @@ $page_scripts = $page_scripts ?? [];
             <li><a href="<?= url('smm.php') ?>">Social Media Marketing</a></li>
             <li><a href="<?= url('website-development.php') ?>">Website Development</a></li>
             <li><a href="<?= url('lead-generation.php') ?>">Lead Generation</a></li>
-            <li><a href="<?= url('construction.php') ?>">Construction Marketing</a></li>
+            <li><a href="<?= url('construction.php') ?>">Real Estate Marketing</a></li>
           </ul>
         </div>
 
@@ -96,6 +96,122 @@ $page_scripts = $page_scripts ?? [];
 
     
   </footer>
+
+  <!-- ===== BOOK A CALL / CONTACT POPUP MODAL ===== -->
+  <div class="tb-call-modal" id="tbCallModal" role="dialog" aria-modal="true" aria-labelledby="tbCallModalTitle" hidden>
+    <div class="tb-call-modal__backdrop" data-close-call-modal></div>
+    <div class="tb-call-modal__dialog">
+      <button type="button" class="tb-call-modal__close" data-close-call-modal aria-label="Close contact menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="tb-call-modal__grid">
+        <!-- Left: Direct Contact Details -->
+        <div class="tb-call-modal__info">
+          <span class="pill pill--glow">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+            Book a Call
+          </span>
+          <h2 id="tbCallModalTitle" class="tb-call-modal__title">Let's Talk About Your Growth</h2>
+          <p class="tb-call-modal__lead">Reach our Trivandrum team directly or request a quick callback within one working day.</p>
+
+          <ul class="tb-call-modal__details">
+            <li>
+              <a href="tel:+918606497677">
+                <span class="tb-call-modal__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+                </span>
+                <span><small>Call Us</small><strong>+91 86064 97677</strong></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/918606497677" target="_blank" rel="noopener noreferrer">
+                <span class="tb-call-modal__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </span>
+                <span><small>WhatsApp</small><strong>Chat on WhatsApp</strong></span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contacts@techbound.in">
+                <span class="tb-call-modal__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                </span>
+                <span><small>Email</small><strong>contacts@techbound.in</strong></span>
+              </a>
+            </li>
+            <li>
+              <div class="tb-call-modal__row">
+                <span class="tb-call-modal__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span>
+                  <small>Offices</small>
+                  <strong>Statue, Thiruvananthapuram &bull; Technopark Campus</strong>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="tb-call-modal__row">
+                <span class="tb-call-modal__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </span>
+                <span><small>Hours</small><strong>Mon – Sat, 9:00 AM – 6:30 PM</strong></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Quick Callback Form -->
+        <div class="tb-call-modal__form-wrap">
+          <h3 class="tb-call-modal__form-title">Request a Callback</h3>
+          <form id="tbCallModalForm" class="tb-call-form" method="post" action="<?= url('send-contact.php') ?>">
+            <div class="tb-call-field">
+              <label for="tbc-name">Your Name *</label>
+              <input type="text" id="tbc-name" name="name" required placeholder="Full name">
+            </div>
+            <div class="tb-call-form__row">
+              <div class="tb-call-field">
+                <label for="tbc-email">Email *</label>
+                <input type="email" id="tbc-email" name="email" required placeholder="you@company.com">
+              </div>
+              <div class="tb-call-field">
+                <label for="tbc-phone">Phone / WhatsApp *</label>
+                <input type="tel" id="tbc-phone" name="phone" required placeholder="+91 98765 43210">
+              </div>
+            </div>
+            <div class="tb-call-field">
+              <label for="tbc-service">Service Needed</label>
+              <select id="tbc-service" name="service">
+                <option value="Book a Call">General Growth Consultation</option>
+                <option value="SEO">Search Engine Optimization (SEO)</option>
+                <option value="AI SEO">AI SEO &amp; Generative Search</option>
+                <option value="Online Advertising">Online Advertising (Google &amp; Meta)</option>
+                <option value="SMM">Social Media Marketing</option>
+                <option value="Website Development">Website Development</option>
+                <option value="Lead Generation">Lead Generation</option>
+                <option value="Real Estate Marketing">Real Estate Marketing</option>
+              </select>
+            </div>
+            <div class="tb-call-field">
+              <label for="tbc-message">How can we help? *</label>
+              <textarea id="tbc-message" name="message" rows="3" required placeholder="Briefly tell us about your business and goals..."></textarea>
+            </div>
+
+            <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+              <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="_form_ts" id="tbc-ts" value="<?= time() ?>">
+            <input type="hidden" name="recaptcha_token" id="tbc-recaptcha-token" value="">
+
+            <button type="submit" class="btn btn--primary btn--sm btn--arrow tb-call-form__submit">Request Callback</button>
+            <p id="tbCallModalStatus" class="tb-call-form__status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   

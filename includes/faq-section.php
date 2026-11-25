@@ -39,7 +39,7 @@ if (empty($_faqs)) {
             ['question' => 'Can I visit your office in Trivandrum?', 'answer' => 'Absolutely. Our office is at 6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Thiruvananthapuram 695001. We welcome in-person meetings — just drop us a message to book a slot.']
         ],
         'about' => [
-            ['question' => 'How long has TechBound been in business?', 'answer' => 'TechBound Innovations was founded in Trivandrum and has been helping businesses grow digitally for over 15 years, working with brands across Kerala, India and the GCC.'],
+            ['question' => 'How long has TechBound been in business?', 'answer' => 'TechBound Innovations was founded in Trivandrum and has been helping businesses grow digitally for over 15 years. Today we work from offices in Trivandrum and Kochi, serving brands across Kerala, India and the GCC.'],
             ['question' => 'What makes TechBound different from other digital marketing agencies?', 'answer' => 'We combine deep local market knowledge with global digital strategy. Our team stays at the forefront of AI-driven search changes, and we measure success by business outcomes — leads, revenue and growth.'],
             ['question' => 'How big is the TechBound team?', 'answer' => 'We have a dedicated in-house team of SEO strategists, content writers, social media managers, paid ads specialists, web developers and designers, all working from our Trivandrum office.'],
             ['question' => 'Does TechBound work with startups or only established businesses?', 'answer' => 'Both. We love helping startups build their digital presence from scratch and helping established brands scale further. Our strategies are tailored to your stage of growth and budget.']
@@ -85,7 +85,12 @@ if (empty($_faqs)) return; // nothing to render
           id="faq-<?= htmlspecialchars($faq_page, ENT_QUOTES, 'UTF-8') ?>-<?= $_i + 1 ?>"
         >
           <div class="faq__answer-inner">
-            <p><?= htmlspecialchars($_faq['answer'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php
+              $_ansHtml = htmlspecialchars($_faq['answer'], ENT_QUOTES, 'UTF-8');
+              $_kochiHref = htmlspecialchars(url('digital-marketing-agency-in-kochi.php'), ENT_QUOTES, 'UTF-8');
+              $_ansHtml = preg_replace('/\bKochi\b/', '<a href="' . $_kochiHref . '" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px;">Kochi</a>', $_ansHtml);
+            ?>
+            <p><?= $_ansHtml ?></p>
           </div>
         </div>
       </div>

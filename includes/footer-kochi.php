@@ -141,17 +141,6 @@ $page_scripts = $page_scripts ?? [];
             <li>
               <div class="tb-call-modal__row">
                 <span class="tb-call-modal__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </span>
-                <span>
-                  <small>Kochi Office</small>
-                  <strong>Suraj Buildings, Giri Nagar, Kadavanthra, Kochi 682020</strong>
-                </span>
-              </div>
-            </li>
-            <li>
-              <div class="tb-call-modal__row">
-                <span class="tb-call-modal__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                 </span>
                 <span><small>Hours</small><strong>Mon – Fri, 9:30 AM – 6:30 PM</strong></span>

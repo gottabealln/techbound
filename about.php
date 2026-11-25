@@ -35,7 +35,7 @@ require __DIR__ . '/includes/header.php';
         <div class="hero__text">
           <h1 class="hero__title">Meet the Team Behind Your Growth</h1>
           <p class="hero__desc">
-            With over 15 years of hands-on experience in Trivandrum, Kerala, we help ambitious brands outgrow trends with transparent, data-driven digital marketing and technology.
+            With over 15 years of hands-on experience in Trivandrum and <a href="<?= url('digital-marketing-agency-in-kochi.php') ?>" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Kochi</a>, Kerala, we help ambitious brands outgrow trends with transparent, data-driven digital marketing and technology.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ require __DIR__ . '/includes/header.php';
       <h2 class="about-who__title">A Team of Passionate Experts Delivering Real Growth</h2>
 
       <p>
-        Techbound is a digital marketing agency based in Trivandrum, Kerala.
+        TechBound is a digital marketing agency based in Trivandrum and <a href="<?= url('digital-marketing-agency-in-kochi.php') ?>" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px;">Kochi</a>, Kerala.
         We help businesses attract quality leads and grow revenue through
         strategies built around their goals, not a template.
       </p>

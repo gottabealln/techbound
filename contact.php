@@ -175,20 +175,81 @@ $map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('Tech
 
 
 <?php
-$map_address = '6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Statue, Thiruvananthapuram, 695001';
-$map_q       = urlencode('Techbound, ' . $map_address);
+$tvm_map_link   = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('TechBound Digital Marketing Agency Trivandrum, 6th Floor, Karimpanal Statue Avenue, Thiruvananthapuram 695001');
+$kochi_map_link = 'https://maps.app.goo.gl/PtZq5j3vESaBQceT8?g_st=iwb';
+$oman_map_link  = 'https://maps.app.goo.gl/488a8Yp1qqUdP9eb9?g_st=iwb';
 ?>
-<section class="map-section">
-  <div class="container">
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0128912179903!2d76.94543917501265!3d8.498126591543524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05ba2d0ad3aab9%3A0xf24e9cee61cb2a41!2sTechBound%20Digital%20Marketing%20Agency%20Trivandrum!5e0!3m2!1sen!2sin!4v1792383022840!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-        title="Techbound location"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen></iframe>
+<section class="map-section" data-nav="light">
+  <div class="locations__inner">
+    <div class="locations__head" data-animate>
+      <span class="pill pill--glow">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+        Our Locations
+      </span>
+      <h2 class="locations__title">Visit Our Offices</h2>
+    </div>
 
-     
+    <div class="locations-grid">
+
+      <!-- Kochi -->
+      <article class="location-card" data-animate style="--d:100ms">
+        <div class="location-card__map">
+          <iframe
+            src="https://www.google.com/maps?q=Suraj+Buildings,+Giri+Nagar,+Club+Rd,+Giri+Nagar,+Kadavanthra,+Ernakulam,+Kerala+682020&amp;output=embed"
+            title="TechBound Kochi Office Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="location-card__body">
+          <span class="location-card__tag">Kochi Office</span>
+          <h3><a href="<?= url('digital-marketing-agency-in-kochi.php') ?>" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Kochi</a>, Ernakulam</h3>
+          <p>Suraj Buildings, Giri Nagar, Club Rd, Giri Nagar, Kadavanthra, Ernakulam, Keralam 682020</p>
+          <a href="<?= $kochi_map_link ?>" target="_blank" rel="noopener noreferrer" class="location-card__link">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Thiruvananthapuram -->
+      <article class="location-card" data-animate>
+        <div class="location-card__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0128912179903!2d76.94543917501265!3d8.498126591543524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05ba2d0ad3aab9%3A0xf24e9cee61cb2a41!2sTechBound%20Digital%20Marketing%20Agency%20Trivandrum!5e0!3m2!1sen!2sin!4v1792383022840!5m2!1sen!2sin"
+            title="TechBound Thiruvananthapuram Office Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="location-card__body">
+          <span class="location-card__tag">Registered Office</span>
+          <h3>Thiruvananthapuram</h3>
+          <p>6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Statue, Thiruvananthapuram, Kerala 695001</p>
+          <a href="<?= $tvm_map_link ?>" target="_blank" rel="noopener noreferrer" class="location-card__link">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+      </article>
+
+      <!-- Muscat, Oman -->
+      <article class="location-card" data-animate style="--d:200ms">
+        <div class="location-card__map">
+          <iframe
+            src="https://www.google.com/maps?q=Al+Khaleej+Tower,+Muscat+133,+Sultanate+of+Oman&amp;output=embed"
+            title="TechBound Oman Office Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="location-card__body">
+          <span class="location-card__tag">Oman Office</span>
+          <h3>Muscat, Oman</h3>
+          <p>Al Khaleej Tower, Muscat 133, Sultanate of Oman</p>
+          <a href="<?= $oman_map_link ?>" target="_blank" rel="noopener noreferrer" class="location-card__link">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+      </article>
     </div>
   </div>
 </section>

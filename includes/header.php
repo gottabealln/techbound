@@ -76,7 +76,12 @@ $company = [
 ];
 
 $company_links = [
-  ['label' => 'Real Estate', 'href' => 'construction.php'],
+  ['label' => 'Real Estate',         'href' => 'construction.php', 'desc' => 'Specialized marketing for builders & developers'],
+  ['label' => 'Education',           'href' => '',                 'desc' => ''],
+  ['label' => 'Banking and Finance', 'href' => '',                 'desc' => ''],
+  ['label' => 'Tourism',             'href' => '',                 'desc' => ''],
+  ['label' => 'Automobile',          'href' => '',                 'desc' => ''],
+  ['label' => 'E-Commerce',          'href' => '',                 'desc' => ''],
 ];
 ?>
 <!DOCTYPE html>
@@ -234,7 +239,13 @@ $company_links = [
         <h3 class="cmenu__heading">Sectors</h3>
         <ul class="cmenu__links">
           <?php foreach ($company_links as $l): ?>
-            <li><a href="<?= url($l['href']) ?>"><?= $l['label'] ?></a></li>
+            <li>
+              <?php if (!empty($l['href'])): ?>
+                <a href="<?= url($l['href']) ?>"><?= htmlspecialchars($l['label']) ?></a>
+              <?php else: ?>
+                <span class="cmenu__item"><?= htmlspecialchars($l['label']) ?></span>
+              <?php endif; ?>
+            </li>
           <?php endforeach; ?>
         </ul>
         
@@ -262,7 +273,7 @@ $company_links = [
       </ul>
 
       <div class="navbar__actions">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--sm btn--arrow navbar__cta">Talk to an expert</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--sm btn--arrow navbar__cta" data-book-call>Talk to an expert</a>
 
         <button id="menuBtn" class="menu-btn" type="button" aria-expanded="false" aria-label="Menu">
           <svg viewBox="0 0 24 24" fill="#000" aria-hidden="true">
@@ -318,10 +329,18 @@ $company_links = [
               <ul class="m-group__list">
                 <?php foreach ($company_links as $l): ?>
                   <li>
-                    <a href="<?= url($l['href']) ?>" class="m-service-link">
-                      <strong class="m-service-link__name"><?= htmlspecialchars($l['label']) ?></strong>
-                      <span class="m-service-link__desc">Specialized marketing for builders &amp; developers</span>
-                    </a>
+                    <?php if (!empty($l['href'])): ?>
+                      <a href="<?= url($l['href']) ?>" class="m-service-link">
+                        <strong class="m-service-link__name"><?= htmlspecialchars($l['label']) ?></strong>
+                        <?php if (!empty($l['desc'])): ?>
+                          <span class="m-service-link__desc"><?= htmlspecialchars($l['desc']) ?></span>
+                        <?php endif; ?>
+                      </a>
+                    <?php else: ?>
+                      <span class="m-service-link m-service-link--static">
+                        <strong class="m-service-link__name"><?= htmlspecialchars($l['label']) ?></strong>
+                      </span>
+                    <?php endif; ?>
                   </li>
                 <?php endforeach; ?>
               </ul>
@@ -370,7 +389,7 @@ $company_links = [
         </div>
       </div>
 
-      <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--sm btn--arrow btn--block">Talk to an expert</a>
+      <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--sm btn--arrow btn--block" data-book-call>Talk to an expert</a>
     </div>
 
     <!-- ===== DESKTOP CONTACT DETAILS DRAWER ===== -->
@@ -473,7 +492,7 @@ $company_links = [
         </div>
 
         <div class="contact-drawer__cta">
-          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--block">Talk to an expert</a>
+          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--block" data-book-call>Talk to an expert</a>
         </div>
       </div>
     </aside>

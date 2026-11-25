@@ -1144,3 +1144,28 @@
   gap: 16px;
   flex-wrap: wrap;
 }
+
+
+/* ===== Career Application Popup Modal ===== */
+.cr-apply-modal__dialog {
+  max-width: 600px;
+}
+
+.cr-apply-modal__body {
+  padding: 36px 34px 34px;
+  background: #ffffff;
+}
+
+.cr-apply-modal__lead {
+  margin: 0 0 22px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #4b5852;
+}
+
+@media (max-width: 600px) {
+  .cr-apply-modal__body {
+    padding: 28px 20px 26px;
+  }
+}

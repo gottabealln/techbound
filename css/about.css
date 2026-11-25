@@ -976,19 +976,58 @@
 
 @media (max-width: 767px) {
   .journey__scroller {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 12px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    margin-top: 36px;
+    padding-bottom: 0;
   }
 
   .journey__timeline {
-    grid-template-columns: repeat(5, 240px);
-    width: 1200px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 28px;
+    padding-left: 36px;
+  }
+
+  .journey__line {
+    left: 11px;
+    right: auto;
+    top: 14px;
+    bottom: 14px;
+    width: 2px;
+    height: auto;
+  }
+
+  .journey__dot {
+    left: 12px;
+    top: 14px;
+    transition: top .6s cubic-bezier(.65, 0, .35, 1);
   }
 
   .journey__step {
-    scroll-snap-align: center;
+    padding: 0;
+    text-align: left;
+    scroll-snap-align: none;
+  }
+
+  .journey__step::before {
+    left: -24px;
+    top: 14px;
+    transform: translate(-50%, -50%);
+  }
+
+  .journey__year {
+    height: auto;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .journey__content {
+    margin-top: 0;
+  }
+
+  .journey__step.is-active .journey__content {
+    transform: translateX(4px);
   }
 }
 

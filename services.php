@@ -69,7 +69,7 @@ require __DIR__ . '/includes/header.php';
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Talk to an Expert</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-book-call>Talk to an Expert</a>
         <a href="#seo" class="btn btn--outline btn--arrow">Explore Services</a>
       </div>
     </div>
@@ -118,7 +118,7 @@ require __DIR__ . '/includes/header.php';
         $__svcAlt = !empty($__svcSeo['image_alt']) ? $__svcSeo['image_alt'] : $s['title'];
       ?>
       <?php if ($hasImg): ?>
-        <img src="<?= url($imgRel) ?>" alt="<?= htmlspecialchars($__svcAlt) ?>" loading="lazy">
+        <img src="<?= asset($imgRel) ?>" alt="<?= htmlspecialchars($__svcAlt) ?>" loading="lazy">
       <?php else: ?>
         <div class="svc-block__placeholder" aria-hidden="true"><span><?= $num ?></span></div>
       <?php endif; ?>

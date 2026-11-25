@@ -40,7 +40,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Get Free AI Audit</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-audit-modal="ai-audit">Get Free AI Audit</a>
         <a href="#process" class="btn btn--outline btn--arrow">See Our Process</a>
       </div>
     </div>
@@ -239,7 +239,7 @@ include __DIR__ . '/includes/header.php';
           <li>90-day roadmap</li>
           <li>Yours to keep</li>
         </ul>
-        <a href="<?= url('contact.php') ?>" class="btn-outline" style="color: #0a1220; border-color: #0a1220; text-align: center; justify-content: center;">Enquire Now</a>
+        <a href="<?= url('contact.php') ?>" class="btn-outline" data-audit-modal="ai-audit" style="color: #0a1220; border-color: #0a1220; text-align: center; justify-content: center;">Enquire Now</a>
       </div>
       <div class="pricing-card pricing-card--highlight">
         <h3>AI SEO Retainer</h3>
@@ -250,7 +250,7 @@ include __DIR__ . '/includes/header.php';
           <li>Entity work & mentions</li>
           <li>Monthly reporting</li>
         </ul>
-        <a href="<?= url('contact.php') ?>" class="btn-outline" style="background: var(--brand); color: #fff; border-color: var(--brand); text-align: center; justify-content: center;">Get Started</a>
+        <a href="<?= url('contact.php') ?>" class="btn-outline" data-audit-modal="ai-audit" style="background: var(--brand); color: #fff; border-color: var(--brand); text-align: center; justify-content: center;">Get Started</a>
       </div>
       <div class="pricing-card">
         <h3>Add-on for SEO Clients</h3>
@@ -261,7 +261,7 @@ include __DIR__ . '/includes/header.php';
           <li>AI citation tracking</li>
           <li>Added to your report</li>
         </ul>
-        <a href="<?= url('contact.php') ?>" class="btn-outline" style="color: #0a1220; border-color: #0a1220; text-align: center; justify-content: center;">Enquire Now</a>
+        <a href="<?= url('contact.php') ?>" class="btn-outline" data-audit-modal="ai-audit" style="color: #0a1220; border-color: #0a1220; text-align: center; justify-content: center;">Enquire Now</a>
       </div>
     </div>
   </div>
@@ -340,7 +340,7 @@ include __DIR__ . '/includes/header.php';
 <section class="svc-cta">
   <h2>Be the business AI answers name.</h2>
   <p>Talk to us about your AI visibility. We'll show you where you stand and what to fix first.</p>
-  <a class="btn-outline" href="<?= url('contact.php') ?>">Get your free AI audit
+  <a class="btn-outline" href="<?= url('contact.php') ?>" data-audit-modal="ai-audit">Get your free AI audit
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </a>
 </section>

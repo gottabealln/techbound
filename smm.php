@@ -40,7 +40,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Get a Free Audit</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-audit-modal="smm-audit">Get a Free Audit</a>
         <a href="#process" class="btn btn--outline btn--arrow">See How We Work</a>
       </div>
     </div>
@@ -401,7 +401,7 @@ include __DIR__ . '/includes/header.php';
 <section class="svc-cta">
   <h2>Ready to Build a Social Presence Your Business Deserves?</h2>
   <p>Your audience is on social media right now discovering brands. If you're looking for a reliable partner that delivers results you can see, let's have an honest conversation.</p>
-  <a class="btn-outline" href="<?= url('contact.php') ?>">Let's Talk
+  <a class="btn-outline" href="<?= url('contact.php') ?>" data-audit-modal="smm-audit">Let's Talk
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </a>
 </section>

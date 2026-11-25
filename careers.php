@@ -525,71 +525,24 @@ require __DIR__ . '/includes/header.php';
   </section>
 
   <!-- =========================================================================
-       APPLICATION FORM SECTION (White-background Send Message interface)
+       APPLICATION POPUP MODAL (Triggered by Apply Now on any open role)
        ========================================================================= -->
-  <section class="cr-apply" id="apply" data-nav="light">
-    <div class="cr-apply__inner" id="applyFormWrap">
+  <div class="tb-call-modal cr-apply-modal" id="crApplyModal" role="dialog" aria-modal="true" aria-labelledby="crApplyModalTitle" hidden>
+    <div class="tb-call-modal__backdrop" data-close-career-modal></div>
+    <div class="tb-call-modal__dialog cr-apply-modal__dialog">
+      <button type="button" class="tb-call-modal__close" data-close-career-modal aria-label="Close application form">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
 
-      <!-- Left info -->
-      <div class="cr-apply__info">
-        <span class="pill pill--glow" data-animate="up">
+      <div class="cr-apply-modal__body">
+        <span class="pill pill--glow">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
-          Send Your Profile
+          <span id="crApplyRoleBadge">Apply Now</span>
         </span>
-        <h2 class="cr-apply__title" data-animate="up" style="--d:80ms">Take the Next Step in Your Career Journey</h2>
-        <p class="cr-apply__lead" data-animate="up" style="--d:160ms">
-          Fill out the application form with your details. Whether you're applying for an open role or reaching out speculatively, our talent team will review your profile and respond promptly.
-        </p>
-
-        <?php
-        $career_map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('TechBound Digital Marketing Agency Trivandrum, 6th Floor, Karimpanal Statue Avenue, Thiruvananthapuram 695001');
-        ?>
-        <ul class="cr-contact-list">
-          <li data-animate="up" style="--d:240ms">
-            <a href="tel:+918606497677">
-              <span class="cr-contact-list__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-              </span>
-              <span class="cr-contact-list__text"><small>Call us</small>+91 8606497677</span>
-            </a>
-          </li>
-          <li data-animate="up" style="--d:320ms">
-            <a href="mailto:contacts@techbound.in">
-              <span class="cr-contact-list__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-              </span>
-              <span class="cr-contact-list__text"><small>Email us</small>contacts@techbound.in</span>
-            </a>
-          </li>
-          <li data-animate="up" style="--d:400ms">
-            <a href="<?= $career_map_link ?>" target="_blank" rel="noopener" aria-label="Open TechBound location in Google Maps">
-              <span class="cr-contact-list__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
-              <span class="cr-contact-list__text"><small>Visit us</small>6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Statue, Thiruvananthapuram, 695001</span>
-            </a>
-          </li>
-          <li data-animate="up" style="--d:480ms">
-            <div class="cr-contact-list__row">
-              <span class="cr-contact-list__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              </span>
-              <span class="cr-contact-list__text"><small>Working hours</small>Mon – Sat, 9:00 AM – 6:30 PM</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Right form -->
-      <div class="cr-form-wrap" data-animate="up" style="--d:120ms">
-        <h2 class="cr-form-title">Send your application</h2>
+        <h2 id="crApplyModalTitle" class="cr-form-title" style="margin: 14px 0 6px;">Send your application</h2>
+        <p class="cr-apply-modal__lead">Fill in your details and attach your resume. Our hiring team reviews applications within 48–72 hours.</p>
 
         <form id="careersForm" class="cr-form" action="<?= url('send-career.php') ?>" method="POST" enctype="multipart/form-data" novalidate>
-
-          <!-- Honeypot -->
-          <div class="cr-trap" aria-hidden="true">
-            <input type="text" name="website" tabindex="-1" autocomplete="off">
-          </div>
 
           <div class="cr-field">
             <input type="text" id="cr-name" name="name" placeholder=" " autocomplete="name" required>
@@ -665,12 +618,12 @@ require __DIR__ . '/includes/header.php';
             <input type="text" name="website" tabindex="-1" autocomplete="off">
             <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
           </div>
-          <input type="hidden" name="_form_ts" value="<?= time() ?>">
+          <input type="hidden" name="_form_ts" id="cr-ts" value="<?= time() ?>">
           <input type="hidden" name="recaptcha_token" id="cr-recaptcha-token" value="">
 
           <p class="cr-form__note">
-            By sending this form I confirm that I have read and accept Techbound's
-            <a href="privacy-policy.php">privacy policy</a>.
+            By sending this form I confirm that I have read and accept TechBound's
+            <a href="<?= url('privacy-policy.php') ?>">privacy policy</a>.
           </p>
 
           <button type="submit" id="careerSubmitBtn" class="btn btn--primary btn--sm btn--arrow cr-submit-btn">
@@ -681,9 +634,8 @@ require __DIR__ . '/includes/header.php';
 
         </form>
       </div>
-
     </div>
-  </section>
+  </div>
 
   <!-- =========================================================================
        FREQUENTLY ASKED QUESTIONS

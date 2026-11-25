@@ -38,7 +38,7 @@ $lnk = [
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= $lnk['contact'] ?>" class="btn btn--primary btn--arrow">Get Free Consultation</a>
+        <a href="<?= $lnk['contact'] ?>" class="btn btn--primary btn--arrow" data-audit-modal="web-project">Get Free Consultation</a>
         <a href="#process" class="btn btn--outline btn--arrow">See How We Build</a>
       </div>
     </div>
@@ -595,7 +595,7 @@ $lnk = [
         <p>Every project is scoped transparently with deliverables agreed upfront. No mid-project surprises, no hidden add-ons and no unexpected scope creep.</p>
         <p class="wd-included__quote">What we commit to at the start is exactly what we deliver—with clear milestones and honest communication at every step.</p>
         <div class="wd-included__actions">
-          <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>">Get a Free Website Consultation</a>
+          <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>" data-audit-modal="web-project">Get a Free Website Consultation</a>
         </div>
       </aside>
 
@@ -631,7 +631,7 @@ $lnk = [
     <p class="wd-bigger__highlight">
       The brands winning online today all started with one decision: investing in building their website right.
     </p>
-    <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>">Start Your Website Project</a>
+    <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>" data-audit-modal="web-project">Start Your Website Project</a>
   </div>
 </section>
 
@@ -727,7 +727,7 @@ $lnk = [
   <h2>Ready for a Website That Works As Hard As You Do?</h2>
   <p>Your website is often the first and most lasting impression your business makes. If you want a web development partner in Trivandrum that takes your commercial goals seriously, builds on the right stack and supports you long after launch—let's talk.</p>
   <div class="wd-cta-actions">
-    <a class="btn-outline" href="<?= $lnk['contact'] ?>">Get a Free Website Consultation
+    <a class="btn-outline" href="<?= $lnk['contact'] ?>" data-audit-modal="web-project">Get a Free Website Consultation
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <a class="btn-outline btn-outline--ghost" href="tel:+918606497677">Call +91 86064 97677</a>

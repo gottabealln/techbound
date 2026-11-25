@@ -568,7 +568,7 @@
   pointer-events: none;
 }
 
-.svc-cta > * {
+.svc-cta>* {
   position: relative;
   z-index: 1;
 }
@@ -1350,6 +1350,7 @@
 }
 
 @media (hover: hover) {
+
   .seo-mistake-card:hover,
   .seo-method__card:hover,
   .seo-review-card:hover {
@@ -1608,7 +1609,7 @@
   max-width: 720px;
 }
 
-.faq__answer-inner p + p {
+.faq__answer-inner p+p {
   margin-top: 12px;
 }
 
@@ -1630,7 +1631,16 @@
 }
 
 @media (max-width: 767px) {
-  .seo-track__grid,
+  .seo-track__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .seo-track__item {
+    padding: 14px 14px;
+    font-size: 14px;
+  }
+
   .seo-mistakes__grid,
   .seo-method__grid,
   .seo-testimonials__grid,

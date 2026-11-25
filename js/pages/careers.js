@@ -56,39 +56,82 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 3. Quick Apply Trigger (Populates role dropdown and scrolls to form)
+  // 3. Quick Apply Trigger (Opens modal popup and pre-selects role)
   const applyBtns = document.querySelectorAll('.js-apply-role');
   const roleSelect = document.getElementById('cr-role');
-  const applySection = document.getElementById('apply');
+  const applyModal = document.getElementById('crApplyModal');
+  const modalTitle = document.getElementById('crApplyModalTitle');
+  const roleBadge = document.getElementById('crApplyRoleBadge');
+  const tsInput = document.getElementById('cr-ts');
+
+  function openCareerModal(roleName) {
+    if (roleSelect && roleName) {
+      let matchFound = false;
+      for (let i = 0; i < roleSelect.options.length; i++) {
+        if (roleSelect.options[i].value === roleName || roleSelect.options[i].text.includes(roleName)) {
+          roleSelect.selectedIndex = i;
+          matchFound = true;
+          break;
+        }
+      }
+      if (!matchFound) {
+        roleSelect.value = roleName;
+      }
+    }
+
+    if (roleBadge) {
+      roleBadge.textContent = roleName || 'Apply Now';
+    }
+    if (modalTitle) {
+      modalTitle.textContent = roleName && roleName !== 'Speculative / General Application'
+        ? 'Apply for ' + roleName
+        : 'Send your application';
+    }
+    if (tsInput) {
+      tsInput.value = String(Math.floor(Date.now() / 1000));
+    }
+
+    const statusEl = document.getElementById('careerStatus');
+    if (statusEl) {
+      statusEl.className = 'cr-status';
+      statusEl.style.display = 'none';
+      statusEl.textContent = '';
+    }
+
+    if (applyModal) {
+      applyModal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      const nameInput = document.getElementById('cr-name');
+      if (nameInput) {
+        setTimeout(() => nameInput.focus(), 80);
+      }
+    }
+  }
+
+  function closeCareerModal() {
+    if (!applyModal) return;
+    applyModal.hidden = true;
+    document.body.style.overflow = '';
+  }
 
   applyBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const roleName = btn.getAttribute('data-role') || '';
-
-      if (roleSelect && roleName) {
-        let matchFound = false;
-        for (let i = 0; i < roleSelect.options.length; i++) {
-          if (roleSelect.options[i].value === roleName || roleSelect.options[i].text.includes(roleName)) {
-            roleSelect.selectedIndex = i;
-            matchFound = true;
-            break;
-          }
-        }
-        if (!matchFound) {
-          // If custom, set value
-          roleSelect.value = roleName;
-        }
-      }
-
-      if (applySection) {
-        applySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const nameInput = document.getElementById('cr-name');
-        if (nameInput) {
-          setTimeout(() => nameInput.focus(), 600);
-        }
-      }
+      openCareerModal(roleName);
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close-career-modal]')) {
+      closeCareerModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && applyModal && !applyModal.hidden) {
+      closeCareerModal();
+    }
   });
 
   // 4. File Upload Preview & Drag and Drop

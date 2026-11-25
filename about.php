@@ -40,7 +40,7 @@ require __DIR__ . '/includes/header.php';
         </div>
 
         <div class="hero__buttons">
-          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Work With Us</a>
+          <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-book-call>Work With Us</a>
           <a href="<?= url('careers.php') ?>" class="btn btn--outline btn--arrow">Join Our Team</a>
         </div>
       </div>
@@ -140,7 +140,7 @@ require __DIR__ . '/includes/header.php';
         <li>Results you can measure</li>
       </ul>
 
-      <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--sm">Work With Us</a>
+      <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow btn--sm" data-book-call>Work With Us</a>
     </div>
 
     <div class="about-who__media" data-who-media>

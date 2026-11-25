@@ -28,7 +28,7 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Get Your Free SEO Audit</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-audit-modal="seo-audit">Get Your Free SEO Audit</a>
         <a href="#process" class="btn btn--outline btn--arrow">See How We Work</a>
       </div>
     </div>
@@ -124,7 +124,7 @@ include __DIR__ . '/includes/header.php';
         What you get isn't a package. It's a partnership &mdash; one where your growth is the only metric that matters.
       </p>
       <div class="seo-about__actions">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Contact Us</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-book-call>Contact Us</a>
       </div>
     </div>
   </div>
@@ -284,7 +284,7 @@ include __DIR__ . '/includes/header.php';
         </p>
       </div>
       <div class="seo-testimonials__cta">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Contact Us</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-book-call>Contact Us</a>
       </div>
     </div>
 
@@ -386,7 +386,7 @@ include __DIR__ . '/includes/header.php';
         <h3>No lock-in tactics. No mystery deliverables</h3>
         <p>Just a clear scope, honest communication, and consistent work toward your growth.</p>
       </div>
-      <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Start with a Free Audit</a>
+      <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-audit-modal="seo-audit">Start with a Free Audit</a>
     </div>
   </div>
 </section>
@@ -505,7 +505,7 @@ include __DIR__ . '/includes/header.php';
     Your customers are searching for exactly what you offer right now. The only question is whether they're finding you or your competitor. If you're looking for the Best SEO Company in Trivandrum, Kerala that will be straight with you, work hard for your business, and stay committed for the long run &mdash; let's talk. No pitch, no pressure. Just an honest conversation about where you stand and where you could be.
   </p>
   <div class="seo-cta__actions">
-    <a class="btn btn--primary btn--arrow" href="<?= url('contact.php') ?>">Start with a Free Audit</a>
+    <a class="btn btn--primary btn--arrow" href="<?= url('contact.php') ?>" data-audit-modal="seo-audit">Start with a Free Audit</a>
     <a class="btn-outline" href="tel:+918606497677">Contact Us
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>

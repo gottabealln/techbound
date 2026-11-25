@@ -27,7 +27,7 @@ require __DIR__ . '/includes/header.php';
 
     <div class="hero__content">
       <div class="hero__tagline-wrap">
-        <h1 class="hero__tagline">Top Digital Marketing Agency in Kerala</h1>
+        <h1 class="hero__tagline">Your Trusted Digital Marketing Partner in Kerala</h1>
         <div class="hero__line"></div>
       </div>
 
@@ -35,11 +35,10 @@ require __DIR__ . '/includes/header.php';
         <div class="hero__text">
           <h1 class="hero__title">We help brands shine beyond trends</h1>
           <p class="hero__desc">
-            We help businesses worldwide grow with customized digital
-            marketing solutions designed to increase revenue and attract
-            quality leads. With over 15 years of experience, we combine
-            global insights with practical strategies to support your
-            success, whether you're starting out or scaling up.
+            We empower businesses worldwide with result-driven digital marketing
+            solutions that generate quality leads, boost revenue, and accelerate
+            growth. Backed by 15+ years of experience, we deliver tailored
+            strategies to help brands grow and succeed globally.
           </p>
         </div>
 

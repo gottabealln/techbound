@@ -7,9 +7,19 @@
   var steps = [].slice.call(tl.querySelectorAll('.journey__step'));
   var cur = 0, timer = null, played = false;
 
+  function isMobile() {
+    return window.matchMedia('(max-width: 767px)').matches;
+  }
+
   function place(i) {
     var s = steps[i];
-    dot.style.left = (s.offsetLeft + s.offsetWidth / 2) + 'px';
+    if (isMobile()) {
+      dot.style.left = '';
+      dot.style.top = (s.offsetTop + 14) + 'px';
+    } else {
+      dot.style.top = '';
+      dot.style.left = (s.offsetLeft + s.offsetWidth / 2) + 'px';
+    }
   }
 
   function set(i, scrollIntoView) {
@@ -19,7 +29,7 @@
       s.classList.toggle('is-active', k === i);
     });
     place(i);
-    if (scrollIntoView && scroller.scrollWidth > scroller.clientWidth) {
+    if (scrollIntoView && !isMobile() && scroller.scrollWidth > scroller.clientWidth) {
       var s = steps[i];
       scroller.scrollTo({
         left: s.offsetLeft - (scroller.clientWidth - s.offsetWidth) / 2,

@@ -88,12 +88,14 @@ $page_scripts = $page_scripts ?? [];
         <p>© 2026 All rights reserved by <a href="<?= url('index.php') ?>" style="color:inherit;text-decoration:none;">TechBound</a></p>
         <div class="footer__legal">
           <a href="<?= url('privacy-policy.php') ?>">Privacy Policy</a>
-          <a href="<?= url('privacy-policy.php') ?>">Terms and Conditions</a>
+          <a href="<?= url('terms-and-conditions.php') ?>">Terms and Conditions</a>
         </div>
       </div>
       </div>
     </div>
   </footer>
+
+  <?php require __DIR__ . '/audit-modal.php'; ?>
 
   <!-- Bootstrap 5 Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

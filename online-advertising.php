@@ -36,7 +36,7 @@ $lnk = [
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow">Get Free Ad Audit</a>
+        <a href="<?= url('contact.php') ?>" class="btn btn--primary btn--arrow" data-audit-modal="ad-audit">Get Free Ad Audit</a>
         <a href="#process" class="btn btn--outline btn--arrow">See How We Work</a>
       </div>
     </div>
@@ -169,7 +169,7 @@ $lnk = [
       <h2>Advertising Complexity Is Our Speciality</h2>
       <p>Most agencies apply the same playbook to every client and wonder why results vary. At TechBound, every engagement starts with a dedicated advertising strategist who understands your business, your market and your margins, not just your platforms.</p>
       <p>Every algorithm update, platform policy change, bid adjustment and creative test is handled. Your job is to convert the enquiries we send you.</p>
-      <a class="btn btn--primary btn--arrow" href="<?= url('contact.php') ?>">Get Your Free Ad Audit</a>
+      <a class="btn btn--primary btn--arrow" href="<?= url('contact.php') ?>" data-audit-modal="ad-audit">Get Your Free Ad Audit</a>
     </div>
 
     <div class="ads-chips">
@@ -343,7 +343,7 @@ $lnk = [
     </div>
 
     <div class="ads-center-btn">
-      <a class="btn btn--outline ads-btn-dark" href="<?= url('contact.php') ?>">Contact Us</a>
+      <a class="btn btn--outline ads-btn-dark" href="<?= url('contact.php') ?>" data-book-call>Contact Us</a>
     </div>
   </div>
 </section>
@@ -361,7 +361,7 @@ $lnk = [
         <p>When you partner with TechBound, here's what your engagement covers from day one: no upsells, no add-on charges, no fragmented packages.</p>
         <p class="ads-included__quote">No lock-in tactics. No mystery deliverables. Just a clear scope, honest communication and consistent work toward your business goals, every month.</p>
         <div class="ads-included__actions">
-          <a class="btn btn--primary btn--arrow" href="<?= url('contact.php') ?>">Start with a Free Consultation</a>
+          <a class="btn btn--primary btn--arrow" href="<?= url('contact.php') ?>" data-audit-modal="ad-audit" data-modal-title="Start With a Free Ad Consultation">Start with a Free Consultation</a>
         </div>
       </aside>
 
@@ -475,7 +475,7 @@ $lnk = [
   <h2>Ready to Turn Your Ad Spend Into Profitable Customer Generation?</h2>
   <p>Whether you're starting from scratch or frustrated with what you're currently spending, a free consultation is the place to start. We'll analyse your current situation and tell you clearly what we'd do differently, and what results you can realistically expect.</p>
   <div class="ads-cta-actions">
-    <a class="btn-outline" href="<?= url('contact.php') ?>">Start with a Free Audit
+    <a class="btn-outline" href="<?= url('contact.php') ?>" data-audit-modal="ad-audit">Start with a Free Audit
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <a class="btn-outline" href="tel:+918606497677">Call +91 86064 97677</a>

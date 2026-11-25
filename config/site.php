@@ -39,6 +39,7 @@ function url(string $path = ''): string
         'portfolio.php'                          => 'portfolio/',
         'careers.php'                            => 'careers/',
         'privacy-policy.php'                     => 'privacy-policy/',
+        'terms-and-conditions.php'               => 'terms-and-conditions/',
     ];
 
     $clean  = ltrim($path, '/');

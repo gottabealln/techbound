@@ -371,6 +371,26 @@ if (document.readyState === 'loading') {
   const form = document.getElementById('tbCallModalForm');
   const statusEl = document.getElementById('tbCallModalStatus');
   const tsInput = document.getElementById('tbc-ts');
+  const otherCb = document.getElementById('tbc-service-other-cb');
+  const otherWrap = document.getElementById('tbc-other-wrap');
+  const otherInput = document.getElementById('tbc-other-desc');
+  const serviceHidden = document.getElementById('tbc-service');
+  const defaultServiceVal = serviceHidden ? serviceHidden.value : 'Book a Call';
+
+  function syncOtherField() {
+    if (!otherCb || !otherWrap) return;
+    const checked = otherCb.checked;
+    otherWrap.hidden = !checked;
+    if (otherInput) {
+      otherInput.required = checked;
+      if (checked) setTimeout(function () { otherInput.focus(); }, 40);
+      else otherInput.value = '';
+    }
+  }
+
+  if (otherCb) {
+    otherCb.addEventListener('change', syncOtherField);
+  }
 
   function openModal() {
     modal.hidden = false;
@@ -411,6 +431,23 @@ if (document.readyState === 'loading') {
       statusEl.className = 'tb-call-form__status';
       statusEl.textContent = 'Sending your request...';
 
+      const selectedServices = Array.from(form.querySelectorAll('input[name="services_multi[]"]:checked'))
+        .map(function (cb) {
+          if (cb.value === 'Others' && otherInput && otherInput.value.trim()) {
+            return 'Others (' + otherInput.value.trim() + ')';
+          }
+          return cb.value;
+        });
+
+      const fd = new FormData(form);
+      if (selectedServices.length > 0) {
+        fd.set('service', selectedServices.join(', ').slice(0, 80));
+        const rawMsg = String(fd.get('message') || '').trim();
+        fd.set('message', 'Selected Services: ' + selectedServices.join(', ') + '\n\n' + rawMsg);
+      } else {
+        fd.set('service', defaultServiceVal);
+      }
+
       const getToken = (typeof window.tbGetRecaptchaToken === 'function')
         ? window.tbGetRecaptchaToken('book_call')
         : Promise.resolve('');
@@ -418,9 +455,10 @@ if (document.readyState === 'loading') {
       getToken.then(function (token) {
         const tokenEl = document.getElementById('tbc-recaptcha-token');
         if (tokenEl) tokenEl.value = token || '';
+        fd.set('recaptcha_token', token || '');
         return fetch(form.getAttribute('action'), {
           method: 'POST',
-          body: new FormData(form)
+          body: fd
         });
       })
         .then(function (r) {
@@ -431,6 +469,7 @@ if (document.readyState === 'loading') {
             throw new Error((data && data.message) || 'Could not send your request. Please call +91 86064 97677.');
           }
           form.reset();
+          syncOtherField();
           statusEl.className = 'tb-call-form__status is-ok';
           statusEl.textContent = data.message || 'Thank you! We will call you back within one working day.';
         })
@@ -443,6 +482,264 @@ if (document.readyState === 'loading') {
         });
     });
   }
+})();
+
+/* ===== Smart Context-Aware Audit / Quick-Enquiry Modal ===== */
+(function () {
+  const modal = document.getElementById('tbAuditModal');
+  if (!modal) return;
+
+  const form        = document.getElementById('tbAuditModalForm');
+  const statusEl    = document.getElementById('tbAuditModalStatus');
+  const badgeText   = document.getElementById('tbAuditBadgeText');
+  const titleEl     = document.getElementById('tbAuditModalTitle');
+  const leadEl      = document.getElementById('tbAuditModalLead');
+  const submitBtn   = document.getElementById('tbAuditSubmitBtn');
+  const urlLabel    = document.getElementById('tba-url-label');
+  const urlInput    = document.getElementById('tba-url');
+  const nameInput   = document.getElementById('tba-name');
+  const phoneInput  = document.getElementById('tba-phone');
+  const emailInput  = document.getElementById('tba-email');
+  const budgetInput = document.getElementById('tba-budget');
+  const hiddenName  = document.getElementById('tba-hidden-name');
+  const hiddenComp  = document.getElementById('tba-hidden-company');
+  const hiddenSvc   = document.getElementById('tba-hidden-service');
+  const hiddenMsg   = document.getElementById('tba-hidden-message');
+  const tsInput     = document.getElementById('tba-ts');
+
+  const PRESETS = {
+    'seo-audit': {
+      badge: 'Free SEO Audit',
+      title: 'Get Your Free SEO Audit',
+      lead: 'Share your contact details and website URL — we will review your rankings, technical health, and quick wins.',
+      service: 'Free SEO Audit',
+      submit: 'Request Free SEO Audit',
+      fields: ['phone', 'email', 'site_url'],
+      required: ['phone', 'email', 'site_url'],
+      urlLabel: 'Website URL *',
+      urlPlaceholder: 'https://yourwebsite.com'
+    },
+    'ai-audit': {
+      badge: 'Free AI Search Audit',
+      title: 'Get Your Free AI Visibility Audit',
+      lead: 'Find out how your brand shows up in ChatGPT, Perplexity, and Google AI Overviews.',
+      service: 'Free AI SEO Audit',
+      submit: 'Request Free AI Audit',
+      fields: ['phone', 'email', 'site_url'],
+      required: ['phone', 'email', 'site_url'],
+      urlLabel: 'Website URL *',
+      urlPlaceholder: 'https://yourwebsite.com'
+    },
+    'ad-audit': {
+      badge: 'Free Ad Audit',
+      title: 'Get Your Free Ad Account Audit',
+      lead: 'We will review your Google & Meta ad potential and highlight wasted spend and ROI opportunities.',
+      service: 'Free Ad Audit',
+      submit: 'Request Free Ad Audit',
+      fields: ['phone', 'email', 'site_url', 'budget'],
+      required: ['phone', 'email', 'site_url'],
+      urlLabel: 'Website or Landing Page URL *',
+      urlPlaceholder: 'https://yourwebsite.com'
+    },
+    'smm-audit': {
+      badge: 'Free Social Media Audit',
+      title: 'Get Your Free Social Media Audit',
+      lead: 'Share your social profile or website URL and we will highlight content and audience growth opportunities.',
+      service: 'Free Social Media Audit',
+      submit: 'Request Free Social Audit',
+      fields: ['phone', 'email', 'site_url'],
+      required: ['phone', 'email', 'site_url'],
+      urlLabel: 'Website or Social Handle URL *',
+      urlPlaceholder: 'https://instagram.com/yourbrand or https://yourwebsite.com'
+    },
+    'lead-audit': {
+      badge: 'Free Lead Gen Audit',
+      title: 'Get Your Free Lead Generation Audit',
+      lead: 'Share your website and contact details to receive a tailored funnel and acquisition review.',
+      service: 'Free Lead Generation Audit',
+      submit: 'Request Free Lead Audit',
+      fields: ['phone', 'email', 'site_url'],
+      required: ['phone', 'email', 'site_url'],
+      urlLabel: 'Website URL *',
+      urlPlaceholder: 'https://yourwebsite.com'
+    },
+    'web-project': {
+      badge: 'Website Consultation',
+      title: 'Start Your Website Project',
+      lead: 'Share your details and we will follow up with a clear scope, timeline, and estimate.',
+      service: 'Website Development Consultation',
+      submit: 'Request Website Consultation',
+      fields: ['name', 'phone', 'email', 'site_url'],
+      required: ['name', 'phone', 'email'],
+      urlLabel: 'Current Website URL (optional)',
+      urlPlaceholder: 'https://yourwebsite.com (if you have one)'
+    },
+    'real-estate': {
+      badge: 'Real Estate Growth Plan',
+      title: 'Request a Real Estate Marketing Plan',
+      lead: 'Tell us where to reach you and our specialists will prepare a buyer-lead strategy for your project.',
+      service: 'Real Estate Marketing',
+      submit: 'Request Marketing Plan',
+      fields: ['name', 'phone', 'email', 'site_url'],
+      required: ['name', 'phone', 'email'],
+      urlLabel: 'Project or Company Website (optional)',
+      urlPlaceholder: 'https://yourproject.com'
+    },
+    'free-audit': {
+      badge: 'Free Digital Audit',
+      title: 'Get Your Free Digital Marketing Audit',
+      lead: 'Share your contact details and website URL for a no-obligation visibility review.',
+      service: 'Free Digital Marketing Audit',
+      submit: 'Request Free Audit',
+      fields: ['phone', 'email', 'site_url'],
+      required: ['phone', 'email', 'site_url'],
+      urlLabel: 'Website URL *',
+      urlPlaceholder: 'https://yourwebsite.com'
+    }
+  };
+
+  let activePreset = PRESETS['seo-audit'];
+
+  function openAuditModal(presetKey, customTitle) {
+    activePreset = PRESETS[presetKey] || PRESETS['free-audit'];
+    if (badgeText) badgeText.textContent = activePreset.badge;
+    if (titleEl) titleEl.textContent = customTitle || activePreset.title;
+    if (leadEl) leadEl.textContent = activePreset.lead;
+    if (submitBtn) submitBtn.textContent = activePreset.submit;
+    if (hiddenSvc) hiddenSvc.value = activePreset.service;
+    if (urlLabel && activePreset.urlLabel) urlLabel.textContent = activePreset.urlLabel;
+    if (urlInput && activePreset.urlPlaceholder) urlInput.placeholder = activePreset.urlPlaceholder;
+
+    modal.querySelectorAll('[data-audit-field]').forEach(function (wrap) {
+      const key = wrap.getAttribute('data-audit-field');
+      const show = activePreset.fields.indexOf(key) !== -1;
+      wrap.hidden = !show;
+      const input = wrap.querySelector('input, select, textarea');
+      if (input) {
+        input.required = show && activePreset.required.indexOf(key) !== -1;
+        input.disabled = !show;
+      }
+    });
+
+    if (statusEl) {
+      statusEl.className = 'tb-call-form__status';
+      statusEl.textContent = '';
+    }
+    if (tsInput) tsInput.value = String(Math.floor(Date.now() / 1000));
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+
+    const firstVisible = modal.querySelector('[data-audit-field]:not([hidden]) input');
+    if (firstVisible) setTimeout(function () { firstVisible.focus(); }, 80);
+  }
+
+  function closeAuditModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function (e) {
+    const trigger = e.target.closest('[data-audit-modal]');
+    if (trigger) {
+      e.preventDefault();
+      openAuditModal(
+        trigger.getAttribute('data-audit-modal'),
+        trigger.getAttribute('data-modal-title') || ''
+      );
+      return;
+    }
+    if (e.target.closest('[data-close-audit-modal]')) {
+      closeAuditModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) {
+      closeAuditModal();
+    }
+  });
+
+  if (form && statusEl) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailVal  = emailInput ? emailInput.value.trim() : '';
+      const phoneVal  = phoneInput ? phoneInput.value.trim() : '';
+      const urlVal    = urlInput && !urlInput.disabled ? urlInput.value.trim() : '';
+      const nameVal   = nameInput && !nameInput.disabled ? nameInput.value.trim() : '';
+      const budgetVal = budgetInput && !budgetInput.disabled ? budgetInput.value.trim() : '';
+
+      const fallbackName = nameVal || (emailVal.split('@')[0] || 'Website Visitor').replace(/[._-]+/g, ' ').trim();
+      if (hiddenName) hiddenName.value = fallbackName.length >= 2 ? fallbackName : 'Audit Lead';
+      if (hiddenComp) hiddenComp.value = urlVal || 'Website Enquiry';
+
+      const msgLines = [
+        'Request Type: ' + (activePreset.service || 'Free Audit'),
+        'Page: ' + window.location.pathname
+      ];
+      if (urlVal) msgLines.push('Website URL: ' + urlVal);
+      if (phoneVal) msgLines.push('Contact Number: ' + phoneVal);
+      if (budgetVal) msgLines.push('Monthly Ad Budget: ' + budgetVal);
+      if (hiddenMsg) hiddenMsg.value = msgLines.join('\n');
+
+      if (submitBtn) submitBtn.disabled = true;
+      statusEl.className = 'tb-call-form__status';
+      statusEl.textContent = 'Submitting your request...';
+
+      const getToken = (typeof window.tbGetRecaptchaToken === 'function')
+        ? window.tbGetRecaptchaToken('audit_modal')
+        : Promise.resolve('');
+
+      getToken.then(function (token) {
+        const tokenEl = document.getElementById('tba-recaptcha-token');
+        if (tokenEl) tokenEl.value = token || '';
+        return fetch(form.getAttribute('action'), {
+          method: 'POST',
+          body: new FormData(form)
+        });
+      })
+        .then(function (r) {
+          return r.json().catch(function () { return { ok: false, message: 'Unexpected server response.' }; });
+        })
+        .then(function (data) {
+          if (!data || !data.ok) {
+            throw new Error((data && data.message) || 'Could not submit your request. Please call +91 86064 97677.');
+          }
+          form.reset();
+          statusEl.className = 'tb-call-form__status is-ok';
+          statusEl.textContent = 'Thank you! Your ' + activePreset.service.toLowerCase() + ' request has been received. Our team will reach out within one working day.';
+        })
+        .catch(function (err) {
+          statusEl.className = 'tb-call-form__status is-err';
+          statusEl.textContent = (err && err.message) ? err.message : 'Could not send right now. Please call +91 86064 97677.';
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
+    });
+  }
+})();
+
+/* ===== Back to Top Button ===== */
+(function () {
+  const btn = document.getElementById('tbBackToTop');
+  if (!btn) return;
+
+  function toggleVisibility() {
+    const show = (window.scrollY || window.pageYOffset || 0) > 320;
+    btn.classList.toggle('is-visible', show);
+  }
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  btn.addEventListener('click', function () {
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReduced ? 'auto' : 'smooth'
+    });
+  });
 })();
 
 

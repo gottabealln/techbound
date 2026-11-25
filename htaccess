@@ -40,6 +40,7 @@
     RewriteRule ^portfolio/?$ portfolio.php [L,QSA]
     RewriteRule ^careers/?$ careers.php [L,QSA]
     RewriteRule ^privacy-policy/?$ privacy-policy.php [L,QSA]
+    RewriteRule ^terms-and-conditions/?$ terms-and-conditions.php [L,QSA]
 
     # Admin panel clean slugs -> Admin PHP files
     RewriteRule ^admin/dashboard/?$ admin/index.php [L,QSA]

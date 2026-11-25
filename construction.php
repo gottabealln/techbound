@@ -39,7 +39,7 @@ $lnk = [
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= $lnk['contact'] ?>" class="btn btn--primary btn--arrow">Request Market Audit</a>
+        <a href="<?= $lnk['contact'] ?>" class="btn btn--primary btn--arrow" data-audit-modal="real-estate">Request Market Audit</a>
         <a href="#process" class="btn btn--outline btn--arrow">See How We Sell</a>
       </div>
     </div>
@@ -543,7 +543,7 @@ $lnk = [
     <p class="cn-bigger__highlight">
       Stop overpaying portals and chasing cold leads. Build a direct, predictable buyer pipeline.
     </p>
-    <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>">Book Your Real Estate Strategy Call</a>
+    <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>" data-audit-modal="real-estate" data-modal-title="Book Your Real Estate Strategy Call">Book Your Real Estate Strategy Call</a>
   </div>
 </section>
 
@@ -626,7 +626,7 @@ $lnk = [
   <h2>Great Developments Deserve Specialized Real Estate Marketing.</h2>
   <p>If you want to accelerate site visits, attract qualified local and NRI buyers, and sell out your Kerala projects faster, talk to TechBound today for a free market audit and launch plan.</p>
   <div class="cn-cta-actions">
-    <a class="btn-outline" href="<?= $lnk['contact'] ?>">Request a Free Real Estate Audit
+    <a class="btn-outline" href="<?= $lnk['contact'] ?>" data-audit-modal="real-estate">Request a Free Real Estate Audit
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <a class="btn-outline btn-outline--ghost" href="tel:+918606497677">Call +91 86064 97677</a>

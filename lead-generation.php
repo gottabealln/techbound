@@ -39,7 +39,7 @@ $lnk = [
       </div>
 
       <div class="hero__buttons">
-        <a href="<?= $lnk['contact'] ?>" class="btn btn--primary btn--arrow">Get Free Lead Audit</a>
+        <a href="<?= $lnk['contact'] ?>" class="btn btn--primary btn--arrow" data-audit-modal="lead-audit">Get Free Lead Audit</a>
         <a href="#process" class="btn btn--outline btn--arrow">See Our Systems</a>
       </div>
     </div>
@@ -610,7 +610,7 @@ $lnk = [
         <p>When you partner with TechBound, your entire customer generation pipeline is built, managed and continually optimized by experienced specialists.</p>
         <p class="lg-included__quote">No hidden add-ons. No mystery deliverables. A transparent scope, weekly telemetry reviews and accountable commercial growth.</p>
         <div class="lg-included__actions">
-          <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>">Start With a Free Lead Audit</a>
+          <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>" data-audit-modal="lead-audit">Start With a Free Lead Audit</a>
         </div>
       </aside>
 
@@ -646,7 +646,7 @@ $lnk = [
     <p class="lg-bigger__highlight">
       A resilient, scalable business starts with building an acquisition system that works around the clock.
     </p>
-    <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>">Build Your Inbound Pipeline</a>
+    <a class="btn btn--primary btn--arrow" href="<?= $lnk['contact'] ?>" data-audit-modal="lead-audit" data-modal-title="Build Your Inbound Pipeline">Build Your Inbound Pipeline</a>
   </div>
 </section>
 
@@ -729,7 +729,7 @@ $lnk = [
   <h2>Ready to Build an Inbound Lead Pipeline You Can Rely On?</h2>
   <p>You have built a service or product worth buying. The right customers simply need to discover it consistently. If you want an experienced lead generation partner in Trivandrum that stays accountable to actual commercial growth, let's talk.</p>
   <div class="lg-cta-actions">
-    <a class="btn-outline" href="<?= $lnk['contact'] ?>">Get a Free Lead Strategy Audit
+    <a class="btn-outline" href="<?= $lnk['contact'] ?>" data-audit-modal="lead-audit">Get a Free Lead Strategy Audit
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <a class="btn-outline btn-outline--ghost" href="tel:+918606497677">Call +91 86064 97677</a>

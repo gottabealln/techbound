@@ -88,7 +88,7 @@ $page_scripts = $page_scripts ?? [];
         <p>© 2026 All rights reserved by <a href="<?= url('index.php') ?>" style="color:inherit;text-decoration:none;">TechBound</a></p>
         <div class="footer__legal">
           <a href="<?= url('privacy-policy.php') ?>">Privacy Policy</a>
-          <a href="<?= url('privacy-policy.php') ?>">Terms and Conditions</a>
+          <a href="<?= url('terms-and-conditions.php') ?>">Terms and Conditions</a>
         </div>
       </div>
       </div>
@@ -181,17 +181,23 @@ $page_scripts = $page_scripts ?? [];
               </div>
             </div>
             <div class="tb-call-field">
-              <label for="tbc-service">Service Needed</label>
-              <select id="tbc-service" name="service">
-                <option value="Book a Call">General Growth Consultation</option>
-                <option value="SEO">Search Engine Optimization (SEO)</option>
-                <option value="AI SEO">AI SEO &amp; Generative Search</option>
-                <option value="Online Advertising">Online Advertising (Google &amp; Meta)</option>
-                <option value="SMM">Social Media Marketing</option>
-                <option value="Website Development">Website Development</option>
-                <option value="Lead Generation">Lead Generation</option>
-                <option value="Real Estate Marketing">Real Estate Marketing</option>
-              </select>
+              <label>Services Needed <small style="font-weight:400;color:#64748b;">(select one or more)</small></label>
+              <div class="tb-call-chips" id="tbc-services-group" role="group" aria-label="Services Needed">
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="General Growth Consultation"><span>Growth Consultation</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="SEO"><span>SEO</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="AI SEO"><span>AI SEO</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="Online Advertising"><span>Online Advertising</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="Social Media Marketing"><span>Social Media</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="Website Development"><span>Website Dev</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="Lead Generation"><span>Lead Generation</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="Real Estate Marketing"><span>Real Estate</span></label>
+                <label class="tb-call-chip"><input type="checkbox" name="services_multi[]" value="Others" id="tbc-service-other-cb"><span>Others</span></label>
+              </div>
+              <input type="hidden" name="service" id="tbc-service" value="Book a Call">
+            </div>
+            <div class="tb-call-field" id="tbc-other-wrap" hidden>
+              <label for="tbc-other-desc">Please describe the other service *</label>
+              <input type="text" id="tbc-other-desc" name="other_service_desc" placeholder="e.g., Branding, Video Production, CRM setup...">
             </div>
             <div class="tb-call-field">
               <label for="tbc-message">How can we help? *</label>
@@ -213,8 +219,8 @@ $page_scripts = $page_scripts ?? [];
     </div>
   </div>
 
+  <?php require __DIR__ . '/audit-modal.php'; ?>
 
-  
   <!-- Bootstrap 5 Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -104,7 +104,7 @@ require __DIR__ . '/includes/header.php';
 
         <div class="hero__buttons">
           <a href="#enquire" class="btn btn--primary btn--arrow" data-cta="cta1_demo">Book a Free Demo Class</a>
-          <a href="tel:+917736560333" class="btn btn--outline btn--arrow">Call +91 77365 60333</a>
+          <a href="tel:+917736560333" class="btn btn--outline btn--arrow">Call Us</a>
         </div>
 
         <p style="margin-top:14px;font-size:14px;color:rgba(255,255,255,.78);">

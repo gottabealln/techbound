@@ -418,8 +418,9 @@ require __DIR__ . '/../_header.php';
                         <button type="button" onclick="promptInsertLink()" class="toolbar-btn" title="Insert Link">
                             <span class="material-symbols-outlined text-[18px]">link</span>
                         </button>
-                        <button type="button" onclick="promptInsertImage()" class="toolbar-btn" title="Insert Image">
-                            <span class="material-symbols-outlined text-[18px]">image</span>
+                        <button type="button" onclick="openInlineImageModal()" class="toolbar-btn text-xs font-semibold px-2.5 flex items-center gap-1" title="Insert Image with Alt Text & Alt Description">
+                            <span class="material-symbols-outlined text-[18px]">add_photo_alternate</span>
+                            <span>Add Image</span>
                         </button>
                         <button type="button" onclick="insertTable()" class="toolbar-btn" title="Insert Table">
                             <span class="material-symbols-outlined text-[18px]">table_chart</span>
@@ -904,12 +905,120 @@ function promptInsertLink() {
 }
 
 function promptInsertImage() {
-    const url = prompt('Enter the Image URL:', 'https://');
-    if (url && url !== 'https://') {
-        const alt = prompt('Enter Image Description / Alt text:', 'TechBound article visual');
-        const imgHtml = '\n<figure style="margin:28px 0; text-align:center;">\n  <img src="' + url + '" alt="' + (alt || '') + '" style="max-width:100%; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">\n  <figcaption style="font-size:12.5px; color:#64748b; margin-top:8px;">' + (alt || '') + '</figcaption>\n</figure>\n';
-        insertRaw(imgHtml);
+    openInlineImageModal();
+}
+
+function escapeHtmlAttr(str) {
+    return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function openInlineImageModal() {
+    const modal = document.getElementById('inlineImageModal');
+    if (!modal) return;
+    document.getElementById('inlineImgUrl').value = '';
+    document.getElementById('inlineImgFile').value = '';
+    document.getElementById('inlineImgAlt').value = '';
+    document.getElementById('inlineImgAltDesc').value = '';
+    document.getElementById('inlineImgShowCaption').checked = true;
+    document.getElementById('inlineImgPreviewWrap').classList.add('hidden');
+    document.getElementById('inlineImgStatus').textContent = '';
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    setTimeout(() => document.getElementById('inlineImgAlt').focus(), 60);
+}
+
+function closeInlineImageModal() {
+    const modal = document.getElementById('inlineImageModal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
+
+function previewInlineImageUrl(url) {
+    const wrap = document.getElementById('inlineImgPreviewWrap');
+    const img  = document.getElementById('inlineImgPreview');
+    const clean = (url || '').trim();
+    if (!clean) {
+        wrap.classList.add('hidden');
+        return;
     }
+    img.src = (clean.startsWith('http://') || clean.startsWith('https://') || clean.startsWith('/'))
+        ? clean
+        : ('<?= BASE_URL ?>' + clean.replace(/^\//, ''));
+    wrap.classList.remove('hidden');
+}
+
+async function handleInlineImageUpload(input) {
+    if (!input.files || !input.files[0]) return;
+    const status = document.getElementById('inlineImgStatus');
+    const urlInput = document.getElementById('inlineImgUrl');
+    const fd = new FormData();
+    fd.append('_csrf', '<?= e($csrf) ?>');
+    fd.append('image', input.files[0]);
+
+    status.className = 'text-xs text-slate-500 mt-1';
+    status.textContent = 'Uploading image...';
+
+    try {
+        const res = await fetch('<?= e(admin_url('resources/upload_blog_image.php')) ?>', {
+            method: 'POST',
+            body: fd
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) {
+            throw new Error(data.message || 'Image upload failed.');
+        }
+        urlInput.value = data.url;
+        previewInlineImageUrl(data.url);
+        status.className = 'text-xs text-emerald-700 font-semibold mt-1';
+        status.textContent = 'Uploaded cleanly to ' + data.path;
+    } catch (err) {
+        status.className = 'text-xs text-red-600 font-semibold mt-1';
+        status.textContent = err.message || 'Upload failed.';
+    }
+}
+
+function insertInlineImageFromModal() {
+    const urlVal  = (document.getElementById('inlineImgUrl').value || '').trim();
+    const altVal  = (document.getElementById('inlineImgAlt').value || '').trim();
+    const descVal = (document.getElementById('inlineImgAltDesc').value || '').trim();
+    const showCap = document.getElementById('inlineImgShowCaption').checked;
+    const status  = document.getElementById('inlineImgStatus');
+
+    if (!urlVal) {
+        status.className = 'text-xs text-red-600 font-semibold mt-1';
+        status.textContent = 'Please upload an image or enter an image URL first.';
+        return;
+    }
+    if (!altVal) {
+        status.className = 'text-xs text-red-600 font-semibold mt-1';
+        status.textContent = 'Please enter Image Alt Text for accessibility and SEO.';
+        document.getElementById('inlineImgAlt').focus();
+        return;
+    }
+
+    const src = (urlVal.startsWith('http://') || urlVal.startsWith('https://') || urlVal.startsWith('/'))
+        ? urlVal
+        : ('<?= BASE_URL ?>' + urlVal.replace(/^\//, ''));
+
+    const descAttr = descVal ? ' data-alt-description="' + escapeHtmlAttr(descVal) + '"' : '';
+    const captionText = descVal || altVal;
+    const figcaptionHtml = (showCap && captionText)
+        ? '\n  <figcaption style="font-size:13px; color:#5b6962; margin-top:10px; line-height:1.55;">' + escapeHtmlAttr(captionText) + '</figcaption>'
+        : '';
+
+    const imgHtml =
+        '\n<figure class="blog-inline-figure" style="margin:28px 0; text-align:center;">\n' +
+        '  <img src="' + escapeHtmlAttr(src) + '" alt="' + escapeHtmlAttr(altVal) + '"' + descAttr + ' loading="lazy" style="max-width:100%; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,0.08);">' +
+        figcaptionHtml +
+        '\n</figure>\n';
+
+    insertRaw(imgHtml);
+    closeInlineImageModal();
 }
 
 function insertRaw(html) {
@@ -983,5 +1092,79 @@ window.addEventListener('DOMContentLoaded', function() {
     updateMetaCounts();
 });
 </script>
+
+<!-- Inline Image Insertion Modal (Upload/URL + Alt Text + Alt Description) -->
+<div id="inlineImageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="inlineImageModalTitle">
+    <div class="w-full max-w-lg rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-700">add_photo_alternate</span>
+                <h3 id="inlineImageModalTitle" class="text-base font-bold text-slate-900">Insert Image into Article</h3>
+            </div>
+            <button type="button" onclick="closeInlineImageModal()" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-200 hover:text-slate-800 transition-colors" aria-label="Close">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+        </div>
+
+        <div class="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+            <!-- Upload from computer -->
+            <div>
+                <label for="inlineImgFile" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Upload Image File</label>
+                <input type="file" id="inlineImgFile" accept="image/jpeg,image/png,image/webp,image/gif,image/avif"
+                       onchange="handleInlineImageUpload(this)"
+                       class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 cursor-pointer border border-slate-200 rounded-xl p-1.5 bg-slate-50">
+                <p id="inlineImgStatus" class="text-xs text-slate-500 mt-1"></p>
+            </div>
+
+            <!-- Or Image URL -->
+            <div>
+                <label for="inlineImgUrl" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Or Image URL</label>
+                <input type="text" id="inlineImgUrl" oninput="previewInlineImageUrl(this.value)"
+                       placeholder="https://... or assets/blog/your-image.jpg"
+                       class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-emerald-600 focus:bg-white">
+            </div>
+
+            <!-- Live Preview -->
+            <div id="inlineImgPreviewWrap" class="hidden rounded-xl overflow-hidden border border-slate-200 bg-slate-50 p-2 text-center">
+                <img id="inlineImgPreview" src="" alt="Preview" class="max-h-44 mx-auto rounded-lg object-contain">
+            </div>
+
+            <!-- Alt Text -->
+            <div>
+                <label for="inlineImgAlt" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                    Image Alt Text <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="inlineImgAlt"
+                       placeholder="Concise description for SEO & screen readers (e.g. Google Search Console organic clicks chart)"
+                       class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-emerald-600 focus:bg-white">
+            </div>
+
+            <!-- Alt Description (Unlimited) -->
+            <div>
+                <label for="inlineImgAltDesc" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                    Image Alt Description <span class="font-normal text-slate-400 normal-case">(no length limit)</span>
+                </label>
+                <textarea id="inlineImgAltDesc" rows="3"
+                          placeholder="Detailed image alt description or explanatory caption..."
+                          class="w-full text-sm px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-emerald-600 focus:bg-white resize-y"></textarea>
+            </div>
+
+            <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer select-none">
+                <input type="checkbox" id="inlineImgShowCaption" checked class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+                <span>Show Alt Description as visible caption under the image</span>
+            </label>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 px-6 py-4 border-t border-slate-200 bg-slate-50">
+            <button type="button" onclick="closeInlineImageModal()" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-200 transition-colors">
+                Cancel
+            </button>
+            <button type="button" onclick="insertInlineImageFromModal()" class="px-5 py-2 rounded-lg text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 transition-colors flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[18px]">check</span>
+                <span>Insert Image</span>
+            </button>
+        </div>
+    </div>
+</div>
 
 <?php require __DIR__ . '/../_footer.php'; ?>

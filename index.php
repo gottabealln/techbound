@@ -27,7 +27,7 @@ require __DIR__ . '/includes/header.php';
 
     <div class="hero__content">
       <div class="hero__tagline-wrap">
-        <h1 class="hero__tagline">Your Trusted Digital Marketing Partner in Kerala</h1>
+        <p class="hero__tagline">Your Trusted Digital Marketing Partner in Kerala</p>
         <div class="hero__line"></div>
       </div>
 

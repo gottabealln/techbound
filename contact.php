@@ -13,7 +13,7 @@ require __DIR__ . '/includes/header.php';
 <main>
 
   <!-- ===== HERO ===== -->
-  <section class="hero hero--inner" style="background-image: url('<?= asset('assets/contact_us.jpg') ?>');">
+  <section class="hero hero--inner" style="background-image: url('<?= asset('assets/contact-hero.jpg') ?>');">
     <div class="hero__overlay"></div>
 
     <div class="hero__content">

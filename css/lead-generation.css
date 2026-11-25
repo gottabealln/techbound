@@ -503,13 +503,55 @@
 }
 .lg-card {
   position: relative;
-  background: #fff;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f9f5 100%);
   border: 1px solid #e3e6e4;
   border-radius: 20px;
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.lg-card--media {
+  padding: 0;
+}
+.lg-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d1912;
+}
+.lg-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.lg-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 18, 32, 0.04) 0%, rgba(10, 18, 32, 0.34) 100%);
+  pointer-events: none;
+}
+.lg-card:hover .lg-card__media img {
+  transform: scale(1.04);
+}
+.lg-card__body {
+  padding: 0 28px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.lg-card--media .lg-card__icon {
+  margin-top: -26px;
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid rgba(27, 140, 67, 0.16);
+  box-shadow: 0 8px 20px rgba(10, 18, 32, 0.08);
 }
 .lg-card:hover {
   transform: translateY(-5px);
@@ -863,9 +905,11 @@
   padding: 44px 38px;
   border-radius: 24px;
   color: #fff;
-  background:
-    radial-gradient(360px 240px at 100% 0%, rgba(27, 140, 67, 0.45), transparent 70%),
-    #0a1220;
+  background-color: #0a1220;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 .lg-included__panel h2 {
   font-family: var(--font-heading);

@@ -108,7 +108,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ===== HERO ===== -->
-<section class="hero hero--inner" style="background-image: url('<?= asset('assets/mega-blog.avif') ?>');">
+<section class="hero hero--inner" style="background-image: url('<?= asset('assets/blog-hero.jpg') ?>');">
   <div class="hero__overlay"></div>
 
   <div class="hero__content">

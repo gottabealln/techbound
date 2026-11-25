@@ -155,28 +155,43 @@ $lnk = [
     </div>
 
     <div class="lg-cards-3">
-      <article class="lg-card">
-        <div class="lg-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+      <article class="lg-card lg-card--media">
+        <div class="lg-card__media">
+          <img src="<?= asset('assets/lg-audience-targeting.jpg') ?>" alt="Marketing strategist analyzing audience targeting and search intent metrics" loading="lazy">
         </div>
-        <h3>Targeting the Wrong Audience</h3>
-        <p>The number one reason lead generation fails isn't ad spend—it's audience miscalibration. When campaigns rely on broad demographic guesses rather than precise in-market commercial intent, you pay for clicks from people who will never purchase. Pinpoint audience targeting is the foundation everything else stands upon.</p>
+        <div class="lg-card__body">
+          <div class="lg-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          </div>
+          <h3>Targeting the Wrong Audience</h3>
+          <p>The number one reason lead generation fails isn't ad spend—it's audience miscalibration. When campaigns rely on broad demographic guesses rather than precise in-market commercial intent, you pay for clicks from people who will never purchase. Pinpoint audience targeting is the foundation everything else stands upon.</p>
+        </div>
       </article>
 
-      <article class="lg-card">
-        <div class="lg-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+      <article class="lg-card lg-card--media">
+        <div class="lg-card__media">
+          <img src="<?= asset('assets/lg-landing-pages.jpg') ?>" alt="UX designer reviewing a high-converting website landing page wireframe" loading="lazy">
         </div>
-        <h3>Landing Pages That Leak Conversions</h3>
-        <p>Even perfectly qualified traffic won't convert if they land on a generic homepage or confusing page layout. Vague value propositions, friction-heavy forms and missing trust signals send high-intent prospects straight back to search results to hire your competitor. Effective lead generation requires <a href="<?= $lnk['web'] ?>">dedicated landing page architecture</a>.</p>
+        <div class="lg-card__body">
+          <div class="lg-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          </div>
+          <h3>Landing Pages That Leak Conversions</h3>
+          <p>Even perfectly qualified traffic won't convert if they land on a generic homepage or confusing page layout. Vague value propositions, friction-heavy forms and missing trust signals send high-intent prospects straight back to search results to hire your competitor. Effective lead generation requires <a href="<?= $lnk['web'] ?>">dedicated landing page architecture</a>.</p>
+        </div>
       </article>
 
-      <article class="lg-card">
-        <div class="lg-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <article class="lg-card lg-card--media">
+        <div class="lg-card__media">
+          <img src="<?= asset('assets/lg-lead-followup.jpg') ?>" alt="Sales specialist managing automated CRM and WhatsApp lead follow-ups" loading="lazy">
         </div>
-        <h3>No Automated Lead Follow-Up System</h3>
-        <p>Research consistently proves that most buyers require 3 to 5 touchpoints before deciding on an engagement. If your only process is collecting a form and waiting around to dial, up to 70% of generated prospects slip away. Automated WhatsApp, email and retargeting sequences are what turn initial interest into contracted revenue.</p>
+        <div class="lg-card__body">
+          <div class="lg-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>No Automated Lead Follow-Up System</h3>
+          <p>Research consistently proves that most buyers require 3 to 5 touchpoints before deciding on an engagement. If your only process is collecting a form and waiting around to dial, up to 70% of generated prospects slip away. Automated WhatsApp, email and retargeting sequences are what turn initial interest into contracted revenue.</p>
+        </div>
       </article>
     </div>
   </div>
@@ -586,7 +601,7 @@ $lnk = [
 <section class="svc-section svc-section--tint">
   <div class="svc-wrap">
     <div class="lg-included">
-      <aside class="lg-included__panel">
+      <aside class="lg-included__panel" style="background-image: linear-gradient(180deg, rgba(10, 18, 32, 0.58) 0%, rgba(10, 18, 32, 0.80) 100%), url('<?= asset('assets/lg-scope-panel.jpg') ?>');">
         <span class="pill pill--glow">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
         Complete Scope

@@ -85,7 +85,7 @@ $page_scripts = $page_scripts ?? [];
 
       <!-- bottom bar -->
       <div class="footer__bottom">
-        <p>© 2026 All rights reserved by TechBound</p>
+        <p>© 2026 All rights reserved by <a href="<?= url('index.php') ?>" style="color:inherit;text-decoration:none;">TechBound</a></p>
         <div class="footer__legal">
           <a href="<?= url('privacy-policy.php') ?>">Privacy Policy</a>
           <a href="<?= url('privacy-policy.php') ?>">Terms and Conditions</a>

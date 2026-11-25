@@ -34,6 +34,7 @@ function url(string $path = ''): string
         'construction.php'                       => 'real-estate-marketing-agency-kerala/',
         'digital-marketing-trivandrum-guide.php' => 'digital-marketing-trivandrum-guide/',
         'digital-marketing-agency-in-kochi.php'  => 'digital-marketing-agency-in-kochi/',
+        'seo-course-in-kerala.php'               => 'seo-course-in-kerala/',
         'blog.php'                               => 'blog/',
         'contact.php'                            => 'contact/',
         'portfolio.php'                          => 'portfolio/',

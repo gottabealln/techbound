@@ -32,6 +32,7 @@
     RewriteRule ^ %1real-estate-marketing-agency-kerala/ [R=301,L]
     RewriteRule ^digital-marketing-trivandrum-guide/?$ digital-marketing-trivandrum-guide.php [L,QSA]
     RewriteRule ^digital-marketing-agency-in-kochi/?$ digital-marketing-agency-in-kochi.php [L,QSA]
+    RewriteRule ^seo-course-in-kerala/?$ seo-course-in-kerala.php [L,QSA]
     RewriteRule ^blog/?$ blog.php [L,QSA]
     RewriteRule ^blog/([^/]+)/?$ blog-post.php?slug=$1 [L,QSA]
     RewriteRule ^contact/?$ contact.php [L,QSA]

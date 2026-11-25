@@ -227,7 +227,9 @@ $company_links = [
        <?php /* <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li> */ ?>
 
       <!-- ===== COMPANY MEGA MENU ===== -->
-<li class="has-sub has-mega">
+        <li><a href="<?= url('seo-course-in-kerala.php') ?>"<?= current_attr('seo-course-in-kerala.php') ?>>AI SEO Course</a></li>
+
+        <li class="has-sub has-mega">
   <button class="nav-trigger has-dropdown" type="button" aria-expanded="false" data-mega-trigger="work"<?= current_attr('about.php', 'careers.php', 'blog.php') ?>>
     Company
   </button>
@@ -319,6 +321,8 @@ $company_links = [
         </li>
 
         <?php /* <li><a href="<?= url('portfolio.php') ?>"<?= current_attr('portfolio.php') ?>>Portfolio</a></li> */ ?>
+
+        <li><a href="<?= url('seo-course-in-kerala.php') ?>"<?= current_attr('seo-course-in-kerala.php') ?>>AI SEO Course</a></li>
 
         <!-- ===== COMPANY MOBILE (SEPARATE SECTIONS) ===== -->
         <li class="has-sub">

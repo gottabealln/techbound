@@ -329,6 +329,19 @@ $company_links = [
           <button class="nav-trigger has-dropdown" type="button" aria-expanded="false">Company</button>
           <div class="m-sub m-company-sub">
             <div class="m-group">
+              <span class="m-group__title">Company Pages</span>
+              <ul class="m-group__list">
+                <?php foreach ($company as $c): ?>
+                  <li>
+                    <a href="<?= url($c['href']) ?>" class="m-service-link">
+                      <strong class="m-service-link__name"><?= htmlspecialchars($c['title']) ?></strong>
+                      <span class="m-service-link__desc"><?= htmlspecialchars($c['text']) ?></span>
+                    </a>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
+            <div class="m-group">
               <span class="m-group__title">Sectors</span>
               <ul class="m-group__list">
                 <?php foreach ($company_links as $l): ?>
@@ -345,19 +358,6 @@ $company_links = [
                         <strong class="m-service-link__name"><?= htmlspecialchars($l['label']) ?></strong>
                       </span>
                     <?php endif; ?>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-            <div class="m-group">
-              <span class="m-group__title">Company Pages</span>
-              <ul class="m-group__list">
-                <?php foreach ($company as $c): ?>
-                  <li>
-                    <a href="<?= url($c['href']) ?>" class="m-service-link">
-                      <strong class="m-service-link__name"><?= htmlspecialchars($c['title']) ?></strong>
-                      <span class="m-service-link__desc"><?= htmlspecialchars($c['text']) ?></span>
-                    </a>
                   </li>
                 <?php endforeach; ?>
               </ul>

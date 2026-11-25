@@ -93,20 +93,20 @@ require __DIR__ . '/includes/header.php';
 
   <div class="about-stats__grid">
     <div class="about-stat" data-animate>
-      <div class="about-stat__num"><span data-count="250">0</span><sup>+</sup></div>
-      <p class="about-stat__label">Projects Completed</p>
-    </div>
-    <div class="about-stat" data-animate>
       <div class="about-stat__num"><span data-count="15">0</span><sup>+</sup></div>
-      <p class="about-stat__label">Years of Experience</p>
+      <p class="about-stat__label">Years of Industry Experience</p>
     </div>
     <div class="about-stat" data-animate>
-      <div class="about-stat__num"><span data-count="100">0</span><sup>+</sup></div>
-      <p class="about-stat__label">Happy Clients</p>
+      <div class="about-stat__num"><span data-count="6">0</span><sup>+</sup></div>
+      <p class="about-stat__label">Countries Served Globally</p>
     </div>
     <div class="about-stat" data-animate>
-      <div class="about-stat__num"><span data-count="25">0</span><sup>+</sup></div>
-      <p class="about-stat__label">Talented Team</p>
+      <div class="about-stat__num"><span data-count="200">0</span><sup>+</sup></div>
+      <p class="about-stat__label">Clients Successfully Delivered</p>
+    </div>
+    <div class="about-stat" data-animate>
+      <div class="about-stat__num"><span data-count="2.9">0</span>L<sup>+</sup></div>
+      <p class="about-stat__label">Leads Generated And Counting</p>
     </div>
   </div>
 </section>

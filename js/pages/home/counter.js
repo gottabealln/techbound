@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!els.length) return;
 
   function run(el) {
-    var target = +el.getAttribute('data-count');
-    var duration = 5000; // 5 seconds
+    var raw = el.getAttribute('data-count') || '0';
+    var decimals = raw.indexOf('.') !== -1 ? raw.split('.')[1].length : 0;
+    var target = parseFloat(raw);
+    var duration = 2200;
     var start = null;
 
     function step(t) {
@@ -14,11 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var p = Math.min((t - start) / duration, 1);
       var eased = 1 - Math.pow(1 - p, 3);
+      var val = target * eased;
 
-      el.textContent = Math.round(target * eased);
+      el.textContent = decimals > 0 ? val.toFixed(decimals) : Math.round(val);
 
       if (p < 1) {
         requestAnimationFrame(step);
+      } else {
+        el.textContent = decimals > 0 ? target.toFixed(decimals) : String(Math.round(target));
       }
     }
 

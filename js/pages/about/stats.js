@@ -8,14 +8,21 @@
       io.unobserve(e.target);
 
       var el = e.target;
-      var end = +el.getAttribute('data-count');
+      var raw = el.getAttribute('data-count') || '0';
+      var decimals = raw.indexOf('.') !== -1 ? raw.split('.')[1].length : 0;
+      var end = parseFloat(raw);
       var start = null, dur = 1600;
 
       function step(t) {
         if (!start) start = t;
         var p = Math.min((t - start) / dur, 1);
-        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(step);
+        var val = end * (1 - Math.pow(1 - p, 3));
+        el.textContent = decimals > 0 ? val.toFixed(decimals) : Math.round(val);
+        if (p < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = decimals > 0 ? end.toFixed(decimals) : String(Math.round(end));
+        }
       }
       requestAnimationFrame(step);
     });

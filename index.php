@@ -73,20 +73,20 @@ require __DIR__ . '/includes/header.php';
 
       <div class="stats">
         <div class="stat">
-          <div class="stat__num"><span data-count="250">250</span><sup>+</sup></div>
-          <p class="stat__label">Projects Completed</p>
-        </div>
-        <div class="stat">
           <div class="stat__num"><span data-count="15">15</span><sup>+</sup></div>
-          <p class="stat__label">Years of Experience</p>
+          <p class="stat__label">Years of Industry Experience</p>
         </div>
         <div class="stat">
-          <div class="stat__num"><span data-count="100">100</span><sup>+</sup></div>
-          <p class="stat__label">Happy Clients</p>
+          <div class="stat__num"><span data-count="6">6</span><sup>+</sup></div>
+          <p class="stat__label">Countries Served Globally</p>
         </div>
         <div class="stat">
-          <div class="stat__num"><span data-count="25">25</span><sup>+</sup></div>
-          <p class="stat__label">Talented Team</p>
+          <div class="stat__num"><span data-count="200">200</span><sup>+</sup></div>
+          <p class="stat__label">Clients Successfully Delivered</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><span data-count="2.9">2.9</span>L<sup>+</sup></div>
+          <p class="stat__label">Leads Generated And Counting</p>
         </div>
       </div>
     </div>

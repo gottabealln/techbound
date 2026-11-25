@@ -231,7 +231,7 @@ $company_links = [
     <div class="cmenu">
 
       <div class="cmenu__side">
-        <h3 class="cmenu__heading">Industries</h3>
+        <h3 class="cmenu__heading">Sectors</h3>
         <ul class="cmenu__links">
           <?php foreach ($company_links as $l): ?>
             <li><a href="<?= url($l['href']) ?>"><?= $l['label'] ?></a></li>
@@ -314,7 +314,7 @@ $company_links = [
           <button class="nav-trigger has-dropdown" type="button" aria-expanded="false">Company</button>
           <div class="m-sub m-company-sub">
             <div class="m-group">
-              <span class="m-group__title">Industries</span>
+              <span class="m-group__title">Sectors</span>
               <ul class="m-group__list">
                 <?php foreach ($company_links as $l): ?>
                   <li>

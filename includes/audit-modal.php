@@ -42,6 +42,11 @@
           <input type="text" id="tba-url" name="site_url" placeholder="https://yourwebsite.com" autocomplete="url">
         </div>
 
+        <div class="tb-call-field" data-audit-field="business_category" hidden>
+          <label for="tba-bizcat">Business Category *</label>
+          <input type="text" id="tba-bizcat" name="business_category" placeholder="e.g., Healthcare, Real Estate, Education, E-Commerce">
+        </div>
+
         <div class="tb-call-field" data-audit-field="budget" hidden>
           <label for="tba-budget">Monthly Ad Budget</label>
           <select id="tba-budget" name="ad_budget">

@@ -28,6 +28,7 @@ $offset = ($page - 1) * $per;
 $total_all     = 0;
 $total_careers = 0;
 $total_leads   = 0;
+$total_audits  = 0;
 $total         = 0;
 $rows          = [];
 
@@ -36,6 +37,7 @@ if ($pdo) {
         $total_all     = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages")->fetchColumn();
         $total_careers = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE company LIKE '%Career%'")->fetchColumn();
         $total_leads   = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE company NOT LIKE '%Career%' OR company IS NULL")->fetchColumn();
+        $total_audits  = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE company LIKE '%Audit%' OR message LIKE '%Audit%'")->fetchColumn();
 
         $whereClauses = [];
         $params       = [];
@@ -52,9 +54,14 @@ if ($pdo) {
         } elseif ($cat === 'leads') {
             $whereClauses[] = '(company NOT LIKE ? OR company IS NULL)';
             $params[] = '%Career%';
+        } elseif ($cat === 'audit') {
+            $whereClauses[] = '(company LIKE ? OR message LIKE ?)';
+            $params[] = '%Audit%';
+            $params[] = '%Audit%';
         } elseif ($cat === 'construction') {
-            $whereClauses[] = 'company LIKE ?';
+            $whereClauses[] = '(company LIKE ? OR company LIKE ?)';
             $params[] = '%Construction%';
+            $params[] = '%Real Estate%';
         } elseif ($cat === 'web') {
             $whereClauses[] = 'company LIKE ?';
             $params[] = '%Web%';
@@ -124,6 +131,10 @@ require __DIR__ . '/../_header.php';
             <a href="?cat=career<?= $search ? '&q=' . urlencode($search) : '' ?>" 
                class="px-3.5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 <?= $cat === 'career' ? 'bg-primary text-on-primary font-semibold' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high' ?>">
                Careers (<?= $total_careers ?>)
+            </a>
+            <a href="?cat=audit<?= $search ? '&q=' . urlencode($search) : '' ?>" 
+               class="px-3.5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 <?= $cat === 'audit' ? 'bg-primary text-on-primary font-semibold' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high' ?>">
+               Audit (<?= $total_audits ?>)
             </a>
             <a href="?cat=construction<?= $search ? '&q=' . urlencode($search) : '' ?>" 
                class="px-3.5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 <?= $cat === 'construction' ? 'bg-primary text-on-primary font-semibold' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high' ?>">

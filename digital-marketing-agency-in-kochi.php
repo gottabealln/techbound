@@ -1,8 +1,9 @@
 <?php
 $page_title  = 'Digital Marketing Agency in Kochi | TechBound';
 $page_desc   = 'SEO, AI search, social media, ads and websites for Kochi businesses. Kadavanthra office, 15+ years since 2009. Get a free visibility audit.';
-$page_styles = ['css/seo.css', 'css/guide.css'];
-$page_slug   = 'digital-marketing-agency-in-kochi';
+$page_styles  = ['css/seo.css', 'css/guide.css'];
+$page_scripts = ['js/pages/home/testimonials.js'];
+$page_slug    = 'digital-marketing-agency-in-kochi';
 
 $schema_data = json_encode([
     '@context' => 'https://schema.org',
@@ -93,14 +94,14 @@ require __DIR__ . '/includes/header.php';
 
       <div class="hero__body">
         <div class="hero__text">
-          <h1 class="hero__title">Digital Marketing Agency in Kochi That Shows Up Where Your Customers Search</h1>
+          <h1 class="hero__title">Digital Marketing Agency in Kochi</h1>
           <p class="hero__desc">
             SEO, AI search visibility, social media, Google and Meta ads, and websites that turn visits into enquiries, run by one team that has been doing this since 2009, now with an office in Kadavanthra.
           </p>
         </div>
 
         <div class="hero__buttons">
-          <a href="#audit" class="btn btn--primary btn--arrow">Get my free Kochi visibility audit</a>
+          <a href="#audit" class="btn btn--primary btn--arrow">Get my free visibility audit</a>
           <a href="tel:+917736560333" class="btn btn--outline btn--arrow">Call Us</a>
         </div>
 
@@ -325,43 +326,70 @@ require __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- ===== WHAT CLIENTS SAY ===== -->
-  <section class="svc-section" data-nav="light">
-    <div class="svc-wrap">
-      <div class="guide-head" data-animate="up">
-        <h2 class="svc-title" data-words>What clients say</h2>
+  <!-- ===== WHAT CLIENTS SAY (Sliding Testimonials Marquee) ===== -->
+  <section class="testimonials" id="testimonials" data-nav="dark">
+    <div class="testimonials__inner">
+      <div class="testimonials__heading">
+        <span class="testimonials__eyebrow">Client Testimonials</span>
+        <h2>What Clients Say</h2>
+        <p>Real experiences. Meaningful results. Lasting partnerships.</p>
       </div>
 
-      <div class="seo-testimonials__grid">
-        <blockquote class="seo-review-card" data-animate="up">
-          <p class="seo-review-card__quote">
-            "Techbound has been a great Digital Marketing partner over the last 5 years… The team is very Responsive, Professional and full of knowledge."
-          </p>
-          <footer class="seo-review-card__author">
-            <span class="seo-review-card__avatar" aria-hidden="true">AS</span>
-            <strong>Abhai Sasidharan</strong>
-          </footer>
-        </blockquote>
+      <?php
+        $kochi_testimonials = [];
+        try {
+          require_once __DIR__ . '/includes/db.php';
+          $tStmt = db()->query("SELECT quote, client, role FROM testimonials WHERE active = 1 ORDER BY sort_order ASC, id ASC");
+          if ($tStmt) {
+            $kochi_testimonials = $tStmt->fetchAll();
+          }
+        } catch (Throwable $e) {
+          $kochi_testimonials = [];
+        }
+        if (empty($kochi_testimonials)) {
+          $kochi_testimonials = [
+            ['quote' => 'TechBound has been a great Digital Marketing partner over the last 5 years. We highly recommend them if you are in need of their Digital Marketing Services. The team is very responsive, professional and full of knowledge.', 'client' => 'Abhai Sasidharan', 'role' => 'Digital Marketing Partner'],
+            ['quote' => 'We have used TechBound Digital Marketing Agency since Feb 2022 and I have been extremely impressed by the work and results they have brought our company.', 'client' => 'Princy Antony', 'role' => 'Digital Marketing Client'],
+            ['quote' => 'Regardless of how urgent our needs were, the TechBound team responded quickly and professionally. They have long served as our marketing consultants and our website ranks have significantly improved.', 'client' => 'Mihila L', 'role' => 'Marketing Consulting'],
+            ['quote' => 'I approached TechBound Innovations for our website to increase our website calls and maintain the top position. As they promised us, their strategies increased our website calls and maintain our websites in top position.', 'client' => 'Biju Kesavan', 'role' => 'SEO & Website Growth'],
+            ['quote' => 'Working with TechBound Digital Marketing Company has been a wonderful experience. The team is very experienced, insightful, and extremely skilled. Their custom strategies generate excellent results.', 'client' => 'Firos Hussain', 'role' => 'Digital Marketing Strategy'],
+            ['quote' => 'TechBound understood our goals and helped us strengthen our online presence.', 'client' => 'Client', 'role' => 'Digital Growth'],
+            ['quote' => 'The website looks modern, works smoothly and represents our business well.', 'client' => 'Client', 'role' => 'Website Design'],
+            ['quote' => 'We appreciated the clear communication and attention to detail throughout the project.', 'client' => 'Client', 'role' => 'Digital Services'],
+          ];
+        }
+        $k_half   = (int)ceil(count($kochi_testimonials) / 2);
+        $k_top    = array_slice($kochi_testimonials, 0, $k_half);
+        $k_bottom = array_slice($kochi_testimonials, $k_half);
+        if (empty($k_bottom)) $k_bottom = $k_top;
+      ?>
 
-        <blockquote class="seo-review-card" data-animate="up" style="--d:80ms">
-          <p class="seo-review-card__quote">
-            "…we have used TechBound Digital Marketing Agency since Feb 2022 and I have been extremely impressed by the work and results they have brought our company…"
-          </p>
-          <footer class="seo-review-card__author">
-            <span class="seo-review-card__avatar" aria-hidden="true">PA</span>
-            <strong>Princy Antony</strong>
-          </footer>
-        </blockquote>
+      <div class="testimonials__stage">
+        <div class="testimonial-row testimonial-row--top">
+          <?php foreach ($k_top as $tr): ?>
+          <article class="testimonial-card">
+            <span class="testimonial-card__quote">&ldquo;</span>
+            <p><?= htmlspecialchars($tr['quote']) ?></p>
+            <div class="testimonial-card__footer">
+              <span><?= htmlspecialchars($tr['client'] ?: 'Client') ?></span>
+              <strong><?= htmlspecialchars($tr['role'] ?: 'Client Review') ?></strong>
+            </div>
+          </article>
+          <?php endforeach; ?>
+        </div>
 
-        <blockquote class="seo-review-card" data-animate="up" style="--d:160ms">
-          <p class="seo-review-card__quote">
-            "…They have long served as our marketing consultants… Our website ranks have significantly improved…"
-          </p>
-          <footer class="seo-review-card__author">
-            <span class="seo-review-card__avatar" aria-hidden="true">ML</span>
-            <strong>Mihila L</strong>
-          </footer>
-        </blockquote>
+        <div class="testimonial-row testimonial-row--bottom">
+          <?php foreach ($k_bottom as $br): ?>
+          <article class="testimonial-card">
+            <span class="testimonial-card__quote">&ldquo;</span>
+            <p><?= htmlspecialchars($br['quote']) ?></p>
+            <div class="testimonial-card__footer">
+              <span><?= htmlspecialchars($br['client'] ?: 'Client') ?></span>
+              <strong><?= htmlspecialchars($br['role'] ?: 'Client Review') ?></strong>
+            </div>
+          </article>
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>
@@ -521,8 +549,8 @@ require __DIR__ . '/includes/header.php';
             <input id="k-email" name="email" type="email" required placeholder="you@company.com">
           </div>
           <div class="guide-field">
-            <label for="k-site">Website URL *</label>
-            <input id="k-site" name="site_url" type="url" required placeholder="https://">
+            <label for="k-site">Website URL (optional)</label>
+            <input id="k-site" name="site_url" type="url" placeholder="https://">
           </div>
           <div class="guide-field">
             <label for="k-comp">Two competitor websites (optional)</label>

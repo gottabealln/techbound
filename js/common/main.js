@@ -497,6 +497,7 @@ if (document.readyState === 'loading') {
   const submitBtn   = document.getElementById('tbAuditSubmitBtn');
   const urlLabel    = document.getElementById('tba-url-label');
   const urlInput    = document.getElementById('tba-url');
+  const bizCatInput = document.getElementById('tba-bizcat');
   const nameInput   = document.getElementById('tba-name');
   const phoneInput  = document.getElementById('tba-phone');
   const emailInput  = document.getElementById('tba-email');
@@ -526,8 +527,8 @@ if (document.readyState === 'loading') {
       service: 'Free AI SEO Audit',
       submit: 'Request Free AI Audit',
       fields: ['phone', 'email', 'site_url'],
-      required: ['phone', 'email', 'site_url'],
-      urlLabel: 'Website URL *',
+      required: ['phone', 'email'],
+      urlLabel: 'Website URL (optional)',
       urlPlaceholder: 'https://yourwebsite.com'
     },
     'ad-audit': {
@@ -537,30 +538,30 @@ if (document.readyState === 'loading') {
       service: 'Free Ad Audit',
       submit: 'Request Free Ad Audit',
       fields: ['phone', 'email', 'site_url', 'budget'],
-      required: ['phone', 'email', 'site_url'],
-      urlLabel: 'Website or Landing Page URL *',
+      required: ['phone', 'email'],
+      urlLabel: 'Website or Landing Page URL (optional)',
       urlPlaceholder: 'https://yourwebsite.com'
     },
     'smm-audit': {
       badge: 'Free Social Media Audit',
       title: 'Get Your Free Social Media Audit',
-      lead: 'Share your social profile or website URL and we will highlight content and audience growth opportunities.',
+      lead: 'Share your contact details and social profile or website URL to identify content and growth opportunities.',
       service: 'Free Social Media Audit',
       submit: 'Request Free Social Audit',
       fields: ['phone', 'email', 'site_url'],
-      required: ['phone', 'email', 'site_url'],
-      urlLabel: 'Website or Social Handle URL *',
+      required: ['phone', 'email'],
+      urlLabel: 'Website or Social Handle URL (optional)',
       urlPlaceholder: 'https://instagram.com/yourbrand or https://yourwebsite.com'
     },
     'lead-audit': {
       badge: 'Free Lead Gen Audit',
       title: 'Get Your Free Lead Generation Audit',
-      lead: 'Share your website and contact details to receive a tailored funnel and acquisition review.',
+      lead: 'Tell us your business category and contact details to receive a tailored funnel and acquisition review.',
       service: 'Free Lead Generation Audit',
       submit: 'Request Free Lead Audit',
-      fields: ['phone', 'email', 'site_url'],
-      required: ['phone', 'email', 'site_url'],
-      urlLabel: 'Website URL *',
+      fields: ['phone', 'email', 'business_category', 'site_url'],
+      required: ['phone', 'email', 'business_category'],
+      urlLabel: 'Website URL (optional)',
       urlPlaceholder: 'https://yourwebsite.com'
     },
     'web-project': {
@@ -588,12 +589,12 @@ if (document.readyState === 'loading') {
     'free-audit': {
       badge: 'Free Digital Audit',
       title: 'Get Your Free Digital Marketing Audit',
-      lead: 'Share your contact details and website URL for a no-obligation visibility review.',
+      lead: 'Share your contact details for a no-obligation visibility review.',
       service: 'Free Digital Marketing Audit',
       submit: 'Request Free Audit',
       fields: ['phone', 'email', 'site_url'],
-      required: ['phone', 'email', 'site_url'],
-      urlLabel: 'Website URL *',
+      required: ['phone', 'email'],
+      urlLabel: 'Website URL (optional)',
       urlPlaceholder: 'https://yourwebsite.com'
     }
   };
@@ -666,17 +667,19 @@ if (document.readyState === 'loading') {
       const emailVal  = emailInput ? emailInput.value.trim() : '';
       const phoneVal  = phoneInput ? phoneInput.value.trim() : '';
       const urlVal    = urlInput && !urlInput.disabled ? urlInput.value.trim() : '';
+      const bizCatVal = bizCatInput && !bizCatInput.disabled ? bizCatInput.value.trim() : '';
       const nameVal   = nameInput && !nameInput.disabled ? nameInput.value.trim() : '';
       const budgetVal = budgetInput && !budgetInput.disabled ? budgetInput.value.trim() : '';
 
       const fallbackName = nameVal || (emailVal.split('@')[0] || 'Website Visitor').replace(/[._-]+/g, ' ').trim();
       if (hiddenName) hiddenName.value = fallbackName.length >= 2 ? fallbackName : 'Audit Lead';
-      if (hiddenComp) hiddenComp.value = urlVal || 'Website Enquiry';
+      if (hiddenComp) hiddenComp.value = bizCatVal || urlVal || 'Website Enquiry';
 
       const msgLines = [
         'Request Type: ' + (activePreset.service || 'Free Audit'),
         'Page: ' + window.location.pathname
       ];
+      if (bizCatVal) msgLines.push('Business Category: ' + bizCatVal);
       if (urlVal) msgLines.push('Website URL: ' + urlVal);
       if (phoneVal) msgLines.push('Contact Number: ' + phoneVal);
       if (budgetVal) msgLines.push('Monthly Ad Budget: ' + budgetVal);

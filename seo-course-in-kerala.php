@@ -103,7 +103,7 @@ require __DIR__ . '/includes/header.php';
         </div>
 
         <div class="hero__buttons">
-          <a href="#enquire" class="btn btn--primary btn--arrow" data-cta="cta1_demo">Book a Free Demo Class</a>
+          <a href="#enquire" class="btn btn--primary btn--arrow" data-cta="cta1_demo" data-open-demo-modal>Book a Free Demo Class</a>
           <a href="tel:+917736560333" class="btn btn--outline btn--arrow">Call Us</a>
         </div>
 
@@ -554,8 +554,6 @@ require __DIR__ . '/includes/header.php';
         <a href="tel:+917736560333" class="btn btn--primary btn--arrow" data-cta="cta3_call">Talk to a Career Mentor</a>
         <p style="margin-top:14px;font-size:14.5px;color:#4b5852;">Or fill the form and we'll call you back within one working day.</p>
         <p style="margin-top:26px;font-size:15px;line-height:1.7;color:#1f2e27;">
-          <strong>TechBound Digital Innovations</strong><br>
-          6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Statue, Thiruvananthapuram 695001<br>
           <a href="tel:+917736560333" style="color:var(--brand);">+91 77365 60333</a> &middot; <a href="mailto:office@techbound.in" style="color:var(--brand);">office@techbound.in</a>
         </p>
       </div>
@@ -654,6 +652,125 @@ require __DIR__ . '/includes/header.php';
 
 </main>
 
+<!-- ===== BOOK A FREE DEMO CLASS POPUP MODAL (Matches Home Page Book a Call Layout) ===== -->
+<div class="tb-call-modal" id="tbCourseDemoModal" role="dialog" aria-modal="true" aria-labelledby="tbCourseDemoTitle" hidden>
+  <div class="tb-call-modal__backdrop" data-close-demo-modal></div>
+  <div class="tb-call-modal__dialog">
+    <button type="button" class="tb-call-modal__close" data-close-demo-modal aria-label="Close demo class modal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="tb-call-modal__grid">
+      <!-- Left: Direct Course Contact Details -->
+      <div class="tb-call-modal__info">
+        <span class="pill pill--glow">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+          Free Demo Class
+        </span>
+        <h2 id="tbCourseDemoTitle" class="tb-call-modal__title">Book Your Free 60-Min Demo Class</h2>
+        <p class="tb-call-modal__lead">See how we audit a real website for Google, ChatGPT, and Gemini live. No payment, no pressure.</p>
+
+        <ul class="tb-call-modal__details">
+          <li>
+            <a href="tel:+917736560333">
+              <span class="tb-call-modal__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              </span>
+              <span><small>Call Course Mentor</small><strong>+91 77365 60333</strong></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/917736560333?text=Hi%20TechBound%2C%20I%20would%20like%20to%20book%20a%20free%20demo%20class%20for%20the%20AI%20360%20SEO%20course." target="_blank" rel="noopener noreferrer">
+              <span class="tb-call-modal__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </span>
+              <span><small>WhatsApp</small><strong>Get Syllabus &amp; Fee</strong></span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:office@techbound.in">
+              <span class="tb-call-modal__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              </span>
+              <span><small>Email</small><strong>office@techbound.in</strong></span>
+            </a>
+          </li>
+          <li>
+            <div class="tb-call-modal__row">
+              <span class="tb-call-modal__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </span>
+              <span><small>Batches</small><strong>Online &amp; Offline &middot; Weekday &amp; Weekend</strong></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Demo Class Booking Form -->
+      <div class="tb-call-modal__form-wrap">
+        <h3 class="tb-call-modal__form-title">Reserve Your Free Demo Seat</h3>
+        <form id="courseDemoModalForm" class="tb-call-form" method="post" action="<?= url('send-contact.php') ?>">
+          <div class="tb-call-field">
+            <label for="cdm-name">Full Name *</label>
+            <input type="text" id="cdm-name" name="name" required placeholder="Your full name" autocomplete="name">
+          </div>
+          <div class="tb-call-form__row">
+            <div class="tb-call-field">
+              <label for="cdm-phone">Mobile / WhatsApp *</label>
+              <input type="tel" id="cdm-phone" name="phone" required placeholder="+91 98765 43210" autocomplete="tel">
+            </div>
+            <div class="tb-call-field">
+              <label for="cdm-email">Email *</label>
+              <input type="email" id="cdm-email" name="email" required placeholder="you@example.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="tb-call-field">
+            <label for="cdm-persona">I am a&hellip; *</label>
+            <select id="cdm-persona" name="persona" required>
+              <option value="">Select your background</option>
+              <option value="Student / Plus-two pass-out">Student / Plus-two pass-out</option>
+              <option value="Graduate">Graduate</option>
+              <option value="Working professional">Working professional</option>
+              <option value="Returning after a break">Returning after a break</option>
+              <option value="Business owner">Business owner</option>
+              <option value="Freelancer">Freelancer</option>
+            </select>
+          </div>
+          <div class="tb-call-form__row">
+            <div class="tb-call-field">
+              <label>Preferred Mode *</label>
+              <div class="crs-radios">
+                <label><input type="radio" name="demo_mode" value="Offline" checked><span>Offline</span></label>
+                <label><input type="radio" name="demo_mode" value="Online"><span>Online</span></label>
+              </div>
+            </div>
+            <div class="tb-call-field">
+              <label>Preferred Batch *</label>
+              <div class="crs-radios">
+                <label><input type="radio" name="demo_batch" value="Weekday" checked><span>Weekday</span></label>
+                <label><input type="radio" name="demo_batch" value="Weekend"><span>Weekend</span></label>
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" name="service" value="AI 360 SEO Free Demo Class">
+          <input type="hidden" name="company" id="cdm-hidden-company" value="AI 360 SEO Demo Class">
+          <input type="hidden" name="message" id="cdm-hidden-message" value="">
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+            <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_form_ts" id="cdm-ts" value="<?= time() ?>">
+          <input type="hidden" name="recaptcha_token" id="cdm-recaptcha-token" value="">
+
+          <button type="submit" class="btn btn--primary btn--sm btn--arrow tb-call-form__submit">Book Free Demo Class</button>
+          <p id="courseDemoModalStatus" class="tb-call-form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function () {
   // Persona tabs
@@ -730,6 +847,96 @@ require __DIR__ . '/includes/header.php';
         .catch(function (err) {
           statusEl.className = 'tb-call-form__status is-err';
           statusEl.textContent = (err && err.message) ? err.message : 'Could not send right now. Please call +91 77365 60333.';
+        })
+        .finally(function () {
+          if (btn) btn.disabled = false;
+        });
+    });
+  }
+
+  // Book a Free Demo Class Popup Modal
+  var demoModal = document.getElementById('tbCourseDemoModal');
+  var demoForm  = document.getElementById('courseDemoModalForm');
+  var demoStat  = document.getElementById('courseDemoModalStatus');
+  var demoTs    = document.getElementById('cdm-ts');
+
+  function openDemoModal() {
+    if (!demoModal) return;
+    if (demoTs) demoTs.value = String(Math.floor(Date.now() / 1000));
+    if (demoStat) { demoStat.className = 'tb-call-form__status'; demoStat.textContent = ''; }
+    demoModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var first = document.getElementById('cdm-name');
+    if (first) setTimeout(function () { first.focus(); }, 80);
+  }
+
+  function closeDemoModal() {
+    if (!demoModal) return;
+    demoModal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-open-demo-modal]')) {
+      e.preventDefault();
+      openDemoModal();
+      return;
+    }
+    if (e.target.closest('[data-close-demo-modal]')) {
+      closeDemoModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && demoModal && !demoModal.hidden) {
+      closeDemoModal();
+    }
+  });
+
+  if (demoForm && demoStat) {
+    demoForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nameVal    = (document.getElementById('cdm-name').value || '').trim();
+      var phoneVal   = (document.getElementById('cdm-phone').value || '').trim();
+      var personaVal = (document.getElementById('cdm-persona').value || '').trim();
+      var modeEl     = demoForm.querySelector('input[name="demo_mode"]:checked');
+      var batchEl    = demoForm.querySelector('input[name="demo_batch"]:checked');
+      var modeVal    = modeEl ? modeEl.value : 'Offline';
+      var batchVal   = batchEl ? batchEl.value : 'Weekday';
+
+      document.getElementById('cdm-hidden-company').value = 'AI 360 SEO Demo (' + modeVal + ' / ' + batchVal + ')';
+      document.getElementById('cdm-hidden-message').value =
+        'Request: Free 60-Min AI 360 SEO Demo Class\n' +
+        'Profile: ' + (personaVal || '-') + '\n' +
+        'Preferred Mode: ' + modeVal + '\n' +
+        'Preferred Batch: ' + batchVal + '\n' +
+        'WhatsApp / Mobile: ' + phoneVal;
+
+      var btn = demoForm.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      demoStat.className = 'tb-call-form__status';
+      demoStat.textContent = 'Booking your free demo seat...';
+
+      var getToken = (typeof window.tbGetRecaptchaToken === 'function')
+        ? window.tbGetRecaptchaToken('course_demo')
+        : Promise.resolve('');
+
+      getToken.then(function (token) {
+        var tok = document.getElementById('cdm-recaptcha-token');
+        if (tok) tok.value = token || '';
+        return fetch(demoForm.getAttribute('action'), { method: 'POST', body: new FormData(demoForm) });
+      })
+        .then(function (r) { return r.json().catch(function () { return { ok: false, message: 'Unexpected server response.' }; }); })
+        .then(function (data) {
+          if (!data || !data.ok) throw new Error((data && data.message) || 'Could not submit right now. Please call +91 77365 60333.');
+          if (window.gtag) gtag('event', 'generate_lead', { persona: personaVal, mode: modeVal, source: 'demo_modal' });
+          demoForm.reset();
+          demoStat.className = 'tb-call-form__status is-ok';
+          demoStat.textContent = 'Thanks, ' + (nameVal.split(' ')[0] || 'there') + '! Your free demo class request is confirmed. Our mentor will call you within one working day.';
+        })
+        .catch(function (err) {
+          demoStat.className = 'tb-call-form__status is-err';
+          demoStat.textContent = (err && err.message) ? err.message : 'Could not send right now. Please call +91 77365 60333.';
         })
         .finally(function () {
           if (btn) btn.disabled = false;

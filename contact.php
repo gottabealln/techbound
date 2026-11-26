@@ -74,18 +74,7 @@ require __DIR__ . '/includes/header.php';
               <span class="contact__text"><small>Email us</small>contacts@techbound.in</span>
             </a>
           </li>
-          <?php
-$map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode('TechBound Digital Marketing Agency Trivandrum, 6th Floor, Karimpanal Statue Avenue, Thiruvananthapuram 695001');
-?>
-<li data-animate style="--d:400ms">
-  <a href="<?= $map_link ?>" target="_blank" rel="noopener" aria-label="Open Techbound location in Google Maps">
-    <span class="contact__icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    </span>
-    <span class="contact__text"><small>Visit us</small>6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Statue, Thiruvananthapuram, 695001</span>
-  </a>
-</li>
-          <li data-animate style="--d:480ms">
+          <li data-animate style="--d:400ms">
             <div class="contact__row">
               <span class="contact__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -193,60 +182,45 @@ $oman_map_link  = 'https://maps.app.goo.gl/488a8Yp1qqUdP9eb9?g_st=iwb';
 
       <!-- Kochi -->
       <article class="location-card" data-animate style="--d:100ms">
-        <div class="location-card__map">
-          <iframe
-            src="https://www.google.com/maps?q=Suraj+Buildings,+Giri+Nagar,+Club+Rd,+Giri+Nagar,+Kadavanthra,+Ernakulam,+Kerala+682020&amp;output=embed"
-            title="TechBound Kochi Office Map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen></iframe>
+        <div class="location-card__media">
+          <img src="<?= asset('assets/locations/kochi.jpg') ?>" alt="Fort Kochi waterfront and Marine Drive skyline, Kerala" loading="lazy">
         </div>
         <div class="location-card__body">
           <span class="location-card__tag">Kochi Office</span>
-          <h3><a href="<?= url('digital-marketing-agency-in-kochi.php') ?>" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Kochi</a>, Ernakulam</h3>
+          <h3>Kochi, Ernakulam</h3>
           <p>Suraj Buildings, Giri Nagar, Club Rd, Giri Nagar, Kadavanthra, Ernakulam, Keralam 682020</p>
-          <a href="<?= $kochi_map_link ?>" target="_blank" rel="noopener noreferrer" class="location-card__link">
-            Open in Google Maps &rarr;
+          <a href="<?= $kochi_map_link ?>" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--arrow location-card__btn">
+            Open in Google Maps
           </a>
         </div>
       </article>
 
       <!-- Thiruvananthapuram -->
       <article class="location-card" data-animate>
-        <div class="location-card__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0128912179903!2d76.94543917501265!3d8.498126591543524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05ba2d0ad3aab9%3A0xf24e9cee61cb2a41!2sTechBound%20Digital%20Marketing%20Agency%20Trivandrum!5e0!3m2!1sen!2sin!4v1792383022840!5m2!1sen!2sin"
-            title="TechBound Thiruvananthapuram Office Map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen></iframe>
+        <div class="location-card__media">
+          <img src="<?= asset('assets/locations/trivandrum.jpg') ?>" alt="Kerala Government Secretariat and Statue Junction, Thiruvananthapuram" loading="lazy">
         </div>
         <div class="location-card__body">
           <span class="location-card__tag">Registered Office</span>
           <h3>Thiruvananthapuram</h3>
           <p>6th Floor, Karimpanal Statue Avenue, Opposite Secretariat, Statue, Thiruvananthapuram, Kerala 695001</p>
-          <a href="<?= $tvm_map_link ?>" target="_blank" rel="noopener noreferrer" class="location-card__link">
-            Open in Google Maps &rarr;
+          <a href="<?= $tvm_map_link ?>" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--arrow location-card__btn">
+            Open in Google Maps
           </a>
         </div>
       </article>
 
       <!-- Muscat, Oman -->
       <article class="location-card" data-animate style="--d:200ms">
-        <div class="location-card__map">
-          <iframe
-            src="https://www.google.com/maps?q=Al+Khaleej+Tower,+Muscat+133,+Sultanate+of+Oman&amp;output=embed"
-            title="TechBound Oman Office Map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen></iframe>
+        <div class="location-card__media">
+          <img src="<?= asset('assets/locations/oman.jpg') ?>" alt="Sultan Qaboos Grand Mosque and Muscat skyline, Sultanate of Oman" loading="lazy">
         </div>
         <div class="location-card__body">
           <span class="location-card__tag">Oman Office</span>
           <h3>Muscat, Oman</h3>
           <p>Al Khaleej Tower, Muscat 133, Sultanate of Oman</p>
-          <a href="<?= $oman_map_link ?>" target="_blank" rel="noopener noreferrer" class="location-card__link">
-            Open in Google Maps &rarr;
+          <a href="<?= $oman_map_link ?>" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm btn--arrow location-card__btn">
+            Open in Google Maps
           </a>
         </div>
       </article>

@@ -85,12 +85,7 @@ if (empty($_faqs)) return; // nothing to render
           id="faq-<?= htmlspecialchars($faq_page, ENT_QUOTES, 'UTF-8') ?>-<?= $_i + 1 ?>"
         >
           <div class="faq__answer-inner">
-            <?php
-              $_ansHtml = htmlspecialchars($_faq['answer'], ENT_QUOTES, 'UTF-8');
-              $_kochiHref = htmlspecialchars(url('digital-marketing-agency-in-kochi.php'), ENT_QUOTES, 'UTF-8');
-              $_ansHtml = preg_replace('/\bKochi\b/', '<a href="' . $_kochiHref . '" style="color:var(--brand);text-decoration:underline;text-underline-offset:3px;">Kochi</a>', $_ansHtml);
-            ?>
-            <p><?= $_ansHtml ?></p>
+            <p><?= htmlspecialchars($_faq['answer'], ENT_QUOTES, 'UTF-8') ?></p>
           </div>
         </div>
       </div>

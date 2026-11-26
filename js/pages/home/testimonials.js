@@ -6,11 +6,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const bottomRow = document.querySelector(".testimonial-row--bottom");
 
   if (!section || !topRow || !bottomRow) {
-    console.warn("Testimonial elements not found.");
     return;
   }
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // Add "Read more" button to any card whose quote exceeds 2 lines (before cloning)
+  [topRow, bottomRow].forEach((row) => {
+    [...row.children].forEach((card) => {
+      const p = card.querySelector(":scope > p");
+      if (!p || card.querySelector(".testimonial-card__more")) return;
+      if (p.scrollHeight > p.clientHeight + 2) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "testimonial-card__more";
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Read more";
+        p.insertAdjacentElement("afterend", btn);
+      }
+    });
+  });
 
   // Duplicate cards for seamless horizontal looping.
   [topRow, bottomRow].forEach((row) => {
@@ -23,6 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     row.dataset.cloned = "true";
+  });
+
+  // Expand / collapse quote on "Read more" click
+  section.addEventListener("click", (e) => {
+    const btn = e.target.closest(".testimonial-card__more");
+    if (!btn) return;
+    const card = btn.closest(".testimonial-card");
+    if (!card) return;
+    const expanded = card.classList.toggle("is-expanded");
+    btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+    btn.textContent = expanded ? "Show less" : "Read more";
   });
 
   let topPosition = 0;
@@ -66,11 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sectionActive = rect.top < window.innerHeight && rect.bottom > 0;
 
-    // Activate the top row only after further scrolling.
+    // Activate the top row smoothly once scrolled into view.
     const progress =
       (window.innerHeight - rect.top) / (window.innerHeight * 0.8);
 
-    topStarted = progress >= 0.65;
+    topStarted = progress >= 0.2;
 
     if (sectionActive && !reducedMotion.matches) {
       if (frame === null) {
@@ -96,10 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const delta = Math.min((time - lastTime) / 1000, 0.05);
     lastTime = time;
 
-    const topPaused = isHovering(topRow);
-    const bottomPaused = isHovering(bottomRow);
+    const topPaused = isHovering(topRow) || !!topRow.querySelector(".testimonial-card.is-expanded");
+    const bottomPaused = isHovering(bottomRow) || !!bottomRow.querySelector(".testimonial-card.is-expanded");
 
-    // BOTTOM ROW: slides left unless the mouse is over it.
+    // BOTTOM ROW: slides left unless hovered or expanded.
     if (bottomDistance > 0 && !bottomPaused) {
       bottomPosition =
         (bottomPosition + BOTTOM_SPEED * delta) % bottomDistance;
@@ -108,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `translate3d(${-bottomPosition}px, 0, 0)`;
     }
 
-    // TOP ROW: slides right once scrolled in, unless hovered.
+    // TOP ROW: slides right once scrolled in, unless hovered or expanded.
     if (topDistance > 0) {
       if (!topStarted) {
         topRow.style.transform = `translate3d(${-topDistance}px, 0, 0)`;

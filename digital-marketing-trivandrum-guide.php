@@ -747,8 +747,8 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
           </div>
 
           <div class="guide-field">
-            <label for="g-url">Website URL *</label>
-            <input type="url" id="g-url" name="site_url" required placeholder="https://yourwebsite.com">
+            <label for="g-url">Website URL (optional)</label>
+            <input type="url" id="g-url" name="site_url" placeholder="https://yourwebsite.com">
           </div>
 
           <div class="guide-field">

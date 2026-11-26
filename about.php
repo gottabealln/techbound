@@ -35,7 +35,7 @@ require __DIR__ . '/includes/header.php';
         <div class="hero__text">
           <h1 class="hero__title">Meet the Team Behind Your Growth</h1>
           <p class="hero__desc">
-            With over 15 years of hands-on experience in Trivandrum and <a href="<?= url('digital-marketing-agency-in-kochi.php') ?>" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Kochi</a>, Kerala, we help ambitious brands outgrow trends with transparent, data-driven digital marketing and technology.
+            With over 15 years of hands-on experience in Trivandrum and Kochi, Kerala, we help ambitious brands outgrow trends with transparent, data-driven digital marketing and technology.
           </p>
         </div>
 

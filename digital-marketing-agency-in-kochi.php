@@ -101,7 +101,7 @@ require __DIR__ . '/includes/header.php';
         </div>
 
         <div class="hero__buttons">
-          <a href="#audit" class="btn btn--primary btn--arrow">Get my free visibility audit</a>
+          <a href="#audit" data-audit-modal="free-audit" data-audit-title="Get Your Free Kochi Visibility Audit" class="btn btn--primary btn--arrow">Get my free visibility audit</a>
           <a href="tel:+917736560333" class="btn btn--outline btn--arrow">Call Us</a>
         </div>
 
@@ -236,7 +236,7 @@ require __DIR__ . '/includes/header.php';
           No agency can guarantee an AI tool will cite you. We show the work and report what moves.
         </p>
         <div style="margin-top:24px;">
-          <a href="#audit" class="btn btn--primary btn--arrow">Run my free AI visibility check</a>
+          <a href="#audit" data-audit-modal="ai-audit" data-audit-title="Run Your Free AI Visibility Check" class="btn btn--primary btn--arrow">Run my free AI visibility check</a>
         </div>
       </div>
 
@@ -423,98 +423,17 @@ require __DIR__ . '/includes/header.php';
           </p>
         </div>
         <div class="guide-callout__actions">
-          <a href="#audit" class="btn btn--primary btn--arrow">Get my free audit and quote</a>
+          <a href="#audit" data-audit-modal="free-audit" data-audit-title="Get Your Free Kochi Audit & Quote" class="btn btn--primary btn--arrow">Get my free audit and quote</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq" data-nav="light">
-    <div class="faq__inner">
-      <h2 class="faq__title">Questions Kochi businesses ask us</h2>
-
-      <div class="faq__list">
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. Do you have an office in Kochi?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>Yes. Our Kochi office is at Suraj Buildings, Giri Nagar Club Road, Kadavanthra, Ernakulam 682020. Our head office is opposite the Secretariat in Thiruvananthapuram.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. How long before we see results?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>Discovery takes 2 to 3 weeks and setup 4 to 6 weeks. Early signals usually show in weeks 8 to 12; steady results build over 4 to 6 months.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. Can you guarantee first-page rankings or ChatGPT mentions?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>No, and be careful with anyone who does. We improve what we control and report honestly every month.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-              4. Do we need every service?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-4">
-            <div class="faq__answer-inner">
-              <p>No. We recommend the channel most likely to pay back first, then add others once results are proven.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-              5. Will we have a dedicated team?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-5">
-            <div class="faq__answer-inner">
-              <p>Yes. You get named people who know your business, with regular updates and plain-language reports.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-6">
-              6. Do you work with businesses outside Kochi?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-6">
-            <div class="faq__answer-inner">
-              <p>Yes, across Kerala, India and 6+ countries, including clients in the Middle East, Europe and North America.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php
+$faq_page  = 'kochi';
+$faq_title = 'Questions Kochi businesses ask us';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
   <!-- ===== FORM + KOCHI LOCATION ===== -->
   <section class="svc-section svc-section--tint" id="audit" data-nav="light">

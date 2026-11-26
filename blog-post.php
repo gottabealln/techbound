@@ -235,7 +235,21 @@ include __DIR__ . '/includes/header.php';
   <!-- Article Body Content -->
   <div class="post-content-container">
     <div class="post-body">
-      <?= $post['body'] ?>
+      <?php
+      $rendered_body = (string)($post['body'] ?? '');
+      $rendered_body = preg_replace(
+          '/(<img\b[^>]*\bsrc=["\'])(?:\/techbound\/|\/)?(assets\/blog\/[^"\']+)(["\'])/i',
+          '$1' . BASE_URL . '$2$3',
+          $rendered_body
+      );
+      $rendered_body = preg_replace(
+          '/(<img\b[^>]*\bsrc=["\'])https?:\/\/(?:www\.)?techbound\.in\/(wp-content\/uploads\/[^"\']+)(["\'])/i',
+          '$1' . BASE_URL . '$2$3',
+          $rendered_body
+      );
+      $rendered_body = preg_replace('/\s+srcset=["\'][^"\']*techbound\.in\/wp-content\/uploads\/[^"\']*["\']/i', '', $rendered_body);
+      echo $rendered_body;
+      ?>
     </div>
 
     <script>

@@ -117,6 +117,9 @@ function blog_image_url(?string $image, ?string $category = null): string
     if ($img === '') {
         return asset(blog_placeholder($category));
     }
+    if (preg_match('~^https?://(?:www\.)?techbound\.in/(wp-content/uploads/.+)$~i', $img, $m)) {
+        return BASE_URL . $m[1];
+    }
     if (strpos($img, 'http://') === 0 || strpos($img, 'https://') === 0) {
         return $img;
     }

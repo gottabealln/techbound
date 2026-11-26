@@ -635,92 +635,11 @@ $lnk = [
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-
-    <div class="faq__list">
-      <div class="faq__item is-open">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-            1. Why do generic website templates fail to generate leads, and what makes a custom website effective?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-1">
-          <div class="faq__answer-inner">
-            <p>Most template websites look acceptable on the surface but fail commercially because they are built around generic placeholder layouts rather than your buyers' decision journey. An effective website works as a structured sales tool: it speaks directly to your ideal customer's pain points in plain language, removes friction by making service details and trust proof easy to find, and places clear, benefit-driven calls-to-action ("Get My Free Consultation") where high-intent visitors naturally look. At TechBound, we structure every page around your customer psychology and sales process so visitors are guided smoothly from curiosity to enquiry.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-            2. How should a business decide between optimising its website for lead generation, e-commerce or brand awareness?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-2">
-          <div class="faq__answer-inner">
-            <p>Your website's primary architecture must match how you make money. E-commerce sites act as digital storefronts—prioritising product discovery, specifications, reviews and a frictionless checkout measured by conversion rate and order value. B2B and service websites act as sales engines—focusing on educational service pages, case studies and lead capture forms measured by qualified enquiries. Brand- showcase sites focus on storytelling and corporate perception. Trying to force all three equally usually dilutes results. For most service businesses in Kerala, we recommend engineering for lead generation first, then layering brand storytelling around that core funnel.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-            3. What technical foundations must a website have to support SEO and lead generation?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-3">
-          <div class="faq__answer-inner">
-            <p>Great visuals cannot rescue a weak technical foundation. Every high-performing site requires mobile-first responsiveness (since over 60–70% of searches happen on phones), sub-3-second page load speeds, logical URL hierarchy, HTTPS security, clean semantic HTML headings, structured schema markup for search engines and AI tools, responsive image compression, unblocked crawlability and conversion analytics tracking. TechBound bakes every one of these technical essentials into your build before go-live so your marketing starts on solid ground.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-            4. How do you balance refined visual design with conversion-focused functionality?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-4">
-          <div class="faq__answer-inner">
-            <p>Aesthetic quality and conversion performance aren't opposites—they reinforce each other. An unattractive site with aggressive forms hurts brand trust, while a gorgeous site with hidden contact paths wastes traffic. We combine clean visual restraint—generous whitespace, scannable typography, authentic visuals and cohesive brand colours—with prominent social proof, clear value propositions and unmistakable action buttons. We also refine layouts based on real visitor behaviour rather than guesswork.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-            5. What ongoing maintenance and updates does a website need after launch?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-5">
-          <div class="faq__answer-inner">
-            <p>A website runs live software that needs continuous care to stay competitive and secure. Ongoing maintenance covers core security patches, CMS and plugin updates, fresh service content and case studies, speed and Core Web Vitals monitoring, and iterative conversion improvements on high-traffic pages. TechBound doesn't hand over your keys and vanish—our post-launch support plans keep your site fast, protected and aligned with your evolving business.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-6">
-            6. How should we measure website success and tie it to real business outcomes?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-6">
-          <div class="faq__answer-inner">
-            <p>Raw traffic numbers and time-on-page mean very little if visitors never convert into customers. The metrics that truly matter connect directly to revenue: conversion rate, volume of qualified enquiries, cost per lead, lead-to-customer close rate and revenue attributed to website channels. Diagnostic metrics like page-level bounce rates and funnel drop-offs help us spot where to improve, while our reporting ties your website's performance directly to tangible commercial growth.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'website-development';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CLOSING CTA ===== -->
 <section class="svc-cta">

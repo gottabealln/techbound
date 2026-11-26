@@ -2,6 +2,16 @@
 require __DIR__ . '/../_guard.php';
 $pdo = admin_db();
 
+// Ensure `is_read` column exists on contact_messages
+if ($pdo) {
+    try {
+        $cols = $pdo->query("SHOW COLUMNS FROM contact_messages LIKE 'is_read'")->fetchAll();
+        if (empty($cols)) {
+            $pdo->exec("ALTER TABLE contact_messages ADD COLUMN is_read TINYINT(1) NOT NULL DEFAULT 0 AFTER ip");
+        }
+    } catch (Throwable $e) {}
+}
+
 // --- Actions ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$pdo) {
@@ -15,6 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ' . admin_url('resources/contact_messages.php?deleted=1'));
         exit;
     }
+    if ($action === 'mark_all_read') {
+        $pdo->exec('UPDATE contact_messages SET is_read = 1 WHERE is_read = 0');
+        header('Location: ' . admin_url('resources/contact_messages.php'));
+        exit;
+    }
+    if ($action === 'toggle_read' && !empty($_POST['id'])) {
+        $pdo->prepare('UPDATE contact_messages SET is_read = 1 - COALESCE(is_read, 0) WHERE id = ?')->execute([(int)$_POST['id']]);
+        header('Location: ' . admin_url('resources/contact_messages.php' . (!empty($_GET['cat']) ? ('?cat=' . urlencode($_GET['cat'])) : '')));
+        exit;
+    }
 }
 
 // --- Category & Search Filters ---
@@ -26,6 +46,7 @@ $offset = ($page - 1) * $per;
 
 // Metric counts
 $total_all     = 0;
+$total_unread  = 0;
 $total_careers = 0;
 $total_leads   = 0;
 $total_audits  = 0;
@@ -35,6 +56,7 @@ $rows          = [];
 if ($pdo) {
     try {
         $total_all     = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages")->fetchColumn();
+        $total_unread  = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE COALESCE(is_read, 0) = 0")->fetchColumn();
         $total_careers = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE company LIKE '%Career%'")->fetchColumn();
         $total_leads   = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE company NOT LIKE '%Career%' OR company IS NULL")->fetchColumn();
         $total_audits  = (int)$pdo->query("SELECT COUNT(*) FROM contact_messages WHERE company LIKE '%Audit%' OR message LIKE '%Audit%'")->fetchColumn();
@@ -48,7 +70,9 @@ if ($pdo) {
             $params = array_merge($params, [$like, $like, $like, $like, $like]);
         }
 
-        if ($cat === 'career') {
+        if ($cat === 'unread') {
+            $whereClauses[] = 'COALESCE(is_read, 0) = 0';
+        } elseif ($cat === 'career') {
             $whereClauses[] = 'company LIKE ?';
             $params[] = '%Career%';
         } elseif ($cat === 'leads') {
@@ -102,6 +126,15 @@ require __DIR__ . '/../_header.php';
             <p class="font-body-md text-body-md text-on-surface-variant">All website contact requests, quote inquiries, and career applications connected directly to the database.</p>
         </div>
         <div class="flex items-center gap-space-sm shrink-0">
+            <?php if ($total_unread > 0): ?>
+            <form method="post" class="inline">
+                <input type="hidden" name="_action" value="mark_all_read">
+                <button type="submit" class="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-white border border-outline-variant text-xs font-medium text-on-surface hover:border-primary hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[16px]">done_all</span>
+                    Mark all read (<span id="unreadCountHeader"><?= $total_unread ?></span>)
+                </button>
+            </form>
+            <?php endif; ?>
             <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant">
                 <span class="material-symbols-outlined text-[16px] text-primary">inbox</span>
                 <?= number_format($total_all) ?> total submissions
@@ -123,6 +156,10 @@ require __DIR__ . '/../_header.php';
             <a href="?cat=all<?= $search ? '&q=' . urlencode($search) : '' ?>" 
                class="px-3.5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 <?= $cat === 'all' ? 'bg-primary text-on-primary font-semibold' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high' ?>">
                All (<?= $total_all ?>)
+            </a>
+            <a href="?cat=unread<?= $search ? '&q=' . urlencode($search) : '' ?>" 
+               class="px-3.5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 <?= $cat === 'unread' ? 'bg-primary text-on-primary font-semibold' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high' ?>">
+               Unread (<span id="unreadCountTab"><?= $total_unread ?></span>)
             </a>
             <a href="?cat=leads<?= $search ? '&q=' . urlencode($search) : '' ?>" 
                class="px-3.5 py-2 rounded-lg font-label-md text-label-md transition-colors shrink-0 <?= $cat === 'leads' ? 'bg-primary text-on-primary font-semibold' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high' ?>">
@@ -205,17 +242,25 @@ require __DIR__ . '/../_header.php';
                             // Clean phone for whatsapp
                             $cleanPhone = preg_replace('/\D/', '', $row['phone'] ?? '');
                             if (strlen($cleanPhone) === 10) $cleanPhone = '91' . $cleanPhone;
+
+                            $isUnread = empty($row['is_read']);
+                            $rowJson  = htmlspecialchars(json_encode($row), ENT_QUOTES);
                         ?>
-                        <tr class="hover:bg-surface-container-low/70 transition-colors group">
-                            <td class="py-3.5 px-space-md text-outline font-label-sm text-label-sm"><?= $offset + $i + 1 ?></td>
+                        <tr data-enquiry-id="<?= (int)$row['id'] ?>" data-unread="<?= $isUnread ? '1' : '0' ?>" onclick="if(!event.target.closest('a,button,form')) openMessageModal(<?= $rowJson ?>, this)" class="cursor-pointer transition-colors group <?= $isUnread ? 'bg-green-50/45 hover:bg-green-50/75' : 'bg-white hover:bg-surface-container-low/70' ?>">
+                            <td class="py-3.5 px-space-md font-label-sm text-label-sm <?= $isUnread ? 'text-primary font-bold' : 'text-outline font-normal' ?>" data-enq-num>
+                                <span class="inline-flex items-center gap-1.5">
+                                    <span data-unread-dot class="w-2 h-2 rounded-full bg-primary shrink-0 <?= $isUnread ? '' : 'hidden' ?>" title="Unread"></span>
+                                    <span><?= $offset + $i + 1 ?></span>
+                                </span>
+                            </td>
                             
                             <!-- Name -->
                             <td class="py-3.5 px-space-md">
                                 <div class="flex items-center gap-space-xs">
                                     <div class="w-9 h-9 rounded-full <?= $color ?> font-label-md text-label-md flex items-center justify-center shrink-0 font-bold"><?= $initials ?></div>
                                     <div class="flex flex-col min-w-0">
-                                        <span class="font-label-lg text-label-lg text-on-surface font-semibold truncate"><?= e($row['name']) ?></span>
-                                        <span class="text-on-surface-variant font-body-sm text-body-sm truncate"><?= e($row['email']) ?></span>
+                                        <span data-enq-text class="font-label-lg text-label-lg truncate <?= $isUnread ? 'text-on-surface font-bold' : 'text-on-surface-variant font-normal' ?>"><?= e($row['name']) ?></span>
+                                        <span data-enq-sub class="font-body-sm text-body-sm truncate <?= $isUnread ? 'text-on-surface font-semibold' : 'text-on-surface-variant font-normal' ?>"><?= e($row['email']) ?></span>
                                     </div>
                                 </div>
                             </td>
@@ -248,14 +293,14 @@ require __DIR__ . '/../_header.php';
                                             <span class="material-symbols-outlined text-[13px]">mail</span> General Inquiry
                                         </span>
                                     <?php endif; ?>
-                                    <span class="font-label-sm text-label-sm text-outline truncate max-w-[180px]"><?= e($companyText ?: 'Direct Website') ?></span>
+                                    <span data-enq-sub class="font-label-sm text-label-sm truncate max-w-[180px] <?= $isUnread ? 'text-on-surface font-semibold' : 'text-outline font-normal' ?>"><?= e($companyText ?: 'Direct Website') ?></span>
                                 </div>
                             </td>
 
                             <!-- Contact info -->
                             <td class="py-3.5 px-space-md">
                                 <div class="flex flex-col gap-0.5">
-                                    <span class="font-label-md text-label-md text-on-surface font-medium"><?= e($row['phone'] ?: 'No Phone') ?></span>
+                                    <span data-enq-text class="font-label-md text-label-md <?= $isUnread ? 'text-on-surface font-bold' : 'text-on-surface-variant font-normal' ?>"><?= e($row['phone'] ?: 'No Phone') ?></span>
                                     <?php if (!empty($cleanPhone)): ?>
                                         <a href="https://wa.me/<?= e($cleanPhone) ?>?text=<?= urlencode('Hello ' . $row['name'] . ', thank you for contacting TechBound. We received your inquiry regarding ' . ($companyText ?: 'our services') . '.') ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-[11px] text-emerald-600 hover:underline font-semibold">
                                             <span class="material-symbols-outlined text-[13px]">chat</span> Chat WhatsApp
@@ -266,7 +311,7 @@ require __DIR__ . '/../_header.php';
 
                             <!-- Message preview -->
                             <td class="py-3.5 px-space-md max-w-xs">
-                                <p class="text-on-surface-variant truncate"><?= e(mb_substr($row['message'], 0, 80)) ?><?= mb_strlen($row['message']) > 80 ? '…' : '' ?></p>
+                                <p data-enq-text class="truncate <?= $isUnread ? 'text-on-surface font-bold' : 'text-on-surface-variant font-normal' ?>"><?= e(mb_substr($row['message'], 0, 80)) ?><?= mb_strlen($row['message']) > 80 ? '…' : '' ?></p>
                                 <?php if (stripos($row['message'], 'uploads/resumes/') !== false): ?>
                                     <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary mt-0.5">
                                         <span class="material-symbols-outlined text-[13px]">attach_file</span> Resume Attached
@@ -275,17 +320,25 @@ require __DIR__ . '/../_header.php';
                             </td>
 
                             <!-- Date -->
-                            <td class="py-3.5 px-space-md text-on-surface whitespace-nowrap font-label-md text-label-md">
+                            <td data-enq-text class="py-3.5 px-space-md whitespace-nowrap font-label-md text-label-md <?= $isUnread ? 'text-on-surface font-bold' : 'text-on-surface-variant font-normal' ?>">
                                 <?= date('M j, Y', strtotime($row['created_at'])) ?>
-                                <span class="block font-label-sm text-label-sm text-outline"><?= date('H:i', strtotime($row['created_at'])) ?></span>
+                                <span class="block font-label-sm text-label-sm text-outline font-normal"><?= date('H:i', strtotime($row['created_at'])) ?></span>
                             </td>
 
                             <!-- Actions -->
                             <td class="py-3.5 px-space-md text-right">
                                 <div class="inline-flex items-center gap-1">
-                                    <button onclick="openMessageModal(<?= htmlspecialchars(json_encode($row), ENT_QUOTES) ?>)" aria-label="View Full Details" class="w-8 h-8 rounded-lg hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="View Details">
+                                    <button type="button" onclick="openMessageModal(<?= $rowJson ?>, this.closest('tr'))" aria-label="View Full Details" class="w-8 h-8 rounded-lg hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="View Details">
                                         <span class="material-symbols-outlined text-[18px]">open_in_new</span>
                                     </button>
+
+                                    <form method="post" class="inline">
+                                        <input type="hidden" name="_action" value="toggle_read">
+                                        <input type="hidden" name="id" value="<?= (int)$row['id'] ?>">
+                                        <button type="submit" aria-label="<?= $isUnread ? 'Mark as read' : 'Mark as unread' ?>" class="w-8 h-8 rounded-lg hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="<?= $isUnread ? 'Mark as read' : 'Mark as unread' ?>">
+                                            <span class="material-symbols-outlined text-[18px]"><?= $isUnread ? 'drafts' : 'mark_email_unread' ?></span>
+                                        </button>
+                                    </form>
                                     
                                     <a href="mailto:<?= e($row['email']) ?>" aria-label="Reply Email" class="w-8 h-8 rounded-lg hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="Reply via Email">
                                         <span class="material-symbols-outlined text-[18px]">mail</span>
@@ -401,7 +454,35 @@ require __DIR__ . '/../_header.php';
 </div>
 
 <script>
-function openMessageModal(row) {
+const ENQUIRY_POLL_ENDPOINT = <?= json_encode(admin_url('resources/enquiry_poll.php')) ?>;
+
+function markRowAsReadUI(trEl) {
+    if (!trEl || trEl.dataset.unread !== '1') return;
+    trEl.dataset.unread = '0';
+    trEl.classList.remove('bg-green-50/45', 'hover:bg-green-50/75');
+    trEl.classList.add('bg-white', 'hover:bg-surface-container-low/70');
+
+    const dot = trEl.querySelector('[data-unread-dot]');
+    if (dot) dot.classList.add('hidden');
+
+    const num = trEl.querySelector('[data-enq-num]');
+    if (num) {
+        num.classList.remove('text-primary', 'font-bold');
+        num.classList.add('text-outline', 'font-normal');
+    }
+
+    trEl.querySelectorAll('[data-enq-text]').forEach(function(el) {
+        el.classList.remove('text-on-surface', 'font-bold');
+        el.classList.add('text-on-surface-variant', 'font-normal');
+    });
+
+    trEl.querySelectorAll('[data-enq-sub]').forEach(function(el) {
+        el.classList.remove('text-on-surface', 'font-semibold');
+        el.classList.add('text-on-surface-variant', 'font-normal');
+    });
+}
+
+function openMessageModal(row, trEl) {
     document.getElementById('modal-name').textContent    = row.name || '—';
     document.getElementById('modal-company').textContent = row.company || 'Direct Website';
     document.getElementById('modal-phone').textContent   = row.phone || '—';
@@ -439,6 +520,27 @@ function openMessageModal(row) {
     const modal = document.getElementById('messageModal');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+
+    // Automatically mark enquiry as opened/read in DB & switch row from bold -> normal font
+    const targetRow = trEl || document.querySelector('tr[data-enquiry-id="' + row.id + '"]');
+    if (row.id && targetRow && targetRow.dataset.unread === '1') {
+        markRowAsReadUI(targetRow);
+        const fd = new FormData();
+        fd.append('action', 'mark_read');
+        fd.append('id', String(row.id));
+        fetch(ENQUIRY_POLL_ENDPOINT, { method: 'POST', body: fd, credentials: 'same-origin' })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                if (d && d.ok) {
+                    if (window.updateAdminUnreadBadges) window.updateAdminUnreadBadges(d.unread_count);
+                    const tabEl = document.getElementById('unreadCountTab');
+                    const hdrEl = document.getElementById('unreadCountHeader');
+                    if (tabEl) tabEl.textContent = String(d.unread_count);
+                    if (hdrEl) hdrEl.textContent = String(d.unread_count);
+                }
+            })
+            .catch(function() {});
+    }
 }
 
 function closeMessageModal() {

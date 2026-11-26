@@ -153,7 +153,7 @@ $role = $user['role'] ?? 'editor';
                     'index.php'                      => ['label' => 'Dashboard',    'icon' => 'dashboard',        'perm' => 'dashboard'],
                     'resources/contact_messages.php' => ['label' => 'Enquiries',    'icon' => 'mail',             'perm' => 'enquiries'],
                     'resources/blog_posts.php'       => ['label' => 'Blog Posts',   'icon' => 'article',          'perm' => 'blog'],
-                    'resources/services.php'         => ['label' => 'Services',     'icon' => 'work_outline',     'perm' => 'services'],
+                    'resources/services.php'         => ['label' => 'Pages & SEO',  'icon' => 'web',              'perm' => 'services'],
                     'resources/testimonials.php'     => ['label' => 'Testimonials', 'icon' => 'format_quote',     'perm' => 'testimonials'],
                     'resources/faqs.php'             => ['label' => 'FAQs',         'icon' => 'help_outline',     'perm' => 'faqs'],
                 ];
@@ -167,7 +167,10 @@ $role = $user['role'] ?? 'editor';
                 ?>
                 <a class="flex items-center gap-2.5 px-3 py-2 rounded-md text-sm font-label-lg transition-colors <?= $active ?>" href="<?= e(admin_url($path)) ?>" onclick="if(window.innerWidth < 1024) toggleAdminSidebar(false)">
                     <span class="material-symbols-outlined text-[19px]"><?= $item['icon'] ?></span>
-                    <span><?= $item['label'] ?></span>
+                    <span class="flex-1"><?= $item['label'] ?></span>
+                    <?php if ($item['perm'] === 'enquiries'): ?>
+                        <span id="adminEnquiriesBadge" class="hidden px-1.5 py-0.5 min-w-[20px] text-center rounded-full bg-primary text-white text-[11px] font-bold leading-none">0</span>
+                    <?php endif; ?>
                 </a>
                 <?php endforeach; ?>
 
@@ -206,7 +209,12 @@ $role = $user['role'] ?? 'editor';
                 <span class="font-headline-sm text-headline-sm text-on-surface truncate"><?= e($page_title) ?></span>
             </div>
 
-            <div class="flex items-center gap-3 shrink-0">
+            <div class="flex items-center gap-2.5 shrink-0">
+                <button type="button" id="adminNotifBtn" onclick="handleAdminNotifClick()" class="relative inline-flex items-center gap-1.5 h-9 px-2.5 rounded-md border border-outline-variant bg-white text-on-surface text-xs font-label-md hover:bg-surface-container transition-colors" title="Enquiry Notifications">
+                    <span id="adminNotifIcon" class="material-symbols-outlined text-[18px] text-on-surface-variant">notifications</span>
+                    <span id="adminNotifLabel" class="hidden md:inline">Alerts</span>
+                    <span id="adminNotifDot" class="hidden absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center leading-none">0</span>
+                </button>
                 <a href="<?= e(BASE_URL) ?>" target="_blank" class="inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-outline-variant bg-white text-on-surface text-xs font-label-md hover:bg-surface-container transition-colors" title="View Public Website">
                     <span class="material-symbols-outlined text-[16px] text-on-surface-variant">open_in_new</span>
                     <span class="hidden sm:inline">View Site</span>
@@ -218,3 +226,19 @@ $role = $user['role'] ?? 'editor';
         </header>
 
         <main class="w-full pt-20 sm:pt-24 bg-surface min-h-[calc(100vh-4rem)] px-4 sm:px-6 lg:px-8 pb-10 min-w-0 overflow-x-hidden">
+            <!-- Browser Notification Permission Prompt -->
+            <div id="adminNotifBanner" class="hidden mb-5 px-4 py-3 rounded-xl bg-white border border-primary/30 shadow-sm flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                    <span class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[20px]">notifications_active</span>
+                    </span>
+                    <div class="min-w-0">
+                        <p class="text-sm font-semibold text-on-surface">Enable desktop notifications for new enquiries?</p>
+                        <p class="text-xs text-on-surface-variant">Get notified instantly whenever a customer submits a contact form, audit request, or job application.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" onclick="dismissNotifBanner()" class="h-8 px-3 rounded-md text-xs font-medium text-outline hover:bg-surface-container transition-colors">Later</button>
+                    <button type="button" onclick="requestAdminNotifPermission()" class="h-8 px-3.5 rounded-md bg-primary text-white text-xs font-medium hover:opacity-90 transition-opacity">Allow Notifications</button>
+                </div>
+            </div>

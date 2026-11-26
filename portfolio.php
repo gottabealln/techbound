@@ -217,65 +217,11 @@ require __DIR__ . '/includes/header.php';
   </section>
 
   <!-- ===== FAQ (matches site-wide .faq design) ===== -->
-  <section class="faq" id="faq" data-nav="light">
-    <div class="faq__inner">
-      <h2 class="faq__title">Frequently Asked Questions</h2>
-
-      <div class="faq__list">
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. Can you share detailed case studies relevant to my industry?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>Yes. During our discovery call, we walk you through live examples, ranking progressions, and campaign metrics from businesses in your sector or with similar sales cycles.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. Do you build websites and manage marketing together?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>Yes. Many of our strongest results come from pairing a conversion-focused website with SEO, Google Ads, Meta Ads, and social media so traffic lands on pages built to convert.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. How do you measure and report project results?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>We track concrete commercial metrics—qualified leads, calls, form submissions, organic rankings, and Return on Ad Spend (ROAS)—and share clear monthly reports with next-step actions.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-              4. How quickly can we kick off a new project?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-4">
-            <div class="faq__answer-inner">
-              <p>Once we complete your initial audit and align on scope and timeline, we typically start discovery and setup within 3 to 5 working days.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php
+$faq_page  = 'portfolio';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
   <!-- ===== CTA BANNER (exact home-page .cta) ===== -->
   <section class="cta" data-nav="dark">

@@ -267,74 +267,11 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-
-    <div class="faq__list">
-      <?php if (!empty($faqs)): ?>
-        <?php foreach ($faqs as $index => $faq):
-          $q = trim($faq['question']);
-          if (!preg_match('/^\d+\.\s/', $q)) { $q = ($index + 1) . '. ' . $q; }
-          $is_open = ($index === 0);
-        ?>
-          <div class="faq__item<?= $is_open ? ' is-open' : '' ?>">
-            <h3>
-              <button class="faq__question" type="button" aria-expanded="<?= $is_open ? 'true' : 'false' ?>" aria-controls="faq-<?= $index + 1 ?>">
-                <?= htmlspecialchars($q) ?>
-              </button>
-            </h3>
-            <div class="faq__answer" id="faq-<?= $index + 1 ?>">
-              <div class="faq__answer-inner">
-                <p><?= nl2br(htmlspecialchars($faq['answer'])) ?></p>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. What are AI SEO services?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>AI SEO services help your business get found, understood and cited by AI search tools such as Google AI Overviews, ChatGPT, Gemini and Perplexity.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. What is the difference between AEO and GEO?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>Answer engine optimization (AEO) focuses on being the direct answer in featured snippets and AI Overviews. Generative engine optimization (GEO) focuses on being mentioned inside answers written by tools like ChatGPT.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. Can you guarantee my business will appear in ChatGPT?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>No, and you should be wary of anyone who does. The platforms decide what they cite. We improve the factors we control and report honestly on what changes.</p>
-            </div>
-          </div>
-        </div>
-      <?php endif; ?>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'ai-seo';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CTA ===== -->
 <section class="svc-cta">

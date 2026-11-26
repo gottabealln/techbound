@@ -383,92 +383,11 @@ $lnk = [
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-
-    <div class="faq__list">
-      <div class="faq__item is-open">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-            1. How much should we spend on advertising to see meaningful results?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-1">
-          <div class="faq__answer-inner">
-            <p>This depends on your business size, your growth targets and how much a customer is worth to you over time. We recommend committing to a budget you can sustain for at least 90 days: month one is data gathering, month two is optimisation, month three is when results compound. For most service businesses in Trivandrum, we typically suggest starting at ₹30,000 to ₹50,000 monthly. For e-commerce, ₹50,000 to ₹1,00,000. The number matters less than having enough runway to see what works.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-            2. Why partner with an online advertising agency in Trivandrum instead of managing ads in-house?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-2">
-          <div class="faq__answer-inner">
-            <p>Learning advertising properly takes 6 months to 2 years of dedicated focus. A freelancer might know one platform well but rarely manages the full picture across Google, Meta, LinkedIn and email at once. Paid social also performs best alongside consistent <a href="<?= $lnk['smm'] ?>">organic social media</a>. An agency that specialises in paid advertising brings multi-platform expertise, tested systems, shared learnings across 200 plus campaigns and accountability for results, not just deliverables.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-            3. What is the most important metric for evaluating advertising success?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-3">
-          <div class="faq__answer-inner">
-            <p>Revenue generated relative to advertising cost, specifically your Return on Ad Spend (ROAS). If you spend ₹1,00,000 and generate ₹5,00,000 in customer revenue, that's a 5:1 ROAS. Secondary metrics like cost per lead, conversion rate and average order value all matter, but ROAS tells you whether your advertising is building the business or subsidising clicks.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-            4. How long before advertising campaigns start generating sales?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-4">
-          <div class="faq__answer-inner">
-            <p>Google Ads can generate initial enquiries within 2 to 3 weeks. Meta advertising typically takes 3 to 4 weeks. Email to an existing list can show results within days. LinkedIn campaigns usually take 4 to 6 weeks. Real optimisation, the kind that makes campaigns profitable, takes 8 to 12 weeks. We ask clients to commit to 90 days before drawing conclusions. Some businesses see profitability at 60 days, others need 120. Sales cycle length, competition and starting position all affect the timeline.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-            5. What makes TechBound different from other advertising agencies in Trivandrum?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-5">
-          <div class="faq__answer-inner">
-            <p>We specialise in advertising across Google, Meta, email and LinkedIn, not a generalist trying to cover every marketing discipline. We also test newer channels, such as <a href="https://techbound.in/chatgpt-ads-india-should-you-advertise/">ChatGPT Ads in India</a>, before recommending them. We're based in Trivandrum and understand the local market and what works in Kerala. We report transparently every month: which campaigns generated leads, what the cost per lead was and what revenue was attributed. And we apply learnings from 200 plus clients across 15 years to make every new engagement sharper than the last.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-6">
-            6. We already have someone managing our ads. Why should we consider TechBound?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-6">
-          <div class="faq__answer-inner">
-            <p>The right question is whether your current setup is properly tracked and consistently optimised. If you can't confidently state your cost per lead or ROAS across every platform, that's the first problem. We offer a free audit of any existing ad account, with no pressure and no obligation, so you can see what's working, where budget is leaking and what we'd do differently before making any decision.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'online-advertising';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CTA ===== -->
 <section class="svc-cta">

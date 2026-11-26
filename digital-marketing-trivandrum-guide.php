@@ -51,7 +51,7 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
         </div>
 
         <div class="hero__buttons">
-          <a href="#free-audit-form" class="btn btn--primary btn--arrow">Get My Free Audit</a>
+          <a href="#free-audit-form" data-audit-modal="free-audit" data-audit-title="Get Your Free Trivandrum Visibility Audit" class="btn btn--primary btn--arrow">Get My Free Audit</a>
           <a href="<?= url('services.php') ?>" class="btn btn--outline btn--arrow">See Our Services</a>
         </div>
       </div>
@@ -135,7 +135,7 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
         <h3>We will run your real customer questions through the major AI tools and show you who gets named today.</h3>
         <div class="guide-callout__actions">
           <a href="tel:+918606497677" class="guide-btn-dark">Call +91 86064 97677</a>
-          <a href="#free-audit-form" class="btn btn--primary btn--arrow">Request a Free Audit</a>
+          <a href="#free-audit-form" data-audit-modal="free-audit" data-audit-title="Request Your Free Trivandrum Audit" class="btn btn--primary btn--arrow">Request a Free Audit</a>
         </div>
       </div>
     </div>
@@ -436,7 +436,7 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
         <article class="guide-card" data-animate="up" style="--d:80ms">
           <h3>Education, B2B and IT</h3>
           <p>In-depth content, LinkedIn and case studies for institutions and Technopark firms whose buyers research for weeks.</p>
-          <a href="#free-audit-form" class="guide-card__link">Discuss your sector with us &rarr;</a>
+          <a href="#free-audit-form" data-audit-modal="free-audit" data-audit-title="Discuss Your Sector With TechBound" class="guide-card__link">Discuss your sector with us &rarr;</a>
         </article>
       </div>
 
@@ -448,7 +448,7 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
           </p>
         </div>
         <div class="guide-callout__actions">
-          <a href="#free-audit-form" class="btn btn--primary btn--arrow">Get My Free Audit</a>
+          <a href="#free-audit-form" data-audit-modal="free-audit" data-audit-title="Get Your Free Trivandrum Visibility Audit" class="btn btn--primary btn--arrow">Get My Free Audit</a>
         </div>
       </div>
     </div>
@@ -476,7 +476,7 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
         <article class="guide-card guide-card--soft" data-animate="up" style="--d:80ms">
           <h3>Digital marketing cost in Trivandrum</h3>
           <p>Price ranges by channel and what each budget buys.</p>
-          <a href="#free-audit-form" class="guide-card__link">Request a fixed quote &rarr;</a>
+          <a href="#free-audit-form" data-audit-modal="free-audit" data-audit-title="Request a Fixed Quote" class="guide-card__link">Request a fixed quote &rarr;</a>
         </article>
 
         <article class="guide-card guide-card--soft" data-animate="up" style="--d:160ms">
@@ -541,105 +541,11 @@ if (empty($guide_posts) && file_exists(__DIR__ . '/data/blogs_index.php')) {
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq" data-nav="light">
-    <div class="faq__inner">
-      <h2 class="faq__title">Frequently Asked Questions</h2>
-
-      <div class="faq__list">
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. What digital marketing services do you offer in Trivandrum?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>SEO, AI search optimisation (AEO and GEO), social media management, Google and Meta ads, website development and lead generation. You can start with one service and add more as results come in.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. How much does digital marketing cost in Trivandrum?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>It depends on how many services you need and how competitive your market is. Most clients start with one channel that can prove return, then expand. Every quote is fixed in writing before work starts.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. What happens after I send an enquiry?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>A specialist calls you within one working day to understand your business. We then send a free audit of your Google, Maps and AI search visibility with the three fixes worth doing first, and a fixed quote if you want us to do the work.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-              4. How soon will I see results?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-4">
-            <div class="faq__answer-inner">
-              <p>Ads can bring enquiries within days. SEO usually shows early signals in 8 to 12 weeks, with consistent results over 4 to 6 months.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-              5. Do you have packages for small businesses?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-5">
-            <div class="faq__answer-inner">
-              <p>Yes. Focused plans cover one channel, such as local SEO or Google Ads, so small businesses can start with a budget they are comfortable with and grow from there.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-6">
-              6. Can you create content in Malayalam?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-6">
-            <div class="faq__answer-inner">
-              <p>Yes. We write in English and Malayalam for social captions, Business Profile posts and ads, and test which works better for your audience.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-7">
-              7. Do you guarantee rankings or AI mentions?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-7">
-            <div class="faq__answer-inner">
-              <p>No. Google and AI platforms decide what they show, so no honest agency can guarantee positions. We improve what we control and report results every month.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php
+$faq_page  = 'trivandrum-guide';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
   <!-- ===== LATEST FROM THE TECHBOUND BLOG ===== -->
   <?php if (!empty($guide_posts)): ?>

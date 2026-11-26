@@ -548,78 +548,11 @@ $lnk = [
 </section>
 
 <!-- ===== FREQUENTLY ASKED QUESTIONS ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-
-    <div class="faq__list">
-      <div class="faq__item is-open">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-            1. How quickly can we start generating qualified real estate enquiries and site visits?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-1">
-          <div class="faq__answer-inner">
-            <p>Targeted Google Search and Meta campaigns typically begin generating qualified property enquiries within 2 to 3 weeks of launch. Organic local SEO and Google Maps dominance for location keywords usually build over 3 to 6 months. Combining paid acquisition with SEO gives your sales team immediate site visits while lowering your long-term cost per booking.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-            2. Can you target NRI property buyers in the UAE, Qatar, Saudi Arabia, and Europe?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-2">
-          <div class="faq__answer-inner">
-            <p>Yes. A large share of Kerala luxury villa and apartment purchases are driven by NRI families in the GCC and overseas. We run geo-targeted Meta, YouTube, and Google Search campaigns tailored to NRI investors with WhatsApp video walkthroughs, RERA transparency, and flexible virtual site-visit booking.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-            3. How do you filter out junk leads so our sales team only speaks with serious buyers?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-3">
-          <div class="faq__answer-inner">
-            <p>We replace generic one-click forms with conversion-focused landing pages and qualifying questions (budget range, preferred configuration, timeline, and location). We also connect CRM feedback back to Google and Meta so the ad algorithms optimize for verified site visits and bookings—not cheap, unqualified clicks.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-            4. Do you work with boutique villa developers as well as large apartment builders?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-4">
-          <div class="faq__answer-inner">
-            <p>Yes. Whether you are launching a 10-villa gated community, a 150-unit residential tower, plotted developments, or commercial spaces, we tailor the channel mix, landing pages, and ad spend to your exact inventory count and target sales velocity.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-            5. How do local Kerala developers compete with national real estate brands and portals?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-5">
-          <div class="faq__answer-inner">
-            <p>Local developers win on micro-market knowledge, handover trust, and direct buyer relationships. We build hyper-local SEO pages for each neighbourhood, showcase real homeowner video stories, strengthen your Google Business Profile reviews, and capture high-intent searchers directly before they land on third-party aggregator portals.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'construction';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CLOSING CTA ===== -->
 <section class="svc-cta">

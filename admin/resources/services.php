@@ -8,15 +8,51 @@ if ($pdo) {
 }
 
 $page_file_options = [
-    'services.php'            => 'Services Overview (services.php)',
-    'seo.php'                 => 'Search Engine Optimization (seo.php)',
-    'ai-seo.php'              => 'AI SEO, AEO & GEO (ai-seo.php)',
-    'smm.php'                 => 'Social Media Marketing (smm.php)',
-    'online-advertising.php'  => 'Online Advertising & PPC (online-advertising.php)',
-    'website-development.php' => 'Website Development (website-development.php)',
-    'lead-generation.php'     => 'Lead Generation (lead-generation.php)',
-    'construction.php'        => 'Real Estate Marketing (construction.php)',
+    'index.php'                              => 'Home Page (index.php)',
+    'about.php'                              => 'About Us (about.php)',
+    'services.php'                           => 'Services Overview (services.php)',
+    'seo.php'                                => 'Search Engine Optimization (seo.php)',
+    'ai-seo.php'                             => 'AI SEO, AEO & GEO (ai-seo.php)',
+    'smm.php'                                => 'Social Media Marketing (smm.php)',
+    'online-advertising.php'                 => 'Online Advertising & PPC (online-advertising.php)',
+    'website-development.php'                => 'Website Development (website-development.php)',
+    'lead-generation.php'                    => 'Lead Generation (lead-generation.php)',
+    'construction.php'                       => 'Real Estate Marketing (construction.php)',
+    'digital-marketing-agency-in-kochi.php'  => 'Digital Marketing Kochi (digital-marketing-agency-in-kochi.php)',
+    'digital-marketing-trivandrum-guide.php' => 'Trivandrum Guide (digital-marketing-trivandrum-guide.php)',
+    'seo-course-in-kerala.php'               => 'AI 360 SEO Course (seo-course-in-kerala.php)',
+    'portfolio.php'                          => 'Portfolio (portfolio.php)',
+    'blog.php'                               => 'Blog (blog.php)',
+    'careers.php'                            => 'Careers (careers.php)',
+    'contact.php'                            => 'Contact Us (contact.php)',
+    'privacy-policy.php'                     => 'Privacy Policy (privacy-policy.php)',
+    'terms-and-conditions.php'               => 'Terms & Conditions (terms-and-conditions.php)',
 ];
+
+// Map page_file -> FAQ page key (for quick "FAQs" button on each row)
+$page_file_to_faq = [
+    'index.php'                              => 'home',
+    'about.php'                              => 'about',
+    'services.php'                           => 'services',
+    'seo.php'                                => 'seo',
+    'ai-seo.php'                             => 'ai-seo',
+    'smm.php'                                => 'smm',
+    'online-advertising.php'                 => 'online-advertising',
+    'website-development.php'                => 'website-development',
+    'lead-generation.php'                    => 'lead-generation',
+    'construction.php'                       => 'construction',
+    'digital-marketing-agency-in-kochi.php'  => 'kochi',
+    'digital-marketing-trivandrum-guide.php' => 'trivandrum-guide',
+    'seo-course-in-kerala.php'               => 'seo-course',
+    'portfolio.php'                          => 'portfolio',
+    'blog.php'                               => 'blog',
+    'careers.php'                            => 'careers',
+    'contact.php'                            => 'contact',
+];
+
+$core_files    = ['index.php', 'about.php', 'portfolio.php', 'blog.php', 'careers.php', 'contact.php'];
+$service_files = ['services.php', 'seo.php', 'ai-seo.php', 'smm.php', 'online-advertising.php', 'website-development.php', 'lead-generation.php', 'construction.php'];
+$landing_files = ['digital-marketing-agency-in-kochi.php', 'digital-marketing-trivandrum-guide.php', 'seo-course-in-kerala.php', 'privacy-policy.php', 'terms-and-conditions.php'];
 
 $action = $_POST['_action'] ?? '';
 
@@ -53,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif ($schema_data !== '' && json_decode($schema_data, true) === null && json_last_error() !== JSON_ERROR_NONE) {
             $flash = 'error:Schema data must be valid JSON-LD (' . json_last_error_msg() . ').';
         } else {
-            if ($slug === '') {
+            if ($slug === '' && $page_file !== 'index.php') {
                 $slug = 'our-services/' . trim(preg_replace('/[^a-z0-9]+/i', '-', strtolower($title)), '-');
             }
             if ($meta_title === '') {
@@ -129,7 +165,18 @@ if ($pdo) {
     $total = count($rows);
 }
 
-$page_title = 'Services';
+$filter_cat = trim($_GET['cat'] ?? '');
+$all_rows   = $rows;
+if ($filter_cat === 'core') {
+    $rows = array_values(array_filter($all_rows, fn($r) => in_array($r['page_file'] ?? '', $core_files, true)));
+} elseif ($filter_cat === 'services') {
+    $rows = array_values(array_filter($all_rows, fn($r) => in_array($r['page_file'] ?? '', $service_files, true)));
+} elseif ($filter_cat === 'landing') {
+    $rows = array_values(array_filter($all_rows, fn($r) => in_array($r['page_file'] ?? '', $landing_files, true)));
+}
+$total = count($rows);
+
+$page_title = 'Pages & SEO';
 require __DIR__ . '/../_header.php';
 ?>
 
@@ -138,18 +185,38 @@ require __DIR__ . '/../_header.php';
     <!-- Page Header -->
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-            <h1 class="font-headline-lg text-headline-lg text-on-surface">Services &amp; SEO Settings</h1>
-            <p class="text-sm text-on-surface-variant mt-0.5">Manage Meta Title, Meta Description, URL Slug, Primary Keyword, Schema JSON-LD, and Image Alt text for each service page.</p>
+            <h1 class="font-headline-lg text-headline-lg text-on-surface">Pages &amp; SEO Settings</h1>
+            <p class="text-sm text-on-surface-variant mt-0.5">Manage Meta Title, Meta Description, URL Slug, Primary Keyword, Schema JSON-LD, and Image Alt text for every page across the website.</p>
         </div>
         <div class="flex items-center gap-2.5 shrink-0">
             <span class="px-3 py-1.5 rounded-md bg-white border border-outline-variant text-xs font-medium text-on-surface-variant">
-                <?= $total ?> service<?= $total !== 1 ? 's' : '' ?>
+                <?= $total ?> page<?= $total !== 1 ? 's' : '' ?>
             </span>
             <button type="button" onclick="openServiceForm()" class="inline-flex items-center gap-1.5 h-9 px-4 rounded-md bg-primary hover:bg-primary-container text-white text-sm font-medium transition-colors">
                 <span class="material-symbols-outlined text-[18px]">add</span>
-                <span>New Service</span>
+                <span>New Page</span>
             </button>
         </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap items-center gap-2">
+        <?php
+        $cat_tabs = [
+            ''         => ['All Pages',       count($all_rows)],
+            'core'     => ['Core Pages',      count(array_filter($all_rows, fn($r) => in_array($r['page_file'] ?? '', $core_files, true)))],
+            'services' => ['Service Pages',   count(array_filter($all_rows, fn($r) => in_array($r['page_file'] ?? '', $service_files, true)))],
+            'landing'  => ['Landing & Legal', count(array_filter($all_rows, fn($r) => in_array($r['page_file'] ?? '', $landing_files, true)))],
+        ];
+        foreach ($cat_tabs as $ck => [$clabel, $ccnt]):
+            $cact = ($filter_cat === $ck);
+        ?>
+        <a href="<?= $ck === '' ? '?' : ('?cat=' . urlencode($ck)) ?>"
+           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-colors <?= $cact ? 'bg-primary text-white border-primary' : 'bg-white text-on-surface border-outline-variant hover:border-primary' ?>">
+            <span><?= e($clabel) ?></span>
+            <span class="px-1.5 py-0.2 rounded-full text-[11px] <?= $cact ? 'bg-white/20 text-white' : 'bg-surface-container text-outline' ?>"><?= $ccnt ?></span>
+        </a>
+        <?php endforeach; ?>
     </div>
 
     <?php if ($flash_msg): ?>
@@ -185,7 +252,10 @@ require __DIR__ . '/../_header.php';
                         $hasMeta   = !empty(trim((string)($row['meta_title'] ?? ''))) && !empty(trim((string)($row['meta_description'] ?? '')));
                         $hasSchema = !empty(trim((string)($row['schema_data'] ?? '')));
                         $hasAlt    = !empty(trim((string)($row['image_alt'] ?? '')));
-                        $liveUrl   = rtrim(BASE_URL, '/') . '/' . trim((string)($row['slug'] ?? ''), '/') . '/';
+                        $cleanSlug = trim((string)($row['slug'] ?? ''), '/');
+                        $liveUrl   = $cleanSlug === '' ? BASE_URL : (rtrim(BASE_URL, '/') . '/' . $cleanSlug . '/');
+                        $slugLabel = $cleanSlug === '' ? '/' : ('/' . $cleanSlug . '/');
+                        $faqKey    = $page_file_to_faq[$row['page_file'] ?? ''] ?? '';
                     ?>
                     <tr class="hover:bg-surface-container-low transition-colors">
                         <td class="py-3.5 px-5">
@@ -194,7 +264,7 @@ require __DIR__ . '/../_header.php';
                         </td>
                         <td class="py-3.5 px-4">
                             <a href="<?= e($liveUrl) ?>" target="_blank" class="text-xs font-mono text-primary hover:underline break-all">
-                                /<?= e(trim((string)$row['slug'], '/')) ?>/
+                                <?= e($slugLabel) ?>
                             </a>
                         </td>
                         <td class="py-3.5 px-4 text-xs text-on-surface-variant">
@@ -217,8 +287,11 @@ require __DIR__ . '/../_header.php';
                             </form>
                         </td>
                         <td class="py-3.5 px-5 text-right whitespace-nowrap">
+                            <?php if ($faqKey !== ''): ?>
+                                <a href="<?= e(admin_url('resources/faqs.php?page=' . urlencode($faqKey))) ?>" class="text-xs font-medium text-on-surface-variant hover:text-primary hover:underline mr-3">FAQs</a>
+                            <?php endif; ?>
                             <button type="button" onclick='openServiceForm(<?= json_encode($row, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) ?>)' class="text-xs font-medium text-primary hover:underline mr-3">Edit SEO</button>
-                            <form method="post" onsubmit="return confirm('Delete this service entry?')" class="inline">
+                            <form method="post" onsubmit="return confirm('Delete this page SEO entry?')" class="inline">
                                 <input type="hidden" name="_action" value="delete">
                                 <input type="hidden" name="id" value="<?= (int)$row['id'] ?>">
                                 <button type="submit" class="text-xs font-medium text-outline hover:text-error">Delete</button>

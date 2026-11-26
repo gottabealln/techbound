@@ -328,74 +328,11 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-
-    <div class="faq__list">
-      <?php if (!empty($faqs)): ?>
-        <?php foreach ($faqs as $index => $faq):
-          $q = trim($faq['question']);
-          if (!preg_match('/^\d+\.\s/', $q)) { $q = ($index + 1) . '. ' . $q; }
-          $is_open = ($index === 0);
-        ?>
-          <div class="faq__item<?= $is_open ? ' is-open' : '' ?>">
-            <h3>
-              <button class="faq__question" type="button" aria-expanded="<?= $is_open ? 'true' : 'false' ?>" aria-controls="faq-<?= $index + 1 ?>">
-                <?= htmlspecialchars($q) ?>
-              </button>
-            </h3>
-            <div class="faq__answer" id="faq-<?= $index + 1 ?>">
-              <div class="faq__answer-inner">
-                <p><?= nl2br(htmlspecialchars($faq['answer'])) ?></p>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. What is the difference between having a social media account and social media marketing?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>A social media account is passive—you post and hope someone sees it. Strategic marketing is active and purposeful, designed with specific business outcomes like lead generation or brand awareness in mind.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. Do you handle both organic content and paid ads?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>Yes. Organic reach has declined significantly across most platforms. We combine organic content strategy with targeted paid campaigns to ensure your message reaches the right people.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. Which platforms should my business be on?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>It depends on your customers. B2B clients usually benefit most from LinkedIn, while B2C brands thrive on Instagram and Facebook. We don't push you to be everywhere; we build where it matters.</p>
-            </div>
-          </div>
-        </div>
-      <?php endif; ?>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'smm';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CTA ===== -->
 <section class="svc-cta">

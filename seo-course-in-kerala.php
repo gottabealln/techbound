@@ -500,44 +500,11 @@ require __DIR__ . '/includes/header.php';
     </div>
   </section>
 
-  <!-- ===== 6a. FAQ (Unified TechBound .faq) ===== -->
-  <section class="faq" id="faq" data-nav="light">
-    <div class="faq__inner">
-      <h2 class="faq__title">Frequently Asked Questions</h2>
-      <div class="faq__list">
-        <?php
-        $course_faqs = [
-          ['Is SEO replaced by AI?', 'No. AI changed where people search, not whether businesses need to be found. AI Overviews, ChatGPT and Gemini build answers from websites, so brands still need SEO, plus AEO and GEO to be quoted in those answers. This course teaches all three.'],
-          ['What is the difference between SEO, AEO and GEO?', 'SEO helps a website rank in search results. AEO (Answer Engine Optimization) helps it become the direct answer in featured snippets, People Also Ask and voice search. GEO (Generative Engine Optimization) helps a brand get mentioned and cited by AI assistants like ChatGPT, Gemini and Perplexity.'],
-          ['Can I learn SEO in 3 months?', 'You can learn the core skills in about three months of regular practice. Becoming job-ready takes that plus hands-on work on real websites, which is why the course includes an agency internship.'],
-          ['What is the fee for the AI 360 SEO course?', 'The course fee is shared with instalment options. It covers training, the agency internship, tools access and the certificate. Ask us on WhatsApp for the full fee breakdown.'],
-          ['Can I join after plus-two?', 'Yes. You need basic computer skills and good reading in English. Classes include Malayalam explanations.'],
-          ['Is the course online or offline?', 'Both. Join at our office or attend live online classes, with weekday and weekend batches. Recordings are available if you miss a session.'],
-          ['Do you offer placement?', 'We offer placement support: portfolio building, mock interviews, CV help and referrals to hiring partners. We don\'t promise "100% placement"; we prepare you so your work speaks for you.'],
-          ['Will I get a certificate?', 'Yes, a TechBound course and internship certificate. Your portfolio of real projects will matter more to employers than any certificate, so we help you build both.'],
-          ['Which SEO tools will I learn?', 'Google Search Console, Google Analytics 4, Looker Studio, Screaming Frog, PageSpeed Insights, Ahrefs or Semrush, and AI tools such as ChatGPT and Gemini for research and content workflows.'],
-          ['Can I freelance after this course?', 'Yes. SEO is one of the easiest digital skills to freelance. The course covers pricing, proposals and client handling, and your internship projects become your first case studies.'],
-          ['I run a business. Is there a shorter option?', 'Ask us about the one-to-one track for business owners who want to manage their own SEO or check an agency\'s work.'],
-        ];
-        foreach ($course_faqs as $idx => [$q, $a]):
-          $isOpen = $idx === 0;
-        ?>
-        <div class="faq__item<?= $isOpen ? ' is-open' : '' ?>">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="<?= $isOpen ? 'true' : 'false' ?>" aria-controls="cfaq-<?= $idx + 1 ?>">
-              <?= ($idx + 1) . '. ' . htmlspecialchars($q) ?>
-            </button>
-          </h3>
-          <div class="faq__answer" id="cfaq-<?= $idx + 1 ?>">
-            <div class="faq__answer-inner">
-              <p><?= $a ?></p>
-            </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
+  <?php
+$faq_page  = 'seo-course';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
   <!-- ===== 6b + 6c. FINAL CTA + ENQUIRY FORM ===== -->
   <section class="crs-section crs-section--tint" id="enquire" data-nav="light">

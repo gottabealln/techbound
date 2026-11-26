@@ -287,5 +287,11 @@ include __DIR__ . '/includes/header.php';
 
   </div>
 </section>
+<?php
+$faq_page  = 'blog';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
+
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

@@ -33,7 +33,7 @@ require __DIR__ . '/includes/header.php';
 
       <div class="hero__body">
         <div class="hero__text">
-          <h1 class="hero__title">Your Trusted Digital Marketing Partner in  Kerala</h1>
+          <h1 class="hero__title">Your Trusted Digital Marketing Partner in Trivandrum, Kerala</h1>
           <p class="hero__desc">
             We empower businesses worldwide with result-driven digital marketing
             solutions that generate quality leads, boost revenue, and accelerate
@@ -332,81 +332,11 @@ require __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-    <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq" data-nav="light">
-    <div class="faq__inner">
-      <h2 class="faq__title">Frequently Asked Questions</h2>
-
-      <div class="faq__list">
-
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. What services does TechBound provide?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>TechBound is a digital marketing agency in Trivandrum, Kerala. We help businesses grow with services such as SEO, social media marketing, paid advertising and web design.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. Do you work with businesses outside Kerala?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>Yes. We work with clients across India and abroad. Our projects are managed online, so location is not a barrier.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. How can TechBound help improve my brand's online visibility?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>We combine search optimization, content, social media and advertising into one plan built around your goals, so the right customers find you.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-              4. How long does it take to see results?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-4">
-            <div class="faq__answer-inner">
-              <p>Paid campaigns can bring results within weeks, while SEO usually takes a few months to build. We share a timeline and regular reports from the start.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-              5. How do I get started?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-5">
-            <div class="faq__answer-inner">
-              <p>Contact us by phone or email, tell us about your business, and we will set up a call to discuss the best plan for you.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+    <?php
+$faq_page  = 'home';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <section class="services blog" id="blog" data-nav="light">
   <div class="services__inner">

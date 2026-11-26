@@ -640,80 +640,11 @@ require __DIR__ . '/includes/header.php';
   <!-- =========================================================================
        FREQUENTLY ASKED QUESTIONS
        ========================================================================= -->
-  <section class="faq" id="faq" data-nav="light">
-    <div class="faq__inner">
-      <h2 class="faq__title">Frequently Asked Questions</h2>
-
-      <div class="faq__list">
-
-        <div class="faq__item is-open">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-              1. Where is the office located and what are the working hours?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">
-              <p>Our studio is located on the 6th Floor, Karimpanal Statue Avenue, Opposite the Secretariat, Statue, Thiruvananthapuram. Our standard business hours are 9:00 AM to 6:00 PM, Monday through Friday, with alternate Saturdays. We focus on clear goals and output rather than micromanaging minutes.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-              2. Can fresh graduates apply for trainee positions at TechBound?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">
-              <p>Yes! We actively welcome energetic freshers with high drive and curiosity. Through our digital marketing and web development trainee tracks, you work directly under senior strategists and get hands-on experience on live client accounts from day one.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-              3. Do you offer remote or hybrid work options?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">
-              <p>We believe high-velocity creative collaboration and rapid peer mentorship thrive best in-person at our Trivandrum office. However, we offer hybrid flexibility for senior roles, along with planned remote working days when needed.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-              4. How fast can I expect to hear back after submitting my application?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-4">
-            <div class="faq__answer-inner">
-              <p>Our hiring team reviews applications within 48 to 72 business hours. If your profile matches our requirements, we will reach out via WhatsApp or phone to schedule an introductory discovery conversation.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <h3>
-            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-              5. What should I do if my exact skill set is not listed in current openings?
-            </button>
-          </h3>
-          <div class="faq__answer" id="faq-5">
-            <div class="faq__answer-inner">
-              <p>You can submit a speculative application using the form above by selecting "Speculative / Other" or email your resume and portfolio directly to <a href="mailto:contacts@techbound.in">contacts@techbound.in</a>. We are always happy to meet high-drive performers.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <?php
+$faq_page  = 'careers';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
   <!-- =========================================================================
        SPECULATIVE / BOTTOM CALL TO ACTION

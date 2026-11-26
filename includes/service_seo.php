@@ -12,6 +12,39 @@ function service_seo_defaults(): array
 {
     return [
         [
+            'page_file'        => 'index.php',
+            'title'            => 'Home Page',
+            'slug'             => '',
+            'intro'            => 'Result-driven digital marketing agency in Kerala helping brands grow with SEO, AI SEO, paid ads, social media, and modern web development.',
+            'image'            => 'assets/hero.avif',
+            'image_alt'        => 'TechBound Digital Marketing Agency in Kerala',
+            'meta_title'       => 'Digital Marketing Agency in Kerala | SEO, AI SEO & Web | TechBound',
+            'meta_description' => 'TechBound Innovations is a result-driven digital marketing agency in Kerala with 15+ years of experience in SEO, AI SEO, PPC ads, social media, and web development.',
+            'primary_keyword'  => 'digital marketing agency in Kerala',
+            'schema_data'      => json_encode([
+                '@context' => 'https://schema.org',
+                '@type'    => 'Organization',
+                'name'     => 'TechBound Digital Innovations',
+                'url'      => 'https://techbound.in/',
+            ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
+            'sort_order'       => 0,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'about.php',
+            'title'            => 'About Us',
+            'slug'             => 'about-us',
+            'intro'            => 'Meet the Trivandrum and Kochi digital marketing team behind TechBound Innovations.',
+            'image'            => 'assets/mega-about.avif',
+            'image_alt'        => 'TechBound Innovations leadership and digital marketing team in Kerala',
+            'meta_title'       => 'About TechBound Innovations | Digital Marketing Agency in Kerala',
+            'meta_description' => 'Learn about TechBound Innovations — 15+ years of helping brands across Trivandrum, Kochi, Kerala, and the GCC grow with SEO, AI search, paid ads, and web development.',
+            'primary_keyword'  => 'about TechBound Innovations Kerala',
+            'schema_data'      => '',
+            'sort_order'       => 1,
+            'active'           => 1,
+        ],
+        [
             'page_file'        => 'services.php',
             'title'            => 'Our Services',
             'slug'             => 'our-services',
@@ -28,7 +61,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 1,
+            'sort_order'       => 2,
             'active'           => 1,
         ],
         [
@@ -48,7 +81,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 2,
+            'sort_order'       => 3,
             'active'           => 1,
         ],
         [
@@ -68,7 +101,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 3,
+            'sort_order'       => 4,
             'active'           => 1,
         ],
         [
@@ -88,7 +121,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 4,
+            'sort_order'       => 5,
             'active'           => 1,
         ],
         [
@@ -108,7 +141,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 5,
+            'sort_order'       => 6,
             'active'           => 1,
         ],
         [
@@ -128,7 +161,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 6,
+            'sort_order'       => 7,
             'active'           => 1,
         ],
         [
@@ -148,7 +181,7 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 7,
+            'sort_order'       => 8,
             'active'           => 1,
         ],
         [
@@ -168,7 +201,133 @@ function service_seo_defaults(): array
                 'provider'    => ['@type' => 'Organization', 'name' => 'TechBound Innovations', 'url' => 'https://techbound.in/'],
                 'areaServed'  => ['Trivandrum', 'Kerala', 'India'],
             ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
-            'sort_order'       => 8,
+            'sort_order'       => 9,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'digital-marketing-agency-in-kochi.php',
+            'title'            => 'Digital Marketing Agency in Kochi',
+            'slug'             => 'digital-marketing-agency-in-kochi',
+            'intro'            => 'SEO, AI SEO, Google & Meta Ads, Social Media, and Website Development from our Kadavanthra, Kochi office.',
+            'image'            => 'assets/locations/kochi.jpg',
+            'image_alt'        => 'Digital Marketing Agency in Kochi - TechBound Innovations',
+            'meta_title'       => 'Digital Marketing Agency in Kochi | TechBound Innovations',
+            'meta_description' => 'Looking for a result-driven digital marketing agency in Kochi? TechBound delivers SEO, AI SEO, paid ads, social media & web development from our Kadavanthra office.',
+            'primary_keyword'  => 'digital marketing agency in Kochi',
+            'schema_data'      => '',
+            'sort_order'       => 10,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'digital-marketing-trivandrum-guide.php',
+            'title'            => 'Digital Marketing in Trivandrum Guide',
+            'slug'             => 'digital-marketing-trivandrum-guide',
+            'intro'            => 'Complete 2026 guide to digital marketing services, costs, timelines, and strategy in Trivandrum.',
+            'image'            => 'assets/locations/trivandrum.jpg',
+            'image_alt'        => 'Digital Marketing in Trivandrum Guide - TechBound',
+            'meta_title'       => 'Digital Marketing in Trivandrum: Services, Costs & 2026 Guide',
+            'meta_description' => 'Digital marketing in Trivandrum: SEO, AI search, social, ads and websites, what each costs and how fast it works. Get a free audit and quote from TechBound.',
+            'primary_keyword'  => 'digital marketing in Trivandrum',
+            'schema_data'      => '',
+            'sort_order'       => 11,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'seo-course-in-kerala.php',
+            'title'            => 'AI 360 SEO Course in Kerala',
+            'slug'             => 'seo-course-in-kerala',
+            'intro'            => 'Hands-on AI 360 SEO, AEO, and GEO training course in Kerala led by Shabna Nazeer.',
+            'image'            => 'assets/course-hero.jpg',
+            'image_alt'        => 'AI 360 SEO Course in Kerala by TechBound',
+            'meta_title'       => 'AI 360 SEO Course in Kerala | Learn SEO, AEO & GEO | TechBound',
+            'meta_description' => 'Master modern SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO) with TechBound\'s practical AI 360 SEO Course in Kerala.',
+            'primary_keyword'  => 'SEO course in Kerala',
+            'schema_data'      => '',
+            'sort_order'       => 12,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'portfolio.php',
+            'title'            => 'Portfolio',
+            'slug'             => 'portfolio',
+            'intro'            => 'Selected SEO, web development, social media, and lead generation projects delivered by TechBound.',
+            'image'            => 'assets/hero.avif',
+            'image_alt'        => 'TechBound Digital Marketing & Web Development Portfolio',
+            'meta_title'       => 'Our Portfolio | Digital Marketing & Web Case Studies | TechBound',
+            'meta_description' => 'Explore TechBound\'s portfolio of SEO, performance marketing, social media, and web development work for brands in Kerala and the GCC.',
+            'primary_keyword'  => 'TechBound portfolio case studies',
+            'schema_data'      => '',
+            'sort_order'       => 13,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'blog.php',
+            'title'            => 'Blog',
+            'slug'             => 'blog',
+            'intro'            => 'Actionable insights on SEO, AI search, social media, paid ads, and digital growth.',
+            'image'            => 'assets/blog-hero.jpg',
+            'image_alt'        => 'TechBound Digital Marketing & SEO Blog',
+            'meta_title'       => 'Digital Marketing & SEO Blog | Insights & Guides | TechBound',
+            'meta_description' => 'Read the latest SEO, AI SEO, social media marketing, and paid advertising guides from TechBound Innovations.',
+            'primary_keyword'  => 'digital marketing blog Kerala',
+            'schema_data'      => '',
+            'sort_order'       => 14,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'careers.php',
+            'title'            => 'Careers',
+            'slug'             => 'careers',
+            'intro'            => 'Join our SEO, paid ads, content, social media, and web engineering teams in Trivandrum and Kochi.',
+            'image'            => 'assets/mega-careers.avif',
+            'image_alt'        => 'Careers at TechBound Innovations Kerala',
+            'meta_title'       => 'Careers at TechBound | Digital Marketing Jobs in Kerala',
+            'meta_description' => 'Explore digital marketing, SEO, content, design, and web development job openings at TechBound Innovations in Trivandrum and Kochi.',
+            'primary_keyword'  => 'digital marketing jobs in Trivandrum Kerala',
+            'schema_data'      => '',
+            'sort_order'       => 15,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'contact.php',
+            'title'            => 'Contact Us',
+            'slug'             => 'contact',
+            'intro'            => 'Get in touch with TechBound offices in Trivandrum, Kochi, and Muscat, Oman.',
+            'image'            => 'assets/contact-hero.jpg',
+            'image_alt'        => 'Contact TechBound Innovations',
+            'meta_title'       => 'Contact TechBound | Digital Marketing Agency in Trivandrum & Kochi',
+            'meta_description' => 'Contact TechBound Innovations for SEO, AI SEO, paid advertising, social media marketing, or web development. Offices in Trivandrum, Kochi, and Muscat.',
+            'primary_keyword'  => 'contact TechBound Innovations',
+            'schema_data'      => '',
+            'sort_order'       => 16,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'privacy-policy.php',
+            'title'            => 'Privacy Policy',
+            'slug'             => 'privacy-policy',
+            'intro'            => 'TechBound Innovations Privacy Policy aligned with India\'s DPDP Act 2023.',
+            'image'            => '',
+            'image_alt'        => 'TechBound Privacy Policy',
+            'meta_title'       => 'Privacy Policy | TechBound Innovations',
+            'meta_description' => 'Read TechBound Innovations\' Privacy Policy explaining how we collect, use, and protect personal data under India\'s DPDP Act 2023.',
+            'primary_keyword'  => 'TechBound privacy policy',
+            'schema_data'      => '',
+            'sort_order'       => 17,
+            'active'           => 1,
+        ],
+        [
+            'page_file'        => 'terms-and-conditions.php',
+            'title'            => 'Terms & Conditions',
+            'slug'             => 'terms-and-conditions',
+            'intro'            => 'Terms and Conditions governing use of TechBound Innovations\' website and services.',
+            'image'            => '',
+            'image_alt'        => 'TechBound Terms and Conditions',
+            'meta_title'       => 'Terms & Conditions | TechBound Innovations',
+            'meta_description' => 'Review the Terms and Conditions for using TechBound Innovations\' website, digital marketing services, and training programs.',
+            'primary_keyword'  => 'TechBound terms and conditions',
+            'schema_data'      => '',
+            'sort_order'       => 18,
             'active'           => 1,
         ],
     ];
@@ -201,14 +360,18 @@ function seed_default_services_if_empty(PDO $pdo): void
 {
     try {
         ensure_services_seo_schema($pdo);
-        $count = (int)$pdo->query("SELECT COUNT(*) FROM services")->fetchColumn();
-        if ($count > 0) return;
+        $existingFiles = $pdo->query("SELECT page_file FROM services WHERE page_file <> ''")->fetchAll(PDO::FETCH_COLUMN);
+        $existingMap   = array_flip($existingFiles);
 
         $stmt = $pdo->prepare(
             "INSERT INTO services (page_file, title, meta_title, meta_description, primary_keyword, schema_data, slug, intro, items, image, image_alt, sort_order, active)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, '[]', ?, ?, ?, ?)"
         );
+        $inserted = 0;
         foreach (service_seo_defaults() as $d) {
+            if (isset($existingMap[$d['page_file']])) {
+                continue;
+            }
             $stmt->execute([
                 $d['page_file'],
                 $d['title'],
@@ -223,8 +386,11 @@ function seed_default_services_if_empty(PDO $pdo): void
                 $d['sort_order'],
                 $d['active'],
             ]);
+            $inserted++;
         }
-        sync_services_cache($pdo);
+        if ($inserted > 0) {
+            sync_services_cache($pdo);
+        }
     } catch (Throwable $e) {
         // Ignore seed error
     }

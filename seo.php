@@ -391,112 +391,11 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Have Questions in Your Mind? Get the Answers Now</h2>
-
-    <div class="faq__list">
-      <div class="faq__item is-open">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-            1. How does search engine optimization actually improve my business visibility and lead generation results?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-1">
-          <div class="faq__answer-inner">
-            <p>Search engine optimization works by ensuring your website ranks for the specific keywords your ideal customers are searching for. When someone in your target market types a query into Google, SEO positions your content at the top of results, capturing their attention before they even discover your competitors. This isn't just about traffic volume &mdash; it's about attracting qualified visitors who are actively looking for what you offer.</p>
-            <p>Most businesses lose sales opportunities simply because they're invisible in search results, even though they provide excellent solutions. A strategic SEO program from TechBound focuses on three core areas: technical optimization to ensure search engines can properly crawl and index your site, on-page optimization where we align your content with actual search intent, and authority building through quality backlinks that establish credibility.</p>
-            <p>The result is sustainable growth that doesn't rely on paid advertising budgets. Businesses that invest in SEO typically see consistent lead increases within 3 to 6 months as their visibility compounds over time.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-            2. What is the difference between organic SEO results and paid search ads, and why should we prioritize organic traffic?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-2">
-          <div class="faq__answer-inner">
-            <p>Organic search results are listings that appear in Google based on relevance and authority, earned through proper SEO practices. Paid search ads are sponsored listings where you pay per click to appear at the top of results. The fundamental difference lies in sustainability and cost.</p>
-            <p>Organic traffic continues flowing to your website even when you're not actively paying for it, while paid ads stop delivering the moment your budget runs out. For businesses in Trivandrum and across India, organic search becomes increasingly valuable as your website ages and authority grows, because Google rewards consistent, quality content with higher rankings.</p>
-            <p>Many companies find that their paid ad costs keep climbing as competition increases, making organic results their most cost-effective channel long term. That said, organic and paid work best together. While we build your organic presence through SEO, paid search provides immediate visibility to support your sales pipeline. TechBound's integrated approach means we optimize both channels to ensure every marketing dollar works harder.</p>
-            <p>Organic search also generates 40 percent higher conversion rates than paid ads because users trust earned rankings more than sponsored placements.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-            3. Should small businesses and startups in Trivandrum invest in SEO when they have limited marketing budgets?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-3">
-          <div class="faq__answer-inner">
-            <p>Yes, absolutely, and in fact this is when SEO becomes most important. Small businesses and startups operate with tighter budgets, which means paid advertising quickly becomes unsustainable. SEO represents the most cost-effective growth channel available because you're not paying for every click.</p>
-            <p>Instead, you invest upfront in building a strong digital foundation that generates leads continuously without ongoing ad spend. The challenge most startups face is that they lack the technical expertise to implement SEO properly, and they often lack the time to manage it themselves while running operations.</p>
-            <p>This is where working with a specialized SEO agency like TechBound makes sense. We bring industry expertise and proven methodologies that compress your learning curve by years. While a startup might spend six months experimenting with SEO tactics, we deliver results in that same timeframe because we've already identified what works.</p>
-            <p>Many of TechBound's most successful client relationships started with small businesses and startups that committed to organic growth early. As they gained market traction and revenue, their investment in SEO continued to pay dividends. The earlier you establish strong SEO fundamentals, the more competitive advantage you build in your market.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-            4. How can TechBound's SEO approach establish stronger search rankings compared to what my business might achieve independently?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-4">
-          <div class="faq__answer-inner">
-            <p>The core difference comes down to expertise, scale, and proven methodology. SEO requires understanding how search algorithms work, which means staying current with algorithm updates that Google releases multiple times per year. Our team monitors these changes continuously and adjusts strategies accordingly.</p>
-            <p>Most business owners and their teams lack the bandwidth to track these updates and implement changes fast enough. TechBound employs dedicated specialists who live and breathe SEO, meaning they apply this focus across multiple clients and industries, building deeper insights than any single in-house team could develop.</p>
-            <p>We also have proprietary tools and data that allow us to identify ranking opportunities faster and more accurately. When we analyze your competitive landscape, we're not guessing &mdash; we're using detailed keyword research, competitor analysis, and search demand data to identify the exact opportunities where you can realistically win.</p>
-            <p>Many businesses waste time optimizing for keywords with zero search volume, or they compete in spaces where they can't realistically rank because authority gaps are too significant. We position you in markets where you can dominate.</p>
-            <p>Additionally, SEO at scale requires consistent execution across hundreds of tasks monthly: content updates, technical fixes, backlink outreach, page speed optimization, and competitive monitoring. Maintaining this discipline independently is nearly impossible for most businesses. TechBound's systematic approach ensures nothing falls through the cracks.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-            5. What are the key performance indicators we should track to measure whether our SEO investment is delivering real business results?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-5">
-          <div class="faq__answer-inner">
-            <p>Tracking the right metrics ensures you understand whether SEO is actually driving business value, not just vanity metrics that look good but don't impact revenue. Most businesses make the mistake of obsessing over rankings, thinking that ranking for more keywords automatically means more business.</p>
-            <p>In reality, ranking position matters far less than actual traffic and conversions. The metrics that matter for business impact are: organic traffic volume from search, which tells you whether your improved visibility is actually attracting visitors; qualified lead generation from organic channels, which means visitors coming from search are filling out forms or initiating contact; conversion rate of organic traffic, which reveals whether your content is compelling enough to turn visitors into customers; and cost per acquisition through organic search, which shows the true efficiency of your SEO investment compared to paid channels.</p>
-            <p>Secondary metrics that provide diagnostic insight include keyword rankings for your most important commercial terms, organic traffic growth rate month over month, bounce rate which indicates whether content is matching search intent, and average time on page which shows content quality and engagement.</p>
-            <p>TechBound provides transparent reporting on all these metrics so you can see exactly how SEO impacts your business. We also look at revenue attributable to organic search, recognizing that some sales come from customers who found you through search weeks or months before converting. Our reporting connects the dots between SEO activities and actual business outcomes.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-6">
-            6. How long does it typically take to see meaningful results from a comprehensive SEO strategy and what factors influence the timeline?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-6">
-          <div class="faq__answer-inner">
-            <p>Most businesses see measurable results within 3 to 6 months, though the specific timeline depends on several factors. Industry competitiveness plays a major role. If you're in a space with light competition, ranking improvements can happen quickly. In highly competitive industries, gaining ground takes longer because you're fighting for position against established players with strong authority.</p>
-            <p>Your website's current state matters significantly. If you're starting from zero SEO foundation, building that foundation takes time. If you already have some basic SEO in place, improvements can be faster.</p>
-            <p>Search demand in your market also influences timeline. Keywords with lower search volume often see ranking improvements faster because there's less competition. The keywords with highest commercial value in your industry typically have more competition, so earning those rankings takes longer.</p>
-            <p>Your content production capacity affects timeline as well. SEO requires fresh, quality content published consistently. If you can produce content weekly, we see faster results than if you can only commit to monthly content.</p>
-            <p>Geographic factors matter too. Local businesses often see results faster than national competitors because the geographic specificity of keywords reduces competition. That said, all quality SEO takes time because Google intentionally prevents instant ranking manipulation.</p>
-            <p>Google wants to ensure rankings reflect genuine quality and authority, not just who pays the most. We typically structure 6 to 12 month programs because that's the timeframe needed to see significant results, and more importantly, to prove that results are real and sustainable rather than temporary fluctuations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'seo';
+$faq_title = 'Have Questions in Your Mind? Get the Answers Now';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CLOSING CTA ===== -->
 <section class="svc-cta">

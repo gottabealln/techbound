@@ -650,79 +650,11 @@ $lnk = [
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq" data-nav="light">
-  <div class="faq__inner">
-    <h2 class="faq__title">Frequently Asked Questions</h2>
-
-    <div class="faq__list">
-      <div class="faq__item is-open">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">
-            1. What makes specialized lead generation different from what generalist agencies or in-house teams attempt?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-1">
-          <div class="faq__answer-inner">
-            <p>Most businesses tackle lead generation reactively: they boost occasional social posts, run a few generic Google ads and hope someone calls. A specialized lead generation agency approaches the problem as a full-funnel engineering system. At TechBound, we study your exact sales cycle—how long deals take to close, what disqualifies prospects early, where your most profitable clients originate—and build a custom acquisition pipeline around your margins. Generalist agencies repeat the same generic playbook for every client; our team applies insights from over 2,90,000 leads across dozens of industries, deploying enterprise-grade multi-channel attribution and A/B testing tools that individual in-house teams cannot cost-effectively maintain.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">
-            2. Which lead generation channels produce the most qualified leads, and how should we allocate budget?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-2">
-          <div class="faq__answer-inner">
-            <p>No single channel fits every business. Google Search Ads capture active buyers at the moment of peak purchase intent, making them essential for high-consideration B2B and specialized services. Meta Ads (Facebook &amp; Instagram) excel at generating demand and expanding reach to qualified buyers before they actively search. Organic SEO and content marketing capture informative search traffic and build compounding domain authority, while email and WhatsApp nurture contacts through longer decision cycles. For most clients in Kerala, we build a coordinated blend: Google Search captures immediate demand, Meta drives awareness and retargeting, and automated nurturing maximizes close rates. We allocate budget based on actual cost-per-acquisition data, shifting spend to whatever channel generates the highest net revenue.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">
-            3. How does TechBound filter and qualify leads so our sales team doesn't waste time on junk inquiries?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-3">
-          <div class="faq__answer-inner">
-            <p>Flooding a sales team with low-quality contacts kills productivity. TechBound implements multi-layered qualification protocols: first, defining strict qualification criteria (budget, authority, timeline, location) with your team; second, designing smart multi-step forms that filter out casual tire-kickers while keeping friction low for high-intent buyers; third, analyzing behavioural signals such as high-intent page engagement before form submission; and fourth, reviewing closed-loop conversion feedback directly with your sales reps to feed negative audience signals back into algorithms. This ensures your sales reps spend their day closing serious prospects instead of dialing bad phone numbers.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-4">
-            4. What is a realistic cost per lead (CPL), and what factors determine whether costs are high or low?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-4">
-          <div class="faq__answer-inner">
-            <p>Cost per lead varies widely depending on your industry, competitive bidding dynamics and customer lifetime value (LTV). For consumer products and lower-ticket services, CPL might range from ₹300 to ₹1,200. For high-ticket B2B consulting, premium real estate or specialized healthcare in Kerala, CPL typically ranges from ₹1,200 to ₹4,500—which is exceptionally profitable when a single closed client generates ₹50,000 to ₹5,00,000+ in revenue. Key factors influencing CPL include audience targeting specificity, landing page conversion rates, ad creative relevance and market competitiveness. We always optimize for overall profitability rather than chasing artificially cheap, unqualified form submissions.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq__item">
-        <h3>
-          <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-5">
-            5. How does automated lead nurturing prevent leads from going cold and improve our close rate?
-          </button>
-        </h3>
-        <div class="faq__answer" id="faq-5">
-          <div class="faq__answer-inner">
-            <p>Up to 70% of generated leads are not ready to sign a contract on day one; they are conducting research, comparing vendors or waiting on internal budgets. If your process relies solely on a single sales call before marking a contact "lost," you forfeit the majority of your investment. TechBound builds automated WhatsApp, email and retargeting sequences that deliver helpful case studies, answer common objections and keep your brand front-of-mind. By the time a nurturing sequence guides a prospect toward booking a consultation, they are far more educated and primed to purchase, drastically shortening your sales cycle.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<?php
+$faq_page  = 'lead-generation';
+$faq_title = 'Frequently Asked Questions';
+require __DIR__ . '/includes/faq-section.php';
+?>
 
 <!-- ===== CLOSING CTA ===== -->
 <section class="svc-cta">

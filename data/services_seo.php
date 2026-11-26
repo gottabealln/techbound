@@ -2,6 +2,30 @@
 return array (
   0 => 
   array (
+    'id' => 9,
+    'page_file' => 'index.php',
+    'slug' => '',
+    'title' => 'Home Page',
+    'meta_title' => 'Digital Marketing Agency in Kerala | SEO, AI SEO & Web | TechBound',
+    'meta_description' => 'TechBound Innovations is a result-driven digital marketing agency in Kerala with 15+ years of experience in SEO, AI SEO, PPC ads, social media, and web development.',
+    'primary_keyword' => 'digital marketing agency in Kerala',
+    'schema_data' => '{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TechBound Digital Innovations",
+    "url": "https://techbound.in/"
+}',
+    'intro' => 'Result-driven digital marketing agency in Kerala helping brands grow with SEO, AI SEO, paid ads, social media, and modern web development.',
+    'items' => '[]',
+    'image' => 'assets/hero.avif',
+    'image_alt' => 'TechBound Digital Marketing Agency in Kerala',
+    'image_alt_description' => NULL,
+    'sort_order' => 0,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  1 => 
+  array (
     'id' => 1,
     'page_file' => 'services.php',
     'slug' => 'our-services',
@@ -33,7 +57,26 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  1 => 
+  2 => 
+  array (
+    'id' => 10,
+    'page_file' => 'about.php',
+    'slug' => 'about-us',
+    'title' => 'About Us',
+    'meta_title' => 'About TechBound Innovations | Digital Marketing Agency in Kerala',
+    'meta_description' => 'Learn about TechBound Innovations — 15+ years of helping brands across Trivandrum, Kochi, Kerala, and the GCC grow with SEO, AI search, paid ads, and web development.',
+    'primary_keyword' => 'about TechBound Innovations Kerala',
+    'schema_data' => '',
+    'intro' => 'Meet the Trivandrum and Kochi digital marketing team behind TechBound Innovations.',
+    'items' => '[]',
+    'image' => 'assets/mega-about.avif',
+    'image_alt' => 'TechBound Innovations leadership and digital marketing team in Kerala',
+    'image_alt_description' => NULL,
+    'sort_order' => 1,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  3 => 
   array (
     'id' => 2,
     'page_file' => 'seo.php',
@@ -66,7 +109,7 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  2 => 
+  4 => 
   array (
     'id' => 3,
     'page_file' => 'ai-seo.php',
@@ -99,7 +142,7 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  3 => 
+  5 => 
   array (
     'id' => 4,
     'page_file' => 'smm.php',
@@ -132,7 +175,7 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  4 => 
+  6 => 
   array (
     'id' => 5,
     'page_file' => 'online-advertising.php',
@@ -165,7 +208,7 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  5 => 
+  7 => 
   array (
     'id' => 6,
     'page_file' => 'website-development.php',
@@ -198,7 +241,7 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  6 => 
+  8 => 
   array (
     'id' => 7,
     'page_file' => 'lead-generation.php',
@@ -231,7 +274,7 @@ return array (
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
   ),
-  7 => 
+  9 => 
   array (
     'id' => 8,
     'page_file' => 'construction.php',
@@ -263,5 +306,176 @@ return array (
     'sort_order' => 8,
     'active' => 1,
     'created_at' => '2026-11-24 12:01:24',
+  ),
+  10 => 
+  array (
+    'id' => 11,
+    'page_file' => 'digital-marketing-agency-in-kochi.php',
+    'slug' => 'digital-marketing-agency-in-kochi',
+    'title' => 'Digital Marketing Agency in Kochi',
+    'meta_title' => 'Digital Marketing Agency in Kochi | TechBound Innovations',
+    'meta_description' => 'Looking for a result-driven digital marketing agency in Kochi? TechBound delivers SEO, AI SEO, paid ads, social media & web development from our Kadavanthra office.',
+    'primary_keyword' => 'digital marketing agency in Kochi',
+    'schema_data' => '',
+    'intro' => 'SEO, AI SEO, Google & Meta Ads, Social Media, and Website Development from our Kadavanthra, Kochi office.',
+    'items' => '[]',
+    'image' => 'assets/locations/kochi.jpg',
+    'image_alt' => 'Digital Marketing Agency in Kochi - TechBound Innovations',
+    'image_alt_description' => NULL,
+    'sort_order' => 10,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  11 => 
+  array (
+    'id' => 12,
+    'page_file' => 'digital-marketing-trivandrum-guide.php',
+    'slug' => 'digital-marketing-trivandrum-guide',
+    'title' => 'Digital Marketing in Trivandrum Guide',
+    'meta_title' => 'Digital Marketing in Trivandrum: Services, Costs & 2026 Guide',
+    'meta_description' => 'Digital marketing in Trivandrum: SEO, AI search, social, ads and websites, what each costs and how fast it works. Get a free audit and quote from TechBound.',
+    'primary_keyword' => 'digital marketing in Trivandrum',
+    'schema_data' => '',
+    'intro' => 'Complete 2026 guide to digital marketing services, costs, timelines, and strategy in Trivandrum.',
+    'items' => '[]',
+    'image' => 'assets/locations/trivandrum.jpg',
+    'image_alt' => 'Digital Marketing in Trivandrum Guide - TechBound',
+    'image_alt_description' => NULL,
+    'sort_order' => 11,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  12 => 
+  array (
+    'id' => 13,
+    'page_file' => 'seo-course-in-kerala.php',
+    'slug' => 'seo-course-in-kerala',
+    'title' => 'AI 360 SEO Course in Kerala',
+    'meta_title' => 'AI 360 SEO Course in Kerala | Learn SEO, AEO & GEO | TechBound',
+    'meta_description' => 'Master modern SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO) with TechBound\'s practical AI 360 SEO Course in Kerala.',
+    'primary_keyword' => 'SEO course in Kerala',
+    'schema_data' => '',
+    'intro' => 'Hands-on AI 360 SEO, AEO, and GEO training course in Kerala led by Shabna Nazeer.',
+    'items' => '[]',
+    'image' => 'assets/course-hero.jpg',
+    'image_alt' => 'AI 360 SEO Course in Kerala by TechBound',
+    'image_alt_description' => NULL,
+    'sort_order' => 12,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  13 => 
+  array (
+    'id' => 14,
+    'page_file' => 'portfolio.php',
+    'slug' => 'portfolio',
+    'title' => 'Portfolio',
+    'meta_title' => 'Our Portfolio | Digital Marketing & Web Case Studies | TechBound',
+    'meta_description' => 'Explore TechBound\'s portfolio of SEO, performance marketing, social media, and web development work for brands in Kerala and the GCC.',
+    'primary_keyword' => 'TechBound portfolio case studies',
+    'schema_data' => '',
+    'intro' => 'Selected SEO, web development, social media, and lead generation projects delivered by TechBound.',
+    'items' => '[]',
+    'image' => 'assets/hero.avif',
+    'image_alt' => 'TechBound Digital Marketing & Web Development Portfolio',
+    'image_alt_description' => NULL,
+    'sort_order' => 13,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  14 => 
+  array (
+    'id' => 15,
+    'page_file' => 'blog.php',
+    'slug' => 'blog',
+    'title' => 'Blog',
+    'meta_title' => 'Digital Marketing & SEO Blog | Insights & Guides | TechBound',
+    'meta_description' => 'Read the latest SEO, AI SEO, social media marketing, and paid advertising guides from TechBound Innovations.',
+    'primary_keyword' => 'digital marketing blog Kerala',
+    'schema_data' => '',
+    'intro' => 'Actionable insights on SEO, AI search, social media, paid ads, and digital growth.',
+    'items' => '[]',
+    'image' => 'assets/blog-hero.jpg',
+    'image_alt' => 'TechBound Digital Marketing & SEO Blog',
+    'image_alt_description' => NULL,
+    'sort_order' => 14,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  15 => 
+  array (
+    'id' => 16,
+    'page_file' => 'careers.php',
+    'slug' => 'careers',
+    'title' => 'Careers',
+    'meta_title' => 'Careers at TechBound | Digital Marketing Jobs in Kerala',
+    'meta_description' => 'Explore digital marketing, SEO, content, design, and web development job openings at TechBound Innovations in Trivandrum and Kochi.',
+    'primary_keyword' => 'digital marketing jobs in Trivandrum Kerala',
+    'schema_data' => '',
+    'intro' => 'Join our SEO, paid ads, content, social media, and web engineering teams in Trivandrum and Kochi.',
+    'items' => '[]',
+    'image' => 'assets/mega-careers.avif',
+    'image_alt' => 'Careers at TechBound Innovations Kerala',
+    'image_alt_description' => NULL,
+    'sort_order' => 15,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  16 => 
+  array (
+    'id' => 17,
+    'page_file' => 'contact.php',
+    'slug' => 'contact',
+    'title' => 'Contact Us',
+    'meta_title' => 'Contact TechBound | Digital Marketing Agency in Trivandrum & Kochi',
+    'meta_description' => 'Contact TechBound Innovations for SEO, AI SEO, paid advertising, social media marketing, or web development. Offices in Trivandrum, Kochi, and Muscat.',
+    'primary_keyword' => 'contact TechBound Innovations',
+    'schema_data' => '',
+    'intro' => 'Get in touch with TechBound offices in Trivandrum, Kochi, and Muscat, Oman.',
+    'items' => '[]',
+    'image' => 'assets/contact-hero.jpg',
+    'image_alt' => 'Contact TechBound Innovations',
+    'image_alt_description' => NULL,
+    'sort_order' => 16,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  17 => 
+  array (
+    'id' => 18,
+    'page_file' => 'privacy-policy.php',
+    'slug' => 'privacy-policy',
+    'title' => 'Privacy Policy',
+    'meta_title' => 'Privacy Policy | TechBound Innovations',
+    'meta_description' => 'Read TechBound Innovations\' Privacy Policy explaining how we collect, use, and protect personal data under India\'s DPDP Act 2023.',
+    'primary_keyword' => 'TechBound privacy policy',
+    'schema_data' => '',
+    'intro' => 'TechBound Innovations Privacy Policy aligned with India\'s DPDP Act 2023.',
+    'items' => '[]',
+    'image' => '',
+    'image_alt' => 'TechBound Privacy Policy',
+    'image_alt_description' => NULL,
+    'sort_order' => 17,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
+  ),
+  18 => 
+  array (
+    'id' => 19,
+    'page_file' => 'terms-and-conditions.php',
+    'slug' => 'terms-and-conditions',
+    'title' => 'Terms & Conditions',
+    'meta_title' => 'Terms & Conditions | TechBound Innovations',
+    'meta_description' => 'Review the Terms and Conditions for using TechBound Innovations\' website, digital marketing services, and training programs.',
+    'primary_keyword' => 'TechBound terms and conditions',
+    'schema_data' => '',
+    'intro' => 'Terms and Conditions governing use of TechBound Innovations\' website and services.',
+    'items' => '[]',
+    'image' => '',
+    'image_alt' => 'TechBound Terms and Conditions',
+    'image_alt_description' => NULL,
+    'sort_order' => 18,
+    'active' => 1,
+    'created_at' => '2026-11-26 17:38:30',
   ),
 );

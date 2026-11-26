@@ -1,11 +1,6 @@
 <?php
 declare(strict_types=1);
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require __DIR__ . '/vendor/autoload.php';
-
 header('Content-Type: application/json; charset=utf-8');
 
 function respond(bool $ok, string $message = '', int $status = 200, array $extra = []): void {

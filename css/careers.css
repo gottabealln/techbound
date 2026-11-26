@@ -1004,20 +1004,35 @@
 }
 
 .cr-status {
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   min-height: 22px;
   font-family: var(--font-body);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
   display: none;
 }
 .cr-status.is-success {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #eef7f1;
+  border: 1px solid rgba(27, 140, 67, 0.35);
+  color: #114b27;
+}
+.cr-status.is-success strong {
+  font-family: var(--font-heading);
+  font-size: 16px;
   color: var(--brand);
 }
 .cr-status.is-error {
   display: block;
-  color: #d33a3a;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
 }
 
 @keyframes spin {

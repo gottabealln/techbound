@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const statusEl = document.getElementById('careerStatus');
     if (statusEl) {
       statusEl.className = 'cr-status';
-      statusEl.style.display = 'none';
+      statusEl.style.display = '';
       statusEl.textContent = '';
     }
 
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
 
       statusBox.className = 'cr-status';
-      statusBox.style.display = 'none';
+      statusBox.style.display = '';
       statusBox.textContent = '';
 
       // Simple client check
@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!name || !email) {
         statusBox.className = 'cr-status is-error';
         statusBox.textContent = 'Please fill in your name and email address.';
+        statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
       }
 
@@ -232,7 +233,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (response.ok && data.ok) {
           statusBox.className = 'cr-status is-success';
-          statusBox.textContent = data.message || 'Application submitted successfully! Our team will contact you.';
+          statusBox.innerHTML = '<strong>Thank you for applying!</strong><span>' + (data.message || 'Your application has been submitted successfully. Our hiring team will review your profile and get back to you within 48–72 hours.') + '</span>';
+          statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           form.reset();
           if (fileNameDisplay) {
             fileNameDisplay.style.display = 'none';
@@ -240,11 +242,13 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           statusBox.className = 'cr-status is-error';
           statusBox.textContent = data.message || 'Something went wrong. Please check your information and try again.';
+          statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } catch (err) {
         console.error('Submission error:', err);
         statusBox.className = 'cr-status is-error';
         statusBox.textContent = 'Network error or server unreachable. You can also email us directly at contacts@techbound.in';
+        statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;

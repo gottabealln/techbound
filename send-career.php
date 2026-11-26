@@ -119,6 +119,7 @@ $cfg = require __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/db.php';
 
 // Save into contact_messages table (shown in Admin -> Enquiries / Leads)
+$dbSaved = false;
 try {
     $pdo = db();
 
@@ -134,9 +135,9 @@ try {
         $compiledMessage,
         $_SERVER['REMOTE_ADDR'] ?? null
     ]);
+    $dbSaved = true;
 } catch (Throwable $e) {
     error_log('Career DB error: ' . $e->getMessage());
-    respond(false, 'We could not save your application right now. Please try again or email us directly at contacts@techbound.in', 500);
 }
 
 // Email notification via Resend
@@ -165,15 +166,20 @@ if ($resumePath && file_exists($resumePath)) {
     }
 }
 
-$mailRes = send_via_resend($cfg, [
+$mailRes  = send_via_resend($cfg, [
     'to'          => $recipients,
     'reply_to'    => $email,
     'subject'     => 'New Job Application: ' . $role . ' - ' . $name,
     'text'        => $careerText,
     'attachments' => $attachments,
 ]);
-if (empty($mailRes['ok'])) {
+$mailSent = !empty($mailRes['ok']);
+if (!$mailSent) {
     error_log('Career Resend error: ' . ($mailRes['error'] ?? 'Unknown error'));
+}
+
+if (!$dbSaved && !$mailSent) {
+    respond(false, 'We could not deliver your application right now. Please try again or email us directly at contacts@techbound.in', 500);
 }
 
 $_SESSION['last_career_submit'] = time();

@@ -44,7 +44,7 @@ return [
         'provider'       => 'resend',
         'resend_api_key' => $env('RESEND_API_KEY', ''),
         'resend_from'    => $env('RESEND_FROM', 'TechBound Website <onboarding@resend.dev>'),
-        'to'             => $env('MAIL_TO', 'allen.medowa@gmail.com'),
+        'to'             => $env('MAIL_TO', 'contacts@techbound.in'),
     ],
     'recaptcha' => [
         'site_key'   => $env('RECAPTCHA_SITE_KEY', ''),

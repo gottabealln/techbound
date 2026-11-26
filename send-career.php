@@ -147,7 +147,7 @@ try {
 // Email notification via Resend
 require_once __DIR__ . '/includes/mailer.php';
 $toRaw      = trim((string)($cfg['mail']['to'] ?? ''));
-$recipients = $toRaw !== '' ? array_values(array_filter(array_map('trim', explode(',', $toRaw)))) : ['allen.medowa@gmail.com'];
+$recipients = $toRaw !== '' ? array_values(array_filter(array_map('trim', explode(',', $toRaw)))) : ['contacts@techbound.in'];
 
 $careerText = "A new application has been submitted through the Careers page:\n\n" .
               "Name: $name\n" .

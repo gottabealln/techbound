@@ -27,13 +27,13 @@ require __DIR__ . '/includes/header.php';
 
     <div class="hero__content">
       <div class="hero__tagline-wrap">
-        <p class="hero__tagline">Your Trusted Digital Marketing Partner in  Kerala</p>
+        <p class="hero__tagline">We help brands shine beyond trends </p>
         <div class="hero__line"></div>
       </div>
 
       <div class="hero__body">
         <div class="hero__text">
-          <h1 class="hero__title">We help brands shine beyond trends</h1>
+          <h1 class="hero__title">Your Trusted Digital Marketing Partner in  Kerala</h1>
           <p class="hero__desc">
             We empower businesses worldwide with result-driven digital marketing
             solutions that generate quality leads, boost revenue, and accelerate

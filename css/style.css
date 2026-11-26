@@ -1396,6 +1396,10 @@ body.drawer-open {
   background: #fff;
 }
 
+.faq--tint {
+  background: #e6ece8;
+}
+
 .faq__inner {
   width: 990px;
   max-width: 100%;

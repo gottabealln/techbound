@@ -14,8 +14,9 @@
  * - If DB is unreachable, falls back to the auto-synced `data/faqs_cache.php`.
  */
 
-$faq_page  = $faq_page  ?? 'home';
-$faq_title = $faq_title ?? 'Frequently Asked Questions';
+$faq_page          = $faq_page          ?? 'home';
+$faq_title         = $faq_title         ?? 'Frequently Asked Questions';
+$faq_section_class = trim((string)($faq_section_class ?? ''));
 
 if (!function_exists('db')) {
     require_once __DIR__ . '/../includes/db.php';
@@ -58,7 +59,7 @@ if (empty($_faqs)) {
 ?>
 
 <!-- ===== FAQ SECTION ===== -->
-<section class="faq" id="faq" data-nav="light">
+<section class="faq<?= $faq_section_class !== '' ? ' ' . htmlspecialchars($faq_section_class, ENT_QUOTES, 'UTF-8') : '' ?>" id="faq" data-nav="light">
   <div class="faq__inner">
     <h2 class="faq__title"><?= htmlspecialchars($faq_title, ENT_QUOTES, 'UTF-8') ?></h2>
 

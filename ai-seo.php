@@ -219,57 +219,10 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-<!-- ===== PRICING ===== -->
-<section class="svc-section svc-section--tint">
-  <div class="svc-wrap svc-center">
-    <span class="pill pill--glow">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
-        Packages
-      </span>
-    <h2 class="svc-title">AI SEO packages and pricing</h2>
-    <p class="svc-text" style="margin: 18px auto 0;">Cost depends on site size, competition and how many AI platforms you want tracked. Every quote is fixed before work starts.</p>
-    
-    <div class="pricing-grid" style="text-align: left;">
-      <div class="pricing-card">
-        <h3>AI Visibility Audit</h3>
-        <div class="price">Custom Quote</div>
-        <ul>
-          <li>One-time baseline</li>
-          <li>Competitor gap report</li>
-          <li>90-day roadmap</li>
-          <li>Yours to keep</li>
-        </ul>
-        <a href="<?= url('contact.php') ?>" class="btn-outline" data-audit-modal="ai-audit" style="color: #0a1220; border-color: #0a1220; text-align: center; justify-content: center;">Enquire Now</a>
-      </div>
-      <div class="pricing-card pricing-card--highlight">
-        <h3>AI SEO Retainer</h3>
-        <div class="price">Monthly Plan</div>
-        <ul>
-          <li>SEO, AEO and GEO as one</li>
-          <li>Technical fixes</li>
-          <li>Entity work & mentions</li>
-          <li>Monthly reporting</li>
-        </ul>
-        <a href="<?= url('contact.php') ?>" class="btn-outline" data-audit-modal="ai-audit" style="background: var(--brand); color: #fff; border-color: var(--brand); text-align: center; justify-content: center;">Get Started</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Add-on for SEO Clients</h3>
-        <div class="price">Add-on</div>
-        <ul>
-          <li>Layer AEO & GEO</li>
-          <li>Onto current SEO plan</li>
-          <li>AI citation tracking</li>
-          <li>Added to your report</li>
-        </ul>
-        <a href="<?= url('contact.php') ?>" class="btn-outline" data-audit-modal="ai-audit" style="color: #0a1220; border-color: #0a1220; text-align: center; justify-content: center;">Enquire Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <?php
-$faq_page  = 'ai-seo';
-$faq_title = 'Frequently Asked Questions';
+$faq_page          = 'ai-seo';
+$faq_title         = 'Frequently Asked Questions';
+$faq_section_class = 'faq--tint';
 require __DIR__ . '/includes/faq-section.php';
 ?>
 

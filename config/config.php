@@ -3,12 +3,14 @@
 $envFile = __DIR__ . '/../.env';
 if (is_file($envFile) && is_readable($envFile)) {
     foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
-        $line = trim($line);
+        $line = preg_replace('/^\xEF\xBB\xBF/', '', trim($line));
         if ($line === '' || $line[0] === '#' || strpos($line, '=') === false) continue;
         [$k, $v] = array_map('trim', explode('=', $line, 2));
-        $v = trim($v, "\"'");
-        if ($k !== '' && getenv($k) === false) {
-            putenv("$k=$v");
+        $v = trim($v, "\"' \t\r\n");
+        if ($k !== '' && getenv($k) === false && !isset($_ENV[$k])) {
+            if (function_exists('putenv')) {
+                @putenv("$k=$v");
+            }
             $_ENV[$k] = $v;
         }
     }

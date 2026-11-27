@@ -4,12 +4,15 @@
 </IfModule>
 
 # Block direct access to sensitive file types
-<FilesMatch "\.(sql|xml|json|lock|frm|ibd|opt|env|md)$">
+<FilesMatch "\.(sql|json|lock|frm|ibd|opt|env|md)$">
     Require all denied
 </FilesMatch>
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Dynamic auto-updating XML Sitemap
+    RewriteRule ^sitemap\.xml/?$ sitemap.php [L,QSA]
 
     # Serve existing files and directories directly (CSS, JS, images, admin, AJAX endpoints)
     RewriteCond %{REQUEST_FILENAME} -f [OR]

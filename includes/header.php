@@ -78,9 +78,7 @@ $company = [
 $company_links = [
   ['label' => 'Real Estate',         'href' => 'construction.php', 'desc' => 'Specialized marketing for builders & developers'],
   ['label' => 'Education',           'href' => '',                 'desc' => ''],
-  ['label' => 'Banking and Finance', 'href' => '',                 'desc' => ''],
   ['label' => 'Tourism',             'href' => '',                 'desc' => ''],
-  ['label' => 'Automobile',          'href' => '',                 'desc' => ''],
   ['label' => 'E-Commerce',          'href' => '',                 'desc' => ''],
 ];
 ?>

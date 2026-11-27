@@ -3062,6 +3062,10 @@ body.drawer-open {
   .testimonial-card {
     flex-basis: 78vw;
   }
+
+  .testimonial-row--bottom {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3093,7 +3097,8 @@ body.drawer-open {
   flex-shrink: 0;
   gap: 20px;
   padding-left: 0;
-  will-change: transform;
+  will-change: auto;
+  transform: none;
 }
 
 .testimonial-card {
@@ -3101,6 +3106,8 @@ body.drawer-open {
   min-height: 225px;
   background: #111 !important;
   border: 1px solid #222;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .testimonial-card > p {
@@ -3145,6 +3152,10 @@ body.drawer-open {
 @media (max-width: 767px) {
   .testimonial-card {
     flex-basis: 78vw;
+  }
+
+  .testimonial-row--bottom {
+    display: none;
   }
 }
 

@@ -131,19 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
         (bottomPosition + BOTTOM_SPEED * delta) % bottomDistance;
 
       bottomRow.style.transform =
-        `translate3d(${-bottomPosition}px, 0, 0)`;
+        `translateX(${-bottomPosition}px)`;
     }
 
-    // TOP ROW: slides right once scrolled in, unless hovered or expanded.
-    if (topDistance > 0) {
-      if (!topStarted) {
-        topRow.style.transform = `translate3d(${-topDistance}px, 0, 0)`;
-      } else if (!topPaused) {
-        topPosition = (topPosition + TOP_SPEED * delta) % topDistance;
+    // TOP ROW: slides right unless hovered or expanded.
+    if (topDistance > 0 && !topPaused) {
+      topPosition = (topPosition + TOP_SPEED * delta) % topDistance;
 
-        topRow.style.transform =
-          `translate3d(${-topDistance + topPosition}px, 0, 0)`;
-      }
+      topRow.style.transform =
+        `translateX(${-topDistance + topPosition}px)`;
     }
 
     frame = requestAnimationFrame(animate);
@@ -155,6 +151,25 @@ document.addEventListener("DOMContentLoaded", () => {
     measureRows();
     updateScroll();
   });
+
+  window.addEventListener("orientationchange", () => {
+    setTimeout(() => {
+      measureRows();
+      updateScroll();
+    }, 150);
+  });
+
+  window.addEventListener("load", () => {
+    measureRows();
+    updateScroll();
+  });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      measureRows();
+      updateScroll();
+    });
+  }
 
   reducedMotion.addEventListener("change", updateScroll);
 

@@ -71,9 +71,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $meta_description = trim($_POST['meta_description'] ?? '');
         $primary_keyword  = trim($_POST['primary_keyword'] ?? '');
         $schema_data      = trim($_POST['schema_data'] ?? '');
+        // Allow users who paste full <script type="application/ld+json">...</script> tags
+        $schema_data      = preg_replace('/^\s*<script[^>]*>\s*/i', '', $schema_data);
+        $schema_data      = preg_replace('/\s*<\/script>\s*$/i', '', trim((string)$schema_data));
         $intro            = trim($_POST['intro'] ?? '');
         $items            = trim($_POST['items'] ?? '');
-        if ($items === '') $items = '[]';
+        if ($items === '' || (json_decode($items, true) === null && json_last_error() !== JSON_ERROR_NONE)) {
+            $items = '[]';
+        }
         $image                 = trim($_POST['image'] ?? '');
         $image_alt             = trim($_POST['image_alt'] ?? '');
         $image_alt_description = trim($_POST['image_alt_description'] ?? '');
@@ -102,29 +107,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $image_alt = $title . ' - TechBound Innovations';
             }
 
-            if ($id) {
-                $pdo->prepare(
-                    'UPDATE services
-                     SET page_file=?, title=?, meta_title=?, meta_description=?, primary_keyword=?, schema_data=?, slug=?, intro=?, items=?, image=?, image_alt=?, image_alt_description=?, sort_order=?, active=?
-                     WHERE id=?'
-                )->execute([
-                    $page_file, $title, $meta_title, $meta_description, $primary_keyword, $schema_data,
-                    $slug, $intro, $items, $image, $image_alt, $image_alt_description, $sort_order, $active, $id
-                ]);
-                $flash = 'success:Service SEO & details updated.';
-            } else {
-                $pdo->prepare(
-                    'INSERT INTO services (page_file, title, meta_title, meta_description, primary_keyword, schema_data, slug, intro, items, image, image_alt, image_alt_description, sort_order, active)
-                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
-                )->execute([
-                    $page_file, $title, $meta_title, $meta_description, $primary_keyword, $schema_data,
-                    $slug, $intro, $items, $image, $image_alt, $image_alt_description, $sort_order, $active
-                ]);
-                $flash = 'success:Service created.';
+            try {
+                ensure_services_seo_schema($pdo);
+                if ($id) {
+                    $pdo->prepare(
+                        'UPDATE services
+                         SET page_file=?, title=?, meta_title=?, meta_description=?, primary_keyword=?, schema_data=?, slug=?, intro=?, items=?, image=?, image_alt=?, image_alt_description=?, sort_order=?, active=?
+                         WHERE id=?'
+                    )->execute([
+                        $page_file, $title, $meta_title, $meta_description, $primary_keyword, $schema_data,
+                        $slug, $intro, $items, $image, $image_alt, $image_alt_description, $sort_order, $active, $id
+                    ]);
+                    $flash = 'success:Page SEO & details updated.';
+                } else {
+                    $pdo->prepare(
+                        'INSERT INTO services (page_file, title, meta_title, meta_description, primary_keyword, schema_data, slug, intro, items, image, image_alt, image_alt_description, sort_order, active)
+                         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+                    )->execute([
+                        $page_file, $title, $meta_title, $meta_description, $primary_keyword, $schema_data,
+                        $slug, $intro, $items, $image, $image_alt, $image_alt_description, $sort_order, $active
+                    ]);
+                    $flash = 'success:Page SEO entry created.';
+                }
+                sync_services_cache($pdo);
+                header('Location: ' . admin_url('resources/services.php?flash=' . urlencode($flash)));
+                exit;
+            } catch (Throwable $e) {
+                error_log('Admin services save error: ' . $e->getMessage());
+                $flash = 'error:Could not save page SEO: ' . $e->getMessage();
             }
-            sync_services_cache($pdo);
-            header('Location: ' . admin_url('resources/services.php?flash=' . urlencode($flash)));
-            exit;
         }
     }
 
@@ -499,6 +510,17 @@ document.getElementById('sf-title').addEventListener('input', function() {
     if (!document.getElementById('sf-id').value) {
         const s = this.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
         document.getElementById('sf-slug').value = s ? ('our-services/' + s) : '';
+    }
+});
+
+// Strip <script type="application/ld+json"> wrappers before POST (prevents Hostinger WAF/500 & JSON errors)
+document.getElementById('serviceForm').addEventListener('submit', function() {
+    const sc = document.getElementById('sf-schema');
+    if (sc && sc.value) {
+        sc.value = sc.value
+            .replace(/^\s*<script[^>]*>\s*/i, '')
+            .replace(/\s*<\/script>\s*$/i, '')
+            .trim();
     }
 });
 

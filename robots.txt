@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /data/
+Disallow: /uploads/resumes/
+Disallow: /send-contact.php
+Disallow: /send-career.php
+Disallow: /service-router.php
+
+Sitemap: https://techbound.in/sitemap.xml
